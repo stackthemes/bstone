@@ -1,0 +1,60 @@
+.bst-responsive-btns,
+.customize-control-title {
+	display:inline-block;
+}
+
+.bst-responsive-btns {
+	float:right;
+	line-height: 1;
+	margin-top: 5px;
+
+	> li {
+		margin-bottom: 0;
+		display: none;
+
+		&.active {
+			display: inline-block;
+		}
+	}
+
+	button[type="button"] {
+		padding: 0;
+		cursor: pointer;
+		background: none;
+		border: none;
+		opacity: .75;
+		outline: none;
+
+		> i {
+			width: 15px;
+			height: 15px;
+			font-size: 15px;
+		}
+	}
+}
+
+.customize-control-bst-responsive .input-wrapper {
+	input {
+		display: none;
+		width: calc(100% - 52px);
+		float: left;
+
+		&.active {
+			display: inline-block;
+		}
+	}
+
+	.bst-responsive-select {
+		width: 50px;
+		margin: 0;
+		display: none;
+		padding: .1em;
+		margin-left: 2px;
+	}
+
+	.bst-responsive-input.active {
+		+ .bst-responsive-select {
+			display: inline-block;
+		}
+	}
+}

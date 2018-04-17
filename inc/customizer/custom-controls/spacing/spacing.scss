@@ -1,0 +1,31 @@
+.customize-control-bst-spacing {
+	ul.bst-spacing-wrapper {
+		position: relative;
+		-js-display: flex;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: flex;
+	}	
+	li.bst-spacing-input-item {
+		display: inline-block;
+		text-align: center;
+		-webkit-box-flex: 1;
+		-ms-flex: auto;
+		flex: auto;
+	}
+	span.bst-spacing-unit {
+		position: absolute;
+		top: -26px;
+		right: 0;
+		font-size: 12px;
+		font-weight: bold;
+	}
+	span.bst-spacing-title {
+		display: block;
+	}
+	input.bst-spacing-input {
+		text-align: center;
+	}
+}

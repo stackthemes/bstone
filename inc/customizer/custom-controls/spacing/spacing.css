@@ -1,0 +1,24 @@
+.customize-control-bst-spacing ul.bst-spacing-wrapper {
+  position: relative;
+  -js-display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex; }
+.customize-control-bst-spacing li.bst-spacing-input-item {
+  display: inline-block;
+  text-align: center;
+  -webkit-box-flex: 1;
+  -ms-flex: auto;
+  flex: auto; }
+.customize-control-bst-spacing span.bst-spacing-unit {
+  position: absolute;
+  top: -26px;
+  right: 0;
+  font-size: 12px;
+  font-weight: bold; }
+.customize-control-bst-spacing span.bst-spacing-title {
+  display: block; }
+.customize-control-bst-spacing input.bst-spacing-input {
+  text-align: center; }

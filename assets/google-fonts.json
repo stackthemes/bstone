@@ -1,0 +1,5595 @@
+[
+    {
+        "ABeeZee": [
+            "regular",
+            "italic"
+        ]
+    },
+    {
+        "Abel": [
+            "regular"
+        ]
+    },
+    {
+        "Abhaya Libre": [
+            "regular",
+            "500",
+            "600",
+            "700",
+            "800"
+        ]
+    },
+    {
+        "Abril Fatface": [
+            "regular"
+        ]
+    },
+    {
+        "Aclonica": [
+            "regular"
+        ]
+    },
+    {
+        "Acme": [
+            "regular"
+        ]
+    },
+    {
+        "Actor": [
+            "regular"
+        ]
+    },
+    {
+        "Adamina": [
+            "regular"
+        ]
+    },
+    {
+        "Advent Pro": [
+            "100",
+            "200",
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700"
+        ]
+    },
+    {
+        "Aguafina Script": [
+            "regular"
+        ]
+    },
+    {
+        "Akronim": [
+            "regular"
+        ]
+    },
+    {
+        "Aladin": [
+            "regular"
+        ]
+    },
+    {
+        "Aldrich": [
+            "regular"
+        ]
+    },
+    {
+        "Alef": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Alegreya": [
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "700",
+            "700italic",
+            "800",
+            "800italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "Alegreya SC": [
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "700",
+            "700italic",
+            "800",
+            "800italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "Alegreya Sans": [
+            "100",
+            "100italic",
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "700",
+            "700italic",
+            "800",
+            "800italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "Alegreya Sans SC": [
+            "100",
+            "100italic",
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "700",
+            "700italic",
+            "800",
+            "800italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "Alex Brush": [
+            "regular"
+        ]
+    },
+    {
+        "Alfa Slab One": [
+            "regular"
+        ]
+    },
+    {
+        "Alice": [
+            "regular"
+        ]
+    },
+    {
+        "Alike": [
+            "regular"
+        ]
+    },
+    {
+        "Alike Angular": [
+            "regular"
+        ]
+    },
+    {
+        "Allan": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Allerta": [
+            "regular"
+        ]
+    },
+    {
+        "Allerta Stencil": [
+            "regular"
+        ]
+    },
+    {
+        "Allura": [
+            "regular"
+        ]
+    },
+    {
+        "Almendra": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Almendra Display": [
+            "regular"
+        ]
+    },
+    {
+        "Almendra SC": [
+            "regular"
+        ]
+    },
+    {
+        "Amarante": [
+            "regular"
+        ]
+    },
+    {
+        "Amaranth": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Amatic SC": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Amethysta": [
+            "regular"
+        ]
+    },
+    {
+        "Amiko": [
+            "regular",
+            "600",
+            "700"
+        ]
+    },
+    {
+        "Amiri": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Amita": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Anaheim": [
+            "regular"
+        ]
+    },
+    {
+        "Andada": [
+            "regular"
+        ]
+    },
+    {
+        "Andika": [
+            "regular"
+        ]
+    },
+    {
+        "Angkor": [
+            "regular"
+        ]
+    },
+    {
+        "Annie Use Your Telescope": [
+            "regular"
+        ]
+    },
+    {
+        "Anonymous Pro": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Antic": [
+            "regular"
+        ]
+    },
+    {
+        "Antic Didone": [
+            "regular"
+        ]
+    },
+    {
+        "Antic Slab": [
+            "regular"
+        ]
+    },
+    {
+        "Anton": [
+            "regular"
+        ]
+    },
+    {
+        "Arapey": [
+            "regular",
+            "italic"
+        ]
+    },
+    {
+        "Arbutus": [
+            "regular"
+        ]
+    },
+    {
+        "Arbutus Slab": [
+            "regular"
+        ]
+    },
+    {
+        "Architects Daughter": [
+            "regular"
+        ]
+    },
+    {
+        "Archivo": [
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Archivo Black": [
+            "regular"
+        ]
+    },
+    {
+        "Archivo Narrow": [
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Aref Ruqaa": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Arima Madurai": [
+            "100",
+            "200",
+            "300",
+            "regular",
+            "500",
+            "700",
+            "800",
+            "900"
+        ]
+    },
+    {
+        "Arimo": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Arizonia": [
+            "regular"
+        ]
+    },
+    {
+        "Armata": [
+            "regular"
+        ]
+    },
+    {
+        "Arsenal": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Artifika": [
+            "regular"
+        ]
+    },
+    {
+        "Arvo": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Arya": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Asap": [
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Asap Condensed": [
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Asar": [
+            "regular"
+        ]
+    },
+    {
+        "Asset": [
+            "regular"
+        ]
+    },
+    {
+        "Assistant": [
+            "200",
+            "300",
+            "regular",
+            "600",
+            "700",
+            "800"
+        ]
+    },
+    {
+        "Astloch": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Asul": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Athiti": [
+            "200",
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700"
+        ]
+    },
+    {
+        "Atma": [
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700"
+        ]
+    },
+    {
+        "Atomic Age": [
+            "regular"
+        ]
+    },
+    {
+        "Aubrey": [
+            "regular"
+        ]
+    },
+    {
+        "Audiowide": [
+            "regular"
+        ]
+    },
+    {
+        "Autour One": [
+            "regular"
+        ]
+    },
+    {
+        "Average": [
+            "regular"
+        ]
+    },
+    {
+        "Average Sans": [
+            "regular"
+        ]
+    },
+    {
+        "Averia Gruesa Libre": [
+            "regular"
+        ]
+    },
+    {
+        "Averia Libre": [
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Averia Sans Libre": [
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Averia Serif Libre": [
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Bad Script": [
+            "regular"
+        ]
+    },
+    {
+        "Bahiana": [
+            "regular"
+        ]
+    },
+    {
+        "Baloo": [
+            "regular"
+        ]
+    },
+    {
+        "Baloo Bhai": [
+            "regular"
+        ]
+    },
+    {
+        "Baloo Bhaijaan": [
+            "regular"
+        ]
+    },
+    {
+        "Baloo Bhaina": [
+            "regular"
+        ]
+    },
+    {
+        "Baloo Chettan": [
+            "regular"
+        ]
+    },
+    {
+        "Baloo Da": [
+            "regular"
+        ]
+    },
+    {
+        "Baloo Paaji": [
+            "regular"
+        ]
+    },
+    {
+        "Baloo Tamma": [
+            "regular"
+        ]
+    },
+    {
+        "Baloo Tammudu": [
+            "regular"
+        ]
+    },
+    {
+        "Baloo Thambi": [
+            "regular"
+        ]
+    },
+    {
+        "Balthazar": [
+            "regular"
+        ]
+    },
+    {
+        "Bangers": [
+            "regular"
+        ]
+    },
+    {
+        "Barlow": [
+            "100",
+            "100italic",
+            "200",
+            "200italic",
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic",
+            "800",
+            "800italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "Barlow Condensed": [
+            "100",
+            "100italic",
+            "200",
+            "200italic",
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic",
+            "800",
+            "800italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "Barlow Semi Condensed": [
+            "100",
+            "100italic",
+            "200",
+            "200italic",
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic",
+            "800",
+            "800italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "Barrio": [
+            "regular"
+        ]
+    },
+    {
+        "Basic": [
+            "regular"
+        ]
+    },
+    {
+        "Battambang": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Baumans": [
+            "regular"
+        ]
+    },
+    {
+        "Bayon": [
+            "regular"
+        ]
+    },
+    {
+        "Belgrano": [
+            "regular"
+        ]
+    },
+    {
+        "Bellefair": [
+            "regular"
+        ]
+    },
+    {
+        "Belleza": [
+            "regular"
+        ]
+    },
+    {
+        "BenchNine": [
+            "300",
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Bentham": [
+            "regular"
+        ]
+    },
+    {
+        "Berkshire Swash": [
+            "regular"
+        ]
+    },
+    {
+        "Bevan": [
+            "regular"
+        ]
+    },
+    {
+        "Bigelow Rules": [
+            "regular"
+        ]
+    },
+    {
+        "Bigshot One": [
+            "regular"
+        ]
+    },
+    {
+        "Bilbo": [
+            "regular"
+        ]
+    },
+    {
+        "Bilbo Swash Caps": [
+            "regular"
+        ]
+    },
+    {
+        "BioRhyme": [
+            "200",
+            "300",
+            "regular",
+            "700",
+            "800"
+        ]
+    },
+    {
+        "BioRhyme Expanded": [
+            "200",
+            "300",
+            "regular",
+            "700",
+            "800"
+        ]
+    },
+    {
+        "Biryani": [
+            "200",
+            "300",
+            "regular",
+            "600",
+            "700",
+            "800",
+            "900"
+        ]
+    },
+    {
+        "Bitter": [
+            "regular",
+            "italic",
+            "700"
+        ]
+    },
+    {
+        "Black Ops One": [
+            "regular"
+        ]
+    },
+    {
+        "Bokor": [
+            "regular"
+        ]
+    },
+    {
+        "Bonbon": [
+            "regular"
+        ]
+    },
+    {
+        "Boogaloo": [
+            "regular"
+        ]
+    },
+    {
+        "Bowlby One": [
+            "regular"
+        ]
+    },
+    {
+        "Bowlby One SC": [
+            "regular"
+        ]
+    },
+    {
+        "Brawler": [
+            "regular"
+        ]
+    },
+    {
+        "Bree Serif": [
+            "regular"
+        ]
+    },
+    {
+        "Bubblegum Sans": [
+            "regular"
+        ]
+    },
+    {
+        "Bubbler One": [
+            "regular"
+        ]
+    },
+    {
+        "Buda": [
+            "300"
+        ]
+    },
+    {
+        "Buenard": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Bungee": [
+            "regular"
+        ]
+    },
+    {
+        "Bungee Hairline": [
+            "regular"
+        ]
+    },
+    {
+        "Bungee Inline": [
+            "regular"
+        ]
+    },
+    {
+        "Bungee Outline": [
+            "regular"
+        ]
+    },
+    {
+        "Bungee Shade": [
+            "regular"
+        ]
+    },
+    {
+        "Butcherman": [
+            "regular"
+        ]
+    },
+    {
+        "Butterfly Kids": [
+            "regular"
+        ]
+    },
+    {
+        "Cabin": [
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Cabin Condensed": [
+            "regular",
+            "500",
+            "600",
+            "700"
+        ]
+    },
+    {
+        "Cabin Sketch": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Caesar Dressing": [
+            "regular"
+        ]
+    },
+    {
+        "Cagliostro": [
+            "regular"
+        ]
+    },
+    {
+        "Cairo": [
+            "200",
+            "300",
+            "regular",
+            "600",
+            "700",
+            "900"
+        ]
+    },
+    {
+        "Calligraffitti": [
+            "regular"
+        ]
+    },
+    {
+        "Cambay": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Cambo": [
+            "regular"
+        ]
+    },
+    {
+        "Candal": [
+            "regular"
+        ]
+    },
+    {
+        "Cantarell": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Cantata One": [
+            "regular"
+        ]
+    },
+    {
+        "Cantora One": [
+            "regular"
+        ]
+    },
+    {
+        "Capriola": [
+            "regular"
+        ]
+    },
+    {
+        "Cardo": [
+            "regular",
+            "italic",
+            "700"
+        ]
+    },
+    {
+        "Carme": [
+            "regular"
+        ]
+    },
+    {
+        "Carrois Gothic": [
+            "regular"
+        ]
+    },
+    {
+        "Carrois Gothic SC": [
+            "regular"
+        ]
+    },
+    {
+        "Carter One": [
+            "regular"
+        ]
+    },
+    {
+        "Catamaran": [
+            "100",
+            "200",
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700",
+            "800",
+            "900"
+        ]
+    },
+    {
+        "Caudex": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Caveat": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Caveat Brush": [
+            "regular"
+        ]
+    },
+    {
+        "Cedarville Cursive": [
+            "regular"
+        ]
+    },
+    {
+        "Ceviche One": [
+            "regular"
+        ]
+    },
+    {
+        "Changa": [
+            "200",
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700",
+            "800"
+        ]
+    },
+    {
+        "Changa One": [
+            "regular",
+            "italic"
+        ]
+    },
+    {
+        "Chango": [
+            "regular"
+        ]
+    },
+    {
+        "Chathura": [
+            "100",
+            "300",
+            "regular",
+            "700",
+            "800"
+        ]
+    },
+    {
+        "Chau Philomene One": [
+            "regular",
+            "italic"
+        ]
+    },
+    {
+        "Chela One": [
+            "regular"
+        ]
+    },
+    {
+        "Chelsea Market": [
+            "regular"
+        ]
+    },
+    {
+        "Chenla": [
+            "regular"
+        ]
+    },
+    {
+        "Cherry Cream Soda": [
+            "regular"
+        ]
+    },
+    {
+        "Cherry Swash": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Chewy": [
+            "regular"
+        ]
+    },
+    {
+        "Chicle": [
+            "regular"
+        ]
+    },
+    {
+        "Chivo": [
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "700",
+            "700italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "Chonburi": [
+            "regular"
+        ]
+    },
+    {
+        "Cinzel": [
+            "regular",
+            "700",
+            "900"
+        ]
+    },
+    {
+        "Cinzel Decorative": [
+            "regular",
+            "700",
+            "900"
+        ]
+    },
+    {
+        "Clicker Script": [
+            "regular"
+        ]
+    },
+    {
+        "Coda": [
+            "regular",
+            "800"
+        ]
+    },
+    {
+        "Coda Caption": [
+            "800"
+        ]
+    },
+    {
+        "Codystar": [
+            "300",
+            "regular"
+        ]
+    },
+    {
+        "Coiny": [
+            "regular"
+        ]
+    },
+    {
+        "Combo": [
+            "regular"
+        ]
+    },
+    {
+        "Comfortaa": [
+            "300",
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Coming Soon": [
+            "regular"
+        ]
+    },
+    {
+        "Concert One": [
+            "regular"
+        ]
+    },
+    {
+        "Condiment": [
+            "regular"
+        ]
+    },
+    {
+        "Content": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Contrail One": [
+            "regular"
+        ]
+    },
+    {
+        "Convergence": [
+            "regular"
+        ]
+    },
+    {
+        "Cookie": [
+            "regular"
+        ]
+    },
+    {
+        "Copse": [
+            "regular"
+        ]
+    },
+    {
+        "Corben": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Cormorant": [
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Cormorant Garamond": [
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Cormorant Infant": [
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Cormorant SC": [
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700"
+        ]
+    },
+    {
+        "Cormorant Unicase": [
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700"
+        ]
+    },
+    {
+        "Cormorant Upright": [
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700"
+        ]
+    },
+    {
+        "Courgette": [
+            "regular"
+        ]
+    },
+    {
+        "Cousine": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Coustard": [
+            "regular",
+            "900"
+        ]
+    },
+    {
+        "Covered By Your Grace": [
+            "regular"
+        ]
+    },
+    {
+        "Crafty Girls": [
+            "regular"
+        ]
+    },
+    {
+        "Creepster": [
+            "regular"
+        ]
+    },
+    {
+        "Crete Round": [
+            "regular",
+            "italic"
+        ]
+    },
+    {
+        "Crimson Text": [
+            "regular",
+            "italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Croissant One": [
+            "regular"
+        ]
+    },
+    {
+        "Crushed": [
+            "regular"
+        ]
+    },
+    {
+        "Cuprum": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Cutive": [
+            "regular"
+        ]
+    },
+    {
+        "Cutive Mono": [
+            "regular"
+        ]
+    },
+    {
+        "Damion": [
+            "regular"
+        ]
+    },
+    {
+        "Dancing Script": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Dangrek": [
+            "regular"
+        ]
+    },
+    {
+        "David Libre": [
+            "regular",
+            "500",
+            "700"
+        ]
+    },
+    {
+        "Dawning of a New Day": [
+            "regular"
+        ]
+    },
+    {
+        "Days One": [
+            "regular"
+        ]
+    },
+    {
+        "Dekko": [
+            "regular"
+        ]
+    },
+    {
+        "Delius": [
+            "regular"
+        ]
+    },
+    {
+        "Delius Swash Caps": [
+            "regular"
+        ]
+    },
+    {
+        "Delius Unicase": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Della Respira": [
+            "regular"
+        ]
+    },
+    {
+        "Denk One": [
+            "regular"
+        ]
+    },
+    {
+        "Devonshire": [
+            "regular"
+        ]
+    },
+    {
+        "Dhurjati": [
+            "regular"
+        ]
+    },
+    {
+        "Didact Gothic": [
+            "regular"
+        ]
+    },
+    {
+        "Diplomata": [
+            "regular"
+        ]
+    },
+    {
+        "Diplomata SC": [
+            "regular"
+        ]
+    },
+    {
+        "Domine": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Donegal One": [
+            "regular"
+        ]
+    },
+    {
+        "Doppio One": [
+            "regular"
+        ]
+    },
+    {
+        "Dorsa": [
+            "regular"
+        ]
+    },
+    {
+        "Dosis": [
+            "200",
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700",
+            "800"
+        ]
+    },
+    {
+        "Dr Sugiyama": [
+            "regular"
+        ]
+    },
+    {
+        "Duru Sans": [
+            "regular"
+        ]
+    },
+    {
+        "Dynalight": [
+            "regular"
+        ]
+    },
+    {
+        "EB Garamond": [
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic",
+            "800",
+            "800italic"
+        ]
+    },
+    {
+        "Eagle Lake": [
+            "regular"
+        ]
+    },
+    {
+        "Eater": [
+            "regular"
+        ]
+    },
+    {
+        "Economica": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Eczar": [
+            "regular",
+            "500",
+            "600",
+            "700",
+            "800"
+        ]
+    },
+    {
+        "El Messiri": [
+            "regular",
+            "500",
+            "600",
+            "700"
+        ]
+    },
+    {
+        "Electrolize": [
+            "regular"
+        ]
+    },
+    {
+        "Elsie": [
+            "regular",
+            "900"
+        ]
+    },
+    {
+        "Elsie Swash Caps": [
+            "regular",
+            "900"
+        ]
+    },
+    {
+        "Emblema One": [
+            "regular"
+        ]
+    },
+    {
+        "Emilys Candy": [
+            "regular"
+        ]
+    },
+    {
+        "Encode Sans": [
+            "100",
+            "200",
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700",
+            "800",
+            "900"
+        ]
+    },
+    {
+        "Encode Sans Condensed": [
+            "100",
+            "200",
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700",
+            "800",
+            "900"
+        ]
+    },
+    {
+        "Encode Sans Expanded": [
+            "100",
+            "200",
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700",
+            "800",
+            "900"
+        ]
+    },
+    {
+        "Encode Sans Semi Condensed": [
+            "100",
+            "200",
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700",
+            "800",
+            "900"
+        ]
+    },
+    {
+        "Encode Sans Semi Expanded": [
+            "100",
+            "200",
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700",
+            "800",
+            "900"
+        ]
+    },
+    {
+        "Engagement": [
+            "regular"
+        ]
+    },
+    {
+        "Englebert": [
+            "regular"
+        ]
+    },
+    {
+        "Enriqueta": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Erica One": [
+            "regular"
+        ]
+    },
+    {
+        "Esteban": [
+            "regular"
+        ]
+    },
+    {
+        "Euphoria Script": [
+            "regular"
+        ]
+    },
+    {
+        "Ewert": [
+            "regular"
+        ]
+    },
+    {
+        "Exo": [
+            "100",
+            "100italic",
+            "200",
+            "200italic",
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic",
+            "800",
+            "800italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "Exo 2": [
+            "100",
+            "100italic",
+            "200",
+            "200italic",
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic",
+            "800",
+            "800italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "Expletus Sans": [
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Fanwood Text": [
+            "regular",
+            "italic"
+        ]
+    },
+    {
+        "Farsan": [
+            "regular"
+        ]
+    },
+    {
+        "Fascinate": [
+            "regular"
+        ]
+    },
+    {
+        "Fascinate Inline": [
+            "regular"
+        ]
+    },
+    {
+        "Faster One": [
+            "regular"
+        ]
+    },
+    {
+        "Fasthand": [
+            "regular"
+        ]
+    },
+    {
+        "Fauna One": [
+            "regular"
+        ]
+    },
+    {
+        "Faustina": [
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Federant": [
+            "regular"
+        ]
+    },
+    {
+        "Federo": [
+            "regular"
+        ]
+    },
+    {
+        "Felipa": [
+            "regular"
+        ]
+    },
+    {
+        "Fenix": [
+            "regular"
+        ]
+    },
+    {
+        "Finger Paint": [
+            "regular"
+        ]
+    },
+    {
+        "Fira Mono": [
+            "regular",
+            "500",
+            "700"
+        ]
+    },
+    {
+        "Fira Sans": [
+            "100",
+            "100italic",
+            "200",
+            "200italic",
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic",
+            "800",
+            "800italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "Fira Sans Condensed": [
+            "100",
+            "100italic",
+            "200",
+            "200italic",
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic",
+            "800",
+            "800italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "Fira Sans Extra Condensed": [
+            "100",
+            "100italic",
+            "200",
+            "200italic",
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic",
+            "800",
+            "800italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "Fjalla One": [
+            "regular"
+        ]
+    },
+    {
+        "Fjord One": [
+            "regular"
+        ]
+    },
+    {
+        "Flamenco": [
+            "300",
+            "regular"
+        ]
+    },
+    {
+        "Flavors": [
+            "regular"
+        ]
+    },
+    {
+        "Fondamento": [
+            "regular",
+            "italic"
+        ]
+    },
+    {
+        "Fontdiner Swanky": [
+            "regular"
+        ]
+    },
+    {
+        "Forum": [
+            "regular"
+        ]
+    },
+    {
+        "Francois One": [
+            "regular"
+        ]
+    },
+    {
+        "Frank Ruhl Libre": [
+            "300",
+            "regular",
+            "500",
+            "700",
+            "900"
+        ]
+    },
+    {
+        "Freckle Face": [
+            "regular"
+        ]
+    },
+    {
+        "Fredericka the Great": [
+            "regular"
+        ]
+    },
+    {
+        "Fredoka One": [
+            "regular"
+        ]
+    },
+    {
+        "Freehand": [
+            "regular"
+        ]
+    },
+    {
+        "Fresca": [
+            "regular"
+        ]
+    },
+    {
+        "Frijole": [
+            "regular"
+        ]
+    },
+    {
+        "Fruktur": [
+            "regular"
+        ]
+    },
+    {
+        "Fugaz One": [
+            "regular"
+        ]
+    },
+    {
+        "GFS Didot": [
+            "regular"
+        ]
+    },
+    {
+        "GFS Neohellenic": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Gabriela": [
+            "regular"
+        ]
+    },
+    {
+        "Gafata": [
+            "regular"
+        ]
+    },
+    {
+        "Galada": [
+            "regular"
+        ]
+    },
+    {
+        "Galdeano": [
+            "regular"
+        ]
+    },
+    {
+        "Galindo": [
+            "regular"
+        ]
+    },
+    {
+        "Gentium Basic": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Gentium Book Basic": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Geo": [
+            "regular",
+            "italic"
+        ]
+    },
+    {
+        "Geostar": [
+            "regular"
+        ]
+    },
+    {
+        "Geostar Fill": [
+            "regular"
+        ]
+    },
+    {
+        "Germania One": [
+            "regular"
+        ]
+    },
+    {
+        "Gidugu": [
+            "regular"
+        ]
+    },
+    {
+        "Gilda Display": [
+            "regular"
+        ]
+    },
+    {
+        "Give You Glory": [
+            "regular"
+        ]
+    },
+    {
+        "Glass Antiqua": [
+            "regular"
+        ]
+    },
+    {
+        "Glegoo": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Gloria Hallelujah": [
+            "regular"
+        ]
+    },
+    {
+        "Goblin One": [
+            "regular"
+        ]
+    },
+    {
+        "Gochi Hand": [
+            "regular"
+        ]
+    },
+    {
+        "Gorditas": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Goudy Bookletter 1911": [
+            "regular"
+        ]
+    },
+    {
+        "Graduate": [
+            "regular"
+        ]
+    },
+    {
+        "Grand Hotel": [
+            "regular"
+        ]
+    },
+    {
+        "Gravitas One": [
+            "regular"
+        ]
+    },
+    {
+        "Great Vibes": [
+            "regular"
+        ]
+    },
+    {
+        "Griffy": [
+            "regular"
+        ]
+    },
+    {
+        "Gruppo": [
+            "regular"
+        ]
+    },
+    {
+        "Gudea": [
+            "regular",
+            "italic",
+            "700"
+        ]
+    },
+    {
+        "Gurajada": [
+            "regular"
+        ]
+    },
+    {
+        "Habibi": [
+            "regular"
+        ]
+    },
+    {
+        "Halant": [
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700"
+        ]
+    },
+    {
+        "Hammersmith One": [
+            "regular"
+        ]
+    },
+    {
+        "Hanalei": [
+            "regular"
+        ]
+    },
+    {
+        "Hanalei Fill": [
+            "regular"
+        ]
+    },
+    {
+        "Handlee": [
+            "regular"
+        ]
+    },
+    {
+        "Hanuman": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Happy Monkey": [
+            "regular"
+        ]
+    },
+    {
+        "Harmattan": [
+            "regular"
+        ]
+    },
+    {
+        "Headland One": [
+            "regular"
+        ]
+    },
+    {
+        "Heebo": [
+            "100",
+            "300",
+            "regular",
+            "500",
+            "700",
+            "800",
+            "900"
+        ]
+    },
+    {
+        "Henny Penny": [
+            "regular"
+        ]
+    },
+    {
+        "Herr Von Muellerhoff": [
+            "regular"
+        ]
+    },
+    {
+        "Hind": [
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700"
+        ]
+    },
+    {
+        "Hind Guntur": [
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700"
+        ]
+    },
+    {
+        "Hind Madurai": [
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700"
+        ]
+    },
+    {
+        "Hind Siliguri": [
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700"
+        ]
+    },
+    {
+        "Hind Vadodara": [
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700"
+        ]
+    },
+    {
+        "Holtwood One SC": [
+            "regular"
+        ]
+    },
+    {
+        "Homemade Apple": [
+            "regular"
+        ]
+    },
+    {
+        "Homenaje": [
+            "regular"
+        ]
+    },
+    {
+        "IM Fell DW Pica": [
+            "regular",
+            "italic"
+        ]
+    },
+    {
+        "IM Fell DW Pica SC": [
+            "regular"
+        ]
+    },
+    {
+        "IM Fell Double Pica": [
+            "regular",
+            "italic"
+        ]
+    },
+    {
+        "IM Fell Double Pica SC": [
+            "regular"
+        ]
+    },
+    {
+        "IM Fell English": [
+            "regular",
+            "italic"
+        ]
+    },
+    {
+        "IM Fell English SC": [
+            "regular"
+        ]
+    },
+    {
+        "IM Fell French Canon": [
+            "regular",
+            "italic"
+        ]
+    },
+    {
+        "IM Fell French Canon SC": [
+            "regular"
+        ]
+    },
+    {
+        "IM Fell Great Primer": [
+            "regular",
+            "italic"
+        ]
+    },
+    {
+        "IM Fell Great Primer SC": [
+            "regular"
+        ]
+    },
+    {
+        "Iceberg": [
+            "regular"
+        ]
+    },
+    {
+        "Iceland": [
+            "regular"
+        ]
+    },
+    {
+        "Imprima": [
+            "regular"
+        ]
+    },
+    {
+        "Inconsolata": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Inder": [
+            "regular"
+        ]
+    },
+    {
+        "Indie Flower": [
+            "regular"
+        ]
+    },
+    {
+        "Inika": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Inknut Antiqua": [
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700",
+            "800",
+            "900"
+        ]
+    },
+    {
+        "Irish Grover": [
+            "regular"
+        ]
+    },
+    {
+        "Istok Web": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Italiana": [
+            "regular"
+        ]
+    },
+    {
+        "Italianno": [
+            "regular"
+        ]
+    },
+    {
+        "Itim": [
+            "regular"
+        ]
+    },
+    {
+        "Jacques Francois": [
+            "regular"
+        ]
+    },
+    {
+        "Jacques Francois Shadow": [
+            "regular"
+        ]
+    },
+    {
+        "Jaldi": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Jim Nightshade": [
+            "regular"
+        ]
+    },
+    {
+        "Jockey One": [
+            "regular"
+        ]
+    },
+    {
+        "Jolly Lodger": [
+            "regular"
+        ]
+    },
+    {
+        "Jomhuria": [
+            "regular"
+        ]
+    },
+    {
+        "Josefin Sans": [
+            "100",
+            "100italic",
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Josefin Slab": [
+            "100",
+            "100italic",
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Joti One": [
+            "regular"
+        ]
+    },
+    {
+        "Judson": [
+            "regular",
+            "italic",
+            "700"
+        ]
+    },
+    {
+        "Julee": [
+            "regular"
+        ]
+    },
+    {
+        "Julius Sans One": [
+            "regular"
+        ]
+    },
+    {
+        "Junge": [
+            "regular"
+        ]
+    },
+    {
+        "Jura": [
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700"
+        ]
+    },
+    {
+        "Just Another Hand": [
+            "regular"
+        ]
+    },
+    {
+        "Just Me Again Down Here": [
+            "regular"
+        ]
+    },
+    {
+        "Kadwa": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Kalam": [
+            "300",
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Kameron": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Kanit": [
+            "100",
+            "100italic",
+            "200",
+            "200italic",
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic",
+            "800",
+            "800italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "Kantumruy": [
+            "300",
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Karla": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Karma": [
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700"
+        ]
+    },
+    {
+        "Katibeh": [
+            "regular"
+        ]
+    },
+    {
+        "Kaushan Script": [
+            "regular"
+        ]
+    },
+    {
+        "Kavivanar": [
+            "regular"
+        ]
+    },
+    {
+        "Kavoon": [
+            "regular"
+        ]
+    },
+    {
+        "Kdam Thmor": [
+            "regular"
+        ]
+    },
+    {
+        "Keania One": [
+            "regular"
+        ]
+    },
+    {
+        "Kelly Slab": [
+            "regular"
+        ]
+    },
+    {
+        "Kenia": [
+            "regular"
+        ]
+    },
+    {
+        "Khand": [
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700"
+        ]
+    },
+    {
+        "Khmer": [
+            "regular"
+        ]
+    },
+    {
+        "Khula": [
+            "300",
+            "regular",
+            "600",
+            "700",
+            "800"
+        ]
+    },
+    {
+        "Kite One": [
+            "regular"
+        ]
+    },
+    {
+        "Knewave": [
+            "regular"
+        ]
+    },
+    {
+        "Kotta One": [
+            "regular"
+        ]
+    },
+    {
+        "Koulen": [
+            "regular"
+        ]
+    },
+    {
+        "Kranky": [
+            "regular"
+        ]
+    },
+    {
+        "Kreon": [
+            "300",
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Kristi": [
+            "regular"
+        ]
+    },
+    {
+        "Krona One": [
+            "regular"
+        ]
+    },
+    {
+        "Kumar One": [
+            "regular"
+        ]
+    },
+    {
+        "Kumar One Outline": [
+            "regular"
+        ]
+    },
+    {
+        "Kurale": [
+            "regular"
+        ]
+    },
+    {
+        "La Belle Aurore": [
+            "regular"
+        ]
+    },
+    {
+        "Laila": [
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700"
+        ]
+    },
+    {
+        "Lakki Reddy": [
+            "regular"
+        ]
+    },
+    {
+        "Lalezar": [
+            "regular"
+        ]
+    },
+    {
+        "Lancelot": [
+            "regular"
+        ]
+    },
+    {
+        "Lateef": [
+            "regular"
+        ]
+    },
+    {
+        "Lato": [
+            "100",
+            "100italic",
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "700",
+            "700italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "League Script": [
+            "regular"
+        ]
+    },
+    {
+        "Leckerli One": [
+            "regular"
+        ]
+    },
+    {
+        "Ledger": [
+            "regular"
+        ]
+    },
+    {
+        "Lekton": [
+            "regular",
+            "italic",
+            "700"
+        ]
+    },
+    {
+        "Lemon": [
+            "regular"
+        ]
+    },
+    {
+        "Lemonada": [
+            "300",
+            "regular",
+            "600",
+            "700"
+        ]
+    },
+    {
+        "Libre Barcode 128": [
+            "regular"
+        ]
+    },
+    {
+        "Libre Barcode 128 Text": [
+            "regular"
+        ]
+    },
+    {
+        "Libre Barcode 39": [
+            "regular"
+        ]
+    },
+    {
+        "Libre Barcode 39 Extended": [
+            "regular"
+        ]
+    },
+    {
+        "Libre Barcode 39 Extended Text": [
+            "regular"
+        ]
+    },
+    {
+        "Libre Barcode 39 Text": [
+            "regular"
+        ]
+    },
+    {
+        "Libre Baskerville": [
+            "regular",
+            "italic",
+            "700"
+        ]
+    },
+    {
+        "Libre Franklin": [
+            "100",
+            "100italic",
+            "200",
+            "200italic",
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic",
+            "800",
+            "800italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "Life Savers": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Lilita One": [
+            "regular"
+        ]
+    },
+    {
+        "Lily Script One": [
+            "regular"
+        ]
+    },
+    {
+        "Limelight": [
+            "regular"
+        ]
+    },
+    {
+        "Linden Hill": [
+            "regular",
+            "italic"
+        ]
+    },
+    {
+        "Lobster": [
+            "regular"
+        ]
+    },
+    {
+        "Lobster Two": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Londrina Outline": [
+            "regular"
+        ]
+    },
+    {
+        "Londrina Shadow": [
+            "regular"
+        ]
+    },
+    {
+        "Londrina Sketch": [
+            "regular"
+        ]
+    },
+    {
+        "Londrina Solid": [
+            "100",
+            "300",
+            "regular",
+            "900"
+        ]
+    },
+    {
+        "Lora": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Love Ya Like A Sister": [
+            "regular"
+        ]
+    },
+    {
+        "Loved by the King": [
+            "regular"
+        ]
+    },
+    {
+        "Lovers Quarrel": [
+            "regular"
+        ]
+    },
+    {
+        "Luckiest Guy": [
+            "regular"
+        ]
+    },
+    {
+        "Lusitana": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Lustria": [
+            "regular"
+        ]
+    },
+    {
+        "Macondo": [
+            "regular"
+        ]
+    },
+    {
+        "Macondo Swash Caps": [
+            "regular"
+        ]
+    },
+    {
+        "Mada": [
+            "200",
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700",
+            "900"
+        ]
+    },
+    {
+        "Magra": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Maiden Orange": [
+            "regular"
+        ]
+    },
+    {
+        "Maitree": [
+            "200",
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700"
+        ]
+    },
+    {
+        "Mako": [
+            "regular"
+        ]
+    },
+    {
+        "Mallanna": [
+            "regular"
+        ]
+    },
+    {
+        "Mandali": [
+            "regular"
+        ]
+    },
+    {
+        "Manuale": [
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Marcellus": [
+            "regular"
+        ]
+    },
+    {
+        "Marcellus SC": [
+            "regular"
+        ]
+    },
+    {
+        "Marck Script": [
+            "regular"
+        ]
+    },
+    {
+        "Margarine": [
+            "regular"
+        ]
+    },
+    {
+        "Marko One": [
+            "regular"
+        ]
+    },
+    {
+        "Marmelad": [
+            "regular"
+        ]
+    },
+    {
+        "Martel": [
+            "200",
+            "300",
+            "regular",
+            "600",
+            "700",
+            "800",
+            "900"
+        ]
+    },
+    {
+        "Martel Sans": [
+            "200",
+            "300",
+            "regular",
+            "600",
+            "700",
+            "800",
+            "900"
+        ]
+    },
+    {
+        "Marvel": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Mate": [
+            "regular",
+            "italic"
+        ]
+    },
+    {
+        "Mate SC": [
+            "regular"
+        ]
+    },
+    {
+        "Maven Pro": [
+            "regular",
+            "500",
+            "700",
+            "900"
+        ]
+    },
+    {
+        "McLaren": [
+            "regular"
+        ]
+    },
+    {
+        "Meddon": [
+            "regular"
+        ]
+    },
+    {
+        "MedievalSharp": [
+            "regular"
+        ]
+    },
+    {
+        "Medula One": [
+            "regular"
+        ]
+    },
+    {
+        "Meera Inimai": [
+            "regular"
+        ]
+    },
+    {
+        "Megrim": [
+            "regular"
+        ]
+    },
+    {
+        "Meie Script": [
+            "regular"
+        ]
+    },
+    {
+        "Merienda": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Merienda One": [
+            "regular"
+        ]
+    },
+    {
+        "Merriweather": [
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "700",
+            "700italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "Merriweather Sans": [
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "700",
+            "700italic",
+            "800",
+            "800italic"
+        ]
+    },
+    {
+        "Metal": [
+            "regular"
+        ]
+    },
+    {
+        "Metal Mania": [
+            "regular"
+        ]
+    },
+    {
+        "Metamorphous": [
+            "regular"
+        ]
+    },
+    {
+        "Metrophobic": [
+            "regular"
+        ]
+    },
+    {
+        "Michroma": [
+            "regular"
+        ]
+    },
+    {
+        "Milonga": [
+            "regular"
+        ]
+    },
+    {
+        "Miltonian": [
+            "regular"
+        ]
+    },
+    {
+        "Miltonian Tattoo": [
+            "regular"
+        ]
+    },
+    {
+        "Miniver": [
+            "regular"
+        ]
+    },
+    {
+        "Miriam Libre": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Mirza": [
+            "regular",
+            "500",
+            "600",
+            "700"
+        ]
+    },
+    {
+        "Miss Fajardose": [
+            "regular"
+        ]
+    },
+    {
+        "Mitr": [
+            "200",
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700"
+        ]
+    },
+    {
+        "Modak": [
+            "regular"
+        ]
+    },
+    {
+        "Modern Antiqua": [
+            "regular"
+        ]
+    },
+    {
+        "Mogra": [
+            "regular"
+        ]
+    },
+    {
+        "Molengo": [
+            "regular"
+        ]
+    },
+    {
+        "Molle": [
+            "italic"
+        ]
+    },
+    {
+        "Monda": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Monofett": [
+            "regular"
+        ]
+    },
+    {
+        "Monoton": [
+            "regular"
+        ]
+    },
+    {
+        "Monsieur La Doulaise": [
+            "regular"
+        ]
+    },
+    {
+        "Montaga": [
+            "regular"
+        ]
+    },
+    {
+        "Montez": [
+            "regular"
+        ]
+    },
+    {
+        "Montserrat": [
+            "100",
+            "100italic",
+            "200",
+            "200italic",
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic",
+            "800",
+            "800italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "Montserrat Alternates": [
+            "100",
+            "100italic",
+            "200",
+            "200italic",
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic",
+            "800",
+            "800italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "Montserrat Subrayada": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Moul": [
+            "regular"
+        ]
+    },
+    {
+        "Moulpali": [
+            "regular"
+        ]
+    },
+    {
+        "Mountains of Christmas": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Mouse Memoirs": [
+            "regular"
+        ]
+    },
+    {
+        "Mr Bedfort": [
+            "regular"
+        ]
+    },
+    {
+        "Mr Dafoe": [
+            "regular"
+        ]
+    },
+    {
+        "Mr De Haviland": [
+            "regular"
+        ]
+    },
+    {
+        "Mrs Saint Delafield": [
+            "regular"
+        ]
+    },
+    {
+        "Mrs Sheppards": [
+            "regular"
+        ]
+    },
+    {
+        "Mukta": [
+            "200",
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700",
+            "800"
+        ]
+    },
+    {
+        "Mukta Mahee": [
+            "200",
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700",
+            "800"
+        ]
+    },
+    {
+        "Mukta Malar": [
+            "200",
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700",
+            "800"
+        ]
+    },
+    {
+        "Mukta Vaani": [
+            "200",
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700",
+            "800"
+        ]
+    },
+    {
+        "Muli": [
+            "200",
+            "200italic",
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic",
+            "800",
+            "800italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "Mystery Quest": [
+            "regular"
+        ]
+    },
+    {
+        "NTR": [
+            "regular"
+        ]
+    },
+    {
+        "Neucha": [
+            "regular"
+        ]
+    },
+    {
+        "Neuton": [
+            "200",
+            "300",
+            "regular",
+            "italic",
+            "700",
+            "800"
+        ]
+    },
+    {
+        "New Rocker": [
+            "regular"
+        ]
+    },
+    {
+        "News Cycle": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Niconne": [
+            "regular"
+        ]
+    },
+    {
+        "Nixie One": [
+            "regular"
+        ]
+    },
+    {
+        "Nobile": [
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Nokora": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Norican": [
+            "regular"
+        ]
+    },
+    {
+        "Nosifer": [
+            "regular"
+        ]
+    },
+    {
+        "Nothing You Could Do": [
+            "regular"
+        ]
+    },
+    {
+        "Noticia Text": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Noto Sans": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Noto Serif": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Nova Cut": [
+            "regular"
+        ]
+    },
+    {
+        "Nova Flat": [
+            "regular"
+        ]
+    },
+    {
+        "Nova Mono": [
+            "regular"
+        ]
+    },
+    {
+        "Nova Oval": [
+            "regular"
+        ]
+    },
+    {
+        "Nova Round": [
+            "regular"
+        ]
+    },
+    {
+        "Nova Script": [
+            "regular"
+        ]
+    },
+    {
+        "Nova Slim": [
+            "regular"
+        ]
+    },
+    {
+        "Nova Square": [
+            "regular"
+        ]
+    },
+    {
+        "Numans": [
+            "regular"
+        ]
+    },
+    {
+        "Nunito": [
+            "200",
+            "200italic",
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic",
+            "800",
+            "800italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "Nunito Sans": [
+            "200",
+            "200italic",
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic",
+            "800",
+            "800italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "Odor Mean Chey": [
+            "regular"
+        ]
+    },
+    {
+        "Offside": [
+            "regular"
+        ]
+    },
+    {
+        "Old Standard TT": [
+            "regular",
+            "italic",
+            "700"
+        ]
+    },
+    {
+        "Oldenburg": [
+            "regular"
+        ]
+    },
+    {
+        "Oleo Script": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Oleo Script Swash Caps": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Open Sans": [
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic",
+            "800",
+            "800italic"
+        ]
+    },
+    {
+        "Open Sans Condensed": [
+            "300",
+            "300italic",
+            "700"
+        ]
+    },
+    {
+        "Oranienbaum": [
+            "regular"
+        ]
+    },
+    {
+        "Orbitron": [
+            "regular",
+            "500",
+            "700",
+            "900"
+        ]
+    },
+    {
+        "Oregano": [
+            "regular",
+            "italic"
+        ]
+    },
+    {
+        "Orienta": [
+            "regular"
+        ]
+    },
+    {
+        "Original Surfer": [
+            "regular"
+        ]
+    },
+    {
+        "Oswald": [
+            "200",
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700"
+        ]
+    },
+    {
+        "Over the Rainbow": [
+            "regular"
+        ]
+    },
+    {
+        "Overlock": [
+            "regular",
+            "italic",
+            "700",
+            "700italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "Overlock SC": [
+            "regular"
+        ]
+    },
+    {
+        "Overpass": [
+            "100",
+            "100italic",
+            "200",
+            "200italic",
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic",
+            "800",
+            "800italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "Overpass Mono": [
+            "300",
+            "regular",
+            "600",
+            "700"
+        ]
+    },
+    {
+        "Ovo": [
+            "regular"
+        ]
+    },
+    {
+        "Oxygen": [
+            "300",
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Oxygen Mono": [
+            "regular"
+        ]
+    },
+    {
+        "PT Mono": [
+            "regular"
+        ]
+    },
+    {
+        "PT Sans": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "PT Sans Caption": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "PT Sans Narrow": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "PT Serif": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "PT Serif Caption": [
+            "regular",
+            "italic"
+        ]
+    },
+    {
+        "Pacifico": [
+            "regular"
+        ]
+    },
+    {
+        "Padauk": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Palanquin": [
+            "100",
+            "200",
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700"
+        ]
+    },
+    {
+        "Palanquin Dark": [
+            "regular",
+            "500",
+            "600",
+            "700"
+        ]
+    },
+    {
+        "Pangolin": [
+            "regular"
+        ]
+    },
+    {
+        "Paprika": [
+            "regular"
+        ]
+    },
+    {
+        "Parisienne": [
+            "regular"
+        ]
+    },
+    {
+        "Passero One": [
+            "regular"
+        ]
+    },
+    {
+        "Passion One": [
+            "regular",
+            "700",
+            "900"
+        ]
+    },
+    {
+        "Pathway Gothic One": [
+            "regular"
+        ]
+    },
+    {
+        "Patrick Hand": [
+            "regular"
+        ]
+    },
+    {
+        "Patrick Hand SC": [
+            "regular"
+        ]
+    },
+    {
+        "Pattaya": [
+            "regular"
+        ]
+    },
+    {
+        "Patua One": [
+            "regular"
+        ]
+    },
+    {
+        "Pavanam": [
+            "regular"
+        ]
+    },
+    {
+        "Paytone One": [
+            "regular"
+        ]
+    },
+    {
+        "Peddana": [
+            "regular"
+        ]
+    },
+    {
+        "Peralta": [
+            "regular"
+        ]
+    },
+    {
+        "Permanent Marker": [
+            "regular"
+        ]
+    },
+    {
+        "Petit Formal Script": [
+            "regular"
+        ]
+    },
+    {
+        "Petrona": [
+            "regular"
+        ]
+    },
+    {
+        "Philosopher": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Piedra": [
+            "regular"
+        ]
+    },
+    {
+        "Pinyon Script": [
+            "regular"
+        ]
+    },
+    {
+        "Pirata One": [
+            "regular"
+        ]
+    },
+    {
+        "Plaster": [
+            "regular"
+        ]
+    },
+    {
+        "Play": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Playball": [
+            "regular"
+        ]
+    },
+    {
+        "Playfair Display": [
+            "regular",
+            "italic",
+            "700",
+            "700italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "Playfair Display SC": [
+            "regular",
+            "italic",
+            "700",
+            "700italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "Podkova": [
+            "regular",
+            "500",
+            "600",
+            "700",
+            "800"
+        ]
+    },
+    {
+        "Poiret One": [
+            "regular"
+        ]
+    },
+    {
+        "Poller One": [
+            "regular"
+        ]
+    },
+    {
+        "Poly": [
+            "regular",
+            "italic"
+        ]
+    },
+    {
+        "Pompiere": [
+            "regular"
+        ]
+    },
+    {
+        "Pontano Sans": [
+            "regular"
+        ]
+    },
+    {
+        "Poppins": [
+            "100",
+            "100italic",
+            "200",
+            "200italic",
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic",
+            "800",
+            "800italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "Port Lligat Sans": [
+            "regular"
+        ]
+    },
+    {
+        "Port Lligat Slab": [
+            "regular"
+        ]
+    },
+    {
+        "Pragati Narrow": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Prata": [
+            "regular"
+        ]
+    },
+    {
+        "Preahvihear": [
+            "regular"
+        ]
+    },
+    {
+        "Press Start 2P": [
+            "regular"
+        ]
+    },
+    {
+        "Pridi": [
+            "200",
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700"
+        ]
+    },
+    {
+        "Princess Sofia": [
+            "regular"
+        ]
+    },
+    {
+        "Prociono": [
+            "regular"
+        ]
+    },
+    {
+        "Prompt": [
+            "100",
+            "100italic",
+            "200",
+            "200italic",
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic",
+            "800",
+            "800italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "Prosto One": [
+            "regular"
+        ]
+    },
+    {
+        "Proza Libre": [
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic",
+            "800",
+            "800italic"
+        ]
+    },
+    {
+        "Puritan": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Purple Purse": [
+            "regular"
+        ]
+    },
+    {
+        "Quando": [
+            "regular"
+        ]
+    },
+    {
+        "Quantico": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Quattrocento": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Quattrocento Sans": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Questrial": [
+            "regular"
+        ]
+    },
+    {
+        "Quicksand": [
+            "300",
+            "regular",
+            "500",
+            "700"
+        ]
+    },
+    {
+        "Quintessential": [
+            "regular"
+        ]
+    },
+    {
+        "Qwigley": [
+            "regular"
+        ]
+    },
+    {
+        "Racing Sans One": [
+            "regular"
+        ]
+    },
+    {
+        "Radley": [
+            "regular",
+            "italic"
+        ]
+    },
+    {
+        "Rajdhani": [
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700"
+        ]
+    },
+    {
+        "Rakkas": [
+            "regular"
+        ]
+    },
+    {
+        "Raleway": [
+            "100",
+            "100italic",
+            "200",
+            "200italic",
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic",
+            "800",
+            "800italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "Raleway Dots": [
+            "regular"
+        ]
+    },
+    {
+        "Ramabhadra": [
+            "regular"
+        ]
+    },
+    {
+        "Ramaraja": [
+            "regular"
+        ]
+    },
+    {
+        "Rambla": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Rammetto One": [
+            "regular"
+        ]
+    },
+    {
+        "Ranchers": [
+            "regular"
+        ]
+    },
+    {
+        "Rancho": [
+            "regular"
+        ]
+    },
+    {
+        "Ranga": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Rasa": [
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700"
+        ]
+    },
+    {
+        "Rationale": [
+            "regular"
+        ]
+    },
+    {
+        "Ravi Prakash": [
+            "regular"
+        ]
+    },
+    {
+        "Redressed": [
+            "regular"
+        ]
+    },
+    {
+        "Reem Kufi": [
+            "regular"
+        ]
+    },
+    {
+        "Reenie Beanie": [
+            "regular"
+        ]
+    },
+    {
+        "Revalia": [
+            "regular"
+        ]
+    },
+    {
+        "Rhodium Libre": [
+            "regular"
+        ]
+    },
+    {
+        "Ribeye": [
+            "regular"
+        ]
+    },
+    {
+        "Ribeye Marrow": [
+            "regular"
+        ]
+    },
+    {
+        "Righteous": [
+            "regular"
+        ]
+    },
+    {
+        "Risque": [
+            "regular"
+        ]
+    },
+    {
+        "Roboto": [
+            "100",
+            "100italic",
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "700",
+            "700italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "Roboto Condensed": [
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Roboto Mono": [
+            "100",
+            "100italic",
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Roboto Slab": [
+            "100",
+            "300",
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Rochester": [
+            "regular"
+        ]
+    },
+    {
+        "Rock Salt": [
+            "regular"
+        ]
+    },
+    {
+        "Rokkitt": [
+            "100",
+            "200",
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700",
+            "800",
+            "900"
+        ]
+    },
+    {
+        "Romanesco": [
+            "regular"
+        ]
+    },
+    {
+        "Ropa Sans": [
+            "regular",
+            "italic"
+        ]
+    },
+    {
+        "Rosario": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Rosarivo": [
+            "regular",
+            "italic"
+        ]
+    },
+    {
+        "Rouge Script": [
+            "regular"
+        ]
+    },
+    {
+        "Rozha One": [
+            "regular"
+        ]
+    },
+    {
+        "Rubik": [
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "700",
+            "700italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "Rubik Mono One": [
+            "regular"
+        ]
+    },
+    {
+        "Ruda": [
+            "regular",
+            "700",
+            "900"
+        ]
+    },
+    {
+        "Rufina": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Ruge Boogie": [
+            "regular"
+        ]
+    },
+    {
+        "Ruluko": [
+            "regular"
+        ]
+    },
+    {
+        "Rum Raisin": [
+            "regular"
+        ]
+    },
+    {
+        "Ruslan Display": [
+            "regular"
+        ]
+    },
+    {
+        "Russo One": [
+            "regular"
+        ]
+    },
+    {
+        "Ruthie": [
+            "regular"
+        ]
+    },
+    {
+        "Rye": [
+            "regular"
+        ]
+    },
+    {
+        "Sacramento": [
+            "regular"
+        ]
+    },
+    {
+        "Sahitya": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Sail": [
+            "regular"
+        ]
+    },
+    {
+        "Saira": [
+            "100",
+            "200",
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700",
+            "800",
+            "900"
+        ]
+    },
+    {
+        "Saira Condensed": [
+            "100",
+            "200",
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700",
+            "800",
+            "900"
+        ]
+    },
+    {
+        "Saira Extra Condensed": [
+            "100",
+            "200",
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700",
+            "800",
+            "900"
+        ]
+    },
+    {
+        "Saira Semi Condensed": [
+            "100",
+            "200",
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700",
+            "800",
+            "900"
+        ]
+    },
+    {
+        "Salsa": [
+            "regular"
+        ]
+    },
+    {
+        "Sanchez": [
+            "regular",
+            "italic"
+        ]
+    },
+    {
+        "Sancreek": [
+            "regular"
+        ]
+    },
+    {
+        "Sansita": [
+            "regular",
+            "italic",
+            "700",
+            "700italic",
+            "800",
+            "800italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "Sarala": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Sarina": [
+            "regular"
+        ]
+    },
+    {
+        "Sarpanch": [
+            "regular",
+            "500",
+            "600",
+            "700",
+            "800",
+            "900"
+        ]
+    },
+    {
+        "Satisfy": [
+            "regular"
+        ]
+    },
+    {
+        "Scada": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Scheherazade": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Schoolbell": [
+            "regular"
+        ]
+    },
+    {
+        "Scope One": [
+            "regular"
+        ]
+    },
+    {
+        "Seaweed Script": [
+            "regular"
+        ]
+    },
+    {
+        "Secular One": [
+            "regular"
+        ]
+    },
+    {
+        "Sedgwick Ave": [
+            "regular"
+        ]
+    },
+    {
+        "Sedgwick Ave Display": [
+            "regular"
+        ]
+    },
+    {
+        "Sevillana": [
+            "regular"
+        ]
+    },
+    {
+        "Seymour One": [
+            "regular"
+        ]
+    },
+    {
+        "Shadows Into Light": [
+            "regular"
+        ]
+    },
+    {
+        "Shadows Into Light Two": [
+            "regular"
+        ]
+    },
+    {
+        "Shanti": [
+            "regular"
+        ]
+    },
+    {
+        "Share": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Share Tech": [
+            "regular"
+        ]
+    },
+    {
+        "Share Tech Mono": [
+            "regular"
+        ]
+    },
+    {
+        "Shojumaru": [
+            "regular"
+        ]
+    },
+    {
+        "Short Stack": [
+            "regular"
+        ]
+    },
+    {
+        "Shrikhand": [
+            "regular"
+        ]
+    },
+    {
+        "Siemreap": [
+            "regular"
+        ]
+    },
+    {
+        "Sigmar One": [
+            "regular"
+        ]
+    },
+    {
+        "Signika": [
+            "300",
+            "regular",
+            "600",
+            "700"
+        ]
+    },
+    {
+        "Signika Negative": [
+            "300",
+            "regular",
+            "600",
+            "700"
+        ]
+    },
+    {
+        "Simonetta": [
+            "regular",
+            "italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "Sintony": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Sirin Stencil": [
+            "regular"
+        ]
+    },
+    {
+        "Six Caps": [
+            "regular"
+        ]
+    },
+    {
+        "Skranji": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Slabo 13px": [
+            "regular"
+        ]
+    },
+    {
+        "Slabo 27px": [
+            "regular"
+        ]
+    },
+    {
+        "Slackey": [
+            "regular"
+        ]
+    },
+    {
+        "Smokum": [
+            "regular"
+        ]
+    },
+    {
+        "Smythe": [
+            "regular"
+        ]
+    },
+    {
+        "Sniglet": [
+            "regular",
+            "800"
+        ]
+    },
+    {
+        "Snippet": [
+            "regular"
+        ]
+    },
+    {
+        "Snowburst One": [
+            "regular"
+        ]
+    },
+    {
+        "Sofadi One": [
+            "regular"
+        ]
+    },
+    {
+        "Sofia": [
+            "regular"
+        ]
+    },
+    {
+        "Sonsie One": [
+            "regular"
+        ]
+    },
+    {
+        "Sorts Mill Goudy": [
+            "regular",
+            "italic"
+        ]
+    },
+    {
+        "Source Code Pro": [
+            "200",
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700",
+            "900"
+        ]
+    },
+    {
+        "Source Sans Pro": [
+            "200",
+            "200italic",
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "Source Serif Pro": [
+            "regular",
+            "600",
+            "700"
+        ]
+    },
+    {
+        "Space Mono": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Special Elite": [
+            "regular"
+        ]
+    },
+    {
+        "Spectral": [
+            "200",
+            "200italic",
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic",
+            "800",
+            "800italic"
+        ]
+    },
+    {
+        "Spectral SC": [
+            "200",
+            "200italic",
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic",
+            "800",
+            "800italic"
+        ]
+    },
+    {
+        "Spicy Rice": [
+            "regular"
+        ]
+    },
+    {
+        "Spinnaker": [
+            "regular"
+        ]
+    },
+    {
+        "Spirax": [
+            "regular"
+        ]
+    },
+    {
+        "Squada One": [
+            "regular"
+        ]
+    },
+    {
+        "Sree Krushnadevaraya": [
+            "regular"
+        ]
+    },
+    {
+        "Sriracha": [
+            "regular"
+        ]
+    },
+    {
+        "Stalemate": [
+            "regular"
+        ]
+    },
+    {
+        "Stalinist One": [
+            "regular"
+        ]
+    },
+    {
+        "Stardos Stencil": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Stint Ultra Condensed": [
+            "regular"
+        ]
+    },
+    {
+        "Stint Ultra Expanded": [
+            "regular"
+        ]
+    },
+    {
+        "Stoke": [
+            "300",
+            "regular"
+        ]
+    },
+    {
+        "Strait": [
+            "regular"
+        ]
+    },
+    {
+        "Sue Ellen Francisco": [
+            "regular"
+        ]
+    },
+    {
+        "Suez One": [
+            "regular"
+        ]
+    },
+    {
+        "Sumana": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Sunshiney": [
+            "regular"
+        ]
+    },
+    {
+        "Supermercado One": [
+            "regular"
+        ]
+    },
+    {
+        "Sura": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Suranna": [
+            "regular"
+        ]
+    },
+    {
+        "Suravaram": [
+            "regular"
+        ]
+    },
+    {
+        "Suwannaphum": [
+            "regular"
+        ]
+    },
+    {
+        "Swanky and Moo Moo": [
+            "regular"
+        ]
+    },
+    {
+        "Syncopate": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Tangerine": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Taprom": [
+            "regular"
+        ]
+    },
+    {
+        "Tauri": [
+            "regular"
+        ]
+    },
+    {
+        "Taviraj": [
+            "100",
+            "100italic",
+            "200",
+            "200italic",
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic",
+            "800",
+            "800italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "Teko": [
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700"
+        ]
+    },
+    {
+        "Telex": [
+            "regular"
+        ]
+    },
+    {
+        "Tenali Ramakrishna": [
+            "regular"
+        ]
+    },
+    {
+        "Tenor Sans": [
+            "regular"
+        ]
+    },
+    {
+        "Text Me One": [
+            "regular"
+        ]
+    },
+    {
+        "The Girl Next Door": [
+            "regular"
+        ]
+    },
+    {
+        "Tienne": [
+            "regular",
+            "700",
+            "900"
+        ]
+    },
+    {
+        "Tillana": [
+            "regular",
+            "500",
+            "600",
+            "700",
+            "800"
+        ]
+    },
+    {
+        "Timmana": [
+            "regular"
+        ]
+    },
+    {
+        "Tinos": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Titan One": [
+            "regular"
+        ]
+    },
+    {
+        "Titillium Web": [
+            "200",
+            "200italic",
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic",
+            "900"
+        ]
+    },
+    {
+        "Trade Winds": [
+            "regular"
+        ]
+    },
+    {
+        "Trirong": [
+            "100",
+            "100italic",
+            "200",
+            "200italic",
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic",
+            "800",
+            "800italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "Trocchi": [
+            "regular"
+        ]
+    },
+    {
+        "Trochut": [
+            "regular",
+            "italic",
+            "700"
+        ]
+    },
+    {
+        "Trykker": [
+            "regular"
+        ]
+    },
+    {
+        "Tulpen One": [
+            "regular"
+        ]
+    },
+    {
+        "Ubuntu": [
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Ubuntu Condensed": [
+            "regular"
+        ]
+    },
+    {
+        "Ubuntu Mono": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Ultra": [
+            "regular"
+        ]
+    },
+    {
+        "Uncial Antiqua": [
+            "regular"
+        ]
+    },
+    {
+        "Underdog": [
+            "regular"
+        ]
+    },
+    {
+        "Unica One": [
+            "regular"
+        ]
+    },
+    {
+        "UnifrakturCook": [
+            "700"
+        ]
+    },
+    {
+        "UnifrakturMaguntia": [
+            "regular"
+        ]
+    },
+    {
+        "Unkempt": [
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Unlock": [
+            "regular"
+        ]
+    },
+    {
+        "Unna": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "VT323": [
+            "regular"
+        ]
+    },
+    {
+        "Vampiro One": [
+            "regular"
+        ]
+    },
+    {
+        "Varela": [
+            "regular"
+        ]
+    },
+    {
+        "Varela Round": [
+            "regular"
+        ]
+    },
+    {
+        "Vast Shadow": [
+            "regular"
+        ]
+    },
+    {
+        "Vesper Libre": [
+            "regular",
+            "500",
+            "700",
+            "900"
+        ]
+    },
+    {
+        "Vibur": [
+            "regular"
+        ]
+    },
+    {
+        "Vidaloka": [
+            "regular"
+        ]
+    },
+    {
+        "Viga": [
+            "regular"
+        ]
+    },
+    {
+        "Voces": [
+            "regular"
+        ]
+    },
+    {
+        "Volkhov": [
+            "regular",
+            "italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Vollkorn": [
+            "regular",
+            "italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic",
+            "900",
+            "900italic"
+        ]
+    },
+    {
+        "Vollkorn SC": [
+            "regular",
+            "600",
+            "700",
+            "900"
+        ]
+    },
+    {
+        "Voltaire": [
+            "regular"
+        ]
+    },
+    {
+        "Waiting for the Sunrise": [
+            "regular"
+        ]
+    },
+    {
+        "Wallpoet": [
+            "regular"
+        ]
+    },
+    {
+        "Walter Turncoat": [
+            "regular"
+        ]
+    },
+    {
+        "Warnes": [
+            "regular"
+        ]
+    },
+    {
+        "Wellfleet": [
+            "regular"
+        ]
+    },
+    {
+        "Wendy One": [
+            "regular"
+        ]
+    },
+    {
+        "Wire One": [
+            "regular"
+        ]
+    },
+    {
+        "Work Sans": [
+            "100",
+            "200",
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700",
+            "800",
+            "900"
+        ]
+    },
+    {
+        "Yanone Kaffeesatz": [
+            "200",
+            "300",
+            "regular",
+            "700"
+        ]
+    },
+    {
+        "Yantramanav": [
+            "100",
+            "300",
+            "regular",
+            "500",
+            "700",
+            "900"
+        ]
+    },
+    {
+        "Yatra One": [
+            "regular"
+        ]
+    },
+    {
+        "Yellowtail": [
+            "regular"
+        ]
+    },
+    {
+        "Yeseva One": [
+            "regular"
+        ]
+    },
+    {
+        "Yesteryear": [
+            "regular"
+        ]
+    },
+    {
+        "Yrsa": [
+            "300",
+            "regular",
+            "500",
+            "600",
+            "700"
+        ]
+    },
+    {
+        "Zeyada": [
+            "regular"
+        ]
+    },
+    {
+        "Zilla Slab": [
+            "300",
+            "300italic",
+            "regular",
+            "italic",
+            "500",
+            "500italic",
+            "600",
+            "600italic",
+            "700",
+            "700italic"
+        ]
+    },
+    {
+        "Zilla Slab Highlight": [
+            "regular",
+            "700"
+        ]
+    }
+]

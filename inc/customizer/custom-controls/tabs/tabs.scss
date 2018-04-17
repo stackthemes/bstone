@@ -1,0 +1,43 @@
+.customize-control-bst-tabs .customize-control-title {
+	font-size: 1.3em;
+	margin: 1.2em 0 0.2em;
+}
+
+.bstone-customizer-tabs {
+	display: flex;
+	text-align: center;
+	justify-content: center;
+}
+
+.bstone-customizer-tabs li {
+	color: #ffffff;
+	cursor: pointer;
+	padding: 8px 15px;
+	background: #0085BA;
+	display: inline-block;
+	text-transform: capitalize;
+	border-left: solid 1px rgba(0,0,0,0.03);
+	border-right: solid 1px rgba(0,0,0,0.03);
+}
+
+.bstone-customizer-tabs li:hover,
+.bstone-customizer-tabs li.active {
+	color: #ffffff;
+	background: #056388;
+}
+
+.bstone-customizer-tabs li.active {
+	cursor: default;
+}
+
+.bstone-customizer-tabs li:first-child {
+	border-left: none;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+
+.bstone-customizer-tabs li:last-child {
+	border-right: none;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}

@@ -1,0 +1,200 @@
+
+#accordion-section-bstone-pro {
+	min-height: 44px !important;
+	display: list-item !important;
+}
+
+#accordion-section-bstone-pro h3 {
+	margin: 0px;
+	padding: 1px 0px;
+}
+
+#accordion-section-bstone-pro h3 a {
+	color: #1e8cbe;
+	background: #FFF;
+    display: block;
+    padding: 11px 10px 12px 14px;
+    text-decoration: none;
+	position: relative;
+}
+
+#accordion-section-bstone-pro h3 a:after {
+    content: "\f345";
+    position: absolute;
+    top: 11px;
+    right: 10px;
+    z-index: 1;
+    float: right;
+    border: none;
+    background: 0 0;
+    font: 400 20px/1 dashicons;
+    speak: none;
+    display: block;
+    padding: 0;
+    text-indent: 0;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#accordion-section-bstone-pro h3:hover {
+	background: #2f5f77;
+}
+
+#accordion-section-bstone-pro h3 a:hover {
+	color: #2f5f77;
+}
+
+#accordion-section-bstone-pro h3:hover a:after {
+	color: #2f5f77;
+}
+
+.customize-control-title {
+	width: 100%;
+	display: block;
+	position: relative;
+}
+
+.bst-responsive-btns {
+	margin-top: -20px;
+}
+
+.dashicons-editor-help,
+.customize-control .bst-control-tooltip {
+    position: absolute;
+    top: 0px;
+    right: 0;
+}
+
+header.site-header button.customize-partial-edit-shortcut-button {
+	left: 2px !important;
+}
+.customize-pane-child>li.customize-control-bst-font-weight,
+.customize-pane-child>li.transform-ctrl,
+#customize-control-bstone-settings-title-img-position,
+#customize-control-bstone-settings-title-img-attachment,
+#customize-control-bstone-settings-title-img-repeat,
+#customize-control-bstone-settings-title-img-size,
+#customize-control-bstone-settings-page-bg-img-position,
+#customize-control-bstone-settings-page-bg-img-attachment,
+#customize-control-bstone-settings-page-bg-img-repeat,
+#customize-control-bstone-settings-page-bg-img-size {
+	width: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    clear: none;
+}
+
+#customize-control-bstone-settings-title-img-position,
+#customize-control-bstone-settings-title-img-repeat,
+#customize-control-bstone-settings-page-bg-img-position,
+#customize-control-bstone-settings-page-bg-img-repeat,
+.customize-pane-child>li.customize-control-bst-font-weight {
+	padding-right: 5px;
+}
+
+#customize-control-bstone-settings-enable-twitter-header,
+#customize-control-bstone-settings-enable-facebook-header,
+#customize-control-bstone-settings-enable-google_plus-header,
+#customize-control-bstone-settings-enable-pinterest-header,
+#customize-control-bstone-settings-enable-dribbble-header,
+#customize-control-bstone-settings-enable-behance-header,
+#customize-control-bstone-settings-enable-vk-header,
+#customize-control-bstone-settings-enable-instagram-header,
+#customize-control-bstone-settings-enable-linkedin-header,
+#customize-control-bstone-settings-enable-tumblr-header,
+#customize-control-bstone-settings-enable-github-header,
+#customize-control-bstone-settings-enable-flickr-header,
+#customize-control-bstone-settings-enable-skype-header,
+#customize-control-bstone-settings-enable-youtube-header,
+#customize-control-bstone-settings-enable-vimeo-header,
+#customize-control-bstone-settings-enable-vine-header,
+#customize-control-bstone-settings-enable-xing-header,
+#customize-control-bstone-settings-enable-yelp-header,
+#customize-control-bstone-settings-enable-500px-header,
+#customize-control-bstone-settings-enable-tripadvisor-header,
+#customize-control-bstone-settings-enable-rss-header,
+#customize-control-bstone-settings-enable-email-header,
+#customize-control-bstone-settings-enable-extra1-header,
+#customize-control-bstone-settings-enable-extra2-header,
+#customize-control-bstone-settings-enable-extra3-header,
+#customize-control-bstone-settings-enable-extra4-header,
+#customize-control-bstone-settings-enable-extra5-header,
+
+#customize-control-bstone-settings-enable-twitter-footer,
+#customize-control-bstone-settings-enable-facebook-footer,
+#customize-control-bstone-settings-enable-google_plus-footer,
+#customize-control-bstone-settings-enable-pinterest-footer,
+#customize-control-bstone-settings-enable-dribbble-footer,
+#customize-control-bstone-settings-enable-behance-footer,
+#customize-control-bstone-settings-enable-vk-footer,
+#customize-control-bstone-settings-enable-instagram-footer,
+#customize-control-bstone-settings-enable-linkedin-footer,
+#customize-control-bstone-settings-enable-tumblr-footer,
+#customize-control-bstone-settings-enable-github-footer,
+#customize-control-bstone-settings-enable-flickr-footer,
+#customize-control-bstone-settings-enable-skype-footer,
+#customize-control-bstone-settings-enable-youtube-footer,
+#customize-control-bstone-settings-enable-vimeo-footer,
+#customize-control-bstone-settings-enable-vine-footer,
+#customize-control-bstone-settings-enable-xing-footer,
+#customize-control-bstone-settings-enable-yelp-footer,
+#customize-control-bstone-settings-enable-500px-footer,
+#customize-control-bstone-settings-enable-tripadvisor-footer,
+#customize-control-bstone-settings-enable-rss-footer,
+#customize-control-bstone-settings-enable-email-footer,
+#customize-control-bstone-settings-enable-extra1-footer,
+#customize-control-bstone-settings-enable-extra2-footer,
+#customize-control-bstone-settings-enable-extra3-footer,
+#customize-control-bstone-settings-enable-extra4-footer,
+#customize-control-bstone-settings-enable-extra5-footer,
+
+#customize-control-bstone-settings-enable-twitter-sidebar,
+#customize-control-bstone-settings-enable-facebook-sidebar,
+#customize-control-bstone-settings-enable-google_plus-sidebar,
+#customize-control-bstone-settings-enable-pinterest-sidebar,
+#customize-control-bstone-settings-enable-dribbble-sidebar,
+#customize-control-bstone-settings-enable-behance-sidebar,
+#customize-control-bstone-settings-enable-vk-sidebar,
+#customize-control-bstone-settings-enable-instagram-sidebar,
+#customize-control-bstone-settings-enable-linkedin-sidebar,
+#customize-control-bstone-settings-enable-tumblr-sidebar,
+#customize-control-bstone-settings-enable-github-sidebar,
+#customize-control-bstone-settings-enable-flickr-sidebar,
+#customize-control-bstone-settings-enable-skype-sidebar,
+#customize-control-bstone-settings-enable-youtube-sidebar,
+#customize-control-bstone-settings-enable-vimeo-sidebar,
+#customize-control-bstone-settings-enable-vine-sidebar,
+#customize-control-bstone-settings-enable-xing-sidebar,
+#customize-control-bstone-settings-enable-yelp-sidebar,
+#customize-control-bstone-settings-enable-500px-sidebar,
+#customize-control-bstone-settings-enable-tripadvisor-sidebar,
+#customize-control-bstone-settings-enable-rss-sidebar,
+#customize-control-bstone-settings-enable-email-sidebar,
+#customize-control-bstone-settings-enable-extra1-sidebar,
+#customize-control-bstone-settings-enable-extra2-sidebar,
+#customize-control-bstone-settings-enable-extra3-sidebar,
+#customize-control-bstone-settings-enable-extra4-sidebar,
+#customize-control-bstone-settings-enable-extra5-sidebar,
+#customize-control-bstone-settings-readbtn-typo-text-transform {
+    width: 50%;
+    clear: none;
+	display: inline-block;
+	box-sizing: border-box;
+}
+
+.customize-pane-child>li#customize-control-bstone-settings-default-body-font-weight {
+	width: 100%;
+	padding-right: 0px;
+}
+
+/* General tweaks */
+.wp-full-overlay-sidebar-content::-webkit-scrollbar, .accordion-section-content::-webkit-scrollbar { width: 5px !important; }
+.wp-full-overlay-sidebar-content::-webkit-scrollbar-track, .accordion-section-content::-webkit-scrollbar-track { -webkit-box-shadow: inset 0 0 0 rgba(0,0,0,0.3) !important;  width: 20px !important; }
+.wp-full-overlay-sidebar-content::-webkit-scrollbar-thumb, .accordion-section-content::-webkit-scrollbar-thumb { -webkit-border-radius: 0 !important; border-radius: 0 !important; background-color: #d8d8d8 !important; }
+.wp-full-overlay-sidebar-content::-webkit-thumb:window-inactive, .accordion-section-content::-webkit-scrollbar-thumb:window-inactive { background-color: #fff !important; }
+
+#accordion-section-background_image,
+#customize-control-display_header_text {
+    display: none !important;
+}
