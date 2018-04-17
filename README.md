@@ -1,4 +1,4 @@
-# bstone
+# Bstone
 Website: https://wpbstone.com/
 Email: support@wpbstone.com
 
@@ -18,40 +18,28 @@ Bstone is distributed under the terms of the GNU GPL.
 Bstone is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
--------------------------------------------------------
-Screenshot Licenses
--------------------------------------------------------
+## Screenshot Licenses
 Screenshot images are all licensed under CC0 Universal
 https://unsplash.com/photos/_RBcxo9AU-U
 
--------------------------------------------------------
-Normalizing styles
--------------------------------------------------------
+## Normalizing styles
 Normalizing styles have been helped along thanks to the fine work of.
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
--------------------------------------------------------
-Flexibility JS
--------------------------------------------------------
+## Flexibility JS
 Flexibility is a JavaScript polyfill for Flexbox By Jonathan Neal, 10up. (https://github.com/jonathantneal/flexibility)
 Licensed under MIT ( https://github.com/jonathantneal/flexibility/blob/master/LICENSE.md )
 
--------------------------------------------------------
-Masonry JS
--------------------------------------------------------
+## Masonry JS
 Masonry works by placing elements in optimal position based on available vertical space, sort of like a mason fitting stones in a wall. (https://github.com/desandro/masonry)
 Licensed under MIT ( https://masonry.desandro.com/#mit-license )
 
--------------------------------------------------------
-Font Awesome
--------------------------------------------------------
+## Font Awesome
 Font Awesome Free is free, open source, and GPL friendly. You can use it for commercial projects, open source projects, or really almost whatever you want. (https://fontawesome.com/)
 (https://fontawesome.com/license)
 (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
 
--------------------------------------------------------
-IcoMoon-Free (bstone font)
--------------------------------------------------------
+## IcoMoon-Free (bstone font)
 Bstone icon font is based on IcoMoon-Free vector icon by Keyamoon.
 IcoMoon-Free vector icon destributed under trems of CC BY 4.0 or GPL. (http://creativecommons.org/licenses/by/4.0/ or http://www.gnu.org/licenses/gpl.html)
 Source: http://keyamoon.com/
