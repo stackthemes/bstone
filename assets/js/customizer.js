@@ -277,7 +277,6 @@ function bstone_dynamic_css( control, style ) {
 	bstone_get_css( api, 'base-heading-color', 'body #primary h1, body #primary h1 a, body #primary h2, body #primary h2 a, body #primary h3, body #primary h3 a, body #primary h4, body #primary h4 a, body #primary h5, body #primary h5 a, body #primary h6, body #primary h6 a', 'color', '' );
 
 	// Page Background Color
-	bstone_get_css( api, 'body-bg-color', 'body', 'background-color', '' );
 	bstone_get_css( api, 'container-bg-color', 'body #page.site', 'background-color', '' );
 	bstone_get_css( api, 'primary-content-bg-color', 'body #primary', 'background-color', '' );
 	
@@ -286,17 +285,16 @@ function bstone_dynamic_css( control, style ) {
 	bstone_get_css( api, 'widget-bg-color', 'body #secondary aside', 'background-color', '' );
 	bstone_get_css( api, 'widget-bg-color', 'body #tertiary aside', 'background-color', '' );
 	
-	bstone_get_css( api, 'page-bg-img-attachment', 'html body', 'background-attachment', '' );
-	bstone_get_css( api, 'page-bg-img-repeat', 'html body', 'background-repeat', '' );
-	bstone_get_css( api, 'page-bg-img-size', 'html body', 'background-size', '' );
+	bstone_get_css( api, 'page-bg-img-attachment', 'html body, html body.custom-background', 'background-attachment', '' );
+	bstone_get_css( api, 'page-bg-img-repeat', 'html body, html body.custom-background', 'background-repeat', '' );
+	bstone_get_css( api, 'page-bg-img-size', 'html body, html body.custom-background', 'background-size', '' );
 	
 	api( 'bstone-settings[page-bg-img-position]', function( value ) {
-		value.bind( function( bg_img_pos ) {
-			var body_bg_dynamicStyle = 'html body {';
-			body_bg_dynamicStyle += 'background-position: '+bg_img_pos.replace("-", " ")+';';
-			body_bg_dynamicStyle += '}';
+		value.bind( function( position ) {
+			var img_position = position.replace("-", " ");
+			dynamicStyle = 'html body, html body.custom-background {background-position: '+img_position+';}';
 
-			bstone_dynamic_css( 'page-bg-image', body_bg_dynamicStyle );
+			bstone_dynamic_css( 'page-bg-img-position', dynamicStyle );
 		} );
 	} );
 	
@@ -317,7 +315,12 @@ function bstone_dynamic_css( control, style ) {
 	bstone_get_css( api, 'menu-bg-color-header', '.header-2 .st-site-nav nav', 'background-color', '' );
 
 	// Header Text Color
-	bstone_get_css( api, 'text-color-header', 'header.site-header .st-head-cta, header.site-header .st-head-cta p', 'color', '' );
+	api( 'header_textcolor', function( value ) {
+		value.bind( function( color ) {
+			dynamicStyle = 'header.site-header .st-head-cta, header.site-header .st-head-cta p {color: '+color+';}';
+			bstone_dynamic_css( 'page_header_textcolor', dynamicStyle );
+		} );
+	} );
 	
 	bstone_get_css( api, 'link-color-header', 'header.site-header .st-head-cta a', 'color', '' );
 	bstone_get_css( api, 'link-hover-color-header', 'header.site-header .st-head-cta a:hover', 'color', '' );
@@ -947,7 +950,28 @@ function bstone_dynamic_css( control, style ) {
 	bstone_get_css( api, 'pagination-text-transform', '.st-pagination .nav-links a, .st-pagination .nav-links span.page-numbers', 'text-transform', '' );
 
 	// Single Post
-	bstone_get_css( api, 'blog-single-max-width', '#content > .st-container, .st-container.page-header-inner', 'max-width', 'px' );
+	bstone_get_css( api, 'blog-single-max-width', '.single #content > .st-container, .single .st-container.page-header-inner', 'max-width', 'px' );
+
+	// Post Title Area
+	bstone_get_css( api, 'page-title-border-width', '#content header.bst-title-section', 'border-bottom-width', 'px' );
+	bstone_get_css( api, 'single-typo-title-transform', '.bst-title-section h1', 'text-transform', '' );
+	bstone_get_css( api, 'page-single-title-color', '.bst-title-section h1', 'color', '' );
+	bstone_get_css( api, 'page-single-breadcrumbs-color', '.bst-title-section .site-breadcrumbs ul li, .bst-title-section .site-breadcrumbs ul li a', 'color', '' );
+	bstone_get_css( api, 'page-single-title-bg-color', '#content header.bst-title-section', 'background-color', '' );
+	bstone_get_css( api, 'title-img-repeat', '#content header.bst-title-section', 'background-repeat', '' );
+	bstone_get_css( api, 'title-img-size', '#content header.bst-title-section', 'background-size', '' );
+	bstone_get_css( api, 'title-img-attachment', '#content header.bst-title-section', 'background-attachment', '' );
+	bstone_get_css( api, 'page-title-border-color', '#content header.bst-title-section', 'border-bottom-color', '' );
+	bstone_get_css( api, 'page-title-bg-overlay-color', '.bst-title-section:after', 'background-color', '' );	
+	
+	api( 'bstone-settings[title-img-position]', function( value ) {
+		value.bind( function( position ) {
+			var img_position = position.replace("-", " ");
+			dynamicStyle = '#content header.bst-title-section {background-position: '+img_position+';}';
+
+			bstone_dynamic_css( 'title-img-position', dynamicStyle );
+		} );
+	} );
 	
 } )( jQuery );
 

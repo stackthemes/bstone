@@ -14,8 +14,6 @@ get_header(); ?>
 	<div id="primary" <?php bstone_primary_class( 'st-flex-grow-1' ); ?>>
 		
 		<?php bstone_primary_content_top(); ?>
-		
-		<?php bstone_archive_header(); ?>
 	
 		<main id="main" class="site-main">
 

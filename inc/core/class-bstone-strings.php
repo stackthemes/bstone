@@ -4,7 +4,7 @@
  *
  * @package     Bstone
  * @author      StackThemes
- * @copyright   Copyright (c) 2017, Bstone
+ * @copyright   Copyright (c) 2018, Bstone
  * @link        https://wpbstone.com/
  * @since       Bstone 1.0.0
  */
@@ -56,6 +56,12 @@ if ( ! function_exists( 'bstone_default_strings' ) ) {
 				'string-full-width-search-placeholder'   => __( 'Start Typing&hellip;', 'bstone' ),
 				'string-header-cover-search-placeholder' => __( 'Start Typing&hellip;', 'bstone' ),
 				'string-search-input-placeholder'        => __( 'Search &hellip;', 'bstone' ),
+
+				// Breadcrumb Strings
+				'string-breadcrumb-home'            	 => __( 'Home', 'bstone' ),
+				'string-breadcrumb-author-archive'		 => __( 'Author archive for ', 'bstone' ),
+				'string-breadcrumb-search'		 		 => __( 'Search query for: ', 'bstone' ),
+				'string-breadcrumb-not-found'		 	 => __( 'Error 404: ', 'bstone' ),
 
 			)
 		);

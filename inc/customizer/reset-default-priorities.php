@@ -4,7 +4,7 @@
  *
  * @package   Bstone
  * @author    Stack Themes
- * @copyright Copyright (c) 2017, Bstone
+ * @copyright Copyright (c) 2018, Bstone
  * @link      https://wpbstone.com/
  * @since     Bstone 1.0.0
  */
@@ -58,17 +58,18 @@ if ( ! class_exists( 'ST_Customizer_Reset_Priority' ) ) {
 		   $header_text_color   = $wp_customize->get_control( 'header_textcolor' );
 		   
 		   if ( $header_image ) {
-			   $header_image->section  = 'section-color-header';
-			   $header_image->priority = 23;
+			   $header_image->section  = 'section-color-page-title';
+			   $header_image->priority = 25;
 		   }
 		   
 		   if ( $background_image ) {
+			   $background_image->priority = 37;
 			   $background_image->section = 'section-color-general';
 		   }
 		   
 		   if ( $background_color ) {
-			   $background_color->priority = 22;
-			   $background_color->section  = 'section-color-header';
+			   $background_color->priority = 36;
+			   $background_color->section  = 'section-color-general';
 		   }
 		   
 		   if ( $header_text_color ) {

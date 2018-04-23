@@ -4,7 +4,7 @@
  *
  * @package     Bstone
  * @author      StackThemes
- * @copyright   Copyright (c) 2017, Bstone
+ * @copyright   Copyright (c) 2018, Bstone
  * @link        https://wpbstone.com/
  * @since       Bstone 1.0.0
  */
@@ -69,17 +69,43 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			$default_font_waight 			 = bstone_options( 'default-body-font-weight' );
 
 			// Color Options.
-			$body_bg_color					 = bstone_options( 'body-bg-color' );
+			$body_bg_color					 = bstone_options( 'background_color' );
 			$container_bg_color				 = bstone_options( 'container-bg-color' );
 			$primary_bg_color				 = bstone_options( 'primary-content-bg-color' );
 			$sidebar_bg_color				 = bstone_options( 'sidebar-bg-color' );
-			$widget_bg_color				 = bstone_options( 'widget-bg-color' );
-			
+			$widget_bg_color				 = bstone_options( 'widget-bg-color' );			
 			$text_color                      = bstone_options( 'base-text-color' );
 			$link_color                      = bstone_options( 'link-color' );
-			$link_hover_color                = bstone_options( 'link-h-color' );
-			
+			$link_hover_color                = bstone_options( 'link-h-color' );			
 			$main_border_color				 = bstone_options( 'main-border-color' );
+
+			// Post / Page Title Area - Colors & Background
+			$page_single_title_color		 = bstone_options( 'page-single-title-color' );
+			$page_single_breadcrumbs_color   = bstone_options( 'page-single-breadcrumbs-color' );
+			$page_single_title_bg_color		 = bstone_options( 'page-single-title-bg-color' );
+			$title_img_position		 		 = bstone_options( 'title-img-position' );
+			$title_img_attachment		 	 = bstone_options( 'title-img-attachment' );
+			$title_img_repeat		 		 = bstone_options( 'title-img-repeat' );
+			$title_img_size		 			 = bstone_options( 'title-img-size' );
+			$page_title_bg_overlay_color	 = bstone_options( 'page-title-bg-overlay-color' );
+			$page_title_border_color		 = bstone_options( 'page-title-border-color' );
+			$page_featured_title_bg		 	 = bstone_options( 'page-featured-title-bg' );
+			$page_single_title_bg_image 	 = esc_url( get_header_image() );
+
+			/**
+			 * Get post / page featured image as title area background if $page_featured_title_bg is true
+			 */
+			if( true == $page_featured_title_bg ) {
+				$featured_allowed = get_post_meta( get_the_ID(), 'bst-featured-img', true );
+
+				if( true != $featured_allowed ) {
+					$featured_url = get_the_post_thumbnail_url( get_the_ID(), 'full' );
+
+					if( $featured_url ) {
+						$page_single_title_bg_image 	 = esc_url( $featured_url );
+					}
+				}
+			}
 
 			// Typography.
 			$body_font_size                  = bstone_options( 'font-size-body' );
@@ -88,8 +114,7 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			$body_text_transform             = bstone_options( 'body-text-transform' );
 			$single_post_title_font_size     = bstone_options( 'font-size-entry-title' );
 			$archive_summary_title_font_size = bstone_options( 'font-size-archive-summary-title' );
-			$archive_post_title_font_size    = bstone_options( 'font-size-page-title' );
-			
+			$archive_post_title_font_size    = bstone_options( 'font-size-page-title' );			
 			$bstone_font_awesome_icons		 = bstone_options( 'bstone-font-awesome-icons' );
 			$bstone_font_awesome_brands		 = bstone_options( 'bstone-font-awesome-brands' );
 			$bstone_font_awesome_regular	 = bstone_options( 'bstone-font-awesome-regular' );
@@ -101,8 +126,7 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			$heading_h3_font_family          = self::get_bstone_font_family($default_font_family, 'h3-font-family');
 			$heading_h4_font_family          = self::get_bstone_font_family($default_font_family, 'h4-font-family');
 			$heading_h5_font_family          = self::get_bstone_font_family($default_font_family, 'h5-font-family');
-			$heading_h6_font_family          = self::get_bstone_font_family($default_font_family, 'h6-font-family');
-			
+			$heading_h6_font_family          = self::get_bstone_font_family($default_font_family, 'h6-font-family');			
 			$heading_h1_font_waight          = self::get_bstone_font_waight( $default_font_waight, 'h1-font-weight' );
 			$heading_h2_font_waight          = self::get_bstone_font_waight( $default_font_waight, 'h2-font-weight' );
 			$heading_h3_font_waight          = self::get_bstone_font_waight( $default_font_waight, 'h3-font-weight' );
@@ -115,22 +139,19 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			$heading_h3_font_transform       = bstone_options( 'h3-text-transform' );
 			$heading_h4_font_transform       = bstone_options( 'h4-text-transform' );
 			$heading_h5_font_transform       = bstone_options( 'h5-text-transform' );
-			$heading_h6_font_transform       = bstone_options( 'h6-text-transform' );
-			
+			$heading_h6_font_transform       = bstone_options( 'h6-text-transform' );			
 			$heading_h1_font_size            = bstone_options( 'font-h1-size' );
 			$heading_h2_font_size            = bstone_options( 'font-h2-size' );
 			$heading_h3_font_size            = bstone_options( 'font-h3-size' );
 			$heading_h4_font_size            = bstone_options( 'font-h4-size' );
 			$heading_h5_font_size            = bstone_options( 'font-h5-size' );
-			$heading_h6_font_size            = bstone_options( 'font-h6-size' );
-			
+			$heading_h6_font_size            = bstone_options( 'font-h6-size' );			
 			$heading_h1_color     	       	 = bstone_options( 'h1-color' );
 			$heading_h2_color     	       	 = bstone_options( 'h2-color' );
 			$heading_h3_color     	       	 = bstone_options( 'h3-color' );
 			$heading_h4_color     	       	 = bstone_options( 'h4-color' );
 			$heading_h5_color     	       	 = bstone_options( 'h5-color' );
-			$heading_h6_color     	       	 = bstone_options( 'h6-color' );
-			
+			$heading_h6_color     	       	 = bstone_options( 'h6-color' );			
 			$widget_title_color				 = bstone_options( 'sidebar-widget-title-color' );
 			$widget_text_color				 = bstone_options( 'sidebar-text-color' );
 			$widget_link_color				 = bstone_options( 'sidebar-link-color' );
@@ -139,63 +160,52 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			$header_font_family          	 = self::get_bstone_font_family($default_font_family, 'header-typo-text-font-family');
 			$header_font_waight          	 = self::get_bstone_font_waight($default_font_waight, 'header-typo-text-font-weight');
 			$header_font_transform       	 = bstone_options( 'header-typo-text-transform' );
-			$header_font_size            	 = bstone_options( 'header-typo-text-font-size' );
-			
+			$header_font_size            	 = bstone_options( 'header-typo-text-font-size' );			
 			$logo_font_family          	 	 = self::get_bstone_font_family($default_font_family, 'logo-typo-text-font-family');
 			$logo_font_waight          	 	 = self::get_bstone_font_waight($default_font_waight, 'logo-typo-text-font-weight');
 			$logo_font_transform       	 	 = bstone_options( 'logo-typo-text-transform' );
-			$logo_font_size            	 	 = bstone_options( 'logo-typo-text-font-size' );
-			
+			$logo_font_size            	 	 = bstone_options( 'logo-typo-text-font-size' );			
 			$tagline_font_family          	 = self::get_bstone_font_family($default_font_family, 'tagline-typo-text-font-family');
 			$tagline_font_waight          	 = self::get_bstone_font_waight($default_font_waight, 'tagline-typo-text-font-weight');
 			$tagline_font_transform       	 = bstone_options( 'tagline-typo-text-transform' );
-			$tagline_font_size            	 = bstone_options( 'tagline-typo-text-font-size' );
-			
+			$tagline_font_size            	 = bstone_options( 'tagline-typo-text-font-size' );			
 			$top_nav_font_family          	 = self::get_bstone_font_family($default_font_family, 'nav-typo-text-font-family');
 			$top_nav_font_waight          	 = self::get_bstone_font_waight($default_font_waight, 'nav-typo-text-font-weight');
 			$top_nav_font_transform       	 = bstone_options( 'nav-typo-text-transform' );
-			$top_nav_font_size            	 = bstone_options( 'nav-typo-text-font-size' );
-			
+			$top_nav_font_size            	 = bstone_options( 'nav-typo-text-font-size' );			
 			$sidebar_wtitle_font_family      = self::get_bstone_font_family($default_font_family, 'sidebar-typo-title-font-family');
 			$sidebar_wtitle_font_waight      = self::get_bstone_font_waight($default_font_waight, 'sidebar-typo-title-font-weight');
 			$sidebar_wtitle_font_transform   = bstone_options( 'sidebar-typo-title-transform' );
-			$sidebar_wtitle_font_size        = bstone_options( 'sidebar-typo-title-font-size' );
-			
+			$sidebar_wtitle_font_size        = bstone_options( 'sidebar-typo-title-font-size' );			
 			$sidebar_wtext_font_family       = self::get_bstone_font_family($default_font_family, 'sidebar-typo-text-font-family');
 			$sidebar_wtext_font_waight       = self::get_bstone_font_waight($default_font_waight, 'sidebar-typo-text-font-weight');
 			$sidebar_wtext_font_transform    = bstone_options( 'sidebar-typo-text-transform' );
-			$sidebar_wtext_font_size         = bstone_options( 'sidebar-typo-text-font-size' );
-			
+			$sidebar_wtext_font_size         = bstone_options( 'sidebar-typo-text-font-size' );			
 			$footer_top_title_font_family    = self::get_bstone_font_family($default_font_family, 'footer-typo-title-font-family');
 			$footer_top_title_font_waight    = self::get_bstone_font_waight($default_font_waight, 'footer-typo-title-font-weight');
 			$footer_top_title_font_transform = bstone_options( 'footer-typo-title-transform' );
-			$footer_top_title_font_size      = bstone_options( 'footer-typo-title-font-size' );
-			
+			$footer_top_title_font_size      = bstone_options( 'footer-typo-title-font-size' );			
 			$footer_top_text_font_family     = self::get_bstone_font_family($default_font_family, 'footer-typo-text-font-family');
 			$footer_top_text_font_waight     = self::get_bstone_font_waight($default_font_waight, 'footer-typo-text-font-weight');
 			$footer_top_text_font_transform  = bstone_options( 'footer-typo-text-transform' );
-			$footer_top_text_font_size       = bstone_options( 'footer-typo-text-font-size' );
-			
+			$footer_top_text_font_size       = bstone_options( 'footer-typo-text-font-size' );			
 			$footer_bar_title_font_family    = self::get_bstone_font_family($default_font_family, 'footer-bar-typo-title-font-family');
 			$footer_bar_title_font_waight    = self::get_bstone_font_waight($default_font_waight, 'footer-bar-typo-title-font-weight');
 			$footer_bar_title_font_transform = bstone_options( 'footer-bar-typo-title-transform' );
-			$footer_bar_title_font_size      = bstone_options( 'footer-bar-typo-title-font-size' );
-			
+			$footer_bar_title_font_size      = bstone_options( 'footer-bar-typo-title-font-size' );			
 			$footer_bar_text_font_family     = self::get_bstone_font_family($default_font_family, 'footer-bar-typo-text-font-family');
 			$footer_bar_text_font_waight     = self::get_bstone_font_waight($default_font_waight, 'footer-bar-typo-text-font-weight');
 			$footer_bar_text_font_transform  = bstone_options( 'footer-bar-typo-text-transform' );
-			$footer_bar_text_font_size       = bstone_options( 'footer-bar-typo-text-font-size' );
-			
+			$footer_bar_text_font_size       = bstone_options( 'footer-bar-typo-text-font-size' );			
 			$blog_typo_title_font_family     = self::get_bstone_font_family($default_font_family, 'blog-typo-title-font-family');
 			$blog_typo_title_font_weight     = self::get_bstone_font_waight( $default_font_waight, 'blog-typo-title-font-weight' );
 			$blog_typo_title_transform  	 = bstone_options( 'blog-typo-title-transform' );
-			$blog_typo_title_font_size       = bstone_options( 'blog-typo-title-font-size' );
-			
+			$blog_typo_title_font_size       = bstone_options( 'blog-typo-title-font-size' );			
 			$blog_typo_entry_font_family     = self::get_bstone_font_family( $default_font_family, 'blog-typo-entry-font-family' );
 			$blog_typo_entry_font_weight     = self::get_bstone_font_waight($default_font_waight, 'blog-typo-entry-font-weight');
 			$blog_typo_entry_transform  	 = bstone_options( 'blog-typo-entry-transform' );
-			$blog_typo_entry_font_size       = bstone_options( 'blog-typo-entry-font-size' );
-			
+			$blog_typo_entry_font_size       = bstone_options( 'blog-typo-entry-font-size' );	
+
 			$blog_title_color       		 = bstone_options( 'blog-title-color' );
 			$blog_meta_color       			 = bstone_options( 'blog-meta-color' );
 			$blog_meta_link_color       	 = bstone_options( 'blog-meta-link-color' );
@@ -208,6 +218,12 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			$blog_meta_padding_bottom        = bstone_options( 'blog-meta-padding-bottom' );
 			$blog_content_padding_top        = bstone_options( 'blog-content-padding-top' );
 			$blog_content_padding_bottom     = bstone_options( 'blog-content-padding-bottom' );
+			
+			$single_typo_title_font_family   = self::get_bstone_font_family( $default_font_family, 'single-typo-title-font-family' );
+			$single_typo_title_font_weight   = self::get_bstone_font_waight($default_font_waight, 'single-typo-title-font-weight');
+			$single_typo_title_transform  	 = bstone_options( 'single-typo-title-transform' );
+			$single_typo_title_font_size     = bstone_options( 'single-typo-title-font-size' );
+			$single_typo_breadcrumbs_font_size = bstone_options( 'single-typo-breadcrumbs-font-size' );
 
 			// Button Styling.
 			$btn_border_radius               = bstone_options( 'btn-border-radius' );
@@ -250,15 +266,11 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			$read_border_color			 	 = bstone_options( 'read-border-color' );
 			$read_border_color_hover		 = bstone_options( 'read-border-color-hover' );
 			
-			// Backgrounds
-			$page_bg_image = bstone_options( 'page-bg-image' );
-			
-			if( isset( $page_bg_image ) && ! empty( $page_bg_image ) ) {
-				$page_bg_img_position 	= bstone_options( 'page-bg-img-position' );
-				$page_bg_img_attachment = bstone_options( 'page-bg-img-attachment' );
-				$page_bg_img_repeat 	= bstone_options( 'page-bg-img-repeat' );
-				$page_bg_img_size 		= bstone_options( 'page-bg-img-size' );
-			}
+			// Backgrounds			
+			$page_bg_img_position 	= bstone_options( 'page-bg-img-position' );
+			$page_bg_img_attachment = bstone_options( 'page-bg-img-attachment' );
+			$page_bg_img_repeat 	= bstone_options( 'page-bg-img-repeat' );
+			$page_bg_img_size 		= bstone_options( 'page-bg-img-size' );
 			
 			// Header Settings
 			$header_layout           		 = bstone_options( 'header-layouts' );
@@ -286,13 +298,12 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			$header_bg_color  		 		 = bstone_options( 'bg-color-header' );			
 			$menu_link_color_header		 	 = bstone_options( 'menu-link-color-header' );
 			$menu_link_hover_color_header	 = bstone_options( 'menu-link-hover-color-header' );
-			$text_color_header		 		 = bstone_options( 'text-color-header' );
+			$text_color_header		 		 = '#'.get_header_textcolor();
 			$link_color_header		 	 	 = bstone_options( 'link-color-header' );
 			$link_hover_color_header	 	 = bstone_options( 'link-hover-color-header' );
 			$nav_bg_color  		 		 	 = bstone_options( 'menu-bg-color-header' );			
 			$site_tital_color		 		 = bstone_options( 'site-tital-color' );			
-			$site_desc_color		 		 = bstone_options( 'site-desc-color' );
-			
+			$site_desc_color		 		 = bstone_options( 'site-desc-color' );			
 
 			// Footer
 			$footer_top_border_color  		 = bstone_options( 'footer-top-border-color' );
@@ -350,6 +361,12 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			$pagination_font_waight			 = self::get_bstone_font_waight( $default_font_waight, 'pagination-text-font-weight' );
 			$pagination_text_transform	 	 = bstone_options( 'pagination-text-transform' );
 			$pagination_text_font_size	 	 = bstone_options( 'pagination-text-font-size' );
+
+			// Post meta values
+			$bst_site_sidebar = get_post_meta( get_the_ID(), 'site-sidebar-layout', true );
+
+			// Post Title Area
+			$page_title_border_width	 	 = bstone_options( 'page-title-border-width' );
 
 			/**
 			 * Apply text color depends on link color
@@ -602,6 +619,7 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 				'.single .nav-links .nav-previous, .single .nav-links .nav-next, .single .bst-author-details .author-title, .bst-comment-meta' => array(
 					'color' => esc_attr( $link_color ),
 				),
+
 
 				// Button Typography.
 				'.menu-toggle, button, .bst-button, .button, input#submit, input[type="button"], input[type="submit"], input[type="reset"], header.site-header .st-head-cta a.button' => array(
@@ -866,6 +884,32 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 					'text-transform' => esc_attr( $blog_typo_entry_transform ),
 				),
 				
+				'#content header.bst-title-section' => array(
+					'background-color' 	    => esc_attr( $page_single_title_bg_color ),
+					'border-bottom-color'   => esc_attr( $page_title_border_color ),
+					'background-image'	    => "url('". $page_single_title_bg_image ."')",
+					'background-attachment' => $title_img_attachment,
+					'background-position' 	=> esc_attr( str_replace( "-"," ",$title_img_position ) ),
+					'background-repeat' 	=> $title_img_repeat,
+					'background-size' 		=> $title_img_size,
+					'border-bottom-width' 	=> $page_title_border_width.'px',
+				),
+
+				'.bst-title-section:after' => array(
+					'background-color' 	    => esc_attr( $page_title_bg_overlay_color ),
+				),
+				
+				'.bst-title-section h1' => array(
+					'color' 		 => esc_attr( $page_single_title_color ),
+					'font-family' 	 => "'".bstone_get_css_value( $single_typo_title_font_family, 'font' )."'",
+					'font-weight' 	 => esc_attr( $single_typo_title_font_weight ),
+					'text-transform' => esc_attr( $single_typo_title_transform ),
+				),
+				
+				'.bst-title-section .site-breadcrumbs ul li, .bst-title-section .site-breadcrumbs ul li a, .bst-title-section .site-breadcrumbs ul li a:visited' => array(
+					'color' => esc_attr( $page_single_breadcrumbs_color ),
+				),
+				
 				'.entry-meta, .entry-meta *' => array(
 					'color' 		 => esc_attr( $blog_meta_color ),
 				),
@@ -887,19 +931,16 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			$parse_css = bstone_parse_css( $css_output );
 			
 			// Page Background - Boxed & Padded Version			
-			if( isset( $page_bg_image ) && ! empty( $page_bg_image ) ) {
-				$bstone_page_bg_css = array(
-					'body' => array(
-						'background-image' 	    => 'url('.$page_bg_image.')',
-						'background-position'   => esc_attr( str_replace( "-"," ",$page_bg_img_position ) ),
-						'background-attachment' => esc_attr( $page_bg_img_attachment ),
-						'background-repeat' 	=> esc_attr( $page_bg_img_repeat ),
-						'background-size' 	 	=> esc_attr( $page_bg_img_size ),
-					),
-				);
-				
-				$parse_css .= bstone_parse_css( $bstone_page_bg_css );
-			}
+			$bstone_page_bg_css = array(
+				'body, html body, html body.custom-background' => array(
+					'background-position'   => esc_attr( str_replace( "-"," ",$page_bg_img_position ) ),
+					'background-attachment' => esc_attr( $page_bg_img_attachment ),
+					'background-repeat' 	=> esc_attr( $page_bg_img_repeat ),
+					'background-size' 	 	=> esc_attr( $page_bg_img_size ),
+				),
+			);
+			
+			$parse_css .= bstone_parse_css( $bstone_page_bg_css );
 			
 			// Spacing
 			$parse_css .= bstone_get_responsive_spacings (
@@ -956,14 +997,16 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 				array('desktop', 'tablet', 'mobile')
 			);
 			
-			$parse_css .= bstone_get_responsive_spacings (
-				'body #primary',
-				'carea', 'padding',
-				'padding', '',
-				'px',
-				array('top', 'bottom', 'right', 'left'),
-				array('desktop', 'tablet', 'mobile')
-			);
+			if( 'no-sidebar' != $bst_site_sidebar ) {
+				$parse_css .= bstone_get_responsive_spacings (
+					'body #primary',
+					'carea', 'padding',
+					'padding', '',
+					'px',
+					array('top', 'bottom', 'right', 'left'),
+					array('desktop', 'tablet', 'mobile')
+				);
+			}
 			
 			$parse_css .= bstone_get_responsive_spacings (
 				'body #primary',
@@ -1099,15 +1142,17 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 				array('top', 'bottom'),
 				array('desktop', 'tablet', 'mobile')
 			);
-			
-			$parse_css .= bstone_get_responsive_spacings (
-				'body #primary',
-				'primarycnt', 'border',
-				'border', 'width',
-				'px',
-				array('top', 'bottom', 'right', 'left'),
-				array('desktop', 'tablet', 'mobile')
-			);
+
+			if( 'no-sidebar' != $bst_site_sidebar ) {
+				$parse_css .= bstone_get_responsive_spacings (
+					'body #primary',
+					'primarycnt', 'border',
+					'border', 'width',
+					'px',
+					array('top', 'bottom', 'right', 'left'),
+					array('desktop', 'tablet', 'mobile')
+				);
+			}
 			
 			$parse_css .= bstone_get_responsive_spacings (
 				'body #secondary',
@@ -1172,6 +1217,33 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 				array('desktop', 'tablet', 'mobile')
 			);
 			
+			$parse_css .= bstone_get_responsive_spacings (
+				'#content header.bst-title-section',
+				'bst_title', 'padding',
+				'padding', '',
+				'px',
+				array('top', 'bottom', 'right', 'left'),
+				array('desktop', 'tablet', 'mobile')
+			);
+			
+			$parse_css .= bstone_get_responsive_spacings (
+				'.bst-title-section h1',
+				'bst_single_title', 'margin',
+				'margin', '',
+				'px',
+				array('top', 'bottom'),
+				array('desktop', 'tablet', 'mobile')
+			);
+			
+			$parse_css .= bstone_get_responsive_spacings (
+				'.bst-title-section .site-breadcrumbs',
+				'bst_breadcrumbs', 'margin',
+				'margin', '',
+				'px',
+				array('top', 'bottom'),
+				array('desktop', 'tablet', 'mobile')
+			);
+			
 			/* Responsive Typo */
 			$parse_css .= bstone_responsive_font_size_css( '#primary h1, #primary h1 a, .entry-content h1, .entry-content h1 a', $heading_h1_font_size );
 			$parse_css .= bstone_responsive_font_size_css( '#primary h2, #primary h2 a, .entry-content h2, .entry-content h2 a', $heading_h2_font_size );
@@ -1208,6 +1280,9 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			$parse_css .= bstone_responsive_font_size_css( '.blog-entry-readmore a', $readbtn_typo_text_font_size );
 			
 			$parse_css .= bstone_responsive_font_size_css( '.st-pagination .nav-links a, .st-pagination .nav-links span.page-numbers', $pagination_text_font_size );
+
+			$parse_css .= bstone_responsive_font_size_css( '.bst-title-section h1', $single_typo_title_font_size );
+			$parse_css .= bstone_responsive_font_size_css( '.bst-title-section .site-breadcrumbs ul li, .bst-title-section .site-breadcrumbs ul li a', $single_typo_breadcrumbs_font_size );
 			
 			/* Primary Container */
 			

@@ -4,7 +4,7 @@
  *
  * @package     Bstone
  * @author      StackThemes
- * @copyright   Copyright (c) 2017, Bstone
+ * @copyright   Copyright (c) 2018, Bstone
  * @link        https://wpbstone.com/
  * @since       Bstone 1.0.0
  */
@@ -145,48 +145,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 		)
 	);
 
-
-	/**
-	 * Option: Page Background Color
-	 */
-	$wp_customize->add_setting(
-		BSTONE_THEME_SETTINGS . '[body-bg-color]', array(
-			'default'           => bstone_get_option( 'body-bg-color' ),
-			'type'              => 'option',
-			'capability' 		=> 'manage_options',
-			'transport'         => 'postMessage',
-			'sanitize_callback' => array( 'Bstone_Customizer_Sanitizes', 'sanitize_alpha_color' ),
-		)
-	);
-	$wp_customize->add_control(
-		new Bstone_Control_Color(
-			$wp_customize, BSTONE_THEME_SETTINGS . '[body-bg-color]', array(
-				'section'  => 'section-color-general',
-				'priority' => 35,
-				'label'    => __( 'Page Background Color', 'bstone' ),
-			)
-		)
-	);
-
-	/**
-	 * Option: Page Background Image
-	 */
-	$wp_customize->add_setting(
-		BSTONE_THEME_SETTINGS . '[page-bg-image]', array(
-			'type' => 'option',
-			'sanitize_callback' 	=> array( 'Bstone_Customizer_Sanitizes', 'sanitize_image' ),
-	) );
-
-	$wp_customize->add_control(
-		new WP_Customize_Image_Control(
-			$wp_customize, BSTONE_THEME_SETTINGS . '[page-bg-image]', array (
-				'label'	   				=> esc_html__( 'Page Background Image', 'bstone' ),
-				'section'  				=> 'section-color-general',
-				'priority' 				=> 40,
-			)
-		)
-	);
-
 	/**
 	 * Option: Page BG Image - Position
 	 */
@@ -210,7 +168,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'top-center'  	 => __( 'Top Center', 'bstone' ),
 				'top-right'  	 => __( 'Top Right', 'bstone' ),
 				'center-left'  	 => __( 'Center Left', 'bstone' ),
-				'center-center'  => __( 'Center Center', 'bstone' ),
+				'center-center'  => __( 'Center-Center', 'bstone' ),
 				'center-right'   => __( 'Center Right', 'bstone' ),
 				'bottom-left'  	 => __( 'Bottom Left', 'bstone' ),
 				'bottom-center'  => __( 'Bottom Center', 'bstone' ),

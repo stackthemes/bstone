@@ -4,7 +4,7 @@
  *
  * @package     Bstone
  * @author      Bstone
- * @copyright   Copyright (c) 2017, Bstone
+ * @copyright   Copyright (c) 2018, Bstone
  * @link        https://wpbstone.com/
  * @since       Bstone 1.0.0
  */
@@ -83,9 +83,7 @@ if ( ! class_exists( 'Bstone_Theme_Options' ) ) {
 					'bstone-font-awesome-regular' => false,
 					'bstone-font-awesome-light'   => true,
 					'bstone-font-awesome-solid'   => false,
-				
-					'search-source'            => 'any',
-					'search-results-per-page'  => 10,
+					'enable-title-area-frontpage' => false,
 					
 					// Site Layout
 					'site-content-width'               => 1200,
@@ -227,7 +225,6 @@ if ( ! class_exists( 'Bstone_Theme_Options' ) ) {
 					// Blog Single.
 					'blog-single-post-structure' => array(
 						'single-image',
-						'single-post-title',
 						'single-post-meta',
 						'single-post-content',
 					),
@@ -265,13 +262,6 @@ if ( ! class_exists( 'Bstone_Theme_Options' ) ) {
 					),
 					'page-title-alignment'      => 'centre',
 					'page-title-border-width'   => 1,
-					'post-title-alignment'      => 'centre',
-					'post-title-border-width'   => 1,
-				
-					'post-title-structure'      => array(
-						'post-title',
-						'post-breadcrumbs',
-					),
 				
 					// Background & Colors
 				
@@ -288,7 +278,7 @@ if ( ! class_exists( 'Bstone_Theme_Options' ) ) {
 					'h4-color'       		 	=> '#3a3a3a',
 					'h5-color'       		 	=> '#3a3a3a',
 					'h6-color'       		 	=> '#3a3a3a',
-					'page-bg-img-position' 	 	=> 'center center',
+					'page-bg-img-position' 	 	=> 'center-center',
 					'page-bg-img-attachment' 	=> 'initial',
 					'page-bg-img-repeat' 	 	=> 'no-repeat',
 					'page-bg-img-size' 	 	 	=> 'cover',
@@ -323,7 +313,7 @@ if ( ! class_exists( 'Bstone_Theme_Options' ) ) {
 					'page-single-title-color'       => '#3a3a3a',
 					'page-single-breadcrumbs-color' => '#3a3a3a',
 					'page-single-title-bg-color' 	=> '#E7E7E7',
-					'title-img-position' 			=> 'center center',
+					'title-img-position' 			=> 'center-center',
 					'title-img-attachment' 			=> 'initial',
 					'title-img-repeat' 				=> 'no-repeat',
 					'title-img-size' 				=> 'cover',
@@ -807,6 +797,17 @@ if ( ! class_exists( 'Bstone_Theme_Options' ) ) {
 					'hmitems_right_margin'   => 0,
 					'hmitems_bottom_margin'  => 0,
 					'hmitems_left_margin'	 => 0,
+
+					'bst_title_top_padding'	  => 50,
+					'bst_title_right_padding' => 0,
+					'bst_title_bottom_padding'=> 70,
+					'bst_title_left_padding'  => 0,
+
+					'bst_single_title_top_margin'	=> 0,
+					'bst_single_title_bottom_margin'=> 0,
+
+					'bst_breadcrumbs_top_margin'	=> 0,
+					'bst_breadcrumbs_bottom_margin' => 0,
 				)
 			);
 		}

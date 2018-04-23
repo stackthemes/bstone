@@ -58,6 +58,7 @@ function bstone_new_customize_register( $wp_customize ) {
 	require $settings_path . 'colors-background/footer-bar-colors.php';
 	require $settings_path . 'colors-background/blog-colors.php';
 	require $settings_path . 'colors-background/button-colors.php';
+	require $settings_path . 'colors-background/title-colors.php';
 	
 	// -- Site Typography
 	
@@ -79,6 +80,7 @@ function bstone_new_customize_register( $wp_customize ) {
 	require $settings_path . 'spacing/header.php';
 	require $settings_path . 'spacing/sidebar.php';
 	require $settings_path . 'spacing/blog-archive.php';
+	require $settings_path . 'spacing/title-spacing.php';
 	
 	// -- Extra Elements
 	

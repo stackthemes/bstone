@@ -67,7 +67,7 @@ if ( ! function_exists( 'bstone_page_container_type' ) ) {
 
 			// If post meta value is empty,
 			// Then get the POST_TYPE layout.
-			$layout = bstone_get_option_meta( 'site-container-layout', '', true );
+			$layout = bstone_get_option_meta( 'site-content-layout', '', true );
 
 			if ( empty( $layout ) ) {
 
@@ -118,7 +118,38 @@ if ( ! function_exists( 'bstone_page_container_type' ) ) {
 	}
 }
 
-//$bstone_theme_options  = get_option(BSTONE_THEME_SETTINGS);
+/**
+ * Get title section classes
+ */
+if ( ! function_exists( 'bstone_title_section_classes' ) ) {
 
-//var_dump($bstone_theme_options);
+	function bstone_title_section_classes() {
+
+		$classes[] = "st-container clear page-header-inner";
+
+		// Get page title alignment settings
+		$page_title_alignment = bstone_options( 'page-title-alignment' );
+
+		switch ($page_title_alignment) {
+			case "centre":
+				$classes[] = "title-center";
+				break;
+			case "left":
+				$classes[] = "title-left";
+				break;
+			case "right":
+				$classes[] = "title-right";
+				break;
+			case "inline":
+				$classes[] = "title-inline st-flex";
+				break;
+			default:
+				$classes[] = "title-center";
+		}
+
+		$classes_markup = 'class="'.implode(" ", $classes).'"';
+
+		return apply_filters( 'bstone_title_section_classes', $classes_markup);
+	}
+}
 

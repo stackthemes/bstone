@@ -4,7 +4,7 @@
  *
  * @package     Bstone
  * @author      StackThemes
- * @copyright   Copyright (c) 2017, Bstone
+ * @copyright   Copyright (c) 2018, Bstone
  * @link        https://wpbstone.com/
  * @since       Bstone 1.0.0
  */
@@ -13,22 +13,32 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-	/**
-	 * Blog Single Typography - Title: Heading
-	 */
-	$wp_customize->add_setting( BSTONE_THEME_SETTINGS . '[single-typo-title-heading]', array(
-		'sanitize_callback'	=> 'wp_kses',
-	) );
-
-	$wp_customize->add_control (
-		new Bstone_Control_Heading (
-			$wp_customize, BSTONE_THEME_SETTINGS . '[single-typo-title-heading]', array(
-				'label'    	=> esc_html__( 'Post / Page Title Typography', 'bstone' ),
-				'section'  	=> 'section-single-typo-settings',
-				'priority' 	=> 10,
-			)
+/**
+ * Customizer Tabs - To navigate to other related sections.
+ */
+$wp_customize->add_control(
+	new Bstone_Control_Tabs(
+		$wp_customize, BSTONE_THEME_SETTINGS . '[page-title-area-typography-tabs]', array(
+			'type'          => 'bst-tabs',
+			'section'       => 'section-single-typo-settings',
+			'priority'      => 1,
+			'settings'      => array(),
+			'tabs_data'     => array(
+				__('layout', 'bstone'),
+				__('typography', 'bstone'),
+				__('colors', 'bstone'),
+				__('spacing', 'bstone')
+			),
+			'tabs_sections' => array(
+				'section-title',
+				'section-single-typo-settings',
+				'section-color-page-title',
+				'section-spacing-page-title'
+			),
+			'tabs_active'   => __('typography', 'bstone'),
 		)
-	);
+	)
+);
 
 	/**
 	 * Blog Single Typography - Title: Font Family

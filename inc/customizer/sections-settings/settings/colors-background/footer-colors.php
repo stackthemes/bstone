@@ -4,7 +4,7 @@
  *
  * @package     Bstone
  * @author      StackThemes
- * @copyright   Copyright (c) 2017, Bstone
+ * @copyright   Copyright (c) 2018, Bstone
  * @link        https://wpbstone.com/
  * @since       Bstone 1.0.0
  */

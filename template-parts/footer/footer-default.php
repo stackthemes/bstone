@@ -6,12 +6,18 @@
  *
  * @package     Bstone
  * @author      StackThemes
- * @copyright   Copyright (c) 2017, Bstone
+ * @copyright   Copyright (c) 2018, Bstone
  * @link        https://wpbstone.com/
  * @since       Bstone 1.0.0
  */
-add_action('bstone_footer_content_markup', 'bstone_footer_top_markup', 1);
-add_action('bstone_footer_content_markup', 'bstone_footer_bar_markup', 2);
+
+if ( apply_filters( 'bstone_footer_top_enabled', true ) ) {
+	add_action('bstone_footer_content_markup', 'bstone_footer_top_markup', 1);
+}
+
+if ( apply_filters( 'bstone_footer_bottom_enabled', true ) ) {
+	add_action('bstone_footer_content_markup', 'bstone_footer_bar_markup', 2);
+}
 
 /*
  * Footer top markup

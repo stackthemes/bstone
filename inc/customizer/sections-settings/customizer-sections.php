@@ -4,7 +4,7 @@
  *
  * @package     Bstone
  * @author      StackThemes
- * @copyright   Copyright (c) 2017, Bstone
+ * @copyright   Copyright (c) 2018, Bstone
  * @link        https://wpbstone.com/
  * @since       Bstone 1.0.0
  */
@@ -146,9 +146,17 @@ $wp_customize->add_panel(
 
 	$wp_customize->add_section(
 		'section-color-blog', array(
-			'title'    => __( 'Post / Page', 'bstone' ),
+			'title'    => __( 'Blog', 'bstone' ),
 			'panel'    => 'panel-colors',
 			'priority' => 60,
+		)
+	);
+
+	$wp_customize->add_section(
+		'section-color-page-title', array(
+			'title'    => __( 'Post / Page Title', 'bstone' ),
+			'panel'    => 'panel-colors',
+			'priority' => 70,
 		)
 	);
 
@@ -156,7 +164,7 @@ $wp_customize->add_panel(
 		'section-color-buttons', array(
 			'title'    => __( 'Buttons', 'bstone' ),
 			'panel'    => 'panel-colors',
-			'priority' => 70,
+			'priority' => 80,
 		)
 	);
 
@@ -231,7 +239,7 @@ $wp_customize->add_panel(
 
 	$wp_customize->add_section(
 		'section-single-typo-settings', array(
-			'title'    => __( 'Single Page / Post', 'bstone' ),
+			'title'    => __( 'Post / Page Title', 'bstone' ),
 			'panel'    => 'panel-typography',
 			'priority' => 80,
 		)
@@ -311,6 +319,14 @@ $wp_customize->add_panel(
 			'priority' 		  => 70,
 			'panel'    		  => 'panel-spacing',
 			'title'    		  => __( 'Single Post', 'bstone' ),
+		)
+	);
+
+	$wp_customize->add_section(
+		'section-spacing-page-title', array(
+			'priority' 		  => 75,
+			'panel'    		  => 'panel-spacing',
+			'title'    		  => __( 'Post / Page Title', 'bstone' ),
 		)
 	);
 

@@ -4,7 +4,7 @@
  *
  * @package     Bstone
  * @author      StackThemes
- * @copyright   Copyright (c) 2017, Bstone
+ * @copyright   Copyright (c) 2018, Bstone
  * @link        https://wpbstone.com/
  * @since       Bstone 1.0.0
  */
@@ -36,28 +36,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 					'section-spacing-header'
 				),
 				'tabs_active'   => __('colors', 'bstone'),
-			)
-		)
-	);
-
-	/**
-	 * Option: Header Text Color
-	 */
-	$wp_customize->add_setting(
-		BSTONE_THEME_SETTINGS . '[text-color-header]', array(
-			'default'           => bstone_get_option( 'text-color-header' ),
-			'type'              => 'option',
-			'capability' 		=> 'manage_options',
-			'transport'         => 'postMessage',
-			'sanitize_callback' => array( 'Bstone_Customizer_Sanitizes', 'sanitize_alpha_color' ),
-		)
-	);
-	$wp_customize->add_control(
-		new Bstone_Control_Color(
-			$wp_customize, BSTONE_THEME_SETTINGS . '[text-color-header]', array(
-				'section'  => 'section-color-header',
-				'priority' => 5,
-				'label'    => __( 'Header Text Color', 'bstone' ),
 			)
 		)
 	);

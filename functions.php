@@ -22,6 +22,9 @@ define( 'BSTONE_THEME_URI', get_template_directory_uri() . '/' );
 require_once BSTONE_THEME_DIR . 'inc/common-functions.php';
 require_once BSTONE_THEME_DIR . 'inc/bstone-enqueue-scripts.php';
 require_once BSTONE_THEME_DIR . 'inc/bstone-custom-css.php';
+require_once BSTONE_THEME_DIR . 'inc/bstone-meta-boxes.php';
+require_once BSTONE_THEME_DIR . 'inc/bstone-meta-boxes-functions.php';
+require_once BSTONE_THEME_DIR . 'inc/bstone-breadcrumbs.php';
 
 /**
  * Implement the Custom Header feature.
