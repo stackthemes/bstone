@@ -15,7 +15,7 @@
  * the visitor has not yet entered the password we will
  * return early without loading the comments.
  */
-if ( post_password_required() ) {
+if ( post_password_required() || is_front_page() ) {
 	return;
 }
 ?>

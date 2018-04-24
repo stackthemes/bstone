@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( is_front_page() && ! is_singular( 'page' ) ) {
+if ( ( is_front_page() && ! is_singular( 'page' )  || is_home() ) ) {
     if( false == bstone_options( 'enable-title-area-frontpage' ) ) {
         return;
     }

@@ -2151,6 +2151,10 @@ body.boxed-container.header-2 .full-width-nav .st-site-nav nav {
 	padding-left: 30px;
 }
 
+body #primary {
+  max-width: 100%;
+}
+
 .st-left-sidebar .widget-area.secondary,
 .st-right-sidebar #primary.content-area {
 	order: 1;

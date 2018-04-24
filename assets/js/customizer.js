@@ -327,7 +327,7 @@ function bstone_dynamic_css( control, style ) {
 
 	// Header Nav Color
 	bstone_get_css( api, 'menu-link-color-header', 'header.site-header nav .st-main-navigation > ul li a', 'color', '' );
-	bstone_get_css( api, 'menu-link-hover-color-header', 'header.site-header nav .st-main-navigation > ul li a:hover', 'color', '' );
+	bstone_get_css( api, 'menu-link-hover-color-header', 'header.site-header nav .st-main-navigation > ul li a:hover, header.site-header nav .st-main-navigation > ul li.current-menu-item a', 'color', '' );
 
 	// Header Menu Alignment
 	bstone_get_css( api, 'header-menu-alignment', '.header-2 .st-site-nav nav > div > ul, .header-1 .st-site-nav nav > div > ul', 'justify-content', '' );

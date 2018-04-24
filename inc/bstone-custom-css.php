@@ -786,7 +786,7 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 					'font-weight' 	 => esc_attr( $top_nav_font_waight ),
 					'text-transform' => esc_attr( $top_nav_font_transform ),
 				),
-				'header.site-header nav .st-main-navigation > ul li a:hover' => array(
+				'header.site-header nav .st-main-navigation > ul li a:hover, header.site-header nav .st-main-navigation > ul li.current-menu-item a' => array(
 					'color' => esc_attr( $menu_link_hover_color_header ),
 				),
 				'.header-2 .st-site-nav nav' => array(
@@ -1470,6 +1470,13 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 					),
 				);
 				$parse_css .= bstone_parse_css( $header2_settings );
+			} else {
+				$header1_settings = array(
+					'.header-1 .st-site-nav nav > div > ul' => array(
+						'justify-content' => esc_attr( $header_menu_alignment ),
+					),
+				);
+				$parse_css .= bstone_parse_css( $header1_settings );
 			}
 
 			// Foreground color.

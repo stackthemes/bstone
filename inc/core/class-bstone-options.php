@@ -80,8 +80,7 @@ if ( ! class_exists( 'Bstone_Theme_Options' ) ) {
 				
 					'bstone-font-awesome-icons'   => true,
 					'bstone-font-awesome-brands'  => true,
-					'bstone-font-awesome-regular' => false,
-					'bstone-font-awesome-light'   => true,
+					'bstone-font-awesome-regular' => true,
 					'bstone-font-awesome-solid'   => false,
 					'enable-title-area-frontpage' => false,
 					
@@ -118,7 +117,7 @@ if ( ! class_exists( 'Bstone_Theme_Options' ) ) {
 					'header-logo-alignment'				=> 'left',
 					'header-logo-display'				=> 1,
 					'header-menu-position'            	=> 'bottom',
-					'header-menu-alignment'            	=> 'center',
+					'header-menu-alignment'            	=> 'flex-end',
 					'custom-menu-in-responsive'         => 0,
 					'header-2-items-position'           => array(
 						'menu-item-1',
@@ -127,9 +126,9 @@ if ( ! class_exists( 'Bstone_Theme_Options' ) ) {
 					),
 					
 					// Footer.
-					'footer-adv'                        => 'disabled',
+					'footer-adv'                        => 'layout-4',
 					'footer-sml-layout'                 => 'disabled',
-					'footer-top-border-size'			=> 0,
+					'footer-top-border-size'			=> 1,
 					'footer-bar-top-border-size'		=> 0,
 					'footer-bar-bottom-border-size'		=> 0,
 					'footer-top-area-width'				=> 'content',
@@ -352,7 +351,7 @@ if ( ! class_exists( 'Bstone_Theme_Options' ) ) {
 				
 					// -- Footer Colors
 					'footer-top-background-color'	 => '#ffffff',
-					'footer-top-border-color'	 	 => '#ffffff',
+					'footer-top-border-color'	 	 => '#efefef',
 					'footer-top-title-color'	 	 => '#3a3a3a',
 					'footer-top-text-color'	 	 	 => '#3a3a3a',
 					'footer-top-link-color'	 	 	 => '#3a3a3a',
@@ -743,8 +742,8 @@ if ( ! class_exists( 'Bstone_Theme_Options' ) ) {
 					'h6_top_margin' 	  => 0,
 					'h6_bottom_margin'    => 0,
 					
-					'footer_top_padding' 		   		 => 0,
-					'footer_bottom_padding' 	   		 => 0,
+					'footer_top_padding' 		   		 => 30,
+					'footer_bottom_padding' 	   		 => 30,
 					'footer-widgets-margin-bottom' 		 => 15,
 					'footer-widgets-title-margin-bottom' => 15,
 					'fwsp_top_padding'	  => 0,
