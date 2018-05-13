@@ -694,14 +694,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	/**
 	 * Option: Blog Image Size
 	 */
-	$blog_img_siz = get_intermediate_image_sizes();
-	array_push($blog_img_siz,"full");
+	$blog_img_size = get_intermediate_image_sizes();
+	array_push($blog_img_size,"full");
 
 	$bstone_blog_image_sizes = array();
 
-	sort( $blog_img_siz );
-
-	foreach ( $blog_img_siz as $size ) {
+	foreach ( $blog_img_size as $size ) {
 		$size_name = str_replace( "_", " ", $size );
 		$size_name = str_replace( "-", " ", $size_name );
 		$size_name = str_replace( ".", " ", $size_name );

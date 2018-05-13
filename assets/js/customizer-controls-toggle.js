@@ -635,6 +635,9 @@
 				controls: [
 					'bstone-settings[scroll-border-width]',
 					'bstone-settings[scroll-border-radius]',
+					'bstone-settings[sctop-icon-class]',
+					'bstone-settings[sctop-icon-size]',
+					'bstone-settings[sctop-spacing]',
 					'bstone-settings[bg-color-scroll]',
 					'bstone-settings[border-color-scroll]',
 					'bstone-settings[icon-color-pagination]',

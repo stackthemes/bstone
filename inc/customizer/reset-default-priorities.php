@@ -9,14 +9,14 @@
  * @since     Bstone 1.0.0
  */
 
-if ( ! class_exists( 'ST_Customizer_Reset_Priority' ) ) {
+if ( ! class_exists( 'Bstone_Customizer_Reset_Priority' ) ) {
 
 	/**
-	 * ST_Customizer_Reset_Priority initial setup
+	 * Bstone_Customizer_Reset_Priority initial setup
 	 *
 	 * @since 1.0.0
 	 */
-	class ST_Customizer_Reset_Priority {
+	class Bstone_Customizer_Reset_Priority {
 
 		/**
 		 * Class instance.
@@ -84,4 +84,4 @@ if ( ! class_exists( 'ST_Customizer_Reset_Priority' ) ) {
 /**
  * Kicking this off by calling 'get_instance()' method
  */
-ST_Customizer_Reset_Priority::get_instance();
+Bstone_Customizer_Reset_Priority::get_instance();

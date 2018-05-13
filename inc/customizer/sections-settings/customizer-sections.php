@@ -335,7 +335,7 @@ $wp_customize->add_panel(
  ********************************/
 $wp_customize->add_panel(
 	'panel-extra-elements', array(
-		'priority' => 130,
+		'priority' => 120,
 		'title'    => __( 'Settings', 'bstone' ),
 	)
 );
@@ -344,7 +344,7 @@ $wp_customize->add_panel(
 		'section-general-settings', array(
 			'title'    => __( 'General Settings', 'bstone' ),
 			'panel'    => 'panel-extra-elements',
-			'priority' => 20,
+			'priority' => 10,
 		)
 	);
 
@@ -352,13 +352,21 @@ $wp_customize->add_panel(
 		'section-forms-settings', array(
 			'title'    => __( 'Forms', 'bstone' ),
 			'panel'    => 'panel-extra-elements',
-			'priority' => 30,
+			'priority' => 20,
 		)
 	);
 
 	$wp_customize->add_section(
 		'section-pagination-settings', array(
 			'title'    => __( 'Pagination', 'bstone' ),
+			'panel'    => 'panel-extra-elements',
+			'priority' => 30,
+		)
+	);
+
+	$wp_customize->add_section(
+		'section-posts-slider', array(
+			'title'    => __( 'Posts Banner / Slider', 'bstone' ),
 			'panel'    => 'panel-extra-elements',
 			'priority' => 40,
 		)
@@ -369,22 +377,6 @@ $wp_customize->add_panel(
 			'title'    => __( 'Scroll To Top', 'bstone' ),
 			'panel'    => 'panel-extra-elements',
 			'priority' => 50,
-		)
-	);
-
-	$wp_customize->add_section(
-		'section-social-icons-settings', array(
-			'title'    => __( 'Social Icons Settings', 'bstone' ),
-			'panel'    => 'panel-extra-elements',
-			'priority' => 60,
-		)
-	);
-
-	$wp_customize->add_section(
-		'section-social-list-settings', array(
-			'title'    => __( 'Social Icons', 'bstone' ),
-			'panel'    => 'panel-extra-elements',
-			'priority' => 70,
 		)
 	);
 

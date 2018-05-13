@@ -1,6 +1,6 @@
 <?php
 /**
- * Custom Styling output for Bstone Theme. LTR
+ * Custom Styling output for Bstone Theme.
  *
  * @package     Bstone
  * @author      StackThemes
@@ -770,7 +770,7 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 				
 				// Header Settings
 				'.header-2 .st-site-branding, header .st-site-branding' => array(
-					'text-align' => esc_attr( $header_logo_alignment ),
+					'text-align' => esc_attr( bstone_get_rtl_directions( $header_logo_alignment ) ),
 				),
 				
 				// Header Colors
@@ -1331,14 +1331,14 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			
 			$primary_cnt_border_left_css = array(
 				'body #primary' => array(
-					'margin-left' => $primary_cnt_border_left.'px',
+					'margin-right' => $primary_cnt_border_left.'px',
 				),
 			);			
 			$parse_css .= bstone_parse_css( $primary_cnt_border_left_css, '753' );
 			
 			$primary_cnt_border_right_css = array(
 				'body #primary' => array(
-					'margin-right' => $primary_cnt_border_right.'px',
+					'margin-left' => $primary_cnt_border_right.'px',
 				),
 			);			
 			$parse_css .= bstone_parse_css( $primary_cnt_border_right_css, '753' );
@@ -1375,7 +1375,7 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 					);
 				$parse_css .= bstone_responsive_css(
 						'.main-header-content',
-						'header', 'right_padding', 'padding-right', 'px', array('desktop', 'tablet', 'mobile')
+						'header', 'right_padding', 'padding-left', 'px', array('desktop', 'tablet', 'mobile')
 					);
 				$parse_css .= bstone_responsive_css(
 						'.main-header-content',
@@ -1383,7 +1383,7 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 					);
 				$parse_css .= bstone_responsive_css(
 						'.main-header-content',
-						'header', 'left_padding', 'padding-left', 'px', array('desktop', 'tablet', 'mobile')
+						'header', 'left_padding', 'padding-right', 'px', array('desktop', 'tablet', 'mobile')
 					);
 				
 			} else if( $header_layout == 'header-main-layout-2' ) {
@@ -1403,7 +1403,7 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 					);
 					$parse_css .= bstone_responsive_css(
 							'.header-2 .main-header-content',
-							'header', 'right_padding', 'padding-right', 'px', array('desktop', 'tablet', 'mobile')
+							'header', 'right_padding', 'padding-left', 'px', array('desktop', 'tablet', 'mobile')
 						);
 					$parse_css .= bstone_responsive_css(
 							'.header-2 .main-header-content',
@@ -1411,7 +1411,7 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 						);
 					$parse_css .= bstone_responsive_css(
 							'.header-2 .main-header-content',
-							'header', 'left_padding', 'padding-left', 'px', array('desktop', 'tablet', 'mobile')
+							'header', 'left_padding', 'padding-right', 'px', array('desktop', 'tablet', 'mobile')
 						);
 					$parse_css .= bstone_responsive_css(
 							'.header-2 .st-site-nav',
@@ -1437,11 +1437,11 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 						);
 					$parse_css .= bstone_responsive_css(
 							'.header-2 .main-header-content',
-							'header', 'right_padding', 'padding-right', 'px', array('desktop', 'tablet', 'mobile')
+							'header', 'right_padding', 'padding-left', 'px', array('desktop', 'tablet', 'mobile')
 						);
 					$parse_css .= bstone_responsive_css(
 							'.header-2 .main-header-content',
-							'header', 'left_padding', 'padding-left', 'px', array('desktop', 'tablet', 'mobile')
+							'header', 'left_padding', 'padding-right', 'px', array('desktop', 'tablet', 'mobile')
 						);
 					$parse_css .= bstone_responsive_css(
 							'.header-2 .st-site-nav',
@@ -1464,21 +1464,21 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 				
 					$header_nav_padding_res = array(
 						'.header-2 .full-width-header .st-site-nav ul > li:first-child > a' => array(
-							'padding-left' => bstone_get_css_value( $header_padding_left, 'px' ),
+							'padding-right' => bstone_get_css_value( $header_padding_left, 'px' ),
 						),
 						'.header-2 .full-width-header .st-site-nav ul > li:lbst-child > a' => array(
-							'padding-right' => bstone_get_css_value( $header_padding_right, 'px' ),
+							'padding-left' => bstone_get_css_value( $header_padding_right, 'px' ),
 						),
 					);
 				
 					$parse_css .= bstone_responsive_css(
 						'.header-2 .full-width-header .st-site-nav ul > li:first-child > a',
-						'header', 'left_padding', 'padding-left', 'px', array('desktop')
+						'header', 'left_padding', 'padding-right', 'px', array('desktop')
 					);
 				
 					$parse_css .= bstone_responsive_css(
 						'.header-2 .full-width-header .st-site-nav ul > li:lbst-child > a',
-						'header', 'right_padding', 'padding-right', 'px', array('desktop')
+						'header', 'right_padding', 'padding-left', 'px', array('desktop')
 					);
 				endif;
 				
@@ -1497,10 +1497,10 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			if( $header_layout == 'header-main-layout-2' ) {
 				$header2_settings = array(
 					'.header-2 .st-head-cta.cta-h-left' => array(
-						'text-align' => esc_attr( $header_item_1_alignment ),
+						'text-align' => esc_attr( bstone_get_rtl_directions( $header_item_1_alignment ) ),
 					),
 					'.header-2 .st-head-cta.cta-h-right' => array(
-						'text-align' => esc_attr( $header_item_2_alignment ),
+						'text-align' => esc_attr( bstone_get_rtl_directions( $header_item_2_alignment ) ),
 					),
 					'.header-2 .st-site-nav nav > div > ul, .header-1 .st-site-nav nav > div > ul' => array(
 						'justify-content' => esc_attr( $header_menu_alignment ),
@@ -1523,8 +1523,8 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 				$genral_global_responsive = array(
 					'.bst-small-footer .bst-container' => array(
 						'max-width' => '100%',
-						'padding-left' => '35px',
 						'padding-right' => '35px',
+						'padding-left' => '35px',
 					),
 				);
 
@@ -1536,8 +1536,8 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			$page_builder_comment = array(
 				'.st-page-builder-template .comments-area, .single.st-page-builder-template .entry-header, .single.st-page-builder-template .post-navigation' => array(
 					'max-width' => bstone_get_css_value( $site_content_width + 40, 'px' ),
-					'margin-left' => 'auto',
 					'margin-right' => 'auto',
+					'margin-left' => 'auto',
 				),
 			);
 			
@@ -1709,7 +1709,7 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			$nav_ul_width = array(
 				'.header-2 .st-site-nav nav > div > ul' => array(
 					'max-width' 	=> bstone_get_css_value( $site_content_width, 'px' ),
-					'padding-left'  => '0px',
+					'padding-right'  => '0px',
 					'margin'  		=> '0 auto',
 				),
 			);

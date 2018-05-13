@@ -39,9 +39,9 @@ final class Bstone_Control_Typography extends WP_Customize_Control {
 	 * Used to set the default font options.
 	 *
 	 * @since 1.0.8
-	 * @var string $ast_inherit
+	 * @var string $bst_inherit
 	 */
-	public $ast_inherit = '';
+	public $bst_inherit = '';
 
 	/**
 	 * If true, the preview button for a control will be rendered.
@@ -60,7 +60,7 @@ final class Bstone_Control_Typography extends WP_Customize_Control {
 	 * @param array                $args    Default parent's arguments.
 	 */
 	public function __construct( $manager, $id, $args = array() ) {
-		$this->ast_inherit = __( 'Inherit', 'bstone' );
+		$this->bst_inherit = __( 'Inherit', 'bstone' );
 		parent::__construct( $manager, $id, $args );
 	}
 
@@ -77,11 +77,11 @@ final class Bstone_Control_Typography extends WP_Customize_Control {
 		switch ( $this->type ) {
 
 			case 'bst-font-family':
-				$this->render_font( $this->ast_inherit );
+				$this->render_font( $this->bst_inherit );
 				break;
 
 			case 'bst-font-weight':
-				$this->render_font_weight( $this->ast_inherit );
+				$this->render_font_weight( $this->bst_inherit );
 				break;
 		}
 	}
@@ -137,7 +137,7 @@ final class Bstone_Control_Typography extends WP_Customize_Control {
 	protected function render_connect_attribute() {
 		if ( $this->connect ) {
 			echo ' data-connected-control="' . esc_attr( $this->connect ) . '"';
-			echo ' data-inherit="' . esc_attr( $this->ast_inherit ) . '"';
+			echo ' data-inherit="' . esc_attr( $this->bst_inherit ) . '"';
 		}
 	}
 

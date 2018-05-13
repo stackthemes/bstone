@@ -16,7 +16,7 @@ if ( ! function_exists( 'bstone_get_breadcrumbs' ) ) {
 	function bstone_get_breadcrumbs() {
 
         // Set variables for later use
-        $home_link        = home_url('/');
+        $home_link        = esc_url( home_url('/') );
         $home_text        = bstone_default_strings('string-breadcrumb-home', false);
         $link_before      = '<li typeof="v:Breadcrumb">';
         $link_after       = '</li>';
@@ -65,7 +65,7 @@ if ( ! function_exists( 'bstone_get_breadcrumbs' ) ) {
                 }
             }
 
-            if ( !in_array( $post_type, ['post', 'page', 'attachment'] ) )
+            if ( !in_array( $post_type, array('post', 'page', 'attachment') ) )
             {
                 $post_type_object = get_post_type_object( $post_type );
                 $archive_link     = esc_url( get_post_type_archive_link( $post_type ) );
@@ -76,11 +76,11 @@ if ( ! function_exists( 'bstone_get_breadcrumbs' ) ) {
             // Get post parents if $parent !== 0
             if ( 0 !== $parent ) 
             {
-                $parent_links = [];
+                $parent_links = array();
                 while ( $parent ) {
                     $post_parent = get_post( $parent );
 
-                    $parent_links[] = sprintf( $link, esc_url( get_permalink( $post_parent->ID ) ), get_the_title( $post_parent->ID ) );
+                    $parent_links[] = sprintf( $link, get_permalink( $post_parent->ID ) , get_the_title( $post_parent->ID ) );
 
                     $parent = $post_parent->post_parent;
                 }
@@ -125,7 +125,7 @@ if ( ! function_exists( 'bstone_get_breadcrumbs' ) ) {
 
                 if ( 0 !== $term_parent ) {
                     // Get all the current term ancestors
-                    $parent_term_links = [];
+                    $parent_term_links = array();
                     while ( $term_parent ) {
                         $term = get_term( $term_parent, $taxonomy );
 
@@ -201,6 +201,7 @@ if ( ! function_exists( 'bstone_get_breadcrumbs' ) ) {
         // Handle paged pages
         if ( is_paged() ) {
             $current_page = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : get_query_var( 'page' );
+            /* translators: 1: Page. */
             $page_addon   = $before . sprintf( __( ' ( Page %s )', 'bstone' ), number_format_i18n( $current_page ) ) . $after;
         }
 

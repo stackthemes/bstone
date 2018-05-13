@@ -11,7 +11,7 @@ $bstone_page_layout = bstone_page_layout();
 
 get_header(); ?>
 
-  <div class="st-container st-flex content-top st-<?php echo $bstone_page_layout; ?>">
+  <div class="st-container st-flex content-top st-<?php echo esc_attr( $bstone_page_layout ); ?>">
 	<div id="primary" <?php bstone_primary_class('st-flex-grow-1'); ?>>
 	
 		<?php bstone_primary_content_top(); ?>

@@ -19,7 +19,6 @@ require BSTONE_THEME_DIR . 'inc/customizer/register-controls.php';
  * Extend Customizer
  */
 require BSTONE_THEME_DIR . 'inc/customizer/extend_customizer.php';
-require BSTONE_THEME_DIR . 'inc/customizer/social-callbacks.php';
 
 
 /**

@@ -46,7 +46,7 @@ add_action( 'after_setup_theme', 'bstone_content_width', 0 );
 /**
  *  Custom Image Sizes
  */
-add_image_size( 'medium-extra-large', 1000, 563 );
+add_image_size( 'bstone-medium', 1000, 563 );
 
 /**
  * Return Theme options.
@@ -886,6 +886,17 @@ if ( ! function_exists( 'bstone_get_responsive_spacings' ) ) {
 		}
 		
 		foreach( $types as $position ) {
+
+			$css_pos = $position;
+
+			if ( is_rtl() ) {
+				if( "right" == $position ) {
+					$css_pos = "left";
+				}
+				else if( "left" == $position ) {
+					$css_pos = "right";
+				}
+			}
 		
 			$ctrl_val_desktop = bstone_options( $control1.'_'.$position.'_'.$control2 );
 			if( $ctrl_val_desktop == '' ) { $ctrl_val_desktop = 0; }
@@ -906,7 +917,7 @@ if ( ! function_exists( 'bstone_get_responsive_spacings' ) ) {
 
 				$mobile_css = array(
 					$selector => array(
-						$property1.'-'.$position.$property2 => $nagative_value.$ctrl_val_mobile.$value,
+						$property1.'-'.$css_pos.$property2 => $nagative_value.$ctrl_val_mobile.$value,
 					),
 				);
 				$css_output .= bstone_parse_css( $mobile_css, '120' );
@@ -919,7 +930,7 @@ if ( ! function_exists( 'bstone_get_responsive_spacings' ) ) {
 
 				$tablet_css = array(
 					$selector => array(
-						$property1.'-'.$position.$property2 => $nagative_value.$ctrl_val_tablet.$value,
+						$property1.'-'.$css_pos.$property2 => $nagative_value.$ctrl_val_tablet.$value,
 					),
 				);
 				$css_output .= bstone_parse_css( $tablet_css, '481' );
@@ -929,7 +940,7 @@ if ( ! function_exists( 'bstone_get_responsive_spacings' ) ) {
 			if ( in_array("desktop", $media_queries) ) {
 				$desktop_css = array(
 					$selector => array(
-						$property1.'-'.$position.$property2 => $nagative_value.$ctrl_val_desktop.$value,
+						$property1.'-'.$css_pos.$property2 => $nagative_value.$ctrl_val_desktop.$value,
 					),
 				);
 				$css_output .= bstone_parse_css( $desktop_css, '921' );
@@ -1008,7 +1019,7 @@ if ( ! function_exists( 'bstone_custom_excerpt_length' ) ) {
 			$excerpt_length = 30;
 		}
 		
-		return $excerpt_length;
+		return esc_html( $excerpt_length );
 	}
 	add_filter( 'excerpt_length', 'bstone_custom_excerpt_length', 999 );
 }// End if().
@@ -1018,7 +1029,7 @@ if ( ! function_exists( 'bstone_custom_excerpt_length' ) ) {
  */
 if ( ! function_exists( 'bstone_excerpt_more' ) ) {
 	function bstone_excerpt_more( $more ) {
-		return bstone_options( 'blog-post-content-more' );
+		return esc_html( bstone_options( 'blog-post-content-more' ) );
 	}
 	add_filter( 'excerpt_more', 'bstone_excerpt_more' );
 }// End if().
@@ -1203,5 +1214,32 @@ if ( ! function_exists( 'bstone_single_post_page_header' ) ) {
 		
 		get_template_part( 'template-parts/single-header' );
 
+	}
+}
+
+/**
+ * Get RTL directions
+ */
+if ( ! function_exists( 'bstone_get_rtl_directions' ) ) {
+	function bstone_get_rtl_directions( $dir ) {
+		if ( is_rtl() ) {
+			
+			if( "left" == $dir ) {
+
+				return "right";
+
+			} else if( "right" == $dir ) {
+
+				return "left";
+
+			} else {
+
+				return $dir;
+				
+			}
+
+		} else {
+			return $dir;
+		}
 	}
 }

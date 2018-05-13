@@ -52,7 +52,7 @@ $caption = get_post( get_post_thumbnail_id() )->post_excerpt;
 		?>
 		
 		<span class="post-thumb-cnt">
-			<img src="<?php echo $img_url[0]; ?>" alt="<?php the_title_attribute(); ?>" <?php echo $image_size_html; echo ' '.bstone_schema_markup( 'image' ); ?> />
+			<img src="<?php echo esc_url( $img_url[0] ); ?>" alt="<?php the_title_attribute(); ?>" <?php echo $image_size_html; echo ' '.bstone_schema_markup( 'image' ); ?> />
 			<?php
 			  if( true == $overlay ) {
 				  echo '<span class="bst-img-overlay"></span>';
@@ -121,7 +121,7 @@ $caption = get_post( get_post_thumbnail_id() )->post_excerpt;
 	// Caption
 	if ( $caption ) { ?>
 		<div class="thumbnail-caption">
-			<?php echo $caption; ?>
+			<?php echo esc_html( $caption ); ?>
 		</div>
 	<?php } ?>
 	

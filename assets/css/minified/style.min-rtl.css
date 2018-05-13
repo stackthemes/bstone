@@ -2040,10 +2040,10 @@ header.site-header .site-title {
 }
 
 .header-2 .full-width-nav .st-site-nav nav {
-    left: 50%;
-	  width: 100vw;
+    right: 50%;
+	width: 100vw;
     position: relative;
-    margin-left: -50vw;
+    margin-right: -50vw;
 }
 
 body.boxed-container.header-2 .full-width-nav .st-site-nav nav {

@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	if ( is_singular() ) :
 		the_title( '<h1 class="entry-title" itemprop="headline">', '</h1>' );
 	else :
-		the_title( sprintf( '<h2 class="entry-title" itemprop="headline"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+		the_title( sprintf( '<h2 class="entry-title" itemprop="headline"><a href="%s" rel="bookmark">', get_permalink() ), '</a></h2>' );
 	endif; ?>
 
 </header><!-- .entry-header -->

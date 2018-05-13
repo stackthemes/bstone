@@ -27,10 +27,17 @@ Bstone is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic,
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 -------------------------------------------------------
+Included Images
+-------------------------------------------------------
+All included images are Self Created - And licensed under the GPL 2.0.
+
+-------------------------------------------------------
 Screenshot Licenses
 -------------------------------------------------------
-Screenshot images are all licensed under CC0 Universal
-https://unsplash.com/photos/_RBcxo9AU-U
+Images in screenshot are licensed under CC0.
+https://www.pexels.com/photo/architecture-buildings-business-city-325185/
+
+Icons in screenshot are Self Created - And licensed under the GPL 2.0.
 
 -------------------------------------------------------
 Normalizing styles

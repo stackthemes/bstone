@@ -55,7 +55,7 @@ $wp_customize->add_control(
 		new Bstone_Control_Typography(
 			$wp_customize, BSTONE_THEME_SETTINGS . '[single-typo-title-font-family]', array(
 				'type'        => 'bst-font-family',
-				'ast_inherit' => __( 'Default', 'bstone' ),
+				'bst_inherit' => __( 'Default', 'bstone' ),
 				'section'     => 'section-single-typo-settings',
 				'priority'    => 15,
 				'label'       => __( 'Font Family', 'bstone' ),
@@ -78,7 +78,7 @@ $wp_customize->add_control(
 		new Bstone_Control_Typography(
 			$wp_customize, BSTONE_THEME_SETTINGS . '[single-typo-title-font-weight]', array(
 				'type'        => 'bst-font-weight',
-				'ast_inherit' => __( 'Default', 'bstone' ),
+				'bst_inherit' => __( 'Default', 'bstone' ),
 				'section'     => 'section-single-typo-settings',
 				'priority'    => 20,
 				'label'       => __( 'Font Weight', 'bstone' ),

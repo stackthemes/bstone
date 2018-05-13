@@ -191,7 +191,7 @@ if ( ! function_exists( 'bstone_get_masonry_grid_sizer' ) ) {
 		$grid_sizer_output = apply_filters( 'bstone_get_masonry_grid_sizer', $grid_sizer );
 		
 		if( true == $echo ) {
-			echo esc_html($grid_sizer_output);
+			echo $grid_sizer_output;
 		} else {
 			return $grid_sizer_output;
 		}

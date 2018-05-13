@@ -18,9 +18,9 @@ function bstone_body_classes( $classes ) {
 	}
 	
 	// Adds a class of header type
-	if(bstone_options( 'header-layouts' )=='header-main-layout-1') {
+	if( bstone_options( 'header-layouts' ) == 'header-main-layout-1' ) {
 		$classes[] = 'header-1';
-	} else if(bstone_options( 'header-layouts' )=='header-main-layout-2') {
+	} else if( bstone_options( 'header-layouts' ) == 'header-main-layout-2' ) {
 		$classes[] = 'header-2';
 	}
 	
@@ -113,6 +113,8 @@ if ( ! function_exists( 'bstone_page_container_type' ) ) {
 		} else {
 			$layout_class = bstone_options( 'site-default-layout' );
 		}
+
+		$layout_class = esc_attr( $layout_class );
 		
 		return apply_filters( 'bstone_page_container_type', $layout_class );
 	}

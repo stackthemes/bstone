@@ -12,16 +12,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 function bstone_new_customize_register( $wp_customize ) {	
 		
-	// Sanitize Callback
-	
+	// Sanitize Callback	
 	require BSTONE_THEME_DIR . 'inc/customizer/sections-settings/customizer-sanitize.php';
 	
-	// Customizer Partials
-	
-	require BSTONE_THEME_DIR . 'inc/customizer/partials.php';
-	
-	// Customizer Sections
-	
+	// Customizer Sections	
 	require BSTONE_THEME_DIR . 'inc/customizer/sections-settings/customizer-sections.php';
 	
 	/**
@@ -29,16 +23,13 @@ function bstone_new_customize_register( $wp_customize ) {
 	 */
 	require BSTONE_THEME_DIR . 'inc/customizer/override-defaults.php';
 	
-	// Customizer Controls & Settings
-	
+	// Customizer Controls & Settings	
 	$settings_path = BSTONE_THEME_DIR . 'inc/customizer/sections-settings/settings/';
 	
-	// -- Site Identity
-	
+	// -- Site Identity	
 	require $settings_path . 'site-identity/site-identity.php';
 	
-	// -- Site Layout
-	
+	// -- Site Layout	
 	require $settings_path . 'layout/container.php';
 	require $settings_path . 'layout/site-layout.php';
 	require $settings_path . 'layout/header.php';
@@ -49,8 +40,7 @@ function bstone_new_customize_register( $wp_customize ) {
 	require $settings_path . 'layout/single.php';
 	require $settings_path . 'layout/post-page-title.php';
 	
-	// -- Site Colors
-	
+	// -- Site Colors	
 	require $settings_path . 'colors-background/general-colors.php';
 	require $settings_path . 'colors-background/header-colors.php';
 	require $settings_path . 'colors-background/sidebar-colors.php';
@@ -60,8 +50,7 @@ function bstone_new_customize_register( $wp_customize ) {
 	require $settings_path . 'colors-background/button-colors.php';
 	require $settings_path . 'colors-background/title-colors.php';
 	
-	// -- Site Typography
-	
+	// -- Site Typography	
 	require $settings_path . 'typography/default.php';
 	require $settings_path . 'typography/archive.php';
 	require $settings_path . 'typography/footer.php';
@@ -72,8 +61,7 @@ function bstone_new_customize_register( $wp_customize ) {
 	require $settings_path . 'typography/single.php';
 	require $settings_path . 'typography/buttons.php';
 	
-	// -- Site Spacing
-	
+	// -- Site Spacing	
 	require $settings_path . 'spacing/content.php';
 	require $settings_path . 'spacing/footer.php';
 	require $settings_path . 'spacing/footer-bar.php';
@@ -82,10 +70,11 @@ function bstone_new_customize_register( $wp_customize ) {
 	require $settings_path . 'spacing/blog-archive.php';
 	require $settings_path . 'spacing/title-spacing.php';
 	
-	// -- Extra Elements
-	
+	// -- Extra Elements	
 	require $settings_path . 'extra-elements/general-settings.php';
 	require $settings_path . 'extra-elements/pagination.php';
+	require $settings_path . 'extra-elements/forms.php';
+	require $settings_path . 'extra-elements/scroll-to-top.php';
 	
 }
 add_action('customize_register', 'bstone_new_customize_register');

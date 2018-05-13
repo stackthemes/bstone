@@ -53,7 +53,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		new Bstone_Control_Typography(
 			$wp_customize, BSTONE_THEME_SETTINGS . '[btn-typo-text-font-family]', array(
 				'type'        => 'bst-font-family',
-				'ast_inherit' => __( 'Default', 'bstone' ),
+				'bst_inherit' => __( 'Default', 'bstone' ),
 				'section'     => 'section-buttons-typo-settings',
 				'priority'    => 5,
 				'label'       => __( 'Font Family', 'bstone' ),
@@ -76,7 +76,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		new Bstone_Control_Typography(
 			$wp_customize, BSTONE_THEME_SETTINGS . '[btn-typo-text-font-weight]', array(
 				'type'        => 'bst-font-weight',
-				'ast_inherit' => __( 'Default', 'bstone' ),
+				'bst_inherit' => __( 'Default', 'bstone' ),
 				'section'     => 'section-buttons-typo-settings',
 				'priority'    => 10,
 				'label'       => __( 'Font Weight', 'bstone' ),
@@ -173,7 +173,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		new Bstone_Control_Typography(
 			$wp_customize, BSTONE_THEME_SETTINGS . '[readbtn-typo-text-font-family]', array(
 				'type'        => 'bst-font-family',
-				'ast_inherit' => __( 'Default', 'bstone' ),
+				'bst_inherit' => __( 'Default', 'bstone' ),
 				'section'     => 'section-buttons-typo-settings',
 				'priority'    => 30,
 				'label'       => __( 'Font Family', 'bstone' ),
@@ -196,7 +196,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		new Bstone_Control_Typography(
 			$wp_customize, BSTONE_THEME_SETTINGS . '[readbtn-typo-text-font-weight]', array(
 				'type'        => 'bst-font-weight',
-				'ast_inherit' => __( 'Default', 'bstone' ),
+				'bst_inherit' => __( 'Default', 'bstone' ),
 				'section'     => 'section-buttons-typo-settings',
 				'priority'    => 35,
 				'label'       => __( 'Font Weight', 'bstone' ),

@@ -315,7 +315,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		new Bstone_Control_Typography(
 			$wp_customize, BSTONE_THEME_SETTINGS . '[pagination-text-font-family]', array(
 				'type'        => 'bst-font-family',
-				'ast_inherit' => __( 'Default', 'bstone' ),
+				'bst_inherit' => __( 'Default', 'bstone' ),
 				'section'     => 'section-pagination-settings',
 				'priority'    => 65,
 				'label'       => __( 'Font Family', 'bstone' ),
@@ -338,7 +338,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		new Bstone_Control_Typography(
 			$wp_customize, BSTONE_THEME_SETTINGS . '[pagination-text-font-weight]', array(
 				'type'        => 'bst-font-weight',
-				'ast_inherit' => __( 'Default', 'bstone' ),
+				'bst_inherit' => __( 'Default', 'bstone' ),
 				'section'     => 'section-pagination-settings',
 				'priority'    => 70,
 				'label'       => __( 'Font Weight', 'bstone' ),

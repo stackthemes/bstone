@@ -21,7 +21,11 @@ define( 'BSTONE_THEME_URI', get_template_directory_uri() . '/' );
  */
 require_once BSTONE_THEME_DIR . 'inc/common-functions.php';
 require_once BSTONE_THEME_DIR . 'inc/bstone-enqueue-scripts.php';
-require_once BSTONE_THEME_DIR . 'inc/bstone-custom-css.php';
+if ( is_rtl() ) {
+	require_once BSTONE_THEME_DIR . 'inc/bstone-custom-css-rtl.php';
+} else {
+	require_once BSTONE_THEME_DIR . 'inc/bstone-custom-css.php';
+}
 require_once BSTONE_THEME_DIR . 'inc/bstone-meta-boxes.php';
 require_once BSTONE_THEME_DIR . 'inc/bstone-meta-boxes-functions.php';
 require_once BSTONE_THEME_DIR . 'inc/bstone-breadcrumbs.php';
@@ -79,7 +83,6 @@ require BSTONE_THEME_DIR . 'inc/template-functions.php';
  * Customizer additions.
  */
 require BSTONE_THEME_DIR . 'inc/customizer/bstone-customizer.php';
-require_once BSTONE_THEME_DIR . 'inc/core/bstone-theme-settings.php';
 
 /**
  * Load Jetpack compatibility file.
@@ -87,4 +90,3 @@ require_once BSTONE_THEME_DIR . 'inc/core/bstone-theme-settings.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require BSTONE_THEME_DIR . 'inc/jetpack.php';
 }
-

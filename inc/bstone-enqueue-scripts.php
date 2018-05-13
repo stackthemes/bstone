@@ -54,9 +54,9 @@ if ( ! class_exists( 'Bstone_Enqueue_Scripts' ) ) {
 
 					// handle => location ( in /assets/js/ ) ( without .js ext).
 					'js' => array(
-						'bstone-theme-js'    => 'bstone',
 						'bstone-flexibility' => 'flexibility',
 						'bstone-masonry-js'  => 'masonry.pkgd',
+						'bstone-theme-js'    => 'bstone',
 					),
 
 					// handle => location ( in /assets/css/ ) ( without .css ext).

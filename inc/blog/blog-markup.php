@@ -8,11 +8,11 @@
 if ( ! function_exists( 'bstone_entry_meta_comments' ) ) {
 	function bstone_entry_meta_comments( $meta_icons, $icon_typ, $icon_status ) {
 
-		$zero = bstone_options( 'blog-comments-txt-zero' );
+		$zero = esc_html( bstone_options( 'blog-comments-txt-zero' ) );
 		
-		$one = bstone_options( 'blog-comments-txt-one' );
+		$one = esc_html( bstone_options( 'blog-comments-txt-one' ) );
 		
-		$more = bstone_options( 'blog-comments-txt-more' );
+		$more = esc_html( bstone_options( 'blog-comments-txt-more' ) );
 		
 		$comment_count = get_comments_number();
 		
@@ -35,7 +35,7 @@ if ( ! function_exists( 'bstone_entry_meta_comments' ) ) {
 		$meta_icons_html = '';
 		
 		if( true == $meta_icons && true == $icon_status ) {
-			$meta_icons_html = '<i class="'.$icon_typ.' fa-comment"></i>';
+			$meta_icons_html = '<i class="' . esc_attr( $icon_typ ) . ' fa-comment"></i>';
 		}
 		
 		return apply_filters( 'bstone_entry_meta_comments', '<span class="meta-comments meta-cnt">'.$meta_icons_html.'<a class="url" href="'.get_comments_link().'">'.$comment_text.'</a></span>' );
@@ -53,7 +53,7 @@ if ( ! function_exists( 'bstone_entry_meta_category' ) ) {
 			$meta_icons_html = '';
 		
 			if( true == $meta_icons && true == $icon_status ) {
-				$meta_icons_html = '<i class="'.$icon_typ.' fa-folder"></i>';
+				$meta_icons_html = '<i class="' . esc_attr( $icon_typ ) . ' fa-folder"></i>';
 			}
 			
 			$output = '';
@@ -82,7 +82,7 @@ if ( ! function_exists( 'bstone_entry_meta_author' ) ) {
 		$meta_icons_html = '';
 		
 		if( true == $meta_icons && true == $icon_status ) {
-			$meta_icons_html = '<i class="'.$icon_typ.' fa-user"></i>';
+			$meta_icons_html = '<i class="' . esc_attr( $icon_typ ) . ' fa-user"></i>';
 		}
 		
 		if( true == bstone_options('display-meta-text') ) {
@@ -123,7 +123,7 @@ if ( ! function_exists( 'bstone_entry_meta_date' ) ) {
 		$meta_icons_html = '';
 		
 		if( true == $meta_icons && true == $icon_status ) {
-			$meta_icons_html = '<i class="'.$icon_typ.' fa-clock"></i>';
+			$meta_icons_html = '<i class="' . esc_attr( $icon_typ ) . ' fa-clock"></i>';
 		}
 		
 		if( true == bstone_options('display-meta-text') ) {
@@ -151,7 +151,7 @@ if ( ! function_exists( 'bstone_entry_meta_tag' ) ) {
 			$meta_icons_html = '';
 		
 			if( true == $meta_icons && true == $icon_status ) {
-				$meta_icons_html = '<i class="'.$icon_typ.' fa-tag"></i>';
+				$meta_icons_html = '<i class="' . esc_attr( $icon_typ ) . ' fa-tag"></i>';
 			}
 			
 			$output = '';

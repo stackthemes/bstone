@@ -45,7 +45,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		new Bstone_Control_Typography(
 			$wp_customize, BSTONE_THEME_SETTINGS . '[default-body-font-family]', array(
 				'type'        => 'bst-font-family',
-				'ast_inherit' => __( 'Default', 'bstone' ),
+				'bst_inherit' => __( 'Default', 'bstone' ),
 				'section'     => 'section-default-typo-settings',
 				'priority'    => 10,
 				'label'       => __( 'Font Family', 'bstone' ),
@@ -68,7 +68,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		new Bstone_Control_Typography(
 			$wp_customize, BSTONE_THEME_SETTINGS . '[default-body-font-weight]', array(
 				'type'        => 'bst-font-weight',
-				'ast_inherit' => __( 'Default', 'bstone' ),
+				'bst_inherit' => __( 'Default', 'bstone' ),
 				'section'     => 'section-default-typo-settings',
 				'priority'    => 15,
 				'label'       => __( 'Font Weight', 'bstone' ),

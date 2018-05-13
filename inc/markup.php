@@ -225,12 +225,12 @@ if ( ! function_exists( 'bstone_logo' ) ) {
 				if ( is_home() || is_front_page() ) {
 					$tag = 'h1';
 				}
-				$html .= '<' . $tag . ' itemprop="name" class="site-title"> <a href="' . esc_url( home_url( '/' ) ) . '" itemprop="url" rel="home">' . get_bloginfo( 'name' ) . '</a> </' . $tag . '>';
+				$html .= '<' . $tag . ' itemprop="name" class="site-title"> <a href="' . esc_url( home_url( '/' ) ) . '" itemprop="url" rel="home">' . esc_html( get_bloginfo( 'name' ) ) . '</a> </' . $tag . '>';
 			}
 
 			// Site description.
 			if ( $site_tagline ) {
-				$html .= '<p class="site-description" itemprop="description">' . get_bloginfo( 'description' ) . '</p>';
+				$html .= '<p class="site-description" itemprop="description">' . esc_html( get_bloginfo( 'description' ) ) . '</p>';
 			}
 		}
 		$html = apply_filters( 'bstone_logo', $html, $display_site_tagline, $site_tagline );
@@ -960,3 +960,24 @@ if ( ! function_exists( 'bstone_single_title' ) ) {
 		return apply_filters( 'bstone_single_title', $title );
 	}
 }
+
+/**
+ * Function to get scroll to top button
+ */
+
+if ( ! function_exists( 'bstone_scroll_to_top_markup' ) ) {
+	/**
+	 * Scroll to top button
+	 *
+	 * @since 1.1.2
+	 */
+	
+	function bstone_scroll_to_top_markup() {
+		if( true == bstone_options( 'bstone-enable-scroll-top' ) ):
+		?>
+		<a id="bstone-scroll-top"><span class="<?php echo esc_attr( bstone_options( 'sctop-icon-class' ) ); ?>"></span></a>
+		<?php
+		endif;
+	}
+}
+add_action('bstone_footer', 'bstone_scroll_to_top_markup', 30);
