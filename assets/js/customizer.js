@@ -923,7 +923,39 @@ function bstone_dynamic_css( control, style ) {
 		'sctop_right_padding', 'sctop_tablet_right_padding', 'sctop_mobile_right_padding'
 	];
 	bstone_get_responsive_spacings( api, '#bstone-scroll-top', 'sctop', bst_sctop_padding, 'padding', '', 'px', ['desktop', 'tablet', 'mobile'] );
+
+	var bst_bffield_margin = [
+		'bffield_top_margin', 'bffield_tablet_top_margin', 'bffield_mobile_top_margin',
+		'bffield_bottom_margin', 'bffield_tablet_bottom_margin', 'bffield_mobile_bottom_margin',
+		'bffield_left_margin', 'bffield_tablet_left_margin', 'bffield_mobile_left_margin',
+		'bffield_right_margin', 'bffield_tablet_right_margin', 'bffield_mobile_right_margin'
+	];
+	bstone_get_responsive_spacings( api, 'body #content form input, body #content form select, body #content form textarea', 'bffield', bst_bffield_margin, 'margin', '', 'px', ['desktop', 'tablet', 'mobile'] );
 	
+	var bst_bftextarea_padding = [
+		'bftextarea_top_padding', 'bftextarea_tablet_top_padding', 'bftextarea_mobile_top_padding',
+		'bftextarea_bottom_padding', 'bftextarea_tablet_bottom_padding', 'bftextarea_mobile_bottom_padding',
+		'bftextarea_left_padding', 'bftextarea_tablet_left_padding', 'bftextarea_mobile_left_padding',
+		'bftextarea_right_padding', 'bftextarea_tablet_right_padding', 'bftextarea_mobile_right_padding'
+	];
+	bstone_get_responsive_spacings( api, 'body #content form textarea', 'bftextarea', bst_bftextarea_padding, 'padding', '', 'px', ['desktop', 'tablet', 'mobile'] );
+	
+	var bst_bffield_padding = [
+		'bffield_top_padding', 'bffield_tablet_top_padding', 'bffield_mobile_top_padding',
+		'bffield_bottom_padding', 'bffield_tablet_bottom_padding', 'bffield_mobile_bottom_padding',
+		'bffield_left_padding', 'bffield_tablet_left_padding', 'bffield_mobile_left_padding',
+		'bffield_right_padding', 'bffield_tablet_right_padding', 'bffield_mobile_right_padding'
+	];
+	bstone_get_responsive_spacings( api, 'body #content form input, body #content form select', 'bffield', bst_bffield_padding, 'padding', '', 'px', ['desktop', 'tablet', 'mobile'] );
+	
+	var bst_bfbuttons_padding = [
+		'bfbuttons_top_padding', 'bfbuttons_tablet_top_padding', 'bfbuttons_mobile_top_padding',
+		'bfbuttons_bottom_padding', 'bfbuttons_tablet_bottom_padding', 'bfbuttons_mobile_bottom_padding',
+		'bfbuttons_left_padding', 'bfbuttons_tablet_left_padding', 'bfbuttons_mobile_left_padding',
+		'bfbuttons_right_padding', 'bfbuttons_tablet_right_padding', 'bfbuttons_mobile_right_padding'
+	];
+	bstone_get_responsive_spacings( api, 'body #content form input[type="reset"], body #content form button', 'bfbuttons', bst_bfbuttons_padding, 'padding', '', 'px', ['desktop', 'tablet', 'mobile'] );
+
 	
 	// Paragraph Margin 
 	bstone_get_css( api, 'para-margin-bottom', '#primary p, #primary .entry-content p', 'margin-bottom', 'em' );
@@ -987,10 +1019,49 @@ function bstone_dynamic_css( control, style ) {
 	bstone_get_css( api, 'border-color-scroll', '#bstone-scroll-top', 'border-color', '' );
 	bstone_get_css( api, 'scroll-border-width', '#bstone-scroll-top', 'border-width', 'px' );
 	bstone_get_css( api, 'scroll-border-radius', '#bstone-scroll-top', 'border-radius', 'px' );
-
 	bstone_get_css( api, 'icon-color-hover-sctop', '#bstone-scroll-top:hover', 'color', '' );
 	bstone_get_css( api, 'bg-color-hover-scroll', '#bstone-scroll-top:hover', 'background-color', '' );
 	bstone_get_css( api, 'border-color-hover-scroll', '#bstone-scroll-top:hover', 'border-color', '' );
+
+	// Form Styles
+	api( 'bstone-settings[bstone-toggle-form-label]', function( value ) {
+		value.bind( function( display ) {
+			if( true === display ) {
+				dynamicStyle = 'body #content form label {display: block;}';
+			} else {
+				dynamicStyle = 'body #content form label {display: none;}';
+			}
+
+			bstone_dynamic_css( 'form-label-display-toggle', dynamicStyle );
+		} );
+	} );
+
+	api( 'bstone-settings[bffield-placeholder-color]', function( value ) {
+		value.bind( function( color ) {
+			dynamicStyle = '::placeholder {color: '+color+'; opacity: 1;} :-ms-input-placeholder{color: '+color+';} ::-ms-input-placeholder{color: '+color+';}';
+			bstone_dynamic_css( 'form-fields-placeholder-color', dynamicStyle );
+		} );
+	} );
+	bstone_get_css( api, 'bffield-text-color', 'body #content form input, body #content form select, body #content form textarea, body #content form label', 'color', '' );
+	bstone_get_css( api, 'bffield-bg-color', 'body #content form input, body #content form select, body #content form textarea', 'background-color', '' );
+	bstone_get_css( api, 'bffield-border-color', 'body #content form input, body #content form select, body #content form textarea', 'border-color', '' );
+	bstone_get_css( api, 'bffield-text-transform', 'body #content form input, body #content form select, body #content form textarea, body #content form label', 'text-transform', '' );
+	bstone_get_css( api, 'bstone-fields-border-width', 'body #content form input, body #content form select, body #content form textarea', 'border-width', 'px' );
+	bstone_get_css( api, 'bstone-fields-border-radius', 'body #content form input, body #content form select, body #content form textarea', 'border-radius', 'px' );
+	bstone_get_css( api, 'bstone-input-height', 'body #content form input, body #content form select', 'height', 'px' );
+	bstone_get_css( api, 'bstone-textarea-height', 'body #content form textarea', 'height', 'px' );
+
+	var bfbuttons_selector = 'body #content form input[type="button"], body #content form input[type="reset"], body #content form input[type="submit"], body #content form button';
+	var bfbuttons_hover_selector = 'body #content form input[type="button"]:hover, body #content form input[type="reset"]:hover, body #content form input[type="submit"]:hover, body #content form button:hover';
+	bstone_get_css( api, 'bfbuttons-bg-color', bfbuttons_selector, 'background-color', '' );
+	bstone_get_css( api, 'bfbuttons-bg-color-hover', bfbuttons_hover_selector, 'background-color', '' );
+	bstone_get_css( api, 'bfbuttons-text-color', bfbuttons_selector, 'color', '' );
+	bstone_get_css( api, 'bfbuttons-text-color-hover', bfbuttons_hover_selector, 'color', '' );
+	bstone_get_css( api, 'bfbuttons-border-color', bfbuttons_selector, 'border-color', '' );
+	bstone_get_css( api, 'bfbuttons-border-color-hover', bfbuttons_hover_selector, 'border-color', '' );
+	bstone_get_css( api, 'bfbuttons-border-width', bfbuttons_selector, 'border-width', 'px' );
+	bstone_get_css( api, 'bfbuttons-border-radius', bfbuttons_selector, 'border-radius', 'px' );
+	bstone_get_css( api, 'bfbuttons-text-transform', bfbuttons_selector, 'text-transform', '' );
 	
 } )( jQuery );
 

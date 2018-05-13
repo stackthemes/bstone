@@ -340,6 +340,36 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			$border_color_hover_scroll   	 = bstone_options( 'border-color-hover-scroll' );
 			$icon_color_sctop   	 	 	 = bstone_options( 'icon-color-sctop' );
 			$icon_color_hover_sctop   	 	 = bstone_options( 'icon-color-hover-sctop' );
+
+			// Form Customizer
+			$form_toggle_label   	 		 = bstone_options( 'bstone-toggle-form-label' );
+			$form_input_height   	 	 	 = bstone_options( 'bstone-input-height' );
+			$form_textarea_height   	 	 = bstone_options( 'bstone-textarea-height' );
+			$form_border_width   	 	 	 = bstone_options( 'bstone-fields-border-width' );
+			$form_border_radius   	 	 	 = bstone_options( 'bstone-fields-border-radius' );
+			$form_bffield_bg_color   	 	 = bstone_options( 'bffield-bg-color' );
+			$form_bffield_text_color   	 	 = bstone_options( 'bffield-text-color' );
+			$form_bffield_placeholder_color  = bstone_options( 'bffield-placeholder-color' );
+			$form_bffield_border_color   	 = bstone_options( 'bffield-border-color' );
+			
+			$form_bfbuttons_border_width   	 = bstone_options( 'bfbuttons-border-width' );
+			$form_bfbuttons_border_radius    = bstone_options( 'bfbuttons-border-radius' );
+			$form_bfbuttons_bg_color   	 	 = bstone_options( 'bfbuttons-bg-color' );
+			$form_bfbuttons_text_color   	 = bstone_options( 'bfbuttons-text-color' );
+			$form_bfbuttons_border_color   	 = bstone_options( 'bfbuttons-border-color' );
+			$form_bfbuttons_bg_color_hover   = bstone_options( 'bfbuttons-bg-color-hover' );
+			$form_bfbuttons_text_color_hover = bstone_options( 'bfbuttons-text-color-hover' );
+			$form_bfbuttons_border_color_hover = bstone_options( 'bfbuttons-border-color-hover' );
+			
+			$form_bffield_font_family 		 = self::get_bstone_font_family($default_font_family, 'bffield-font-family');
+			$form_bffield_font_weight		 = self::get_bstone_font_waight( $default_font_waight, 'bffield-font-weight' );
+			$form_bffield_text_transform	 = bstone_options( 'bffield-text-transform' );
+			$form_bffield_font_size	 		 = bstone_options( 'bffield-font-size' );
+			
+			$form_bfbuttons_font_family 	 = self::get_bstone_font_family($default_font_family, 'bfbuttons-font-family');
+			$form_bfbuttons_font_weight		 = self::get_bstone_font_waight( $default_font_waight, 'bfbuttons-font-weight' );
+			$form_bfbuttons_text_transform	 = bstone_options( 'bfbuttons-text-transform' );
+			$form_bfbuttons_font_size	 	 = bstone_options( 'bfbuttons-font-size' );
 			
 			// Sidebar			
 			$sidebar_widgets_margin_bottom   = bstone_options( 'sidebar-widgets-margin-bottom' );
@@ -881,6 +911,49 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 					'border-color' 	   => esc_attr( $border_color_hover_scroll ),
 				),
 				
+				'body #content form input, body #content form select, body #content form textarea' => array(
+					'color' 		   => esc_attr( $form_bffield_text_color ),
+					'background-color' => esc_attr( $form_bffield_bg_color ),
+					'border-color' 	   => esc_attr( $form_bffield_border_color ),
+					'border-width' 	   => bstone_get_css_value( $form_border_width, 'px' ),
+					'border-radius'    => bstone_get_css_value( $form_border_radius, 'px' ),
+					'font-family' 	   => "'".bstone_get_css_value( $form_bffield_font_family, 'font' )."'",
+					'font-weight' 	   => esc_attr( $form_bffield_font_weight ),
+					'text-transform'   => esc_attr( $form_bffield_text_transform ),
+				),
+
+				'body #content form label'=> array(
+					'color' 		   => esc_attr( $form_bffield_text_color ),
+					'font-family' 	   => "'".bstone_get_css_value( $form_bffield_font_family, 'font' )."'",
+					'font-weight' 	   => esc_attr( $form_bffield_font_weight ),
+					'text-transform'   => esc_attr( $form_bffield_text_transform ),
+				),
+
+				'body #content form input'=> array(
+					'height' 		   => bstone_get_css_value( $form_input_height, 'px' ),
+				),
+
+				'body #content form textarea'=> array(
+					'height' 		   => bstone_get_css_value( $form_textarea_height, 'px' ),
+				),
+
+				'body #content form input[type="button"], body #content form input[type="reset"], body #content form input[type="submit"], body #content form button' => array(
+					'color' 		   => esc_attr( $form_bfbuttons_text_color ),
+					'background-color' => esc_attr( $form_bfbuttons_bg_color ),
+					'border-color' 	   => esc_attr( $form_bfbuttons_border_color ),
+					'border-width' 	   => bstone_get_css_value( $form_bfbuttons_border_width, 'px' ),
+					'border-radius'    => bstone_get_css_value( $form_bfbuttons_border_radius, 'px' ),
+					'font-family' 	   => "'".bstone_get_css_value( $form_bfbuttons_font_family, 'font' )."'",
+					'font-weight' 	   => esc_attr( $form_bfbuttons_font_weight ),
+					'text-transform'   => esc_attr( $form_bfbuttons_text_transform ),
+				),
+
+				'body #content form input[type="button"]:hover, body #content form input[type="reset"]:hover, body #content form input[type="submit"]:hover, body #content form button:hover' => array(
+					'color' 		   => esc_attr( $form_bfbuttons_text_color_hover ),
+					'background-color' => esc_attr( $form_bfbuttons_bg_color_hover ),
+					'border-color' 	   => esc_attr( $form_bfbuttons_border_color_hover ),
+				),
+				
 				'#primary .bst-posts-cnt .entry-title, #primary .bst-posts-cnt .entry-title a' => array(
 					'color' 		 => esc_attr( $blog_title_color ),
 					'font-family' 	 => "'".bstone_get_css_value( $blog_typo_title_font_family, 'font' )."'",
@@ -967,6 +1040,38 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			);
 			
 			$parse_css .= bstone_parse_css( $bstone_page_bg_css );
+
+			// Form Label Display/Hide
+			if( true == $form_toggle_label ) {
+				$bstone_form_label_toggle_css = array(
+					'body #content form label' => array(
+						'display' 	 	=> 'block',
+					),
+				);
+			} else {
+				$bstone_form_label_toggle_css = array(
+					'body #content form label' => array(
+						'display' 	 	=> 'none',
+					),
+				);
+			}
+
+			$parse_css .= bstone_parse_css( $bstone_form_label_toggle_css );
+
+			// Form Fields Placeholder Color
+			$bstone_placeholder_color = array(
+				'::placeholder' => array(
+					'color'   => esc_attr( $form_bffield_placeholder_color ),
+					'opacity' => 1,
+				),
+				':-ms-input-placeholder' => array(
+					'color'   => esc_attr( $form_bffield_placeholder_color ),
+				),
+				'::-ms-input-placeholder' => array(
+					'color'   => esc_attr( $form_bffield_placeholder_color ),
+				),
+			);
+			$parse_css .= bstone_parse_css( $bstone_placeholder_color );
 			
 			// Spacing
 			$parse_css .= bstone_get_responsive_spacings (
@@ -1278,6 +1383,42 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 				array('top', 'bottom', 'right', 'left'),
 				array('desktop', 'tablet', 'mobile')
 			);
+
+			$parse_css .= bstone_get_responsive_spacings (
+				'body #content form input, body #content form select, body #content form textarea',
+				'bffield', 'margin',
+				'margin', '',
+				'px',
+				array('top', 'bottom', 'right', 'left'),
+				array('desktop', 'tablet', 'mobile')
+			);
+
+			$parse_css .= bstone_get_responsive_spacings (
+				'body #content form textarea',
+				'bftextarea', 'padding',
+				'padding', '',
+				'px',
+				array('top', 'bottom', 'right', 'left'),
+				array('desktop', 'tablet', 'mobile')
+			);
+
+			$parse_css .= bstone_get_responsive_spacings (
+				'body #content form input, body #content form select',
+				'bffield', 'padding',
+				'padding', '',
+				'px',
+				array('top', 'bottom', 'right', 'left'),
+				array('desktop', 'tablet', 'mobile')
+			);
+
+			$parse_css .= bstone_get_responsive_spacings (
+				'body #content form input[type="button"], body #content form input[type="reset"], body #content form input[type="submit"], body #content form button',
+				'bfbuttons', 'padding',
+				'padding', '',
+				'px',
+				array('top', 'bottom', 'right', 'left'),
+				array('desktop', 'tablet', 'mobile')
+			);
 			
 			/* Responsive Typo */
 			$parse_css .= bstone_responsive_font_size_css( 'h1, h1 a', $heading_h1_font_size );
@@ -1300,6 +1441,10 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			$parse_css .= bstone_responsive_font_size_css( '#secondary aside, #secondary .widget, #tertiary aside, #tertiary .widget', $sidebar_wtext_font_size );
 
 			$parse_css .= bstone_responsive_font_size_css( '#bstone-scroll-top', $sctop_icon_size );
+
+			$parse_css .= bstone_responsive_font_size_css( 'body #content form input, body #content form textarea, body #content form select, body #content form label', $form_bffield_font_size );
+			
+			$parse_css .= bstone_responsive_font_size_css( 'body #content form input[type="button"], body #content form input[type="reset"], body #content form input[type="submit"], body #content form button', $form_bfbuttons_font_size );
 			
 			$parse_css .= bstone_responsive_font_size_css( 'footer .footer_top_markup', $footer_top_text_font_size );
 			

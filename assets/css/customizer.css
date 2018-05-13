@@ -176,7 +176,9 @@ header.site-header button.customize-partial-edit-shortcut-button {
 #customize-control-bstone-settings-enable-extra3-sidebar,
 #customize-control-bstone-settings-enable-extra4-sidebar,
 #customize-control-bstone-settings-enable-extra5-sidebar,
-#customize-control-bstone-settings-readbtn-typo-text-transform {
+#customize-control-bstone-settings-readbtn-typo-text-transform,
+#customize-control-bstone-settings-bffield-text-transform, 
+#customize-control-bstone-settings-bfbuttons-text-transform {
     width: 50%;
     clear: none;
 	display: inline-block;

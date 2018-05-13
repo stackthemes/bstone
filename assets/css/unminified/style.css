@@ -2595,6 +2595,7 @@ footer ul {
   min-width: 20px;
   min-height: 20px;
   border-width: 0px;
+  z-index: 99999999;
   border-style: solid;
   border-color: transparent;
   background: rgba(0,0,0,.4);
@@ -2606,6 +2607,28 @@ footer ul {
 }
 
 #bstone-scroll-top.sctop-enabled {
+  display: block;
+}
+
+body #content form select,
+body #content form input[type="text"],
+body #content form input[type="password"],
+body #content form input[type="date"],
+body #content form input[type="datetime-local"],
+body #content form input[type="week"],
+body #content form input[type="month"],
+body #content form input[type="number"],
+body #content form input[type="range"],
+body #content form input[type="email"],
+body #content form input[type="url"],
+body #content form input[type="tel"],
+body #content form input[type="search"] {
+  width: 100%;
+}
+
+body #content form input[type="button"],
+body #content form input[type="reset"],
+body #content form input[type="submit"] {
   display: block;
 }
 

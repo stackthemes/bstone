@@ -233,6 +233,18 @@ if ( ! class_exists( 'Bstone_Enqueue_Scripts' ) ) {
 			$font_weight = bstone_options( 'pagination-text-font-weight' );
 
 			Bstone_Fonts::add_font( $font_family, $font_weight );
+			
+			// Render from field's font.
+			$font_family = bstone_options( 'bffield-font-family' );
+			$font_weight = bstone_options( 'bffield-font-weight' );
+
+			Bstone_Fonts::add_font( $font_family, $font_weight );
+			
+			// Render from buttons font.
+			$font_family = bstone_options( 'bfbuttons-font-family' );
+			$font_weight = bstone_options( 'bfbuttons-font-weight' );
+
+			Bstone_Fonts::add_font( $font_family, $font_weight );
 		}
 
 		/**
