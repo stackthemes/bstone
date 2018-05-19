@@ -3,7 +3,6 @@
 */
 
 // Menu Toggle
-
 var bstone_menu_toggle  	 = document.querySelector('.main-header-menu-toggle');
 var bstone_body  			 = document.querySelector('body');
 
@@ -59,3 +58,21 @@ if( null !== sctop_element ) {
     }
   }
 }
+
+// Owl Carousel
+jQuery.noConflict();
+(function( $ ) {
+  $(function() {
+    
+    if ( $( ".owl-carousel" ).length ) {
+      $( ".owl-carousel" ).owlCarousel( {
+        items:1,
+        loop:true,        
+        autoplay:true,
+        autoplayTimeout:3000,
+        autoplayHoverPause:true
+      } );
+    }
+
+  });
+})(jQuery);

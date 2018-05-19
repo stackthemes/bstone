@@ -16,9 +16,48 @@
 	 * @class BstoneCustomizerToggles
 	 */
 	BstoneCustomizerToggles = {
+		
+		// Header 2 Menu Items Position		
+		'bstone-settings[header-2-items-position]' :
+		[
+			{
+				controls: [
+					'bstone-settings[header-cmi-1-alignment]',
+				],
+				callback: function( value ) {
+					if ( value.indexOf("menu-item-1")>-1 ) {
+						return true;
+					}
+					return false;
+				}
+			},
+			{
+				controls: [
+					'bstone-settings[header-cmi-2-alignment]',
+				],
+				callback: function( value ) {
+					if ( value.indexOf("menu-item-2")>-1 ) {
+						return true;
+					}
+					return false;
+				}
+			},
+			{
+				controls: [
+					'bstone-settings[header-logo-display]',
+				],
+				callback: function( value ) {
+					var header_type = api.instance('bstone-settings[header-layouts]').get();
+					
+					if ( ( value.indexOf("logo") === -1 ) && 'header-main-layout-2' === header_type ) {
+						return false;
+					}
+					return true;
+				}
+			},
+		],
 
 		// Header Layout Controls
-
 		'bstone-settings[header-layouts]' :
 		[
 			{
@@ -67,6 +106,51 @@
 						return false;
 					}
 					return true;
+				}
+			},
+		],
+		
+		// Menu Active or Not : Toggle Menu Spacing Controls		
+		'bstone-settings[disable-primary-nav]' :
+		[
+			{
+				controls: [
+					'bstone-settings[navlink-spacing]',
+					'bstone-settings[nav-typo-text-heading]',
+					'bstone-settings[nav-typo-text-font-size]',
+					'bstone-settings[nav-typo-text-transform]',
+					'bstone-settings[nav-typo-text-font-weight]',
+					'bstone-settings[nav-typo-text-font-family]',
+					'bstone-settings[header-menu-alignment]',
+					'bstone-settings[menu-link-color-header]',
+					'bstone-settings[menu-link-hover-color-header]',
+				],
+				callback: function( value ) {					
+					if ( false === value ) {
+						return true;
+					}
+					return false;
+				}
+			},
+			{
+				controls: [
+					'bstone-settings[header-menu-position]',
+					'bstone-settings[header-main-sep-top]',
+					'bstone-settings[header-main-sep-top-color]',
+					'bstone-settings[menu-bg-color-header]',
+				],
+				callback: function( value ) {
+					if ( false === value ) {
+
+						var menu_header_type = api.instance('bstone-settings[header-layouts]').get();
+
+						if( 'header-main-layout-2' == menu_header_type ) {
+							return true;
+						} else {
+							return false;
+						}						
+					}
+					return false;
 				}
 			},
 		],
@@ -598,35 +682,6 @@
 			},
 		],
 		
-		// Menu Active or Not : Toggle Menu Spacing Controls
-		
-		'bstone-settings[disable-primary-nav]' :
-		[
-			{
-				controls: [
-					'bstone-settings[navlink-spacing]',
-					'bstone-settings[nav-typo-text-heading]',
-					'bstone-settings[nav-typo-text-font-size]',
-					'bstone-settings[nav-typo-text-transform]',
-					'bstone-settings[nav-typo-text-font-weight]',
-					'bstone-settings[nav-typo-text-font-family]',
-					'bstone-settings[header-menu-alignment]',
-					'bstone-settings[header-menu-position]',
-					'bstone-settings[header-main-sep-top]',
-					'bstone-settings[header-main-sep-top-color]',
-					'bstone-settings[menu-bg-color-header]',
-					'bstone-settings[menu-link-color-header]',
-					'bstone-settings[menu-link-hover-color-header]',
-				],
-				callback: function( value ) {					
-					if ( false === value ) {
-						return true;
-					}
-					return false;
-				}
-			},
-		],
-		
 		// Scroll To Top Active or Not : Toggle Scroll to Top Controls
 		
 		'bstone-settings[bstone-enable-scroll-top]' :
@@ -644,7 +699,8 @@
 					'bstone-settings[bg-color-hover-scroll]',
 					'bstone-settings[divider-scrolltop-colors]',
 					'bstone-settings[border-color-hover-scroll]',
-					'bstone-settings[icon-color-hover-pagination]',
+					'bstone-settings[icon-color-sctop]',
+					'bstone-settings[icon-color-hover-sctop]',
 				],
 				callback: function( value ) {
 					if ( false === value ) {
@@ -663,7 +719,6 @@
 				controls: [
 					'bstone-settings[bstone-font-awesome-brands]',
 					'bstone-settings[bstone-font-awesome-regular]',
-					'bstone-settings[bstone-font-awesome-light]',
 					'bstone-settings[bstone-font-awesome-solid]',
 				],
 				callback: function( value ) {
@@ -710,16 +765,94 @@
 			},
 		],
 		
-		// Header 2 Menu Items Position
-		
-		'bstone-settings[header-2-items-position]' :
+		// Posts Banner / Slider - Active or Not
+		// 'bstone-settings[bp-banner-enable]' :
+		// [
+		// 	{
+		// 		controls: [
+		// 			'bstone-settings[bp-banner-layout]',
+		// 			'bstone-settings[bp-banner-width]',
+		// 			'bstone-settings[bp-banner-type]',
+		// 			'bstone-settings[bp-banner-display]',
+		// 			'bstone-settings[bp-banner-data-source]',
+		// 			'bstone-settings[bp-banner-structure]',					
+		// 			'bstone-settings[bp-banner-meta-structure]',
+		// 			'bstone-settings[bp-banner-align]',
+		// 			'bstone-settings[bp-banner-heading-spacing]',
+		// 			'bstone-settings[bpbnr-padding]',
+		// 			'bstone-settings[bpbnr-margin]',
+		// 			'bstone-settings[bp-banner-grid-gap]',
+		// 			'bstone-settings[bp-banner-heading-typography]',
+		// 			'bstone-settings[bp-banner-title-font-size]',
+		// 			'bstone-settings[bp-banner-category-font-size]',
+		// 			'bstone-settings[bp-banner-title-font-size-smlgrid]',
+		// 			'bstone-settings[bp-banner-category-font-size-smlgrid]',
+		// 			'bstone-settings[bp-banner-heading-colors]',
+		// 			'bstone-settings[bp-banner-title-text-color]',
+		// 			'bstone-settings[bp-banner-category-text-color]',
+		// 			'bstone-settings[bp-banner-meta-text-color]',
+		// 			'bstone-settings[bp-banner-title-text-color-hover]',
+		// 			'bstone-settings[bp-banner-category-text-color-hover]',
+		// 			'bstone-settings[bp-banner-title-bg-color]',
+		// 			'bstone-settings[bp-banner-category-bg-color]',
+		// 			'bstone-settings[bp-banner-title-bg-color-hover]',
+		// 			'bstone-settings[bp-banner-category-bg-color-hover]',
+		// 			'bstone-settings[bp-banner-posts-num]',
+		// 			'bstone-settings[bp-banner-imgsize]',
+		// 			'bstone-settings[bp-banner-content-gap]',
+		// 			'bstone-settings[bp-banner-title-top-padding]',
+		// 			'bstone-settings[bp-banner-title-left-padding]',
+		// 			'bstone-settings[bp-banner-cat-top-padding]',
+		// 			'bstone-settings[bp-banner-cat-left-padding]',
+		// 			'bstone-settings[bp-banner-overlay-color]',
+
+		// 			'bstone-settings[bp-banner-data-category]',
+		// 			'bstone-settings[bp-banner-data-postid]',
+		// 		],
+		// 		callback: function( value ) {
+		// 			if ( false === value ) {
+		// 				return false;
+		// 			}
+		// 			return true;
+		// 		}
+		// 	},
+		// 	{
+		// 		controls: [
+		// 			'bstone-settings[bp-banner-data-category]',
+		// 		],
+		// 		callback: function( value ) {
+		// 			var banner_data_category = api.instance('bstone-settings[bp-banner-data-source]').get();
+
+		// 			if ( true === value && 'category' === banner_data_category ) {
+		// 				return true;
+		// 			}
+		// 			return false;
+		// 		}
+		// 	},
+		// 	{
+		// 		controls: [
+		// 			'bstone-settings[bp-banner-data-postid]',
+		// 		],
+		// 		callback: function( value ) {
+		// 			var banner_data_posts = api.instance('bstone-settings[bp-banner-data-source]').get();
+
+		// 			if ( true === value && 'posts' === banner_data_posts ) {
+		// 				return true;
+		// 			}
+		// 			return false;
+		// 		}
+		// 	},
+		// ],
+
+		// Posts Banner / Slider - Data Source Change		
+		'bstone-settings[bp-banner-data-source]' :
 		[
 			{
 				controls: [
-					'bstone-settings[header-cmi-1-alignment]',
+					'bstone-settings[bp-banner-data-category]',
 				],
-				callback: function( value ) {
-					if ( value.indexOf("menu-item-1")>-1 ) {
+				callback: function( value ) {					
+					if ( 'category' === value ) {
 						return true;
 					}
 					return false;
@@ -727,10 +860,26 @@
 			},
 			{
 				controls: [
-					'bstone-settings[header-cmi-2-alignment]',
+					'bstone-settings[bp-banner-data-postid]',
 				],
 				callback: function( value ) {
-					if ( value.indexOf("menu-item-2")>-1 ) {
+					if ( 'posts' === value ) {
+						return true;
+					}
+					return false;
+				}
+			},
+		],
+
+		//Posts Banner / Slider - Type Change
+		'bstone-settings[bp-banner-type]' :
+		[
+			{
+				controls: [
+					'bstone-settings[bp-banner-grid-gap]',
+				],
+				callback: function( value ) {
+					if ( 'posts-grid' === value ) {
 						return true;
 					}
 					return false;
@@ -738,21 +887,126 @@
 			},
 			{
 				controls: [
-					'bstone-settings[header-logo-display]',
+					'bstone-settings[bp-banner-title-font-size-smlgrid]',
 				],
 				callback: function( value ) {
-					var header_type = api.instance('bstone-settings[header-layouts]').get();
-					
-					if ( ( value.indexOf("logo") === -1 ) && 'header-main-layout-2' === header_type ) {
-						return false;
+					if ( 'posts-grid' === value ) {
+						return true;
 					}
-					return true;
+					return false;
+				}
+			},
+			{
+				controls: [
+					'bstone-settings[bp-banner-category-font-size-smlgrid]',
+				],
+				callback: function( value ) {					
+					if ( 'posts-grid' === value ) {
+						return true;
+					}
+					return false;
+				}
+			},
+			{
+				controls: [
+					'bstone-settings[bp-banner-posts-num]',
+				],
+				callback: function( value ) {				
+					if ( 'slider' === value ) {
+						return true;
+					}
+					return false;
 				}
 			},
 		],
 		
-		
-		
+		//Posts Banner / Slider - Structure Change
+		'bstone-settings[bp-banner-structure]' :
+		[
+			{
+				controls: [
+					'bstone-settings[bp-banner-category-font-size]',
+					'bstone-settings[bp-banner-category-text-color]',
+					'bstone-settings[bp-banner-category-text-color-hover]',
+					'bstone-settings[bp-banner-category-bg-color]',
+					'bstone-settings[bp-banner-category-bg-color-hover]',
+					'bstone-settings[bp-banner-cat-top-padding]',
+					'bstone-settings[bp-banner-cat-left-padding]',
+					'bstone-settings[bp-banner-cat-shadow]',
+				],
+				callback: function( value ) {
+					if ( true === value.includes('category') ) {
+						return true;
+					}
+					return false;
+				}
+			},
+			{
+				controls: [
+					'bstone-settings[bp-banner-title-font-size]',
+					'bstone-settings[bp-banner-title-text-color]',
+					'bstone-settings[bp-banner-title-text-color-hover]',
+					'bstone-settings[bp-banner-title-bg-color]',
+					'bstone-settings[bp-banner-title-bg-color-hover]',
+					'bstone-settings[bp-banner-title-top-padding]',
+					'bstone-settings[bp-banner-title-left-padding]',
+					'bstone-settings[bp-banner-title-shadow]',
+				],
+				callback: function( value ) {
+					if ( true === value.includes('title') ) {
+						return true;
+					}
+					return false;
+				}
+			},
+			{
+				controls: [
+					'bstone-settings[bp-banner-meta-text-color]',
+					'bstone-settings[bp-banner-meta-structure]',
+					'bstone-settings[bp-banner-meta-shadow]',
+				],
+				callback: function( value ) {
+					if ( true === value.includes('meta') ) {
+						return true;
+					}
+					return false;
+				}
+			},
+			{
+				controls: [
+					'bstone-settings[bp-banner-category-font-size-smlgrid]',
+				],
+				callback: function( value ) {
+					if ( true === value.includes('category') ) {
+
+						var bp_banner_type_cat = api.instance('bstone-settings[bp-banner-type]').get();
+
+						if( 'posts-grid' == bp_banner_type_cat ) {
+							return true;
+						} 
+						return false;
+					}
+					return false;
+				}
+			},
+			{
+				controls: [
+					'bstone-settings[bp-banner-title-font-size-smlgrid]',
+				],
+				callback: function( value ) {
+					if ( true === value.includes('title') ) {
+
+						var bp_banner_type_title = api.instance('bstone-settings[bp-banner-type]').get();
+
+						if( 'posts-grid' == bp_banner_type_title ) {
+							return true;
+						} 
+						return false;
+					}
+					return false;
+				}
+			},
+		],
 		
 		
 	};	

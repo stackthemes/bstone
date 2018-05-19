@@ -46,7 +46,9 @@ add_action( 'after_setup_theme', 'bstone_content_width', 0 );
 /**
  *  Custom Image Sizes
  */
-add_image_size( 'bstone-medium', 1000, 563 );
+add_image_size( 'bstone-small', 700, 450, true );
+add_image_size( 'bstone-medium', 1000, 563, true );
+add_image_size( 'bstone-large', 1920, 780, true );
 
 /**
  * Return Theme options.

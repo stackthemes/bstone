@@ -349,8 +349,8 @@ $wp_customize->add_panel(
 	);
 
 	$wp_customize->add_section(
-		'section-forms-settings', array(
-			'title'    => __( 'Forms', 'bstone' ),
+		'section-posts-slider', array(
+			'title'    => __( 'Posts Banner / Slider', 'bstone' ),
 			'panel'    => 'panel-extra-elements',
 			'priority' => 20,
 		)
@@ -365,8 +365,8 @@ $wp_customize->add_panel(
 	);
 
 	$wp_customize->add_section(
-		'section-posts-slider', array(
-			'title'    => __( 'Posts Banner / Slider', 'bstone' ),
+		'section-forms-settings', array(
+			'title'    => __( 'Forms', 'bstone' ),
 			'panel'    => 'panel-extra-elements',
 			'priority' => 40,
 		)

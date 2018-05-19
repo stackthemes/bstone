@@ -337,3 +337,47 @@ if ( ! defined( 'ABSPATH' ) ) {
 			)
 		)
 	);
+
+	/**
+	 * Text area Padding
+	 */
+
+	$article_text_padding = array(
+		'batarea_left_padding:'.bstone_get_option( 'batarea_left_padding' ), 'batarea_right_padding:'.bstone_get_option( 'batarea_right_padding' ),
+		'batarea_tablet_left_padding:', 'batarea_tablet_right_padding:',
+		'batarea_mobile_left_padding:', 'batarea_mobile_right_padding:',
+	);	
+	foreach($article_text_padding as $dimension) {
+		$dval = explode(":",$dimension);
+		$wp_customize->add_setting(
+			BSTONE_THEME_SETTINGS . '['.$dval[0].']', array(
+				'default'           => $dval[1],
+				'type'              => 'option',
+				'capability' 		=> 'manage_options',
+				'transport'         => 'postMessage',
+				'sanitize_callback' => array( 'Bstone_Customizer_Sanitizes', 'sanitize_number_n_blank' ),
+			)
+		);
+	}
+	$wp_customize->add_control(
+		new Bstone_Control_Dimensions(
+			$wp_customize, BSTONE_THEME_SETTINGS . '[blog-article-text-padding]', array(
+				'section'  => 'section-spacing-blog',
+				'priority' => 55,
+				'label'    => __( 'Article Text Area Padding (px)', 'bstone' ),				
+				'settings'   => array(
+		            'desktop_right' 	=> BSTONE_THEME_SETTINGS.'[batarea_right_padding]',
+		            'desktop_left' 		=> BSTONE_THEME_SETTINGS.'[batarea_left_padding]',
+		            'tablet_right' 		=> BSTONE_THEME_SETTINGS.'[batarea_tablet_right_padding]',
+		            'tablet_left' 		=> BSTONE_THEME_SETTINGS.'[batarea_tablet_left_padding]',
+		            'mobile_right' 		=> BSTONE_THEME_SETTINGS.'[batarea_mobile_right_padding]',
+		            'mobile_left' 		=> BSTONE_THEME_SETTINGS.'[batarea_mobile_left_padding]',
+				),
+			    'input_attrs' 			=> array(
+			        'min'   => 0,
+			        'max'   => 500,
+			        'step'  => 1,
+			    ),
+			)
+		)
+	);

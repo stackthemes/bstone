@@ -26,20 +26,15 @@ if ( 'post' === get_post_type() ) :
 	$meta_icons_status = bstone_options( 'bstone-font-awesome-icons' );
 	$meta_icons_type_r = bstone_options( 'bstone-font-awesome-regular' );
 	$meta_icons_type_s = bstone_options( 'bstone-font-awesome-solid' );
-	$meta_icons_type_l = bstone_options( 'bstone-font-awesome-light' );
 	
 	$bst_meta_icons_typ = '';
 	
 	if( true == $meta_icons_status ) {
 		if( true == $meta_icons_type_r ) { $bst_meta_icons_typ = 'far'; } else 
-		if( true == $meta_icons_type_s ) { $bst_meta_icons_typ = 'fas'; } else 
-		if( true == $meta_icons_type_l ) { $bst_meta_icons_typ = 'fal'; }
+		if( true == $meta_icons_type_s ) { $bst_meta_icons_typ = 'fas'; }
 		
 		if( 'regular' == $meta_icons_type && true == $meta_icons_type_r ) {
 			$bst_meta_icons_typ = 'far';
-
-		} else if( 'light' == $meta_icons_type && true == $meta_icons_type_l ) {
-			$bst_meta_icons_typ = 'fal';
 
 		} else if( 'solid' == $meta_icons_type && true == $meta_icons_type_s ) {
 			$bst_meta_icons_typ = 'fas';

@@ -79,7 +79,7 @@ if ( ! function_exists( 'bstone_header_markup' ) ) {
 	}
 }
 
-add_action( 'bstone_header', 'bstone_header_markup' );
+add_action( 'bstone_header', 'bstone_header_markup', 10 );
 
 /**
  * Function to get Header Classes
@@ -964,7 +964,6 @@ if ( ! function_exists( 'bstone_single_title' ) ) {
 /**
  * Function to get scroll to top button
  */
-
 if ( ! function_exists( 'bstone_scroll_to_top_markup' ) ) {
 	/**
 	 * Scroll to top button
@@ -981,3 +980,367 @@ if ( ! function_exists( 'bstone_scroll_to_top_markup' ) ) {
 	}
 }
 add_action('bstone_footer', 'bstone_scroll_to_top_markup', 30);
+
+/**
+ * Function to get posts banner / slider markup
+ */
+if ( ! function_exists( 'bstone_posts_banner_markup' ) ) {
+	/**
+	 * Posts banner / slider
+	 *
+	 * @since 1.1.2
+	 */
+	
+	function bstone_posts_banner_markup() {
+
+		$banner_content = '';
+
+		$display_bp_banner = false;
+		$display_on = bstone_options( 'bp-banner-display' );
+
+		if( 'blog' == $display_on ) {
+			if( is_home() ) {
+				$display_bp_banner = true;
+			}
+		} else if( 'archive' == $display_on ) {
+			if( is_home() || is_archive( 'post' ) ) {
+				$display_bp_banner = true;
+			}
+		}
+
+		if( true == $display_bp_banner ) {
+
+			$bpb_shadow = '';
+
+			$banner_type	  = bstone_options( 'bp-banner-type' );
+			$banner_width 	  = bstone_options( 'bp-banner-width' );
+			$data_source	  = bstone_options( 'bp-banner-data-source' );
+			$posts_num		  = bstone_options( 'bp-banner-posts-num' );
+			$banner_structure = bstone_options( 'bp-banner-structure' );
+			$bpb_head_shadow  = bstone_options( 'bp-banner-title-shadow' );
+
+			if( true == $bpb_head_shadow ) {
+				$bpb_shadow = 'shadow';
+			}
+
+			$classes_container = $banner_type;
+
+			if( 'content' == $banner_width ) {
+				$classes_container .= ' st-container';
+			}
+
+			/**
+			 * If banner type is 'posts-grid' get only 3 posts
+			 */
+			if( 'posts-grid' == $banner_type ) {
+				$posts_num = 3;
+			}
+
+			if( true == bstone_options( 'bp-banner-enable' ) ):
+
+				/**
+				 * Get Banner Posts
+				 *
+				 * @var array
+				 */
+				$posts_args = array(
+					'posts_per_page'   => $posts_num,
+					'post_type'        => 'post',
+					'post_status'      => 'publish',
+				);
+
+				if( 'category' == $data_source ) {
+
+					$posts_args['category'] = esc_html( bstone_options( 'bp-banner-data-category' ) );
+
+				} else if( 'posts' == $data_source ) {
+					$bp_posts_ids = esc_html( bstone_options( 'bp-banner-data-postid' ) );
+
+					$posts_args['post__in'] = explode( ",", $bp_posts_ids );
+
+				}
+
+				$bp_posts_args = apply_filters( 'bstone_posts_banner_qry_args', $posts_args );
+
+				$posts_array = get_posts( $bp_posts_args );
+
+				/**
+				 * Banner Html Markup
+				 */
+
+				if( $posts_array ) {
+
+					$banner_content .= '<section id="bp-banner-container" class="'.$classes_container.'">';
+
+						$banner_content .= '<div class="bp-banner-inner">';
+
+							/**
+							 * Get Posts Grid Banner
+							 */
+							if( 'posts-grid' == $banner_type ) {
+								
+								$banner_content .= '<div class="bp-grid-banner st-flex content-top">';
+
+								$bp_grid_item_count = 0;
+
+								foreach ($posts_array as $post) :
+
+									if (has_post_thumbnail( $post->ID ) ):
+
+										$bp_grid_item_count++;
+
+										$bp_grid_size_class = '';									
+
+										if( 1 == $bp_grid_item_count ) {
+											$banner_content .= '<div class="bp-banner-grid-item bpg-large" style="background-image: url('.esc_url(get_the_post_thumbnail_url( $post->ID, bstone_options( 'bp-banner-imgsize' ) )).');">';
+										}
+
+										if( 2 == $bp_grid_item_count ) {
+											$banner_content .= '<div class="bp-banner-grid-item bpg-small">';
+										}
+
+											if( 2 == $bp_grid_item_count || 3 == $bp_grid_item_count ) {
+												$banner_content .= '<div class="bpg-small-item">';
+												$banner_content .= '<div class="bpg-small-bg-cnt" style="background-image: url('.esc_url(get_the_post_thumbnail_url( $post->ID, bstone_options( 'bp-banner-imgsize' ) )).');">';
+											}
+
+												$banner_content .='<div class="bp-banner-grid-content bp-banner-content '. esc_attr( bstone_options( 'bp-banner-align' ) ) .'">';
+
+													if( $banner_structure ) {
+														$element_count = 0;
+														foreach ($banner_structure as $element) :
+															$element_count++;
+															switch ( $element ) {
+																case 'title':
+																	$banner_content .= '<h2 class="bst-banner-heading '.$bpb_shadow.'"><a href="'. get_permalink( $post->ID ) .'">' . get_the_title( $post->ID ) . '</a></h2>';
+																	break;
+																case 'category':
+																	$banner_content .= bstone_posts_banner_category_markup( $post );
+																	break;
+																case 'meta':
+																	$banner_content .= bstone_posts_banner_meta_markup( $post );
+																	break;
+															}
+															if( $element_count != count( $banner_structure ) ) {
+																$banner_content .= '<span style="height:'. esc_attr( bstone_options( 'bp-banner-content-gap' ) ) .'px; display: block;"></span>';
+															}
+														endforeach;
+													}
+
+												$banner_content .= '</div>';
+
+												$banner_content .= get_the_post_thumbnail( $post->ID, bstone_options( 'bp-banner-imgsize' ) );
+
+											if( 2 == $bp_grid_item_count || 3 == $bp_grid_item_count ) {
+												$banner_content .= '</div></div>';
+											}
+
+										if( 1 == $bp_grid_item_count ) {
+											$banner_content .= '</div>';
+										}
+
+										if( 3 == $bp_grid_item_count ) {
+											$banner_content .= '</div>';
+										}
+
+									endif;
+								endforeach;
+
+								$banner_content .= '</div>';
+
+							}
+							/**
+							 * Get Posts Slider Banner
+							 */
+							else {
+
+								$banner_content .= '<div class="owl-carousel bp-slider">';
+
+								foreach ($posts_array as $post) :
+
+									if (has_post_thumbnail( $post->ID ) ):
+
+										$banner_content .= '<div class="bp-slider-item">';
+
+											if( 'full' == $banner_width ) { $banner_content .= '<div class="bp-slider-content-outer st-container">'; }
+
+											$banner_content .='<div class="bp-slider-content bp-banner-content '. esc_attr( bstone_options( 'bp-banner-align' ) ) .'">';								
+
+												if( $banner_structure ) {
+													$element_count = 0;
+													foreach ($banner_structure as $element) :
+														$element_count++;
+														switch ( $element ) {
+															case 'title':
+																$banner_content .= '<h2 class="bst-banner-heading '.$bpb_shadow.'"><a href="'. get_permalink( $post->ID ) .'">' . get_the_title( $post->ID ) . '</a></h2>';
+																break;
+															case 'category':
+																$banner_content .= bstone_posts_banner_category_markup( $post );
+																break;
+															case 'meta':
+																$banner_content .= bstone_posts_banner_meta_markup( $post );
+																break;
+														}
+														if( $element_count != count( $banner_structure ) ) {
+															$banner_content .= '<span style="height:'. esc_attr( bstone_options( 'bp-banner-content-gap' ) ) .'px; display: block;"></span>';
+														}
+													endforeach;
+												}
+											$banner_content .='</div>';
+
+											if( 'full' == $banner_width ) { $banner_content .='</div>'; }
+
+											$banner_content .= get_the_post_thumbnail( $post->ID, bstone_options( 'bp-banner-imgsize' ) );
+
+										$banner_content .= '</div>';
+
+									endif; // end have post thumbnail
+
+								endforeach;
+
+								wp_reset_postdata();
+
+								$banner_content .= '</div>';
+
+							}
+
+						$banner_content .= '</div>';
+
+					$banner_content .= '</section>';
+				}
+
+			endif;
+		}
+
+		// Apply filters
+		$banner_markup = apply_filters( 'bstone_posts_banner_markup', $banner_content );
+
+		echo $banner_markup;
+	}
+}
+add_action('bstone_content_top', 'bstone_posts_banner_markup', 20);
+
+/**
+ * Function to get posts banner / slider categories markup
+ */
+if ( ! function_exists( 'bstone_posts_banner_category_markup' ) ) {
+	/**
+	 * Posts banner / slider Categories
+	 *
+	 * @since 1.1.2
+	 */	
+	function bstone_posts_banner_category_markup( $post ) {
+		$category_content = '';
+
+		$categories = get_the_category( $post->ID );
+
+		if( $categories ) {
+
+			$bpb_cat_shadow = '';
+
+			if( true == bstone_options( 'bp-banner-cat-shadow' ) ) {
+				$bpb_cat_shadow = 'shadow';
+			}
+
+			$category_content .= '<div class="bp-banner-category '.$bpb_cat_shadow.'">';
+
+			$bpb_cat_count = 0;
+
+			foreach ( $categories as $category ) {
+
+				$bpb_cat_count++;
+
+				if( $bpb_cat_count > 1 ) {
+					$category_content .= '<span class="spacer"></span>';
+				}
+
+				$category_content .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . $category->name . '</a>';
+
+			}
+
+			$category_content .= '</div>';
+
+		}
+
+		return apply_filters( 'bstone_posts_banner_category_markup', $category_content );
+	}
+}
+
+/**
+ * Function to get posts banner / slider meta markup
+ */
+if ( ! function_exists( 'bstone_posts_banner_meta_markup' ) ) {
+	/**
+	 * Posts banner / slider Meta
+	 *
+	 * @since 1.1.2
+	 */	
+	function bstone_posts_banner_meta_markup( $post ) {
+
+		$banner_mata_structure = bstone_options( 'bp-banner-meta-structure' );
+
+		$meta_icons 	   = bstone_options( 'display-meta-icons' );		
+		$meta_icons_type   = bstone_options( 'meta-icons-type' );
+
+		$meta_icons_status = bstone_options( 'bstone-font-awesome-icons' );
+		$meta_icons_type_r = bstone_options( 'bstone-font-awesome-regular' );
+		$meta_icons_type_s = bstone_options( 'bstone-font-awesome-solid' );
+		
+		$bst_meta_icons_typ = '';
+		
+		if( true == $meta_icons_status ) {
+			if( true == $meta_icons_type_r ) { $bst_meta_icons_typ = 'far'; } else 
+			if( true == $meta_icons_type_s ) { $bst_meta_icons_typ = 'fas'; }
+			
+			if( 'regular' == $meta_icons_type && true == $meta_icons_type_r ) {
+				$bst_meta_icons_typ = 'far';
+
+			} else if( 'solid' == $meta_icons_type && true == $meta_icons_type_s ) {
+				$bst_meta_icons_typ = 'fas';
+			}
+		}
+
+		$meta_content = '';
+
+		if( $banner_mata_structure ) {
+
+			$bpb_meta_shadow = '';
+
+			if( true == bstone_options( 'bp-banner-meta-shadow' ) ) {
+				$bpb_meta_shadow = 'shadow';
+			}
+
+			$meta_content .= '<div class="entry-meta bp-banner-meta '.$bpb_meta_shadow.'">';
+
+			foreach( $banner_mata_structure as $index => $element ):
+
+				if( count(  $banner_mata_structure) > 1 && $index != 0 ) :
+					$meta_content .= '<span class="bst-meta-sep">'.esc_html( bstone_options( 'blog-meta-separator' ) ).'</span>';
+				endif;
+
+				switch ( $element ) {
+					case 'comments':
+						$meta_content .= bstone_entry_meta_comments( $meta_icons, $bst_meta_icons_typ, $meta_icons_status );
+						break;
+					case 'date':
+						$meta_content .= bstone_entry_meta_date( $meta_icons, $bst_meta_icons_typ, $meta_icons_status );
+						break;
+					case 'author':
+						$meta_content .= bstone_entry_meta_author_by_post_id( $meta_icons, $bst_meta_icons_typ, $meta_icons_status, $post->ID );
+						break;
+					case 'category':
+						$meta_content .= bstone_entry_meta_category( $meta_icons, $bst_meta_icons_typ, $meta_icons_status );
+						break;
+					case 'tag':
+						$meta_content .= bstone_entry_meta_tag( $meta_icons, $bst_meta_icons_typ, $meta_icons_status );
+						break;
+				}
+
+			endforeach;
+
+			$meta_content .= '</div>';
+		}
+
+		return apply_filters( 'bstone_posts_banner_meta_markup', $meta_content );
+	}
+}

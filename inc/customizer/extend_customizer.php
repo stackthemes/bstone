@@ -75,6 +75,7 @@ function bstone_new_customize_register( $wp_customize ) {
 	require $settings_path . 'extra-elements/pagination.php';
 	require $settings_path . 'extra-elements/forms.php';
 	require $settings_path . 'extra-elements/scroll-to-top.php';
+	require $settings_path . 'extra-elements/posts-slider.php';
 	
 }
 add_action('customize_register', 'bstone_new_customize_register');

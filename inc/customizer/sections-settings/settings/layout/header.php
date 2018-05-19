@@ -95,6 +95,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 			)
 		);
 	}
+	
+	/**
+	 * Option: Enable Transparent Header
+	 */
+	$wp_customize->add_setting(
+		BSTONE_THEME_SETTINGS . '[enable-transparent-header]', array(
+			'default'           => bstone_get_option( 'enable-transparent-header' ),
+			'type'              => 'option',
+			'capability' 		=> 'manage_options',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => array( 'Bstone_Customizer_Sanitizes', 'sanitize_checkbox' ),
+		)
+	);
+	$wp_customize->add_control(
+		BSTONE_THEME_SETTINGS . '[enable-transparent-header]', array(
+			'type'        => 'checkbox',
+			'section'     => 'section-header',
+			'label'       => __( 'Header Position Absolute', 'bstone' ),
+			'priority'    => 7,
+		)
+	);
 
 	/**
 	 * Option: Disable Menu

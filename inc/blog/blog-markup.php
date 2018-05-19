@@ -105,6 +105,37 @@ if ( ! function_exists( 'bstone_entry_meta_author' ) ) {
 	}
 }
 
+if ( ! function_exists( 'bstone_entry_meta_author_by_post_id' ) ) {
+	function bstone_entry_meta_author_by_post_id( $meta_icons, $icon_typ, $icon_status, $posd_id ) {
+		
+		$meta_icons_html = '';
+		
+		if( true == $meta_icons && true == $icon_status ) {
+			$meta_icons_html = '<i class="' . esc_attr( $icon_typ ) . ' fa-user"></i>';
+		}
+		
+		$author_id = get_post_field ( 'post_author', $posd_id );
+
+		if( true == bstone_options('display-meta-text') ) {
+			
+			$byline = '<span class="author vcard meta-cnt">'.$meta_icons_html;
+			$byline .= __('by', 'bstone');
+			$byline .= ' <a class="url fn n" href="' . esc_url( get_author_posts_url( $author_id ) ) . '" title="'.bstone_default_strings('string-post-by-title', false).' '.esc_html( get_the_author_meta( 'display_name', $author_id ) ).'">' . esc_html( get_the_author_meta( 'display_name', $author_id ) ) . '</a>';
+			$byline .= '</span>';
+			
+		} else {
+			
+			$byline = '<span class="author vcard meta-cnt">'.$meta_icons_html;
+			$byline .= ' <a class="url fn n" href="' . esc_url( get_author_posts_url( $author_id ) ) . '" title="'.bstone_default_strings('string-post-by-title', false).' '.esc_html( get_the_author_meta( 'display_name', $author_id ) ).'">' . esc_html( get_the_author_meta( 'display_name', $author_id ) ) . '</a>';
+			$byline .= '</span>';
+			
+		}
+		
+		return apply_filters( 'bstone_entry_meta_author', $byline );
+		
+	}
+}
+
 if ( ! function_exists( 'bstone_entry_meta_date' ) ) {
 	function bstone_entry_meta_date( $meta_icons, $icon_typ, $icon_status ) {
 		

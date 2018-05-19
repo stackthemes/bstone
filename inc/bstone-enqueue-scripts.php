@@ -37,8 +37,18 @@ if ( ! class_exists( 'Bstone_Enqueue_Scripts' ) ) {
 		public function __construct() {
 
 			add_action( 'bstone_get_fonts',          array( $this, 'add_fonts' ), 1 );
-			add_action( 'wp_enqueue_scripts',       array( $this, 'enqueue_scripts' ), 1 );
+			add_action( 'wp_enqueue_scripts',        array( $this, 'enque_jquery_script' ), 1 );
+			add_action( 'wp_enqueue_scripts',        array( $this, 'enqueue_scripts' ), 1 );
 
+		}
+
+		/**
+		 * Enqueue jQuery
+		 */
+		public function enque_jquery_script() {
+			if( true == bstone_options( 'bp-banner-enable' ) ) {
+				wp_enqueue_script("jquery");
+			}
 		}
 
 		/**
@@ -81,6 +91,12 @@ if ( ! class_exists( 'Bstone_Enqueue_Scripts' ) ) {
 					),
 				);
 				
+			}
+
+			if( true == bstone_options( 'bp-banner-enable' ) ) {
+				$default_assets['js']['bstone-owl-js']  	  = 'owl.carousel';
+				$default_assets['css']['bstone-owl-style'] 	  = 'owl.carousel';
+				$default_assets['css']['bstone-owl-theme'] 	  = 'owl.theme.default';
 			}
 
 			return apply_filters( 'bstone_theme_assets', $default_assets );

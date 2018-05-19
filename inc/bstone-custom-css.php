@@ -118,7 +118,6 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			$bstone_font_awesome_icons		 = bstone_options( 'bstone-font-awesome-icons' );
 			$bstone_font_awesome_brands		 = bstone_options( 'bstone-font-awesome-brands' );
 			$bstone_font_awesome_regular	 = bstone_options( 'bstone-font-awesome-regular' );
-			$bstone_font_awesome_light		 = bstone_options( 'bstone-font-awesome-light' );
 			$bstone_font_awesome_solid		 = bstone_options( 'bstone-font-awesome-solid' );
 			
 			$heading_h1_font_family          = self::get_bstone_font_family($default_font_family, 'h1-font-family');
@@ -386,6 +385,7 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			$img_caption_padding	 		 = bstone_options( 'img-caption-padding' );
 			$img_caption_color	 		 	 = bstone_options( 'img-caption-color' );
 			$img_caption_bg_color	 		 = bstone_options( 'img-caption-bg-color' );
+			$blog_post_border_radius		 = bstone_options( 'blog-post-border-radius' );
 			
 			// Pagination
 			$pagination_align		 		 = bstone_options( 'pagination-align' );
@@ -402,6 +402,31 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			$pagination_font_waight			 = self::get_bstone_font_waight( $default_font_waight, 'pagination-text-font-weight' );
 			$pagination_text_transform	 	 = bstone_options( 'pagination-text-transform' );
 			$pagination_text_font_size	 	 = bstone_options( 'pagination-text-font-size' );
+
+			// Banner / Slider
+			$bp_banner_title_font_size	 	 = bstone_options( 'bp-banner-title-font-size' );
+			$bp_banner_category_font_size	 = bstone_options( 'bp-banner-category-font-size' );
+			
+			$bp_banner_title_font_size_smlgrid	  = bstone_options( 'bp-banner-title-font-size-smlgrid' );
+			$bp_banner_category_font_size_smlgrid = bstone_options( 'bp-banner-category-font-size-smlgrid' );
+
+			$bp_banner_title_text_color	 	 = bstone_options( 'bp-banner-title-text-color' );
+			$bp_banner_category_text_color	 = bstone_options( 'bp-banner-category-text-color' );
+			$bp_banner_meta_text_color	 	 = bstone_options( 'bp-banner-meta-text-color' );
+			
+			$bp_banner_title_text_color_hover 	 = bstone_options( 'bp-banner-title-text-color-hover' );
+			$bp_banner_category_text_color_hover = bstone_options( 'bp-banner-category-text-color-hover' );
+			$bp_banner_title_bg_color 	 		 = bstone_options( 'bp-banner-title-bg-color' );
+			$bp_banner_category_bg_color 		 = bstone_options( 'bp-banner-category-bg-color' );
+			$bp_banner_title_bg_color_hover 	 = bstone_options( 'bp-banner-title-bg-color-hover' );
+			$bp_banner_category_bg_color_hover 	 = bstone_options( 'bp-banner-category-bg-color-hover' );
+
+			$bp_banner_title_top_padding	 = bstone_options( 'bp-banner-title-top-padding' );
+			$bp_banner_title_left_padding	 = bstone_options( 'bp-banner-title-left-padding' );
+			$bp_banner_cat_top_padding	 	 = bstone_options( 'bp-banner-cat-top-padding' );
+			$bp_banner_cat_left_padding	 	 = bstone_options( 'bp-banner-cat-left-padding' );
+			$bp_banner_overlay_color	 	 = bstone_options( 'bp-banner-overlay-color' );
+			$bp_banner_grid_gap	 	 		 = bstone_options( 'bp-banner-grid-gap' );
 
 			// Post meta values
 			$bst_site_sidebar = get_post_meta( get_the_ID(), 'site-sidebar-layout', true );
@@ -961,6 +986,69 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 					'text-transform' => esc_attr( $blog_typo_title_transform ),
 				),
 				
+				'#bp-banner-container .bst-banner-heading, #bp-banner-container .bst-banner-heading a' => array(
+					'color' 		   => esc_attr( $bp_banner_title_text_color ),
+					'background-color' => esc_attr( $bp_banner_title_bg_color ),
+					'font-family' 	   => "'".bstone_get_css_value( $blog_typo_title_font_family, 'font' )."'",
+					'font-weight' 	   => esc_attr( $blog_typo_title_font_weight ),
+					'text-transform'   => esc_attr( $blog_typo_title_transform ),
+				),
+				
+				'#bp-banner-container .bst-banner-heading:hover, #bp-banner-container .bst-banner-heading:hover a' => array(
+					'color' 		   => esc_attr( $bp_banner_title_text_color_hover ),
+					'background-color' => esc_attr( $bp_banner_title_bg_color_hover ),
+				),
+				
+				'#bp-banner-container .bp-banner-inner .bp-banner-category a' => array(
+					'color' 		   => esc_attr( $bp_banner_category_text_color ),
+					'background-color' => esc_attr( $bp_banner_category_bg_color ),
+					'font-family' 	   => "'".bstone_get_css_value( $blog_typo_entry_font_family, 'font' )."'",
+					'font-weight' 	   => esc_attr( $blog_typo_entry_font_weight ),
+					'text-transform'   => esc_attr( $blog_typo_entry_transform ),
+				),
+				
+				'#bp-banner-container .bp-banner-category a:hover' => array(
+					'color' 		   => esc_attr( $bp_banner_category_text_color_hover ),
+					'background-color' => esc_attr( $bp_banner_category_bg_color_hover ),
+				),
+				
+				'#bp-banner-container .bp-banner-meta, #bp-banner-container .bp-banner-meta a, #bp-banner-container .entry-meta *' => array(
+					'color' 		 => esc_attr( $bp_banner_meta_text_color ),
+					'font-family' 	 => "'".bstone_get_css_value( $blog_typo_entry_font_family, 'font' )."'",
+					'font-weight' 	 => esc_attr( $blog_typo_entry_font_weight ),
+					'text-transform' => esc_attr( $blog_typo_entry_transform ),
+				),
+				
+				'#bp-banner-container .bst-banner-heading a' => array(
+					'padding-top' 	 => bstone_get_css_value( $bp_banner_title_top_padding, 'px' ),
+					'padding-bottom' => bstone_get_css_value( $bp_banner_title_top_padding, 'px' ),
+					'padding-left' 	 => bstone_get_css_value( $bp_banner_title_left_padding, 'px' ),
+					'padding-right'  => bstone_get_css_value( $bp_banner_title_left_padding, 'px' ),
+				),
+				
+				'#bp-banner-container .bp-banner-category a' => array(
+					'padding-top' 	 => bstone_get_css_value( $bp_banner_cat_top_padding, 'px' ),
+					'padding-bottom' => bstone_get_css_value( $bp_banner_cat_top_padding, 'px' ),
+					'padding-left' 	 => bstone_get_css_value( $bp_banner_cat_left_padding, 'px' ),
+					'padding-right'  => bstone_get_css_value( $bp_banner_cat_left_padding, 'px' ),
+				),
+				
+				'#bp-banner-container .bp-slider-item:after, #bp-banner-container .bpg-small-bg-cnt:after, #bp-banner-container .bp-banner-grid-item.bpg-large:after' => array(
+					'background' 	 => esc_attr( $bp_banner_overlay_color ),
+				),
+
+				'.bp-banner-grid-item .bpg-small-item:first-child, .bp-banner-grid-item .bpg-small-item:last-child' => array (
+					'height' 	 => 'calc(50% - '.bstone_get_css_value( ( $bp_banner_grid_gap / 2 ), 'px' ).')',
+				),
+
+				'.bp-banner-grid-item .bpg-small-item:last-child' => array (
+					'bottom'	=> '-'.bstone_get_css_value( ( $bp_banner_grid_gap ), 'px' ),
+				),
+
+				'.bp-banner-grid-item.bpg-small' => array (
+					'padding-left'	=> bstone_get_css_value( $bp_banner_grid_gap, 'px' ),
+				),
+				
 				'#primary .bst-posts-cnt .entry-title' => array(
 					'margin-top' 	 => bstone_get_css_value( $blog_title_padding_top, 'px' ),
 					'margin-bottom' => bstone_get_css_value( $blog_title_padding_bottom, 'px' ),
@@ -1023,6 +1111,7 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 				
 				'#primary .bst-posts-cnt article .bst-article-inner' => array(
 					'background-color' => esc_attr( $blog_entry_bg_color ),
+					'border-radius'	   => bstone_get_css_value( $blog_post_border_radius, 'px' ),
 				),
 			);
 
@@ -1337,6 +1426,15 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 				'px',
 				array('right', 'left'),
 				array('desktop', 'tablet', 'mobile')
+			);			
+			
+			$parse_css .= bstone_get_responsive_spacings (
+				'#primary .bst-posts-cnt article .entry-title, #primary .bst-posts-cnt article .entry-meta, #primary .bst-posts-cnt article .entry-content, #primary .bst-posts-cnt article .blog-entry-readmore',
+				'batarea', 'padding',
+				'padding', '',
+				'px',
+				array('right', 'left'),
+				array('desktop', 'tablet', 'mobile')
 			);
 			
 			$parse_css .= bstone_get_responsive_spacings (
@@ -1419,6 +1517,24 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 				array('top', 'bottom', 'right', 'left'),
 				array('desktop', 'tablet', 'mobile')
 			);
+
+			$parse_css .= bstone_get_responsive_spacings (
+				'#bp-banner-container .bp-banner-inner',
+				'bpbnr', 'margin',
+				'margin', '',
+				'px',
+				array('top', 'bottom', 'right', 'left'),
+				array('desktop', 'tablet', 'mobile')
+			);
+
+			$parse_css .= bstone_get_responsive_spacings (
+				'#bp-banner-container .bp-banner-inner .bp-banner-content',
+				'bpbnr', 'padding',
+				'padding', '',
+				'px',
+				array('top', 'bottom', 'right', 'left'),
+				array('desktop', 'tablet', 'mobile')
+			);
 			
 			/* Responsive Typo */
 			$parse_css .= bstone_responsive_font_size_css( 'h1, h1 a', $heading_h1_font_size );
@@ -1457,11 +1573,19 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			$parse_css .= bstone_responsive_font_size_css( '#primary .bst-posts-cnt .entry-title, #primary .bst-posts-cnt .entry-title a', $blog_typo_title_font_size );
 			$parse_css .= bstone_responsive_font_size_css( '#primary .bst-posts-cnt .entry-meta, #primary .bst-posts-cnt .entry-meta a, .single-post #primary .entry-meta, .single-post #primary .entry-meta a', $blog_typo_entry_font_size );
 			
+			$parse_css .= bstone_responsive_font_size_css( '#bp-banner-container .bp-banner-meta, #bp-banner-container .bp-banner-meta a', $blog_typo_entry_font_size );
+			
 			$parse_css .= bstone_responsive_font_size_css( '.menu-toggle, button, .bst-button, .button, input#submit, input[type="button"], input[type="submit"], input[type="reset"], header.site-header .st-head-cta a.button', $btn_typo_text_font_size );
 			
 			$parse_css .= bstone_responsive_font_size_css( '.blog-entry-readmore a', $readbtn_typo_text_font_size );
 			
 			$parse_css .= bstone_responsive_font_size_css( '.st-pagination .nav-links a, .st-pagination .nav-links span.page-numbers', $pagination_text_font_size );
+			
+			$parse_css .= bstone_responsive_font_size_css( '#bp-banner-container .bst-banner-heading, #bp-banner-container .bst-banner-heading a', $bp_banner_title_font_size );
+			$parse_css .= bstone_responsive_font_size_css( '#bp-banner-container .bp-banner-category', $bp_banner_category_font_size );
+
+			$parse_css .= bstone_responsive_font_size_css( '#bp-banner-container .bpg-small-item .bst-banner-heading, #bp-banner-container .bpg-small-item .bst-banner-heading a', $bp_banner_title_font_size_smlgrid );
+			$parse_css .= bstone_responsive_font_size_css( '#bp-banner-container .bpg-small-item .bp-banner-category', $bp_banner_category_font_size_smlgrid );
 
 			$parse_css .= bstone_responsive_font_size_css( '.bst-title-section h1', $single_typo_title_font_size );
 			$parse_css .= bstone_responsive_font_size_css( '.bst-title-section .site-breadcrumbs ul li, .bst-title-section .site-breadcrumbs ul li a', $single_typo_breadcrumbs_font_size );
