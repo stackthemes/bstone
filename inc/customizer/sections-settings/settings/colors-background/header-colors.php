@@ -130,7 +130,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			'type'              => 'option',
 			'capability' 		=> 'manage_options',
 			'transport'         => 'postMessage',
-			'sanitize_callback' => array( 'Bstone_Customizer_Sanitizes', 'sanitize_hex_color' ),
+			'sanitize_callback' => array( 'Bstone_Customizer_Sanitizes', 'sanitize_alpha_color' ),
 		)
 	);
 	$wp_customize->add_control(
@@ -152,7 +152,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			'type'              => 'option',
 			'capability' 		=> 'manage_options',
 			'transport'         => 'postMessage',
-			'sanitize_callback' => array( 'Bstone_Customizer_Sanitizes', 'sanitize_hex_color' ),
+			'sanitize_callback' => array( 'Bstone_Customizer_Sanitizes', 'sanitize_alpha_color' ),
 		)
 	);
 	$wp_customize->add_control(
@@ -247,7 +247,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	);
 
 	/**
-	 * Option: Site Tital Color
+	 * Option: Site Title Color
 	 */
 	$wp_customize->add_setting(
 		BSTONE_THEME_SETTINGS . '[site-tital-color]', array(
@@ -263,7 +263,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			$wp_customize, BSTONE_THEME_SETTINGS . '[site-tital-color]', array(
 				'section'  => 'section-color-header',
 				'priority' => 65,
-				'label'    => __( 'Site Tital Color', 'bstone' ),
+				'label'    => __( 'Site Title Color', 'bstone' ),
 			)
 		)
 	);

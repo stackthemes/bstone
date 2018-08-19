@@ -112,7 +112,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		BSTONE_THEME_SETTINGS . '[enable-transparent-header]', array(
 			'type'        => 'checkbox',
 			'section'     => 'section-header',
-			'label'       => __( 'Header Position Absolute', 'bstone' ),
+			'label'       => __( 'Transparent Header', 'bstone' ),
 			'priority'    => 7,
 		)
 	);
@@ -155,12 +155,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 			'section'  => 'section-header',
 			'priority' => 15,
 			'label'    => __( 'Custom Menu Item', 'bstone' ),
-			'choices'  => array(
-				'none'      => __( 'None', 'bstone' ),
-				'search'    => __( 'Search', 'bstone' ),
-				'text-html' => __( 'Text / HTML', 'bstone' ),
-				'widget'    => __( 'Widget', 'bstone' ),
-			),
+			'choices'  => apply_filters(
+				'bstone_header_section_elements',
+					array(
+						'none'      => __( 'None', 'bstone' ),
+						'search'    => __( 'Search', 'bstone' ),
+						'text-html' => __( 'Text / HTML', 'bstone' ),
+						'widget'    => __( 'Widget', 'bstone' ),
+					),
+					'primary-header'
+				),
 		)
 	);
 
@@ -202,12 +206,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 			'section'  => 'section-header',
 			'priority' => 25,
 			'label'    => __( 'Custom Menu Item 2', 'bstone' ),
-			'choices'  => array(
-				'none'      => __( 'None', 'bstone' ),
-				'search'    => __( 'Search', 'bstone' ),
-				'text-html' => __( 'Text / HTML', 'bstone' ),
-				'widget'    => __( 'Widget', 'bstone' ),
-			),
+			'choices'  => apply_filters(
+				'bstone_header_section_elements',
+					array(
+						'none'      => __( 'None', 'bstone' ),
+						'search'    => __( 'Search', 'bstone' ),
+						'text-html' => __( 'Text / HTML', 'bstone' ),
+						'widget'    => __( 'Widget', 'bstone' ),
+					),
+					'primary-header'
+				),
 		)
 	);
 
@@ -312,7 +320,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 		BSTONE_THEME_SETTINGS . '[header-logo-alignment]', array(
 			'default'           => bstone_get_option( 'header-logo-alignment' ),
 			'type'              => 'option',
-			'transport'         => 'postMessage',
 			'sanitize_callback' => array( 'Bstone_Customizer_Sanitizes', 'sanitize_choices' ),
 		)
 	);

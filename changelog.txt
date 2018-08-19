@@ -1,0 +1,27 @@
+= 1.1.6 =
+* ADD: WooCommerce Shop Customizer
+* FIXED: Responsive Menu Background in Transparent Header
+
+= 1.1.5 =
+* FIXED: Blog grid style banner issues in mobile
+
+= 1.1.4 =
+* ADD: Custom comment list markup
+* ADD: Secondary Text Color Option
+
+= 1.1.3 =
+ * ADD: Sidebar Widgets Border
+ * IMPROVED: Improve search and 404 CSS style.
+ * FIXED: Blog content custom width was not working
+ 
+ = 1.1.2 =
+ * FIXED: Title area display issues.
+ * ADD: Posts slider
+ * ADD: Scroll to top button
+ * ADD: bstone.pot
+
+= 1.1.1 =
+* IMPROVED: Update theme screenshot to matching the default setting.
+
+= 1.1.0 =
+* Initial release

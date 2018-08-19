@@ -1,0 +1,44 @@
+.sc-toggle,
+.sc-toggle * {
+	box-sizing: border-box;
+}
+.sc-toggle {
+	display: inline-block;
+	width: 25px;
+	height: 12px;
+	border: 1px solid #363636;
+	background-color: #3d3d3d;
+	border-radius: 25px;
+	position: relative;
+	cursor: pointer;
+	transform: translateY(2px);
+	transition: background-color 0.3s ease;
+}
+.sc-toggle-bullet {
+	width: 17px;
+	height: 17px;
+	border-radius: 50%;
+	position: absolute;
+	left: -7px;
+	top: -4px;
+	box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3); 
+	z-index: 5;
+	border-radius: 50%;
+	background-color: #808080;
+	transition: transform 0.1s ease;
+}
+.sc-toggle-active .sc-toggle-bullet {
+	transform: translateX(20px);
+	background-color: #37c4ff;
+}
+.sc-toggle-active {
+	background-color: #46626e;
+}
+.sc-toggle-group {
+	display: inline-block;
+}
+.sc-sublabel {
+	display: inline-block;
+	margin-right: 10px;
+	font-size: 12px;
+}

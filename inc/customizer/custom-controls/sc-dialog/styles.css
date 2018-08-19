@@ -1,0 +1,490 @@
+/* Sidebar */
+.customize-control-sc-dialog > p {
+	color: #a6a6a6;
+	font-size: 15px;
+	font-weight: bold;
+	margin-top: 0px;
+	margin-bottom: 13px;
+}
+
+.customize-control-sc-dialog .sc-dialog-button {
+	display: block;
+	border: 1px solid #cccccc;
+	border-radius: 5px;
+	padding: 6px 11px;
+	height: auto;
+	width: 100%;
+	text-align: left;
+	font-size: 14px;
+	color: #555;
+	-webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
+	        box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
+	margin-bottom: 10px;
+	background-color: #f7f7f7;
+}
+
+.customize-control-sc-dialog .sc-dialog-button:hover,
+.customize-control-sc-dialog .sc-dialog-button:hover svg,
+.customize-control-sc-dialog .sc-dialog-button:focus,
+.customize-control-sc-dialog .sc-dialog-button:focus svg {
+	color: #262b30;
+	fill: #262b30;
+}
+
+.customize-control-sc-dialog .sc-dialog-button:disabled svg {
+	fill: #cccccc;
+}
+
+.customize-control-sc-dialog .sc-dialog-button img,
+.customize-control-sc-dialog .sc-dialog-button svg {
+	vertical-align: -5px;
+	margin-right: 10px;
+}
+
+.customize-control-sc-dialog .sc-dialog-button:focus {
+	border-color: #cccccc;
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+/* Dialog */
+.wp-customizer .sc-dialog *:not( .dashicons ) {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.wp-customizer .sc-dialog {
+	position: relative;
+	background: url('images/sc-dialog-bg.png') no-repeat top right #0085BA;
+	border: 0px solid #0085BA;
+	color: #fff;
+	border-radius: 13px;
+	padding: 0;
+	overflow: hidden;
+	box-shadow: 0px 3px 30px 0px rgba(0,0,0,0.4);
+	-webkit-box-shadow: 0px 3px 30px 0px rgba(0,0,0,0.4);
+	-moz-box-shadow: 0px 3px 30px 0px rgba(0,0,0,0.4);
+	z-index: 888888;
+}
+
+.wp-customizer .sc-dialog .ui-widget-content {
+	font-size: 13px;
+	padding: 0;
+	border-width: 0;
+	background: transparent;
+	color: #333333;
+}
+
+.wp-customizer .sc-dialog .ui-widget-content li.customize-control {
+	width: 100%;
+	float: none;
+	padding: 0px 15px;
+	box-sizing: border-box;
+	vertical-align: top;
+	margin-bottom: 20px;
+}
+
+.wp-customizer .sc-dialog-parent.sc-dialog-child-open {
+	z-index: 888889 !important;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+}
+
+.wp-customizer .sc-dialog-parent.sc-dialog-child-open:before {
+	position: absolute;
+	content: '';
+	background-color: rgba(51, 51, 51, 0.5);
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	border-radius: 5px;
+	z-index: 500001;
+}
+
+.wp-customizer .sc-dialog-parent.sc-dialog-child {
+	background-color: #535353;
+}
+
+.wp-customizer .sc-dialog .ui-dialog-titlebar {
+	padding: 25px 30px;
+	font-weight: bold;
+	background: transparent;
+	border: 0;
+	font-size: 13px;
+	line-height: 1.4;
+	height: auto;
+	color: #ffffff;
+	height: 18px;
+	border-top-left-radius: 13px;
+	border-top-right-radius: 13px;
+	padding-bottom: 30px;
+}
+
+.wp-customizer .sc-dialog .ui-dialog-title {
+	max-width: 340px;
+	font-weight: 300;
+    font-size: 24px;
+    letter-spacing: 1px;
+    display: inline-block;
+	margin-top: -2px;
+	font-family: 'Hind', sans-serif;
+}
+
+.wp-customizer .sc-dialog .ui-dialog-titlebar .sc-reset {
+	border: 0px solid;
+	border-radius: 3px;
+	float: right;
+	position: relative;
+	top: 2px;
+	right: 19px;
+	color: #ffffff;
+	cursor: pointer;
+	height: 23px;
+	margin-right: 8px;
+	background: url('images/reset-icon.png') no-repeat center center transparent;
+}
+
+.wp-customizer .sc-dialog .ui-dialog-titlebar .sc-reset.sc-resetting {
+	-webkit-animation: rotation 2s infinite linear;
+	animation: rotation 2s infinite linear;
+}
+
+.wp-customizer .sc-dialog .ui-dialog-titlebar .sc-reset > span {
+	font-size: 17px;
+	width: 16px;
+	height: 16px;
+}
+
+/*.sc-dialog-child .ui-dialog-titlebar .ui-dialog-title {
+	font-size: 18px;
+}*/
+
+.wp-customizer .sc-dialog-child .ui-dialog-titlebar {
+	padding-bottom: 25px;
+	background-color: transparent;
+}
+
+.wp-customizer .sc-dialog .ui-dialog-titlebar:hover {
+	cursor: move;
+}
+
+.wp-customizer .sc-dialog-child .ui-dialog-titlebar .sc-reset {
+	border-width: 0;
+	color: #d9d9d9;
+	right: -3px;
+}
+
+.wp-customizer .sc-dialog-child .ui-dialog-titlebar .sc-reset span {
+	visibility: hidden;
+}
+
+/* Close button */
+.sc-dialog .ui-dialog-titlebar-close {
+	display: none;
+}
+
+.sc-dialog .sc-close {
+	position: relative;
+	float: right;
+	border: 0px solid #fff;
+	color: #fff;
+	border-radius: 3px;
+	margin: -5px -14px;
+	font-size: 10px;
+	text-transform: uppercase;
+	height: 23px;
+	width: auto;
+	line-height: 1.75;
+	outline: 0;
+	margin-top: 2px;
+	margin-right: -8px;
+	background: url('images/close-icon.png') no-repeat center center transparent;
+}
+
+.sc-dialog .sc-close .dashicons {
+	font-size: 16px;
+	line-height: 1.13;
+	margin: 0 -4px 0 -4px;
+}
+
+.sc-dialog .sc-close:hover {
+	cursor: pointer;
+}
+
+.sc-dialog-child .sc-close {
+	color: #d9d9d9;
+	border-width: 0;
+	margin: 2px -5px 0 5px;
+}
+
+.sc-dialog-child .sc-close span {
+	visibility: hidden;
+}
+
+/* Dialog content, tabs */
+.wp-customizer .sc-dialog .ui-dialog-content {
+	overflow: hidden;
+	position: relative;
+	background: transparent;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	padding: 0;
+}
+
+.wp-customizer .sc-dialog .ui-dialog-content .customize-control-title {
+	font-size: 14px;
+	color: #32373c;
+	font-weight: 500;
+	font-family: 'Hind', sans-serif;
+}
+
+.wp-customizer .sc-dialog-parent .ui-dialog-content textarea,
+.wp-customizer .sc-dialog-parent .ui-dialog-content input,
+.wp-customizer .sc-dialog-parent .ui-dialog-content select {
+	font-size: 13px;
+}
+
+.wp-customizer .sc-dialog .ui-tabs-nav {
+	border-bottom: 1px solid #0085BA;
+	background: transparent;
+	margin-bottom: 0;
+	margin-top: 0;
+	border-width: 0;
+	padding: 0;
+	border-radius: 0;
+	padding-left: 30px;
+}
+
+.wp-customizer .sc-dialog .ui-tabs-nav > li {
+	border: none;
+	display: inline-block;
+	border-bottom: none !important;
+	padding: 0px;
+	border-radius: 0;
+	margin: 0;
+    margin-right: 10px;
+}
+
+.wp-customizer .sc-dialog .ui-tabs-nav > li:focus {
+	outline-width: 0;
+}
+
+.wp-customizer .sc-dialog .ui-tabs-nav a {
+	padding: 0 20px;
+	height: 38px;
+	line-height: 38px;
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	background-color: transparent;
+	font-size: 18px;
+	font-weight: 300;
+	font-family: 'Hind', sans-serif;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	padding-top: 5px;
+	padding-left: 43px;	
+	letter-spacing: 1px;
+}
+
+.wp-customizer .sc-dialog .ui-tabs-nav a:focus {
+	-webkit-box-shadow: 0 0 0;
+	box-shadow: 0 0 0;
+}
+
+.wp-customizer .sc-dialog .ui-tabs-nav .ui-state-active {
+	border-bottom-color: transparent !important;
+}
+
+.wp-customizer .sc-dialog .ui-tabs-nav > li:first-child a {
+	background: url('images/settings-icon.png') no-repeat 18px center transparent;
+}
+
+.wp-customizer .sc-dialog .ui-tabs-nav > li.ui-state-active:first-child a {
+	background: url('images/settings-icon.png') no-repeat 18px center #319cc6;
+}
+
+.wp-customizer .sc-dialog .ui-tabs-nav > li:last-child a {
+	background: url('images/styles-icon.png') no-repeat 18px center transparent;
+}
+
+.wp-customizer .sc-dialog .ui-tabs-nav > li.ui-state-active:last-child a {
+	background: url('images/styles-icon.png') no-repeat 18px center #319cc6;
+}
+
+.wp-customizer .sc-dialog .ui-tabs .ui-tabs-panel {
+    left: 0;
+	padding: 0;
+	width: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+	position: absolute;
+	background: #fff;
+	height: calc(100% - 43px);
+	border-bottom-left-radius: 12px;
+	border-bottom-right-radius: 12px;
+	border-bottom: 30px solid #fff;
+	box-sizing: border-box;
+}
+
+.wp-customizer .ui-dialog-content select,
+.wp-customizer .ui-dialog-content textarea,
+.wp-customizer .ui-dialog-content input[type="text"],
+.wp-customizer .ui-dialog-content input[type="number"],
+.wp-customizer .sc-dialog-parent .ui-dialog-content select,
+.wp-customizer .sc-dialog-parent .ui-dialog-content textarea,
+.wp-customizer .sc-dialog-parent .ui-dialog-content input[type="text"],
+.wp-customizer .sc-dialog-parent .ui-dialog-content input[type="number"] {
+	height: 34px;
+	color: #555;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 5px 10px;
+	line-height: 34px;
+	font-family: 'Hind', sans-serif;
+}
+
+.wp-customizer .ui-dialog-content .bst-responsive-slider-btns,
+.wp-customizer .sc-dialog-parent .ui-dialog-content .bst-responsive-slider-btns {
+	margin-top: -24px;
+}
+
+.wp-customizer .ui-dialog-content input[type="number"],
+.wp-customizer .sc-dialog-parent .ui-dialog-content input[type="number"] {
+	padding-right: 0px;
+}
+
+.ui-tabs.ui-widget-content .sc-row {
+	padding: 15px;
+}
+
+.sc-row.bst-sc-styles-cnt {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.bst-sc-styles-cnt .sc-col-5 {
+	width: 40%;
+    padding-right: 15px;
+}
+
+.bst-sc-styles-cnt .sc-col-7 {
+	width: 50%;
+}
+
+.wp-customizer .sc-dialog-child .ui-dialog-content {
+	overflow-y: auto;
+	overflow-x: hidden;
+	background: #ffffff !important;
+}
+
+.wp-customizer .sc-dialog-child .ui-dialog-titlebar {
+	padding-bottom: 30px;
+}
+
+.tippy-tooltip {
+	padding-top: 0.5rem !important;
+}
+
+.tippy-tooltip-content {
+	font-size: 14px !important;
+	color: #354558 !important;
+	font-weight: 500 !important;
+	font-family: 'Hind', sans-serif !important;
+}
+
+.tippy-tooltip-content strong {
+	color: #319CC6;
+	font-weight: 500;
+}
+
+.wp-customizer .sc-dialog .ui-tabs .ui-tabs-panel::-webkit-scrollbar, .wp-customizer .sc-dialog .ui-tabs .ui-tabs-panel::-webkit-scrollbar { width: 5px !important; }
+.wp-customizer .sc-dialog .ui-tabs .ui-tabs-panel::-webkit-scrollbar-track, .wp-customizer .sc-dialog .ui-tabs .ui-tabs-panel::-webkit-scrollbar-track { -webkit-box-shadow: inset 0 0 0 rgba(0,0,0,0.3) !important;  width: 20px !important; }
+.wp-customizer .sc-dialog .ui-tabs .ui-tabs-panel::-webkit-scrollbar-thumb, .wp-customizer .sc-dialog .ui-tabs .ui-tabs-panel::-webkit-scrollbar-thumb { -webkit-border-radius: 0 !important; border-radius: 0 !important; background-color: #d8d8d8 !important; }
+.wp-customizer .sc-dialog .ui-tabs .ui-tabs-panel::-webkit-thumb:window-inactive, .wp-customizer .sc-dialog .ui-tabs .ui-tabs-panel::-webkit-scrollbar-thumb:window-inactive { background-color: #fff !important; }
+
+.wp-customizer .sc-dialog-child .ui-dialog-content::-webkit-scrollbar, .wp-customizer .sc-dialog-child .ui-dialog-content::-webkit-scrollbar { width: 5px !important; }
+.wp-customizer .sc-dialog-child .ui-dialog-content::-webkit-scrollbar-track, .wp-customizer .sc-dialog-child .ui-dialog-content::-webkit-scrollbar-track { -webkit-box-shadow: inset 0 0 0 rgba(0,0,0,0.3) !important;  width: 20px !important; }
+.wp-customizer .sc-dialog-child .ui-dialog-content::-webkit-scrollbar-thumb, .wp-customizer .sc-dialog-child .ui-dialog-content::-webkit-scrollbar-thumb { -webkit-border-radius: 0 !important; border-radius: 0 !important; background-color: #d8d8d8 !important; }
+.wp-customizer .sc-dialog-child .ui-dialog-content::-webkit-thumb:window-inactive, .wp-customizer .sc-dialog-child .ui-dialog-content::-webkit-scrollbar-thumb:window-inactive { background-color: #fff !important; }
+
+.wp-customizer .sc-dialog .ui-tabs-panel .sc-style-title {
+	margin-top: 12px;
+	display: block;
+	font-size: 14px;
+	font-weight: 500;
+	font-family: 'Hind', sans-serif;
+}
+
+.wp-customizer .sc-dialog .ui-tabs-panel .sc-child-dialog-button {
+	background-color: #0085BA;
+	border-color: #0085BA;
+	color: #fff;
+	font-size: 13px;
+	margin-bottom: 4px;
+	padding: 4px 18px;
+	height: auto;
+	font-family: 'Hind', sans-serif;
+    letter-spacing: 1px;
+    padding-top: 7px;
+}
+
+.wp-customizer .sc-dialog .ui-tabs-panel .sc-child-dialog-button span {
+	font-size: 16px;
+	vertical-align: middle;
+}
+
+.wp-customizer .sc-dialog .ui-tabs-panel .sc-child-dialog-button:hover,
+.wp-customizer .sc-dialog .ui-tabs-panel .sc-child-dialog-button:focus {
+	background-color: #319CC6;
+	border-color: #319CC6;
+	color: #fff;
+	outline: none;
+	box-shadow: none;
+}
+
+.ui-dialog-content .customize-control-bstone-dimensions .dimension-wrap .link-dimensions span {
+	height: 32px;
+	line-height: 32px;
+}
+
+.ui-dialog-content .customize-control-bst-divider hr {
+	border-top: #319CC6 solid 2px;
+}
+
+.ui-dialog-content li.customize-control-sc-toggle {
+    width: 50% !important;
+	clear: none !important;
+	float: left !important;
+	box-sizing: border-box !important;
+}
+
+/* Widgets Styles top button */
+.wp-customizer .sc-dialog-button.sc-widgets-styles {
+	position: absolute;
+	right: 14px;
+	bottom: 10px;
+	height: 24px;
+	line-height: 0;
+	font-size: 12px;
+}
+
+/* Rotation animation */
+@-webkit-keyframes rotation {
+	from {
+		-webkit-transform: rotate(0deg);
+	}
+	to {
+		-webkit-transform: rotate(359deg);
+	}
+}
+@keyframes rotation {
+	from {
+		-webkit-transform: rotate(0deg);
+	}
+	to {
+		-webkit-transform: rotate(359deg);
+	}
+}

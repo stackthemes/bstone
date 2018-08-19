@@ -1244,7 +1244,7 @@ msgid "Link Color"
 msgstr ""
 
 #: inc/customizer/sections-settings/settings/colors-background/header-colors.php:103
-msgid "Header Position Absolute"
+msgid "Transparent Header"
 msgstr ""
 
 #: inc/customizer/sections-settings/settings/colors-background/header-colors.php:125

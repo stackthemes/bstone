@@ -11,7 +11,7 @@
 /**
  * Define Constants
  */
-define( 'BSTONE_THEME_VERSION', '1.0.0' );
+define( 'BSTONE_THEME_VERSION', '1.1.6' );
 define( 'BSTONE_THEME_SETTINGS', 'bstone-settings' );
 define( 'BSTONE_THEME_DIR', get_template_directory() . '/' );
 define( 'BSTONE_THEME_URI', get_template_directory_uri() . '/' );
@@ -36,11 +36,13 @@ require_once BSTONE_THEME_DIR . 'inc/bstone-breadcrumbs.php';
 require BSTONE_THEME_DIR . 'inc/custom-header.php';
 
 /**
- * Fonts Files
+ * Fonts Files & Recomended Plugins
  */
 require_once BSTONE_THEME_DIR . 'inc/bstone-fonts.php';
 if ( is_admin() ) {
 	require_once BSTONE_THEME_DIR . 'inc/customizer/bstone-fonts-data.php';
+	require_once BSTONE_THEME_DIR . 'inc/plugins/class-tgm-plugin-activation.php';
+	require_once BSTONE_THEME_DIR . 'inc/plugins/tgm-plugin-activation.php';
 }
 
 /**
@@ -87,6 +89,8 @@ require BSTONE_THEME_DIR . 'inc/customizer/bstone-customizer.php';
 /**
  * Load Jetpack compatibility file.
  */
+require_once BSTONE_THEME_DIR . 'inc/compatibility/woocommerce/class-bstone-woocommerce.php';
+
 if ( defined( 'JETPACK__VERSION' ) ) {
-	require BSTONE_THEME_DIR . 'inc/jetpack.php';
+	require BSTONE_THEME_DIR . 'inc/compatibility/jetpack.php';
 }

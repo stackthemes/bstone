@@ -49,7 +49,9 @@ if ( ! function_exists( 'bstone_post_single_after_post_sections' ) ) {
 				if( 'post-comments' == $element ) {
 					// If comments are open or we have at least one comment, load up the comment template.
 					if ( comments_open() || get_comments_number() ) :
+						echo '<section class="bst-single-post-section">';
 						comments_template();
+						echo '</section>';
 					endif;
 				}
 			}
@@ -88,11 +90,7 @@ if ( ! function_exists( 'bstone_get_author_info_box' ) ) {
 			// Get link to the author archive page
 			$user_posts = get_author_posts_url( get_the_author_meta( 'ID' , $post->post_author));
 			
-			$author_details = '<section class="bst-after-post author_bio_section" itemprop="author" itemscope="" itemtype="http://schema.org/Person">';
-
-			if ( ! empty( $display_name ) && ! empty( $user_description ) ) {		
-				$author_details .= '<h3 class="author_name">About the Author</h3>';		
-			}
+			$author_details = '<section class="bst-after-post author_bio_section bst-single-post-section" itemprop="author" itemscope="" itemtype="http://schema.org/Person">';
 
 			// Author avatar and bio
 			if ( ! empty( $user_description ) ) {
@@ -100,7 +98,7 @@ if ( ! function_exists( 'bstone_get_author_info_box' ) ) {
 				$author_details .= '<div class="author_details st-flex">
 				'.get_avatar( get_the_author_meta('user_email') , 100 ).'
 				
-				<div><a class="url fn n" href="'. $user_posts .'" itemprop="url" rel="author"> <h4 class="author-title" itemprop="name"> ' . $display_name . ' </h4> </a>
+				<div><a class="url fn n" href="'. $user_posts .'" itemprop="url" rel="author"> <h3 class="author-title" itemprop="name"> ' . ucwords( $display_name ) . ' </h3> </a>
 				
 				<p>' . nl2br( $user_description ). '</p></div></div>'; 
 			}
@@ -117,24 +115,126 @@ if ( ! function_exists( 'bstone_get_author_info_box' ) ) {
 } // End if
 
 /**
+ * Post Nav Classes
+ */
+if ( ! function_exists( 'bstone_get_post_nav_classes' ) ) {
+	function bstone_get_post_nav_classes() {
+		$post_nav_cntclass = '';
+		$post_nav_style    = bstone_options( 'nex-prev-liks-style' );
+		$post_nav_position = bstone_options( 'nex-prev-liks-position' );
+
+		switch ($post_nav_position) {
+			case 'center':
+				$post_nav_cntclass = 'bst-post-nav center-fixed';
+				break;
+			default:
+				$post_nav_cntclass = 'bst-post-nav default';
+		}
+
+		switch ($post_nav_style) {
+			case 'title-arrow-top':
+				$post_nav_cntclass .= ' bst-nav-arrow-top';
+				break;
+			case 'title-arrow-bottom':
+				$post_nav_cntclass .= ' bst-nav-arrow-bottom';
+				break;
+			case 'title-arrow-side':
+				$post_nav_cntclass .= ' bst-nav-arrow-side';
+				break;
+			case 'arrow-image-round':
+				$post_nav_cntclass .= ' bst-nav-img-round';
+				break;
+			case 'only-arrows':
+				$post_nav_cntclass .= ' bst-nav-arrows-only';
+				break;
+			default:
+				$post_nav_cntclass .= ' bst-nav-arrow-top';
+		}
+
+		return $post_nav_cntclass;
+	}
+}
+
+/**
  * Post Nav
  */ 
 if ( ! function_exists( 'bstone_get_post_nav' ) ) {
-	function bstone_get_post_nav() {	
+	function bstone_get_post_nav() {
+
+		$next_post = get_next_post();
+		$prev_post = get_previous_post();
 		
+		$post_nav_style    = bstone_options( 'nex-prev-liks-style' );
+
 		$post_nav_taxonomy = bstone_options( 'nex-prev-liks-taxonomy' );
+
+		$post_nav_classes = bstone_get_post_nav_classes();
+
+		$post_nav_before = '<div class="'.$post_nav_classes.' bst-single-post-section">';
+
+		$post_nav_after = '</div>';
 		
 		$post_nav_content = '';
+
+		$markup_prev_before = '';
+		$markup_prev_after  = '';
+		$markup_next_before = '';
+		$markup_next_after  = '';
+
+		switch ($post_nav_style) {
+			case 'title-arrow-top':
+				$markup_prev_before = '<i class="bst-icon-arrow-left" title="'.get_the_title( $prev_post ).'"></i>';
+				$markup_prev_after  = '';
+				$markup_next_before = '<i class="bst-icon-arrow-right" title="'.get_the_title( $next_post ).'"></i>';
+				$markup_next_after  = '';
+				break;
+			case 'title-arrow-bottom':
+				$markup_prev_before = '';
+				$markup_prev_after  = '<i class="bst-icon-arrow-left" title="'.get_the_title( $prev_post ).'"></i>';
+				$markup_next_before = '';
+				$markup_next_after  = '<i class="bst-icon-arrow-right" title="'.get_the_title( $next_post ).'"></i>';
+				break;
+			case 'title-arrow-side':
+				$markup_prev_before = '<i class="bst-icon-left-arrow" title="'.get_the_title( $prev_post ).'"></i>';
+				$markup_prev_after  = '';
+				$markup_next_before = '';
+				$markup_next_after  = '<i class="bst-icon-right-arrow" title="'.get_the_title( $next_post ).'"></i>';
+				break;
+			case 'arrow-image-round':
+				if (!empty( $prev_post )) {
+					$markup_prev_before = '<span class="bst-post-nav-img bst-icon-left-arrow" title="'.get_the_title( $prev_post ).'">'.get_the_post_thumbnail( $prev_post->ID, array( 100, 100) ).'</span>';
+				} else { $markup_prev_before = ''; }
+				$markup_prev_after  = '';
+				$markup_next_before = '';
+				if (!empty( $next_post )) {
+					$markup_next_after  = '<span class="bst-post-nav-img bst-icon-right-arrow" title="'.get_the_title( $next_post ).'">'.get_the_post_thumbnail( $next_post->ID, array( 100, 100) ).'</span>';
+				} else { $markup_next_after = ''; }
+				break;
+			case 'only-arrows':
+				$markup_prev_before = '<i class="bst-icon-bst-arrow-left" title="'.get_the_title( $prev_post ).'"></i>';
+				$markup_prev_after  = '';
+				$markup_next_before = '';
+				$markup_next_after  = '<i class="bst-icon-bst-arrow-right" title="'.get_the_title( $next_post ).'"></i>';
+				break;
+			default:
+				$markup_prev_before = '';
+				$markup_prev_after  = '';
+				$markup_next_before = '';
+				$markup_next_after  = '';
+		}
 		
 		if( 'default' == $post_nav_taxonomy ) {
 			
-			$post_nav_content = get_the_post_navigation();
+			$post_nav_content = get_the_post_navigation( array(
+				'prev_text'                  => $markup_prev_before.'<span class="bst-post-nav-title"><h5>'.'%title'.'</h5></span>'.$markup_prev_after,
+				'next_text'                  => $markup_next_before.'<span class="bst-post-nav-title"><h5>'.'%title'.'</h5></span>'.$markup_next_after,
+			) );
 			
 		} else if( 'category' == $post_nav_taxonomy ) {
 			
 			$post_nav_content = get_the_post_navigation( array(
-				'prev_text'                  => '%title',
-				'next_text'                  => '%title',
+				'prev_text'                  => $markup_prev_before.'<span class="bst-post-nav-title"><h5>'.'%title'.'</h5></span>'.$markup_prev_after,
+				'next_text'                  => $markup_next_before.'<span class="bst-post-nav-title"><h5>'.'%title'.'</h5></span>'.$markup_next_after,
 				'in_same_term'               => true,
 				'taxonomy'                   => 'category',
 				'screen_reader_text' => __( 'Post Navigation', 'bstone' ),
@@ -143,15 +243,15 @@ if ( ! function_exists( 'bstone_get_post_nav' ) ) {
 		} else if( 'tag' == $post_nav_taxonomy ) {
 			
 			$post_nav_content = get_the_post_navigation( array(
-				'prev_text'                  => '%title',
-				'next_text'                  => '%title',
+				'prev_text'                  => $markup_prev_before.'<span class="bst-post-nav-title"><h5>'.'%title'.'</h5></span>'.$markup_prev_after,
+				'next_text'                  => $markup_next_before.'<span class="bst-post-nav-title"><h5>'.'%title'.'</h5></span>'.$markup_next_after,
 				'in_same_term'               => true,
 				'taxonomy'                   => 'post_tag',
 				'screen_reader_text' => __( 'Post Navigation', 'bstone' ),
 			) );
 		}		
 		
-		return apply_filters( 'bstone_get_post_nav', $post_nav_content );
+		return apply_filters( 'bstone_get_post_nav', $post_nav_before.$post_nav_content.$post_nav_after );
 	}
 }// End if
 
@@ -197,14 +297,14 @@ add_filter( 'comment_form_default_fields', 'bstone_comment_placeholders' );
 /**
  * Add placeholder to comment area.
  */
-function bstone_comment_placeholders_textarea( $comment_field ) {
+function bstone_comment_placeholders_textarea( $fields ) {
 
-  $comment_field =
+    $fields['comment_field'] =
     '<p class="comment-form-comment">
-            <label for="comment">' . __( "Comment", "bstone" ) . '</label>
-            <textarea required id="comment" name="comment" placeholder="' . esc_attr__( "Enter Your Comments Here..", "bstone" ) . '" cols="45" rows="8" aria-required="true"></textarea>
+            <label for="comment">' . esc_html( bstone_default_strings( 'string-comment-field-label', false ) ) . '</label>
+            <textarea required id="comment" name="comment" placeholder="' . esc_attr( bstone_default_strings( 'string-comment-field-placeholder', false ) ) . '" cols="45" rows="8" aria-required="true"></textarea>
         </p>';
-
-  return $comment_field;
-}
-add_filter( 'comment_form_field_comment', 'bstone_comment_placeholders_textarea' );
+    
+    return $fields;
+ }
+add_filter( 'comment_form_defaults', 'bstone_comment_placeholders_textarea' );

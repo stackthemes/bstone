@@ -261,6 +261,198 @@ if ( ! class_exists( 'Bstone_Enqueue_Scripts' ) ) {
 			$font_weight = bstone_options( 'bfbuttons-font-weight' );
 
 			Bstone_Fonts::add_font( $font_family, $font_weight );
+			
+			// Render Woo Shop List - Title
+			$font_family = bstone_options( 'sh_pl_sty_title_font_family' );
+			$font_weight = bstone_options( 'sh_pl_sty_title_font_weight' );
+
+			Bstone_Fonts::add_font( $font_family, $font_weight );
+			
+			// Render Woo Shop List - Description
+			$font_family = bstone_options( 'sh_pl_sty_desc_font_family' );
+			$font_weight = bstone_options( 'sh_pl_sty_desc_font_weight' );
+
+			Bstone_Fonts::add_font( $font_family, $font_weight );
+			
+			// Render Woo Shop List - Category
+			$font_family = bstone_options( 'sh_pl_sty_cat_font_family' );
+			$font_weight = bstone_options( 'sh_pl_sty_cat_font_weight' );
+
+			Bstone_Fonts::add_font( $font_family, $font_weight );
+			
+			// Render Woo Shop List - Price
+			$font_family = bstone_options( 'sh_pl_sty_price_font_family' );
+			$font_weight = bstone_options( 'sh_pl_sty_price_font_weight' );
+
+			Bstone_Fonts::add_font( $font_family, $font_weight );
+			
+			// Render Woo Shop List - Sale Price
+			$font_family = bstone_options( 'sh_pl_sty_sale_price_font_family' );
+			$font_weight = bstone_options( 'sh_pl_sty_sale_price_font_weight' );
+
+			Bstone_Fonts::add_font( $font_family, $font_weight );
+			
+			// Render Woo Shop List - Add to Cart
+			$font_family = bstone_options( 'sh_pl_sty_cart_btn_font_family' );
+			$font_weight = bstone_options( 'sh_pl_sty_cart_btn_font_weight' );
+
+			Bstone_Fonts::add_font( $font_family, $font_weight );
+			
+			// Render Woo Shop List - Sale Badge
+			$font_family = bstone_options( 'sh_pl_sty_sale_bdg_font_family' );
+			$font_weight = bstone_options( 'sh_pl_sty_sale_bdg_font_weight' );
+
+			Bstone_Fonts::add_font( $font_family, $font_weight );
+			
+			// Render Woo Shop List - Out of Stock Badge
+			$font_family = bstone_options( 'sh_pl_sty_out_stok_font_family' );
+			$font_weight = bstone_options( 'sh_pl_sty_out_stok_font_weight' );
+
+			Bstone_Fonts::add_font( $font_family, $font_weight );
+			
+			// Render Woo Shop List - Filter
+			$font_family = bstone_options( 'sh_pl_sty_filter_font_family' );
+			$font_weight = bstone_options( 'sh_pl_sty_filter_font_weight' );
+
+			Bstone_Fonts::add_font( $font_family, $font_weight );
+			
+			// Render Woo Product Single - Title
+			$font_family = bstone_options( 'sh_pp_sty_title_font_family' );
+			$font_weight = bstone_options( 'sh_pp_sty_title_font_weight' );
+
+			Bstone_Fonts::add_font( $font_family, $font_weight );
+			
+			// Render Woo Product Single - Regular Price
+			$font_family = bstone_options( 'sh_pp_sty_price_font_family' );
+			$font_weight = bstone_options( 'sh_pp_sty_price_font_weight' );
+
+			Bstone_Fonts::add_font( $font_family, $font_weight );
+			
+			// Render Woo Product Single - Sale Price
+			$font_family = bstone_options( 'sh_pp_sty_sale_price_font_family' );
+			$font_weight = bstone_options( 'sh_pp_sty_sale_price_font_weight' );
+
+			Bstone_Fonts::add_font( $font_family, $font_weight );
+			
+			// Render Woo Product Single - Category
+			$font_family = bstone_options( 'sh_pp_sty_cat_font_family' );
+			$font_weight = bstone_options( 'sh_pp_sty_cat_font_weight' );
+
+			Bstone_Fonts::add_font( $font_family, $font_weight );
+			
+			// Render Woo Product Single - Tags
+			$font_family = bstone_options( 'sh_pp_sty_tags_font_family' );
+			$font_weight = bstone_options( 'sh_pp_sty_tags_font_weight' );
+
+			Bstone_Fonts::add_font( $font_family, $font_weight );
+			
+			// Render Woo Product Single - Add to Cart Button
+			$font_family = bstone_options( 'sh_pp_sty_cart_btn_font_family' );
+			$font_weight = bstone_options( 'sh_pp_sty_cart_btn_font_weight' );
+
+			Bstone_Fonts::add_font( $font_family, $font_weight );
+			
+			// Render Woo Product Single - SKU
+			$font_family = bstone_options( 'sh_pp_sty_sku_font_family' );
+			$font_weight = bstone_options( 'sh_pp_sty_sku_font_weight' );
+
+			Bstone_Fonts::add_font( $font_family, $font_weight );
+			
+			// Render Woo Product Single - Description
+			$font_family = bstone_options( 'sh_pp_sty_desc_font_family' );
+			$font_weight = bstone_options( 'sh_pp_sty_desc_font_weight' );
+
+			Bstone_Fonts::add_font( $font_family, $font_weight );
+			
+			// Render Woo Product Single - Variations
+			$font_family = bstone_options( 'sh_pp_sty_var_font_family' );
+			$font_weight = bstone_options( 'sh_pp_sty_var_font_weight' );
+
+			Bstone_Fonts::add_font( $font_family, $font_weight );
+			
+			// Render Woo Product Single - Quantity
+			$font_family = bstone_options( 'sh_pp_sty_qty_font_family' );
+			$font_weight = bstone_options( 'sh_pp_sty_qty_font_weight' );
+
+			Bstone_Fonts::add_font( $font_family, $font_weight );
+			
+			// Render Woo Product Single - Sale Badge
+			$font_family = bstone_options( 'sh_pp_sty_sale_bdg_font_family' );
+			$font_weight = bstone_options( 'sh_pp_sty_sale_bdg_font_weight' );
+
+			Bstone_Fonts::add_font( $font_family, $font_weight );
+			
+			// Render Woo Product Single - Out of Stock Badge
+			$font_family = bstone_options( 'sh_pp_sty_out_stok_font_family' );
+			$font_weight = bstone_options( 'sh_pp_sty_out_stok_font_weight' );
+
+			Bstone_Fonts::add_font( $font_family, $font_weight );
+			
+			// Render Woo Product Single - Rating
+			$font_family = bstone_options( 'sh_pp_sty_rating_font_family' );
+			$font_weight = bstone_options( 'sh_pp_sty_rating_font_weight' );
+
+			Bstone_Fonts::add_font( $font_family, $font_weight );
+			
+			// Render Woo Product Single - Tabs Title
+			$font_family = bstone_options( 'sh_pp_sty_tabs_font_family' );
+			$font_weight = bstone_options( 'sh_pp_sty_tabs_font_family' );
+
+			Bstone_Fonts::add_font( $font_family, $font_weight );
+			
+			// Render Woo Product Single - Upsells Heading
+			$font_family = bstone_options( 'sh_pp_sty_rup_font_family' );
+			$font_weight = bstone_options( 'sh_pp_sty_rup_font_weight' );
+
+			Bstone_Fonts::add_font( $font_family, $font_weight );
+			
+			// Render Woo Checkout & Cart - Section Heading
+			$font_family = bstone_options( 'sh_cc_sty_shead_font_family' );
+			$font_weight = bstone_options( 'sh_cc_sty_shead_font_weight' );
+
+			Bstone_Fonts::add_font( $font_family, $font_weight );
+			
+			// Render Woo Checkout & Cart - Field Label
+			$font_family = bstone_options( 'sh_cc_sty_label_font_family' );
+			$font_weight = bstone_options( 'sh_cc_sty_label_font_weight' );
+
+			Bstone_Fonts::add_font( $font_family, $font_weight );
+			
+			// Render Woo Checkout & Cart - Field
+			$font_family = bstone_options( 'sh_cc_sty_field_font_family' );
+			$font_weight = bstone_options( 'sh_cc_sty_field_font_weight' );
+
+			Bstone_Fonts::add_font( $font_family, $font_weight );
+			
+			// Render Woo Checkout & Cart - Button
+			$font_family = bstone_options( 'sh_cc_sty_button_font_family' );
+			$font_weight = bstone_options( 'sh_cc_sty_button_font_weight' );
+
+			Bstone_Fonts::add_font( $font_family, $font_weight );
+			
+			// Render Woo Checkout & Cart - Update Button
+			$font_family = bstone_options( 'sh_cc_sty_update_button_font_family' );
+			$font_weight = bstone_options( 'sh_cc_sty_update_button_font_weight' );
+
+			Bstone_Fonts::add_font( $font_family, $font_weight );
+			
+			// Render Woo Mini Cart
+			$font_family = bstone_options( 'sh_mc_sty_content_font_family' );
+			$font_weight = bstone_options( 'sh_mc_sty_content_font_weight' );
+
+			Bstone_Fonts::add_font( $font_family, $font_weight );
+			
+			// Render Woo Mini Cart - Checkout Button
+			$font_family = bstone_options( 'sh_mc_sty_checkout_font_family' );
+			$font_weight = bstone_options( 'sh_mc_sty_checkout_font_weight' );
+
+			Bstone_Fonts::add_font( $font_family, $font_weight );
+			
+			// Render Woo Mini Cart - View Cart Button
+			$font_family = bstone_options( 'sh_mc_sty_view_font_family' );
+			$font_weight = bstone_options( 'sh_mc_sty_view_font_weight' );
+
+			Bstone_Fonts::add_font( $font_family, $font_weight );
 		}
 
 		/**

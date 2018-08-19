@@ -7,10 +7,17 @@
  * @package Bstone
  * @since 1.0.0
  */
+
+	$bstone_page_layout = bstone_page_layout();
+	
 	get_header();
 ?>
 
-	<div id="primary" class="content-area">
+	<div class="st-container st-flex content-top st-<?php echo esc_attr( $bstone_page_layout ); ?>">
+	<div id="primary" <?php bstone_primary_class('st-flex-grow-1'); ?>>
+	
+		<?php bstone_primary_content_top(); ?>
+	
 		<main id="main" class="site-main">
 
 			<section class="error-404 not-found">
@@ -23,39 +30,22 @@
 
 					<?php
 						get_search_form();
-
-						the_widget( 'WP_Widget_Recent_Posts' );
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'bstone' ); ?></h2>
-						<ul>
-						<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-						?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'bstone' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-
-						the_widget( 'WP_Widget_Tag_Cloud' );
 					?>
 
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
 
 		</main><!-- #main -->
+								
+		<?php bstone_primary_content_bottom(); ?>
+		
 	</div><!-- #primary -->
 
 <?php
-get_footer();
+if( $bstone_page_layout == 'right-sidebar' || $bstone_page_layout == 'left-sidebar' || $bstone_page_layout == 'both-sidebars' ) :
+	  get_sidebar();
+endif;
+?>
+  </div><!-- .st-container -->
+  
+<?php get_footer();

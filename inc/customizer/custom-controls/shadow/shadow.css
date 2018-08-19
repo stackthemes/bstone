@@ -1,0 +1,15 @@
+
+.bst-box-shadow-wrap.bst-sc-control ul li {
+    width: 24%;
+    text-align: center;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.bst-box-shadow-wrap.bst-sc-control ul li input {
+    text-align: center;
+}
+
+.sc-shadow-color .alpha-color-control.wp-color-picker {
+    height: 25px;
+}

@@ -73,6 +73,7 @@
 					'bstone-settings[header-cmi-2-alignment]',
 					'bstone-settings[header-menu-position]',
 					'bstone-settings[header-2-items-position]',
+					'bstone-settings[header-logo-alignment]',
 				],
 				callback: function( value ) {					
 					if ( 'header-main-layout-1' === value ) {
@@ -764,85 +765,6 @@
 				}
 			},
 		],
-		
-		// Posts Banner / Slider - Active or Not
-		// 'bstone-settings[bp-banner-enable]' :
-		// [
-		// 	{
-		// 		controls: [
-		// 			'bstone-settings[bp-banner-layout]',
-		// 			'bstone-settings[bp-banner-width]',
-		// 			'bstone-settings[bp-banner-type]',
-		// 			'bstone-settings[bp-banner-display]',
-		// 			'bstone-settings[bp-banner-data-source]',
-		// 			'bstone-settings[bp-banner-structure]',					
-		// 			'bstone-settings[bp-banner-meta-structure]',
-		// 			'bstone-settings[bp-banner-align]',
-		// 			'bstone-settings[bp-banner-heading-spacing]',
-		// 			'bstone-settings[bpbnr-padding]',
-		// 			'bstone-settings[bpbnr-margin]',
-		// 			'bstone-settings[bp-banner-grid-gap]',
-		// 			'bstone-settings[bp-banner-heading-typography]',
-		// 			'bstone-settings[bp-banner-title-font-size]',
-		// 			'bstone-settings[bp-banner-category-font-size]',
-		// 			'bstone-settings[bp-banner-title-font-size-smlgrid]',
-		// 			'bstone-settings[bp-banner-category-font-size-smlgrid]',
-		// 			'bstone-settings[bp-banner-heading-colors]',
-		// 			'bstone-settings[bp-banner-title-text-color]',
-		// 			'bstone-settings[bp-banner-category-text-color]',
-		// 			'bstone-settings[bp-banner-meta-text-color]',
-		// 			'bstone-settings[bp-banner-title-text-color-hover]',
-		// 			'bstone-settings[bp-banner-category-text-color-hover]',
-		// 			'bstone-settings[bp-banner-title-bg-color]',
-		// 			'bstone-settings[bp-banner-category-bg-color]',
-		// 			'bstone-settings[bp-banner-title-bg-color-hover]',
-		// 			'bstone-settings[bp-banner-category-bg-color-hover]',
-		// 			'bstone-settings[bp-banner-posts-num]',
-		// 			'bstone-settings[bp-banner-imgsize]',
-		// 			'bstone-settings[bp-banner-content-gap]',
-		// 			'bstone-settings[bp-banner-title-top-padding]',
-		// 			'bstone-settings[bp-banner-title-left-padding]',
-		// 			'bstone-settings[bp-banner-cat-top-padding]',
-		// 			'bstone-settings[bp-banner-cat-left-padding]',
-		// 			'bstone-settings[bp-banner-overlay-color]',
-
-		// 			'bstone-settings[bp-banner-data-category]',
-		// 			'bstone-settings[bp-banner-data-postid]',
-		// 		],
-		// 		callback: function( value ) {
-		// 			if ( false === value ) {
-		// 				return false;
-		// 			}
-		// 			return true;
-		// 		}
-		// 	},
-		// 	{
-		// 		controls: [
-		// 			'bstone-settings[bp-banner-data-category]',
-		// 		],
-		// 		callback: function( value ) {
-		// 			var banner_data_category = api.instance('bstone-settings[bp-banner-data-source]').get();
-
-		// 			if ( true === value && 'category' === banner_data_category ) {
-		// 				return true;
-		// 			}
-		// 			return false;
-		// 		}
-		// 	},
-		// 	{
-		// 		controls: [
-		// 			'bstone-settings[bp-banner-data-postid]',
-		// 		],
-		// 		callback: function( value ) {
-		// 			var banner_data_posts = api.instance('bstone-settings[bp-banner-data-source]').get();
-
-		// 			if ( true === value && 'posts' === banner_data_posts ) {
-		// 				return true;
-		// 			}
-		// 			return false;
-		// 		}
-		// 	},
-		// ],
 
 		// Posts Banner / Slider - Data Source Change		
 		'bstone-settings[bp-banner-data-source]' :
@@ -1009,7 +931,53 @@
 		],
 		
 		
-	};	
+	};
+	
+	// Stick Bstone Customizer Tabs Section To Top
+	$( '#customize-controls .wp-full-overlay-sidebar-content').scroll(function() {
+		var bst_tab_width = '';
+		var bst_tab_border_left = '0px';
+		var screenSize = $(window).width();
+
+		if( screenSize <= 1500 ) {
+			bst_tab_border_left = '-1px';
+		}
+
+		if( $(this).scrollTop() > 200 ) {
+
+			if( screenSize <= 600 ) {
+				bst_tab_width = '100%';
+			} else {
+				bst_tab_width = '17.9%';
+			}
+
+			$( '.bstone-customizer-tabs' ).css({
+				'position' : 'fixed',
+				'z-index' : '9999',
+				'top' : '46px',
+				'left' : bst_tab_border_left,
+				'width' : bst_tab_width,
+				'min-width': '300px',
+				'max-width': '600px',
+				'background' : '#ffffff',
+				'padding' : '17px 0px',				
+				'border-right' : 'solid 1px #dddddd',
+				'border-bottom' : 'solid 1px #dddddd'
+			});
+		} else {
+			$( '.bstone-customizer-tabs' ).css({
+				'position' : 'relative',
+				'z-index' : '0',
+				'top' : 'auto',
+				'left' : 'auto',
+				'width' : 'auto',
+				'background' : 'transparent',
+				'padding' : '0px',
+				'border-right' : 'none',
+				'border-bottom' : 'none'
+			});
+		}
+	});
 	
 })( jQuery );
 

@@ -57,7 +57,29 @@ if ( ! defined( 'ABSPATH' ) ) {
 			$wp_customize, BSTONE_THEME_SETTINGS . '[base-text-color]', array(
 				'section'  => 'section-color-general',
 				'priority' => 5,
-				'label'    => __( 'Text Color', 'bstone' ),
+				'label'    => __( 'Primary Text Color', 'bstone' ),
+			)
+		)
+	);
+
+	/**
+	 * Option: Text Color Light
+	 */
+	$wp_customize->add_setting(
+		BSTONE_THEME_SETTINGS . '[second-text-color]', array(
+			'default'           => bstone_get_option( 'second-text-color' ),
+			'type'              => 'option',
+			'capability' 		=> 'manage_options',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => array( 'Bstone_Customizer_Sanitizes', 'sanitize_alpha_color' ),
+		)
+	);
+	$wp_customize->add_control(
+		new Bstone_Control_Color(
+			$wp_customize, BSTONE_THEME_SETTINGS . '[second-text-color]', array(
+				'section'  => 'section-color-general',
+				'priority' => 10,
+				'label'    => __( 'Secondary Text Color', 'bstone' ),
 			)
 		)
 	);

@@ -55,9 +55,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'priority'    => 5,
 				'label'       => __( 'Logo Width', 'bstone' ),
 				'input_attrs' => array(
-					'min'  => 50,
+					'min'  => 10,
 					'step' => 1,
-					'max'  => 600,
+					'max'  => 500,
 				),
 			)
 		)
@@ -120,6 +120,47 @@ if ( ! defined( 'ABSPATH' ) ) {
 	);
 
 	/**
+	 * Option: Header Layout
+	 */
+	$wp_customize->add_setting(
+		BSTONE_THEME_SETTINGS . '[logo-layouts]', array(
+			'default'           => bstone_get_option( 'logo-layouts' ),
+			'type'              => 'option',
+			'capability' 		=> 'manage_options',
+			'sanitize_callback' => array( 'Bstone_Customizer_Sanitizes', 'sanitize_choices' ),
+		)
+	);
+
+	$wp_customize->add_control(
+		new Bstone_Control_Radio_Image(
+			$wp_customize, BSTONE_THEME_SETTINGS . '[logo-layouts]', array(
+				'section'  => 'title_tagline',
+				'priority' => 50,
+				'label'    => __( 'Site Identity Alignment', 'bstone' ),
+				'type'     => 'bst-radio-image',
+				'choices'  => array(
+					'default'          => array(
+						'label' => __( 'Default', 'bstone' ),
+						'path'  => BSTONE_THEME_URI . '/assets/images/logo-layout-1-60x60.png',
+					),
+					'all-inline'          => array(
+						'label' => __( 'All Inline', 'bstone' ),
+						'path'  => BSTONE_THEME_URI . '/assets/images/logo-layout-2-60x60.png',
+					),
+					'icon-title-inline'          => array(
+						'label' => __( 'Icon & Title Inline', 'bstone' ),
+						'path'  => BSTONE_THEME_URI . '/assets/images/logo-layout-3-60x60.png',
+					),
+					'title-tagline-inline'          => array(
+						'label' => __( 'Title & Tagline Inline', 'bstone' ),
+						'path'  => BSTONE_THEME_URI . '/assets/images/logo-layout-4-60x60.png',
+					),
+				),
+			)
+		)
+	);
+
+	/**
 	 * Option: Divider
 	*/
 	$wp_customize->add_control(
@@ -127,7 +168,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			$wp_customize, BSTONE_THEME_SETTINGS . '[bst-site-icon-divider]', array(
 				'type'     => 'bst-divider',
 				'section'  => 'title_tagline',
-				'priority' => 50,
+				'priority' => 55,
 				'settings' => array(),
 			)
 		)

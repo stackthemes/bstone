@@ -179,3 +179,24 @@ if ( ! defined( 'ABSPATH' ) ) {
 			)
 		)
 	);
+
+	/**
+	 * Option: Widget Border Color
+	 */
+	$wp_customize->add_setting(
+		BSTONE_THEME_SETTINGS . '[widget-border-color]', array(
+			'default'           => bstone_get_option( 'widget-border-color' ),
+			'type'              => 'option',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => array( 'Bstone_Customizer_Sanitizes', 'sanitize_alpha_color' ),
+		)
+	);
+	$wp_customize->add_control(
+		new Bstone_Control_Color(
+			$wp_customize, BSTONE_THEME_SETTINGS . '[widget-border-color]', array(
+				'section'  => 'section-color-sidebar',
+				'priority' => 40,
+				'label'    => __( 'Widget Border', 'bstone' ),
+			)
+		)
+	);

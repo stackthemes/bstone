@@ -190,12 +190,17 @@ if ( ! function_exists( 'bstone_get_breadcrumbs' ) ) {
 
         // Handle the search page
         if ( is_search() ) {
-            $breadcrumb_trail = bstone_default_strings('string-breadcrumb-search', false) . $before . get_search_query() . $after;
+            $breadcrumb_trail = '<li>'.bstone_default_strings('string-breadcrumb-search', false) . $before . get_search_query() . $after.'</li>';
         }
 
         // Handle 404's
         if ( is_404() ) {
-            $breadcrumb_trail = $before . bstone_default_strings('string-breadcrumb-not-found', false) . $after;
+            $breadcrumb_trail = '<li>'.$before . bstone_default_strings('string-breadcrumb-not-found', false) . $after.'</li>';
+        }
+
+        // Shop Page
+        if( class_exists( 'WooCommerce' ) && is_shop() ) {
+            $breadcrumb_trail = '<li>'.$before . woocommerce_page_title( false ) . $after.'</li>';
         }
 
         // Handle paged pages
@@ -226,7 +231,8 @@ if ( ! function_exists( 'bstone_get_breadcrumbs' ) ) {
         }
         $breadcrumb_output_link .= '</ul>';
         $breadcrumb_output_link .= '</nav><!-- .breadcrumbs -->';
-
-        return $breadcrumb_output_link;
+        
+        // Apply filters and return
+		return apply_filters( 'bstone_get_breadcrumbs', $breadcrumb_output_link );
 	}
 }

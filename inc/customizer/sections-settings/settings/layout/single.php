@@ -14,6 +14,29 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 	/**
+	 * Customizer Tabs - To navigate to other related sections.
+	 */
+	$wp_customize->add_control(
+		new Bstone_Control_Tabs(
+			$wp_customize, BSTONE_THEME_SETTINGS . '[site-single-post-layout-tabs]', array(
+				'type'          => 'bst-tabs',
+				'section'       => 'section-single',
+				'priority'      => 1,
+				'settings'      => array(),
+				'tabs_data'     => array(
+					__('layout', 'bstone'),
+					__('spacing', 'bstone')
+				),
+				'tabs_sections' => array(
+					'section-single',
+					'section-spacing-blog-single'
+				),
+				'tabs_active'   => __('layout', 'bstone'),
+			)
+		)
+	);
+
+	/**
 	 * Option: Display Post Structure
 	 */
 	$wp_customize->add_setting(
@@ -77,7 +100,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 			'default'           => bstone_get_option( 'post-title-display-option' ),
 			'type'              => 'option',
 			'capability' 		=> 'manage_options',
-			'transport'         => 'postMessage',
 			'sanitize_callback' => array( 'Bstone_Customizer_Sanitizes', 'sanitize_checkbox' ),
 		)
 	);
@@ -172,7 +194,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 			'label'    => __( 'Next Prev Links Position', 'bstone' ),
 			'choices'  => array(
 				'default' => __( 'Default', 'bstone' ),
-				'bottom'  => __( 'Bottom', 'bstone' ),
 				'center'  => __( 'Center', 'bstone' ),
 			),
 		)

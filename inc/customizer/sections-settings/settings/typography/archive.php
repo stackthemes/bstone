@@ -54,7 +54,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'section'  	=> 'section-archive-typo-settings',
 				'priority' 	=> 10,
 			)
-		)
+		) 
 	);
 
 	/**

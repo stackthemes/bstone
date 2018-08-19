@@ -72,6 +72,40 @@
 				});
 				
 			}); // End Bstone Customizer Control Toggles
+
+			// Loop through each setting. - Shop Customizer Controls Toggle
+			if( BstoneShopCustomizerToggles ) {
+				$.each( BstoneShopCustomizerToggles, function( settingId, toggles ) {
+					
+					// Get the setting object.
+					api( settingId, function( setting ) {
+
+						// Loop though the toggles for the setting.
+						$.each( toggles, function( i, toggle ) {
+
+							// Loop through the controls for the toggle.
+							$.each( toggle.controls, function( k, controlId ) {
+
+								// Get the control object.
+								api.control( controlId, function( control ) {
+									
+									// Define the visibility callback.
+									var visibility = function( to ) {
+										control.container.toggle( toggle.callback( to ) );
+									};
+
+									// Init visibility.
+									visibility( setting.get() );
+
+									// Bind the visibility callback to the setting.
+									setting.bind( visibility );
+								});
+							});
+						});
+					});
+					
+				}); // End Bstone Shop Customizer Control Toggles
+			}
 			
 		}
 		

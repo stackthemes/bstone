@@ -122,7 +122,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			'section'     => 'section-blog',
 			'priority'    => 20,
 			'label'       => __( 'Read More Button Text', 'bstone' ),
-			'description' => __( 'Text at the end of the excerpt.', 'bstone' ),
+			'description' => __( 'Read more button text string.', 'bstone' ),
 		)
 	);
 
@@ -188,7 +188,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			'type'     => 'select',
 			'priority' => 35,
 			'choices'  => array(
-				'normal'     => __( 'Default', 'bstone' ),
+				'normal'     => __( 'None', 'bstone' ),
 				'1-full-1'   => __( 'First post full width on first page', 'bstone' ),
 				'1-full-all' => __( 'First post full width on all pages', 'bstone' ),
 			),
@@ -239,6 +239,31 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'flex-start' => __( 'Top', 'bstone' ),
 				'center'	 => __( 'Center', 'bstone' ),
 				'flex-end'	 => __( 'Bottom', 'bstone' ),
+			),
+		)
+	);
+
+	/**
+	 * Option: Blog Display Style - List Style
+	 */
+	$wp_customize->add_setting(
+		BSTONE_THEME_SETTINGS . '[blog-article-alignment]', array(
+			'default'           => bstone_get_option( 'blog-article-alignment' ),
+			'type'              => 'option',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => array( 'Bstone_Customizer_Sanitizes', 'sanitize_choices' ),
+		)
+	);
+	$wp_customize->add_control(
+		BSTONE_THEME_SETTINGS . '[blog-article-alignment]', array(
+			'section'  => 'section-blog',
+			'label'    => __( 'Content Alignment', 'bstone' ),
+			'type'     => 'select',
+			'priority' => 43,
+			'choices'  => array(
+				'left'       => __( 'Left', 'bstone' ),
+				'right'      => __( 'Right', 'bstone' ),
+				'center' => __( 'Center', 'bstone' ),
 			),
 		)
 	);
@@ -787,6 +812,56 @@ if ( ! defined( 'ABSPATH' ) ) {
 	);
 
 	/**
+	 * Post Margin
+	 */
+
+	$article_outer_border = array(
+		'baouter_top_border:'.bstone_get_option( 'baouter_top_border' ),'baouter_bottom_border:'.bstone_get_option( 'baouter_bottom_border' ),'baouter_left_border:'.bstone_get_option( 'baouter_left_border' ), 'baouter_right_border:'.bstone_get_option( 'baouter_right_border' ),
+		'baouter_tablet_top_border:', 'baouter_tablet_bottom_border:','baouter_tablet_left_border:', 'baouter_tablet_right_border:',
+		'baouter_mobile_top_border:', 'baouter_mobile_bottom_border:','baouter_mobile_left_border:', 'baouter_mobile_right_border:',
+	);	
+	foreach($article_outer_border as $dimension) {
+		$dval = explode(":",$dimension);
+		$wp_customize->add_setting(
+			BSTONE_THEME_SETTINGS . '['.$dval[0].']', array(
+				'default'           => $dval[1],
+				'type'              => 'option',
+				'capability' 		=> 'manage_options',
+				'transport'         => 'postMessage',
+				'sanitize_callback' => array( 'Bstone_Customizer_Sanitizes', 'sanitize_number_n_blank' ),
+			)
+		);
+	}
+	$wp_customize->add_control(
+		new Bstone_Control_Dimensions(
+			$wp_customize, BSTONE_THEME_SETTINGS . '[blog-article-outer-border]', array(
+				'section'  => 'section-blog',
+				'priority' => 160,
+				'label'    => __( 'Post Border Size (px)', 'bstone' ),
+				'settings'   => array(
+		            'desktop_top' 		=> BSTONE_THEME_SETTINGS.'[baouter_top_border]',
+		            'desktop_right' 	=> BSTONE_THEME_SETTINGS.'[baouter_right_border]',
+		            'desktop_bottom' 	=> BSTONE_THEME_SETTINGS.'[baouter_bottom_border]',
+		            'desktop_left' 		=> BSTONE_THEME_SETTINGS.'[baouter_left_border]',
+		            'tablet_top' 		=> BSTONE_THEME_SETTINGS.'[baouter_tablet_top_border]',
+		            'tablet_right' 		=> BSTONE_THEME_SETTINGS.'[baouter_tablet_right_border]',
+		            'tablet_bottom'		=> BSTONE_THEME_SETTINGS.'[baouter_tablet_bottom_border]',
+		            'tablet_left' 		=> BSTONE_THEME_SETTINGS.'[baouter_tablet_left_border]',
+		            'mobile_top' 		=> BSTONE_THEME_SETTINGS.'[baouter_mobile_top_border]',
+		            'mobile_right' 		=> BSTONE_THEME_SETTINGS.'[baouter_mobile_right_border]',
+		            'mobile_bottom'		=> BSTONE_THEME_SETTINGS.'[baouter_mobile_bottom_border]',
+		            'mobile_left' 		=> BSTONE_THEME_SETTINGS.'[baouter_mobile_left_border]',
+				),
+			    'input_attrs' 			=> array(
+			        'min'   => 0,
+			        'max'   => 15,
+			        'step'  => 1,
+			    ),
+			)
+		)
+	);
+
+	/**
 	 * Option: Post Border Radius
 	 */
 	$wp_customize->add_setting(
@@ -802,7 +877,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		BSTONE_THEME_SETTINGS . '[blog-post-border-radius]', array(
 			'type'        => 'number',
 			'section'     => 'section-blog',
-			'priority'    => 160,
+			'priority'    => 165,
 			'label'       => __( 'Post Border Radius', 'bstone' ),
 			'input_attrs' => array(
 				'min'  => 0,

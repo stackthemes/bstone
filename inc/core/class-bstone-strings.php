@@ -37,6 +37,8 @@ if ( ! function_exists( 'bstone_default_strings' ) ) {
 				'string-blog-navigation-next'            => __( 'Next Page', 'bstone' ) . ' <span class="bst-right-arrow">&rarr;</span>',
 				'string-blog-navigation-previous'        => '<span class="bst-left-arrow">&larr;</span> ' . __( 'Previous Page', 'bstone' ),
 				'string-post-by-title'		 			 => __( 'Posts by', 'bstone' ),
+				'string-comment-field-label'		 	 => __( 'Comment', 'bstone' ),
+				'string-comment-field-placeholder'		 => __( 'Type Here...', 'bstone' ),
 
 				// Single Post Default Strings.
 				'string-single-page-links-before'        => __( 'Pages:', 'bstone' ),

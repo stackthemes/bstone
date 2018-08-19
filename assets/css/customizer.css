@@ -178,16 +178,27 @@ header.site-header button.customize-partial-edit-shortcut-button {
 #customize-control-bstone-settings-enable-extra5-sidebar,
 #customize-control-bstone-settings-readbtn-typo-text-transform,
 #customize-control-bstone-settings-bffield-text-transform, 
-#customize-control-bstone-settings-bfbuttons-text-transform {
+#customize-control-bstone-settings-bfbuttons-text-transform,
+#bstone-settings[sh_pp_set_product_desc],
+#bstone-settings[sh_pp_set_product_review],
+#bstone-settings[sh_pp_set_product_additional_info],
+#bstone-settings[sh_pp_set_product_lightbox],
+#bstone-settings[sh_pp_set_product_zoom],
+#bstone-settings[sh_pp_set_related_products] {
     width: 50%;
     clear: none;
-	display: inline-block;
+	display: inline-block !important;
 	box-sizing: border-box;
 }
 
 .customize-pane-child>li#customize-control-bstone-settings-default-body-font-weight {
 	width: 100%;
 	padding-right: 0px;
+}
+
+#customize-control-bstone-settings-sh_pp_sty_playout_content_width_custom input[type="number"],
+#customize-control-bstone-settings-sh_pl_sty_cnt_content_width_custom input[type="number"] {
+    width: 65px !important;
 }
 
 /* General tweaks */
@@ -199,4 +210,27 @@ header.site-header button.customize-partial-edit-shortcut-button {
 #accordion-section-background_image,
 #customize-control-display_header_text {
     display: none !important;
+}
+
+.control-section-sc-dialog {
+    display: none !important;
+}
+
+#customize-control-bstone-settings-sh_pl_sty_desc_line_height input.bst-range-value-input,
+#customize-control-bstone-settings-sh_pl_set_shop_vertical_space.customize-control-bst-responsive .input-wrapper .bst-responsive-select,
+#customize-control-bstone-settings-sh_pl_set_shop_horizontal_space.customize-control-bst-responsive .input-wrapper .bst-responsive-select {
+    width: 60px;
+}
+
+#customize-control-bstone-settings-sh_pl_set_shop_vertical_space.customize-control-bst-responsive .input-wrapper input,
+#customize-control-bstone-settings-sh_pl_set_shop_horizontal_space.customize-control-bst-responsive .input-wrapper input {
+    width: calc(100% - 62px);
+}
+
+.wp-customizer .sc-dialog .ui-dialog-title#ui-id-4 {
+    font-size: 20px !important;
+}
+
+#sc_shop_pages button img {
+    max-width: 20px;
 }

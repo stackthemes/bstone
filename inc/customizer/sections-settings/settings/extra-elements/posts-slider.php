@@ -99,30 +99,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	);
     
     /**
-	 * Option: Posts Banner Display On
-	 */
-	$wp_customize->add_setting(
-		BSTONE_THEME_SETTINGS . '[bp-banner-display]', array(
-			'default'           => bstone_get_option( 'bp-banner-display' ),
-			'type'              => 'option',
-			'sanitize_callback' => array( 'Bstone_Customizer_Sanitizes', 'sanitize_choices' ),
-		)
-	);
-
-	$wp_customize->add_control(
-		BSTONE_THEME_SETTINGS . '[bp-banner-display]', array(
-			'type'     => 'select',
-			'section'  => 'section-posts-slider',
-			'priority' => 25,
-			'label'    => __( 'Display Banner On', 'bstone' ),
-			'choices'  => array(
-				'archive'   => __( 'On all archive pages', 'bstone' ),
-				'blog'      => __( 'Only on blog page', 'bstone' ),
-			),
-		)
-	);
-    
-    /**
 	 * Option: Posts Banner Data Source
 	 */
 	$wp_customize->add_setting(
@@ -404,7 +380,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					 'mobile_left' 		=> BSTONE_THEME_SETTINGS.'[bpbnr_mobile_left_margin]',
 				 ),
 				 'input_attrs' 			=> array(
-					 'min'   => 0,
+					 'min'   => -500,
 					 'max'   => 500,
 					 'step'  => 1,
 				 ),

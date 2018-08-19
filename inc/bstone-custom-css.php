@@ -75,9 +75,11 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			$sidebar_bg_color				 = bstone_options( 'sidebar-bg-color' );
 			$widget_bg_color				 = bstone_options( 'widget-bg-color' );			
 			$text_color                      = bstone_options( 'base-text-color' );
+			$second_text_color               = bstone_options( 'second-text-color' );
 			$link_color                      = bstone_options( 'link-color' );
 			$link_hover_color                = bstone_options( 'link-h-color' );			
 			$main_border_color				 = bstone_options( 'main-border-color' );
+			$sidebar_border_color			 = bstone_options( 'widget-border-color' );
 
 			// Post / Page Title Area - Colors & Background
 			$page_single_title_color		 = bstone_options( 'page-single-title-color' );
@@ -218,6 +220,13 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			$blog_content_padding_top        = bstone_options( 'blog-content-padding-top' );
 			$blog_content_padding_bottom     = bstone_options( 'blog-content-padding-bottom' );
 			
+			$blog_single_meta_margin_top     = bstone_options( 'blog-single-meta-margin-top' );
+			$blog_single_meta_margin_bottom  = bstone_options( 'blog-single-meta-margin-bottom' );
+			$blog_single_img_margin_top      = bstone_options( 'blog-single-img-margin-top' );
+			$blog_single_img_margin_bottom   = bstone_options( 'blog-single-img-margin-bottom' );
+			$blog_single_footer_margin_top   = bstone_options( 'blog-single-footer-margin-top' );
+			$blog_single_footer_margin_bottom = bstone_options( 'blog-single-footer-margin-bottom' );
+			
 			$single_typo_title_font_family   = self::get_bstone_font_family( $default_font_family, 'single-typo-title-font-family' );
 			$single_typo_title_font_weight   = self::get_bstone_font_waight($default_font_waight, 'single-typo-title-font-weight');
 			$single_typo_title_transform  	 = bstone_options( 'single-typo-title-transform' );
@@ -285,8 +294,7 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			$header_main_layout_width  		 = bstone_options( 'header-main-layout-width' );
 			$header_logo_alignment  		 = bstone_options( 'header-logo-alignment' );
 			
-			$display_site_title  		 	 = bstone_options( 'display-site-title' );
-			$display_site_tagline  		 	 = bstone_options( 'display-site-tagline' );
+			$logo_layouts  		 	 		 = bstone_options( 'logo-layouts' );
 			
 			$disable_primary_nav  		 	 = bstone_options( 'disable-primary-nav' );
 			
@@ -386,6 +394,8 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			$img_caption_color	 		 	 = bstone_options( 'img-caption-color' );
 			$img_caption_bg_color	 		 = bstone_options( 'img-caption-bg-color' );
 			$blog_post_border_radius		 = bstone_options( 'blog-post-border-radius' );
+			$single_sec_border_size			 = bstone_options( 'single-sec-border-size' );
+			$blog_article_alignment			 = bstone_options( 'blog-article-alignment' );
 			
 			// Pagination
 			$pagination_align		 		 = bstone_options( 'pagination-align' );
@@ -531,6 +541,9 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 				'body #tertiary aside, body #tertiary .widget' => array(
 					'background-color' => esc_attr( $widget_bg_color ),
 				),
+				'#secondary aside, #tertiary aside, #tertiary .bst-popular-posts-widget ul.posts-separator li.bst-post-list-separator, #secondary .bst-popular-posts-widget ul.posts-separator li.bst-post-list-separator' => array(
+					'border-color'	   => esc_attr( $sidebar_border_color ),
+				),
 				'#masthead .site-logo-img .custom-logo-link img' => array(
 					'max-width' => esc_attr( bstone_options( 'bst-header-logo-width' ) ) . 'px',
 				),
@@ -540,9 +553,6 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 				'.entry-title' => array(
 					'font-size' => bstone_responsive_font( $archive_post_title_font_size, 'desktop' ),
 				),
-				'.comment-reply-title' => array(
-					'font-size' => bstone_get_font_css_value( (int) $body_font_size_desktop * 1.66666 ),
-				),
 				'.bst-comment-list #cancel-comment-reply-link' => array(
 					'font-size' => bstone_responsive_font( $body_font_size, 'desktop' ),
 				),
@@ -551,6 +561,11 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 				),
 				'#secondary' => array(
 					'font-size' => bstone_responsive_font( $body_font_size, 'desktop' ),
+				),
+
+				'.commentlist .comment-header .comment-date a' => array(
+					'color' 	=> esc_attr( $second_text_color ),
+					'font-size' => '100%',
 				),
 
 				// Global CSS.
@@ -761,10 +776,10 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 				),
 				
 				// Pagination
-				'.st-pagination' => array(
+				'.st-pagination, body.woocommerce #page nav.woocommerce-pagination' => array(
 					'text-align'	   => esc_attr( $pagination_align ),
 				),				
-				'.st-pagination .nav-links a' => array(
+				'.st-pagination .nav-links a, body.woocommerce #page nav.woocommerce-pagination ul li a, body.woocommerce #page nav.woocommerce-pagination ul li span' => array(
 					'color' 	   	   => esc_attr( $text_color_pagination ),
 					'background-color' => esc_attr( $bg_color_pagination ),
 					'border-color' 	   => esc_attr( $border_color_pagination ),
@@ -773,18 +788,20 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 					'font-family'	   => "'".bstone_get_css_value( $pagination_font_family, 'font' )."'",
 					'font-weight' 	   => esc_attr( $pagination_font_waight ),
 					'text-transform'   => esc_attr( $pagination_text_transform ),
+					'border-style'    => 'solid',
 				),				
-				'.st-pagination .nav-links a:hover, .st-pagination .nav-links span.page-numbers' => array(
+				'.st-pagination .nav-links a:hover, .st-pagination .nav-links span.page-numbers, body.woocommerce #page nav.woocommerce-pagination ul li a:focus, body.woocommerce #page nav.woocommerce-pagination ul li a:hover, body.woocommerce #page nav.woocommerce-pagination ul li span.current' => array(
 					'color' 	   	   => esc_attr( $text_color_hover_pagination ),
 					'background-color' => esc_attr( $bg_color_hover_pagination ),
 					'border-color' 	   => esc_attr( $border_color_hover_pagination ),
 				),				
-				'.st-pagination .nav-links span.page-numbers' => array(
+				'.st-pagination .nav-links span.page-numbers, body.woocommerce #page nav.woocommerce-pagination ul li span.current' => array(
 					'border-width' 	   => bstone_get_css_value( $pagination_border_width, 'px' ),
 					'border-radius'    => bstone_get_css_value( $pagination_border_radius, 'px' ),
 					'font-family'	   => "'".bstone_get_css_value( $pagination_font_family, 'font' )."'",
 					'font-weight' 	   => esc_attr( $pagination_font_waight ),
 					'text-transform'   => esc_attr( $pagination_text_transform ),
+					'border-style'    => 'solid',
 				),	
 
 				// Blockquote Text Color.
@@ -816,10 +833,10 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 				),
 
 				// Pagination.
-				'.bst-pagination a, .page-links .page-link, .single .post-navigation a' => array(
+				'.bst-pagination a, .page-links .page-link, .single .post-navigation a, .post-navigation a h5' => array(
 					'color' => esc_attr( $link_color ),
 				),
-				'.bst-pagination a:hover, .bst-pagination a:focus, .bst-pagination > span:hover:not(.dots), .bst-pagination > span.current, .page-links > .page-link, .page-links .page-link:hover, .post-navigation a:hover' => array(
+				'.bst-pagination a:hover, .bst-pagination a:focus, .bst-pagination > span:hover:not(.dots), .bst-pagination > span.current, .page-links > .page-link, .page-links .page-link:hover, .post-navigation a:hover, .post-navigation a:hover h5' => array(
 					'color' => esc_attr( $link_hover_color ),
 				),
 				
@@ -853,7 +870,7 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 					'font-weight' 	 => esc_attr( $top_nav_font_waight ),
 					'text-transform' => esc_attr( $top_nav_font_transform ),
 				),
-				'header.site-header nav .st-main-navigation > ul li a:hover, header.site-header nav .st-main-navigation > ul li.current-menu-item a' => array(
+				'header.site-header nav .st-main-navigation > ul li > a:hover, header.site-header nav .st-main-navigation > ul li.current-menu-item > a, header.site-header nav .st-main-navigation > ul li.current-menu-parent > a' => array(
 					'color' => esc_attr( $menu_link_hover_color_header ),
 				),
 				'.header-2 .st-site-nav nav' => array(
@@ -936,7 +953,7 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 					'border-color' 	   => esc_attr( $border_color_hover_scroll ),
 				),
 				
-				'body #content form input, body #content form select, body #content form textarea' => array(
+				'body #page form input, body #page form select, body #page form textarea' => array(
 					'color' 		   => esc_attr( $form_bffield_text_color ),
 					'background-color' => esc_attr( $form_bffield_bg_color ),
 					'border-color' 	   => esc_attr( $form_bffield_border_color ),
@@ -947,22 +964,22 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 					'text-transform'   => esc_attr( $form_bffield_text_transform ),
 				),
 
-				'body #content form label'=> array(
+				'body #page form label'=> array(
 					'color' 		   => esc_attr( $form_bffield_text_color ),
 					'font-family' 	   => "'".bstone_get_css_value( $form_bffield_font_family, 'font' )."'",
 					'font-weight' 	   => esc_attr( $form_bffield_font_weight ),
 					'text-transform'   => esc_attr( $form_bffield_text_transform ),
 				),
 
-				'body #content form input'=> array(
+				'body #page form input'=> array(
 					'height' 		   => bstone_get_css_value( $form_input_height, 'px' ),
 				),
 
-				'body #content form textarea'=> array(
+				'body #page form textarea'=> array(
 					'height' 		   => bstone_get_css_value( $form_textarea_height, 'px' ),
 				),
 
-				'body #content form input[type="button"], body #content form input[type="reset"], body #content form input[type="submit"], body #content form button' => array(
+				'body #page form input[type="button"], body #page form input[type="reset"], body #page form input[type="submit"], body #page form button' => array(
 					'color' 		   => esc_attr( $form_bfbuttons_text_color ),
 					'background-color' => esc_attr( $form_bfbuttons_bg_color ),
 					'border-color' 	   => esc_attr( $form_bfbuttons_border_color ),
@@ -973,13 +990,13 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 					'text-transform'   => esc_attr( $form_bfbuttons_text_transform ),
 				),
 
-				'body #content form input[type="button"]:hover, body #content form input[type="reset"]:hover, body #content form input[type="submit"]:hover, body #content form button:hover' => array(
+				'body #page form input[type="button"]:hover, body #page form input[type="reset"]:hover, body #page form input[type="submit"]:hover, body #page form button:hover' => array(
 					'color' 		   => esc_attr( $form_bfbuttons_text_color_hover ),
 					'background-color' => esc_attr( $form_bfbuttons_bg_color_hover ),
 					'border-color' 	   => esc_attr( $form_bfbuttons_border_color_hover ),
 				),
 				
-				'#primary .bst-posts-cnt .entry-title, #primary .bst-posts-cnt .entry-title a' => array(
+				'#primary .bst-posts-cnt .entry-title, #primary .bst-posts-cnt .entry-title a, .bst-popular-posts-widget li .entry-title' => array(
 					'color' 		 => esc_attr( $blog_title_color ),
 					'font-family' 	 => "'".bstone_get_css_value( $blog_typo_title_font_family, 'font' )."'",
 					'font-weight' 	 => esc_attr( $blog_typo_title_font_weight ),
@@ -1064,7 +1081,22 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 					'margin-bottom'  => bstone_get_css_value( $blog_content_padding_bottom, 'px' ),
 				),
 				
-				'#primary .bst-posts-cnt .entry-meta, #primary .bst-posts-cnt .entry-meta a, .single-post #primary .entry-meta, .single-post #primary .entry-meta a' => array(
+				'#primary .bst-article-inner-single .entry-meta' => array(
+					'margin-top' 	 => bstone_get_css_value( $blog_single_meta_margin_top, 'px' ),
+					'margin-bottom'  => bstone_get_css_value( $blog_single_meta_margin_bottom, 'px' ),
+				),
+				
+				'.bst-article-inner-single > .thumbnail' => array(
+					'margin-top' 	 => bstone_get_css_value( $blog_single_img_margin_top, 'px' ),
+					'margin-bottom'  => bstone_get_css_value( $blog_single_img_margin_bottom, 'px' ),
+				),
+				
+				'.bst-article-inner-single .entry-footer' => array(
+					'margin-top' 	 => bstone_get_css_value( $blog_single_footer_margin_top, 'px' ),
+					'margin-bottom'  => bstone_get_css_value( $blog_single_footer_margin_bottom, 'px' ),
+				),
+				
+				'#primary .bst-posts-cnt .entry-meta, #primary .bst-posts-cnt .entry-meta a, .single-post #primary .entry-meta, .single-post #primary .entry-meta a, .bst-popular-posts-widget li .bst-widget-post-cnt .entry-meta, .entry-meta *, .bst-article-inner-single .entry-footer *' => array(
 					'color' 		 => esc_attr( $blog_meta_color ),
 					'font-family' 	 => "'".bstone_get_css_value( $blog_typo_entry_font_family, 'font' )."'",
 					'font-weight' 	 => esc_attr( $blog_typo_entry_font_weight ),
@@ -1101,17 +1133,32 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 					'color' 		 => esc_attr( $blog_meta_color ),
 				),
 				
-				'#primary .bst-posts-cnt .entry-meta a, .single-post #primary .entry-meta a' => array(
+				'#primary .bst-posts-cnt .entry-meta a, .single-post #primary .entry-meta a, .bst-popular-posts-widget li .bst-widget-post-cnt .entry-meta' => array(
 					'color' 		 => esc_attr( $blog_meta_link_color ),
 				),
 				
-				'#primary .bst-posts-cnt .entry-meta a:hover, .single-post #primary .entry-meta a:hover' => array(
+				'#primary .bst-posts-cnt .entry-meta a:hover, .single-post #primary .entry-meta a:hover, .bst-article-inner-single .entry-footer a:hover' => array(
 					'color' 		 => esc_attr( $blog_meta_link_color_hover ),
 				),
 				
 				'#primary .bst-posts-cnt article .bst-article-inner' => array(
+					'border-color' 	  	  => esc_attr( $main_border_color ),
 					'background-color' => esc_attr( $blog_entry_bg_color ),
 					'border-radius'	   => bstone_get_css_value( $blog_post_border_radius, 'px' ),
+				),
+
+				'.bst-single-post-section' => array(
+					'border-color' 	  	  => esc_attr( $main_border_color ),
+					'border-bottom-width' => bstone_get_css_value( $single_sec_border_size, 'px' ),
+				),
+
+				'#main > .bst-single-post-section' => array(
+					'border-color' 	   => esc_attr( $main_border_color ),
+					'border-top-width' => bstone_get_css_value( $single_sec_border_size, 'px' ),
+				),
+
+				'.bst-posts-cnt .bst-article-inner' => array(
+					'text-align' => esc_attr( $blog_article_alignment ),
 				),
 			);
 
@@ -1130,16 +1177,59 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			
 			$parse_css .= bstone_parse_css( $bstone_page_bg_css );
 
+			// Header logo layout
+			if( 'default' != $logo_layouts ) {
+				$bstone_logo_layout_inner_css = '';
+
+				$bstone_logo_layout_outer_css = array(
+					'.st-site-identity' => array(
+						'display' 	  => 'flex',
+						'align-items' => 'center',
+						'flex-wrap'   => 'wrap',
+					),
+				);
+
+				if( 'right' == $header_logo_alignment ) {
+					$bstone_logo_layout_outer_css['.st-site-identity']['justify-content'] = 'flex-end';
+				}
+
+				if( 'center' == $header_logo_alignment ) {
+					$bstone_logo_layout_outer_css['.st-site-identity']['justify-content'] = 'center';
+				}
+
+				if( 'icon-title-inline' == $logo_layouts ) {
+					$bstone_logo_layout_inner_css = array(
+						'header.site-header p.site-description' => array(
+							'width' => '100%',
+						),
+					);
+				}
+
+				if( 'title-tagline-inline' == $logo_layouts ) {
+					$bstone_logo_layout_inner_css = array(
+						'header.site-header .site-logo-img' => array(
+							'width' => '100%',
+						),
+					);
+				}
+
+				$parse_css .= bstone_parse_css( $bstone_logo_layout_outer_css );
+
+				if( '' != $bstone_logo_layout_inner_css ) {
+					$parse_css .= bstone_parse_css( $bstone_logo_layout_inner_css );
+				}
+			}
+
 			// Form Label Display/Hide
 			if( true == $form_toggle_label ) {
 				$bstone_form_label_toggle_css = array(
-					'body #content form label' => array(
+					'body #page form label' => array(
 						'display' 	 	=> 'block',
 					),
 				);
 			} else {
 				$bstone_form_label_toggle_css = array(
-					'body #content form label' => array(
+					'body #page form label' => array(
 						'display' 	 	=> 'none',
 					),
 				);
@@ -1196,6 +1286,24 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 				'padding', '',
 				'px',
 				array('top', 'bottom', 'right', 'left'),
+				array('desktop', 'tablet', 'mobile')
+			);
+			
+			$parse_css .= bstone_get_responsive_spacings (
+				'body.boxed-container.header-2 .full-width-nav .st-site-nav nav',
+				'header', 'padding',
+				'margin', '-',
+				'px',
+				array('right', 'left'),
+				array('desktop', 'tablet', 'mobile')
+			);
+			
+			$parse_css .= bstone_get_responsive_spacings (
+				'body.boxed-container.header-2 .full-width-nav .st-site-nav nav ul',
+				'header', 'padding',
+				'padding', '',
+				'px',
+				array('right', 'left'),
 				array('desktop', 'tablet', 'mobile')
 			);
 			
@@ -1313,6 +1421,15 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 				'body #secondary.widget-area .widget, body #tertiary.widget-area .widget',
 				'wpadding', 'padding',
 				'padding', '',
+				'px',
+				array('top', 'bottom', 'right', 'left'),
+				array('desktop', 'tablet', 'mobile')
+			);
+
+			$parse_css .= bstone_get_responsive_spacings (
+				'#secondary aside, #tertiary aside',
+				'bstwidget', 'border',
+				'border', 'width',
 				'px',
 				array('top', 'bottom', 'right', 'left'),
 				array('desktop', 'tablet', 'mobile')
@@ -1435,10 +1552,19 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 				'px',
 				array('right', 'left'),
 				array('desktop', 'tablet', 'mobile')
+			);			
+			
+			$parse_css .= bstone_get_responsive_spacings (
+				'.bst-single-post-section',
+				'safsp', 'padding',
+				'padding', '',
+				'px',
+				array('top', 'bottom'),
+				array('desktop', 'tablet', 'mobile')
 			);
 			
 			$parse_css .= bstone_get_responsive_spacings (
-				'.st-pagination .nav-links a, .st-pagination .nav-links span.page-numbers',
+				'.st-pagination .nav-links a, .st-pagination .nav-links span.page-numbers, body.woocommerce #page nav.woocommerce-pagination ul li a, body.woocommerce #page nav.woocommerce-pagination ul li span.current',
 				'pagi', 'padding',
 				'padding', '',
 				'px',
@@ -1483,7 +1609,7 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			);
 
 			$parse_css .= bstone_get_responsive_spacings (
-				'body #content form input, body #content form select, body #content form textarea',
+				'body #page form input, body #page form select, body #page form textarea',
 				'bffield', 'margin',
 				'margin', '',
 				'px',
@@ -1492,7 +1618,7 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			);
 
 			$parse_css .= bstone_get_responsive_spacings (
-				'body #content form textarea',
+				'body #page form textarea',
 				'bftextarea', 'padding',
 				'padding', '',
 				'px',
@@ -1501,7 +1627,7 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			);
 
 			$parse_css .= bstone_get_responsive_spacings (
-				'body #content form input, body #content form select',
+				'body #page form input, body #page form select',
 				'bffield', 'padding',
 				'padding', '',
 				'px',
@@ -1510,7 +1636,7 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			);
 
 			$parse_css .= bstone_get_responsive_spacings (
-				'body #content form input[type="button"], body #content form input[type="reset"], body #content form input[type="submit"], body #content form button',
+				'body #page form input[type="button"], body #page form input[type="reset"], body #page form input[type="submit"], body #page form button',
 				'bfbuttons', 'padding',
 				'padding', '',
 				'px',
@@ -1531,6 +1657,15 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 				'#bp-banner-container .bp-banner-inner .bp-banner-content',
 				'bpbnr', 'padding',
 				'padding', '',
+				'px',
+				array('top', 'bottom', 'right', 'left'),
+				array('desktop', 'tablet', 'mobile')
+			);
+			
+			$parse_css .= bstone_get_responsive_spacings (
+				'#primary .bst-posts-cnt article .bst-article-inner',
+				'baouter', 'border',
+				'border', 'width',
 				'px',
 				array('top', 'bottom', 'right', 'left'),
 				array('desktop', 'tablet', 'mobile')
@@ -1558,9 +1693,9 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 
 			$parse_css .= bstone_responsive_font_size_css( '#bstone-scroll-top', $sctop_icon_size );
 
-			$parse_css .= bstone_responsive_font_size_css( 'body #content form input, body #content form textarea, body #content form select, body #content form label', $form_bffield_font_size );
+			$parse_css .= bstone_responsive_font_size_css( 'body #page form input, body #page form textarea, body #page form select, body #page form label', $form_bffield_font_size );
 			
-			$parse_css .= bstone_responsive_font_size_css( 'body #content form input[type="button"], body #content form input[type="reset"], body #content form input[type="submit"], body #content form button', $form_bfbuttons_font_size );
+			$parse_css .= bstone_responsive_font_size_css( 'body #page form input[type="button"], body #page form input[type="reset"], body #page form input[type="submit"], body #page form button', $form_bfbuttons_font_size );
 			
 			$parse_css .= bstone_responsive_font_size_css( 'footer .footer_top_markup', $footer_top_text_font_size );
 			
@@ -1571,7 +1706,7 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			$parse_css .= bstone_responsive_font_size_css( 'footer .footer_bar_markup .widget .widget-title', $footer_bar_title_font_size );
 			
 			$parse_css .= bstone_responsive_font_size_css( '#primary .bst-posts-cnt .entry-title, #primary .bst-posts-cnt .entry-title a', $blog_typo_title_font_size );
-			$parse_css .= bstone_responsive_font_size_css( '#primary .bst-posts-cnt .entry-meta, #primary .bst-posts-cnt .entry-meta a, .single-post #primary .entry-meta, .single-post #primary .entry-meta a', $blog_typo_entry_font_size );
+			$parse_css .= bstone_responsive_font_size_css( '#primary .bst-posts-cnt .entry-meta, #primary .bst-posts-cnt .entry-meta a, .single-post #primary .entry-meta, .single-post #primary .entry-meta a, .bst-popular-posts-widget li .bst-widget-post-cnt .entry-meta, .bst-article-inner-single .entry-footer *', $blog_typo_entry_font_size );
 			
 			$parse_css .= bstone_responsive_font_size_css( '#bp-banner-container .bp-banner-meta, #bp-banner-container .bp-banner-meta a', $blog_typo_entry_font_size );
 			
@@ -1579,7 +1714,7 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			
 			$parse_css .= bstone_responsive_font_size_css( '.blog-entry-readmore a', $readbtn_typo_text_font_size );
 			
-			$parse_css .= bstone_responsive_font_size_css( '.st-pagination .nav-links a, .st-pagination .nav-links span.page-numbers', $pagination_text_font_size );
+			$parse_css .= bstone_responsive_font_size_css( '.st-pagination .nav-links a, .st-pagination .nav-links span.page-numbers, body.woocommerce #page nav.woocommerce-pagination ul li a, body.woocommerce #page nav.woocommerce-pagination ul li span', $pagination_text_font_size );
 			
 			$parse_css .= bstone_responsive_font_size_css( '#bp-banner-container .bst-banner-heading, #bp-banner-container .bst-banner-heading a', $bp_banner_title_font_size );
 			$parse_css .= bstone_responsive_font_size_css( '#bp-banner-container .bp-banner-category', $bp_banner_category_font_size );
@@ -1589,7 +1724,7 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 
 			$parse_css .= bstone_responsive_font_size_css( '.bst-title-section h1', $single_typo_title_font_size );
 			$parse_css .= bstone_responsive_font_size_css( '.bst-title-section .site-breadcrumbs ul li, .bst-title-section .site-breadcrumbs ul li a', $single_typo_breadcrumbs_font_size );
-			
+
 			/* Primary Container */
 			
 			$primary_cnt_border_left 	= bstone_options( 'primarycnt_left_border' );
@@ -1621,6 +1756,20 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 						'width' 	=> '100%',
 						'position'  => 'relative',
 					),
+					'.menu-toggled .st-head-cta > div' => array(
+						'display' => 'flex',
+						'justify-content' => 'center',
+						'align-items' => 'center',
+					),
+					'header.site-header nav .st-main-navigation > ul li ul li a' => array(
+						'color' => '#3a3a3a',
+					),
+					'.menu-toggled.header-2 .full-width-nav .st-site-nav nav' => array(
+						'left' => '0px',
+						'right' => '0px',
+						'width' => '100%',
+						'margin-left' => '0px',
+					),
 				);
 				
 				$parse_css .= bstone_parse_css( $transparent_css );
@@ -1630,6 +1779,51 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 						'top' 		=> '0px',
 						'width' 	=> '100%',
 						'position'  => 'absolute',
+					),
+					'.menu-toggled .main-header-content .st-site-nav, .menu-toggled.display-custom-menu-responsive header .st-head-cta' => array(
+						'background' => bstone_options( 'buttons-text-color' ),
+					),
+					'.menu-toggled header .st-site-nav nav li > ul' => array(
+						'background' => bstone_options( 'buttons-text-color' ),
+					),
+					'.menu-toggled header.site-header nav .st-main-navigation > ul li a' => array(
+						'color' => bstone_options( 'buttons-background-color' ),
+					),
+					'header.site-header nav .st-main-navigation > ul li ul li a' => array(
+						'color' => '#3a3a3a',
+					),
+					'.menu-toggled header.site-header nav .st-main-navigation > ul li > a:hover, .menu-toggled header.site-header nav .st-main-navigation > ul li.current-menu-item > a, .menu-toggled header.site-header nav .st-main-navigation > ul li.current-menu-parent > a' => array(
+						'color' => bstone_options( 'buttons-background-color-hover' ),
+					),
+					'body.menu-toggled .bst-cart-menu-wrap .count, body.menu-toggled .bst-cart-menu-wrap .count:after' => array(
+						'color' => bstone_options( 'buttons-background-color' ),
+						'border-color' => bstone_options( 'buttons-background-color' ),
+					),
+					'body.menu-toggled .bst-cart-menu-wrap:hover .count' => array(
+						'color' => bstone_options( 'buttons-text-color' ),
+						'background-color' => bstone_options( 'buttons-background-color' ),
+					),
+					'body.menu-toggled .bst-cart-menu-wrap:hover .count, body.menu-toggled .bst-cart-menu-wrap:hover .count:after' => array(
+						'border-color' => bstone_options( 'buttons-background-color' ),
+					),
+					'.menu-toggled.header-2 header .st-site-nav ul>li:first-child>a' => array(
+						'padding-left' => '0px',
+						'padding-right' => '0px',
+					),
+					'.menu-toggled.header-2 .st-site-nav nav' => array(
+						'background-color' => 'transparent',
+						'border-color' => 'transparent !important',
+					),
+					'.menu-toggled .st-head-cta > div' => array(
+						'display' => 'flex',
+						'justify-content' => 'center',
+						'align-items' => 'center',
+					),
+					'.menu-toggled.header-2 .full-width-nav .st-site-nav nav' => array(
+						'left' => '0px',
+						'right' => '0px',
+						'width' => '100%',
+						'margin-left' => '0px',
 					),
 				);
 				
@@ -1785,6 +1979,14 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 				$parse_css .= bstone_parse_css( $header1_settings );
 			}
 
+			if( 'center' == $header_menu_alignment ) {
+				$header_menu_first_child = array(
+					'.header-2 header .st-site-nav ul>li:first-child>a' => array(
+						'padding-left' => esc_attr( $header_item_1_alignment ),
+					),
+				);
+			}
+
 			// Foreground color.
 
 			/* Width for Footer */
@@ -1884,9 +2086,6 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 				);
 
 				$tablet_typo = array(
-					'.comment-reply-title' => array(
-						'font-size' => bstone_get_font_css_value( (int) $body_font_size['tablet'] * 1.66666, 'px', 'tablet' ),
-					),
 					// Single Post Meta.
 					'.bst-comment-meta' => array(
 						'font-size' => bstone_get_font_css_value( (int) $body_font_size['tablet'] * 0.8571428571, 'px', 'tablet' ),
@@ -1929,9 +2128,6 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 				$mobile_typo = array(
 					'html' => array(
 						'font-size' => bstone_get_font_css_value( (int) $body_font_size['mobile'] * 6.25, '%', 'mobile' ),
-					),
-					'.comment-reply-title' => array(
-						'font-size' => bstone_get_font_css_value( (int) $body_font_size['mobile'] * 1.66666, 'px', 'mobile' ),
 					),
 					// Single Post Meta.
 					'.bst-comment-meta' => array(
@@ -2005,7 +2201,7 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			/* Blog */
 			if ( 'custom' === $blog_width ) :
 				$blog_css  = '@media (min-width:769px) {';
-					$blog_css .= '.blog .site-content > .bst-container, .archive .site-content > .bst-container, .search .site-content > .bst-container{';
+					$blog_css .= 'body.blog #content > .st-container, body.archive #content > .st-container, body.blog .st-container.page-header-inner, body.archive .st-container.page-header-inner, body.search #content > .st-container, body.search .st-container.page-header-inner {';
 						$blog_css .= 'max-width:' . esc_attr( $blog_max_width ) . 'px;';
 					$blog_css .= '}';
 				$blog_css .= '}';
@@ -2020,6 +2216,30 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 					$single_blog_css .= '}';
 					$single_blog_css .= '}';
 					$parse_css       .= $single_blog_css;
+			endif;
+
+			/* Blog Post Banner Grid CSS */
+			if ( true == bstone_options( 'bp-banner-enable' ) && 'posts-grid' === bstone_options( 'bp-banner-type' ) ) :
+				$blog_grid_rcss = '@media only screen and (max-width: 1040px) {';
+				$blog_grid_rcss .= '.bp-banner-grid-item .bpg-small-item:first-child {';
+				$blog_grid_rcss .= 'padding-top:' . esc_attr( $bp_banner_grid_gap ) . 'px;';
+				$blog_grid_rcss .= 'padding-right:' . esc_attr( $bp_banner_grid_gap/2 ) . 'px;';
+				$blog_grid_rcss .= '}';
+				$blog_grid_rcss .= '.bp-banner-grid-item .bpg-small-item:last-child {';
+				$blog_grid_rcss .= 'padding-left:' . esc_attr( $bp_banner_grid_gap/2 ) . 'px;';
+				$blog_grid_rcss .= '}';
+				$blog_grid_rcss .= '}';
+
+				$blog_grid_rcss .= '@media only screen and (max-width: 800px) {';
+				$blog_grid_rcss .= '.bp-banner-grid-item .bpg-small-item:first-child {';
+				$blog_grid_rcss .= 'padding-right: 0px;';
+				$blog_grid_rcss .= '}';
+				$blog_grid_rcss .= '.bp-banner-grid-item .bpg-small-item:last-child {';
+				$blog_grid_rcss .= 'padding-left: 0px;';
+				$blog_grid_rcss .= '}';
+				$blog_grid_rcss .= '}';
+
+				$parse_css      .= $blog_grid_rcss;
 			endif;
 
 			/* Small Footer CSS */
@@ -2092,7 +2312,7 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			$meta_style .= '}';
 
 			if ( 'no-sidebar' !== bstone_page_layout() && 'both-sidebars' !== bstone_page_layout() ) :
-				$meta_style .= '@media (min-width: 769px) {';
+				$meta_style .= '@media (min-width: 921px) {';
 				$meta_style .= '#primary {';
 				$meta_style .= 'width:' . esc_attr( $primary_width ) . '%;';
 				$meta_style .= '}';
@@ -2100,15 +2320,31 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 				$meta_style .= 'width:' . esc_attr( $secondary_width ) . '%;';
 				$meta_style .= '}';
 				$meta_style .= '}';
+				$meta_style .= '@media (max-width: 920px) {';
+				$meta_style .= '#primary, #secondary.widget-area, #tertiary.widget-area {';
+				$meta_style .= 'width: 100%;';
+				$meta_style .= '}';
+				$meta_style .= '}';
 			elseif ( 'both-sidebars' == bstone_page_layout() ) :
 				$primary_width = absint( 100 - $secondary_width*2 );
 			
-				$meta_style .= '@media (min-width: 769px) {';
+				$meta_style .= '@media (min-width: 921px) {';
 				$meta_style .= '#primary {';
 				$meta_style .= 'width:' . esc_attr( $primary_width ) . '%;';
 				$meta_style .= '}';
 				$meta_style .= '#secondary.widget-area, #tertiary.widget-area {';
 				$meta_style .= 'width:' . esc_attr( $secondary_width ) . '%;';
+				$meta_style .= '}';
+				$meta_style .= '}';
+				$meta_style .= '@media (max-width: 920px) {';
+				$meta_style .= '#primary, #secondary.widget-area, #tertiary.widget-area {';
+				$meta_style .= 'width: 100%;';
+				$meta_style .= '}';
+				$meta_style .= '}';
+			else:
+				$meta_style .= '@media (min-width: 120px) {';
+				$meta_style .= '#primary {';
+				$meta_style .= 'width: 100%;';
 				$meta_style .= '}';
 				$meta_style .= '}';
 			endif;

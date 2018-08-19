@@ -327,6 +327,30 @@ if ( ! function_exists( 'bstone_replace_header_attr' ) ) :
 endif; // End if().
 
 /**
+ * Function to check if it is Internet Explorer
+ */
+if ( ! function_exists( 'bstone_check_is_ie' ) ) :
+
+	/**
+	 * Function to check if it is Internet Explorer.
+	 *
+	 * @return true | false boolean
+	 */
+	function bstone_check_is_ie() {
+
+		$is_ie = false;
+
+		$ua = htmlentities( $_SERVER['HTTP_USER_AGENT'], ENT_QUOTES, 'UTF-8' );
+		if ( strpos( $ua, 'Trident/7.0' ) !== false ) {
+			$is_ie = true;
+		}
+
+		return apply_filters( 'bstone_check_is_ie', $is_ie );
+	}
+
+endif;
+
+/**
  * Function to get Toggle Button Markup
  */
 if ( ! function_exists( 'bstone_toggle_buttons_markup' ) ) {
@@ -399,6 +423,10 @@ if ( ! function_exists( 'bstone_get_dynamic_header_content' ) ) {
 			case 'widget':
 					$output[] = bstone_get_custom_widget( $option );
 				break;
+
+			default:
+					$output[] = apply_filters( 'bstone_get_dynamic_header_content', '', $option, $section );
+				break;
 		}
 
 		return $output;
@@ -411,7 +439,7 @@ if ( ! function_exists( 'bstone_get_dynamic_header_content' ) ) {
 
 if ( ! function_exists( 'bstone_get_search' ) ) {
 	function bstone_get_search() {
-		$search_html = '<div class="st-search-header"><div class="st-search-icon"><a class="slide-search bstone-search-icon" href="#"><span class="screen-reader-text">' . esc_html__( 'Search', 'bstone' ) . '</span></a></div>
+		$search_html = '<div class="st-search-header">
 						<div class="st-search-menu-icon slide-search" id="st-search-form" >';
 		$search_html .= get_search_form( false );
 		$search_html .= '</div></div>';
@@ -996,16 +1024,9 @@ if ( ! function_exists( 'bstone_posts_banner_markup' ) ) {
 		$banner_content = '';
 
 		$display_bp_banner = false;
-		$display_on = bstone_options( 'bp-banner-display' );
 
-		if( 'blog' == $display_on ) {
-			if( is_home() ) {
-				$display_bp_banner = true;
-			}
-		} else if( 'archive' == $display_on ) {
-			if( is_home() || is_archive( 'post' ) ) {
-				$display_bp_banner = true;
-			}
+		if( is_home() ) {
+			$display_bp_banner = true;
 		}
 
 		if( true == $display_bp_banner ) {
@@ -1218,7 +1239,7 @@ if ( ! function_exists( 'bstone_posts_banner_markup' ) ) {
 		echo $banner_markup;
 	}
 }
-add_action('bstone_content_top', 'bstone_posts_banner_markup', 20);
+add_action('bstone_single_header', 'bstone_posts_banner_markup', 20);
 
 /**
  * Function to get posts banner / slider categories markup
@@ -1342,5 +1363,42 @@ if ( ! function_exists( 'bstone_posts_banner_meta_markup' ) ) {
 		}
 
 		return apply_filters( 'bstone_posts_banner_meta_markup', $meta_content );
+	}
+}
+
+/**
+ * Comments and pingbacks
+ *
+ * @since 1.1.4
+ */
+if ( ! function_exists( 'bst_comment_list_markup' ) ) {
+	function bst_comment_list_markup( $comment, $args, $depth ) { ?>
+	
+		<li <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">
+			<div class="the-comment">
+				<div class="comment-header">
+					<div class="avatar">
+						<?php echo get_avatar( $comment, $size='78' ); ?>
+					</div>
+					<div class="author-meta">
+						<h5>
+							<?php printf(__('%s ', 'bstone'), get_comment_author_link()) ?>
+							<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+						</h5>
+						<span class="comment-date">
+							<a class="comment-permalink" href="<?php echo htmlspecialchars ( get_comment_link( $comment->comment_ID ) ) ?>"><?php printf(__('%1$s ', 'bstone'), get_comment_date(), get_comment_time()) ?></a> 
+							<?php edit_comment_link( __('(Edit)', 'bstone'),'  ', '') ?>
+						</span>
+					</div>
+				</div>
+				
+				<div class="comment-body">
+					<?php if ($comment->comment_approved == '0') : ?>
+						<em class="comment-awaiting-moderation"><?php esc_html_e('Your comment is awaiting moderation.', 'bstone') ?></em><br />
+					<?php endif; ?>
+					<?php comment_text(); ?>
+				</div>
+			</div><!-- #comment-## -->
+<?php 
 	}
 }

@@ -192,8 +192,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'label'       => __( 'Sidebar Width', 'bstone' ),
 				'suffix'      => '%',
 				'input_attrs' => array(
-					'min'  => 15,
-					'step' => 1,
+					'min'  => 5,
+					'step' => 0.1,
 					'max'  => 50,
 				),
 			)
@@ -306,6 +306,55 @@ if ( ! defined( 'ABSPATH' ) ) {
 			    'input_attrs' 			=> array(
 			        'min'   => 0,
 			        'max'   => 500,
+			        'step'  => 1,
+			    ),
+			)
+		)
+	);
+
+	/**
+	 * Option: Sidebar Widgets Border Size
+	 */
+	$bstwidget_border = array(
+		'bstwidget_top_border:'.bstone_get_option( 'bstwidget_top_border' ),'bstwidget_bottom_border:'.bstone_get_option( 'bstwidget_bottom_border' ),'bstwidget_left_border:'.bstone_get_option( 'bstwidget_left_border' ), 'bstwidget_right_border:'.bstone_get_option( 'bstwidget_right_border' ),
+		'bstwidget_tablet_top_border:', 'bstwidget_tablet_bottom_border:','bstwidget_tablet_left_border:', 'bstwidget_tablet_right_border:',
+		'bstwidget_mobile_top_border:', 'bstwidget_mobile_bottom_border:','bstwidget_mobile_left_border:', 'bstwidget_mobile_right_border:',
+	);	
+	foreach($bstwidget_border as $dimension) {
+		$dval = explode(":",$dimension);
+		$wp_customize->add_setting(
+			BSTONE_THEME_SETTINGS . '['.$dval[0].']', array(
+				'default'           => $dval[1],
+				'type'              => 'option',
+				'capability' 		=> 'manage_options',
+				'transport'         => 'postMessage',
+				'sanitize_callback' => array( 'Bstone_Customizer_Sanitizes', 'sanitize_number_n_blank' ),
+			)
+		);
+	}
+	$wp_customize->add_control(
+		new Bstone_Control_Dimensions(
+			$wp_customize, BSTONE_THEME_SETTINGS . '[bstwidget-border-width]', array(
+				'section'  => 'section-sidebars',
+				'priority' => 50,
+				'label'    => __( 'Widgets Border Size (px)', 'bstone' ),				
+				'settings' => array(
+		            'desktop_top' 		=> BSTONE_THEME_SETTINGS.'[bstwidget_top_border]',
+		            'desktop_right' 	=> BSTONE_THEME_SETTINGS.'[bstwidget_right_border]',
+		            'desktop_bottom' 	=> BSTONE_THEME_SETTINGS.'[bstwidget_bottom_border]',
+		            'desktop_left' 		=> BSTONE_THEME_SETTINGS.'[bstwidget_left_border]',
+		            'tablet_top' 		=> BSTONE_THEME_SETTINGS.'[bstwidget_tablet_top_border]',
+		            'tablet_right' 		=> BSTONE_THEME_SETTINGS.'[bstwidget_tablet_right_border]',
+		            'tablet_bottom'		=> BSTONE_THEME_SETTINGS.'[bstwidget_tablet_bottom_border]',
+		            'tablet_left' 		=> BSTONE_THEME_SETTINGS.'[bstwidget_tablet_left_border]',
+		            'mobile_top' 		=> BSTONE_THEME_SETTINGS.'[bstwidget_mobile_top_border]',
+		            'mobile_right' 		=> BSTONE_THEME_SETTINGS.'[bstwidget_mobile_right_border]',
+		            'mobile_bottom'		=> BSTONE_THEME_SETTINGS.'[bstwidget_mobile_bottom_border]',
+		            'mobile_left' 		=> BSTONE_THEME_SETTINGS.'[bstwidget_mobile_left_border]',
+				),
+			    'input_attrs' 			=> array(
+			        'min'   => 0,
+			        'max'   => 30,
 			        'step'  => 1,
 			    ),
 			)

@@ -330,7 +330,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		            'mobile_left' 		=> BSTONE_THEME_SETTINGS.'[baouter_mobile_left_padding]',
 				),
 			    'input_attrs' 			=> array(
-			        'min'   => 0,
+			        'min'   => -100,
 			        'max'   => 500,
 			        'step'  => 1,
 			    ),

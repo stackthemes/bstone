@@ -57,6 +57,42 @@ if ( ! class_exists( 'Bstone_Customizer_Sanitizes' ) ) {
 		 */
 		static public function sanitize_integer( $input ) {
 			return absint( $input );
+		}		
+
+		/**
+		 * Sanitize Responsive Slider
+		 *
+		 * @param  array|number $val Customizer setting input number.
+		 * @param  object       $setting Setting Onject.
+		 * @return array        Return number.
+		 */
+		static public function sanitize_responsive_slider( $val, $setting ) {
+
+			$input_attrs = array();
+			if ( isset( $setting->manager->get_control( $setting->id )->input_attrs ) ) {
+				$input_attrs = $setting->manager->get_control( $setting->id )->input_attrs;
+			}
+
+			$responsive = array(
+				'desktop' => '',
+				'tablet'  => '',
+				'mobile'  => '',
+			);
+			if ( is_array( $val ) ) {
+				$responsive['desktop'] = is_numeric( $val['desktop'] ) ? $val['desktop'] : '';
+				$responsive['tablet']  = is_numeric( $val['tablet'] ) ? $val['tablet'] : '';
+				$responsive['mobile']  = is_numeric( $val['mobile'] ) ? $val['mobile'] : '';
+			} else {
+				$responsive['desktop'] = is_numeric( $val ) ? $val : '';
+			}
+
+			foreach ( $responsive as $key => $value ) {
+					$value              = isset( $input_attrs['min'] ) && ( ! empty( $value ) ) && ( $input_attrs['min'] > $value ) ? $input_attrs['min'] : $value;
+					$value              = isset( $input_attrs['max'] ) && ( ! empty( $value ) ) && ( $input_attrs['max'] < $value ) ? $input_attrs['max'] : $value;
+					$responsive[ $key ] = $value;
+			}
+
+			return $responsive;
 		}
 
 		/**
@@ -261,6 +297,21 @@ if ( ! class_exists( 'Bstone_Customizer_Sanitizes' ) ) {
 		static public function sanitize_checkbox( $input ) {
 			if ( $input ) {
 				$output = '1';
+			} else {
+				$output = false;
+			}
+			return $output;
+		}
+
+		/**
+		 * Sanitize toggle
+		 *
+		 * @param  boolean $input setting input.
+		 * @return boolean        setting input value.
+		 */
+		static public function sanitize_toggle( $input ) {
+			if ( 'true' == $input ) {
+				$output = true;
 			} else {
 				$output = false;
 			}

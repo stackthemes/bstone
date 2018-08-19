@@ -163,7 +163,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 */
 	$wp_customize->add_setting(
 		BSTONE_THEME_SETTINGS . '[body-line-height]', array(
-			'default'           => '',
+			'default'           => bstone_get_option( 'body-line-height' ),
 			'type'              => 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => array( 'Bstone_Customizer_Sanitizes', 'sanitize_number_n_blank' ),

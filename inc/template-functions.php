@@ -46,6 +46,11 @@ function bstone_body_classes( $classes ) {
 		$classes[] = 'hide-custom-menu-responsive';
 	}
 
+	// WooCommerce Class
+	if ( class_exists( 'WooCommerce' ) && is_page() ) {
+		$classes[] = 'woocommerce';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'bstone_body_classes' );
@@ -80,6 +85,7 @@ if ( ! function_exists( 'bstone_page_container_type' ) ) {
 					$layout = bstone_options( 'site-default-layout' );
 				}
 			}
+
 		} else {
 			
 			if ( is_search() ) {

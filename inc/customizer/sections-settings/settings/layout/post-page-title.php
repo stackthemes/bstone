@@ -117,6 +117,23 @@ $wp_customize->add_control(
 	);
 
 	/**
+	 * Heading
+	 */
+	$wp_customize->add_setting( BSTONE_THEME_SETTINGS . '[enable-title-area-heading]', array(
+		'sanitize_callback'	=> 'wp_kses',
+	) );
+
+	$wp_customize->add_control (
+		new Bstone_Control_Heading (
+			$wp_customize, BSTONE_THEME_SETTINGS . '[enable-title-area-heading]', array(
+				'label'    	=> esc_html__( 'Enable Title Section', 'bstone' ),
+				'section'  	=> 'section-title',
+				'priority' 	=> 20,
+			)
+		)
+	);
+
+	/**
 	 * Option: Enable title area on front page
 	 */
 	$wp_customize->add_setting(
@@ -131,7 +148,107 @@ $wp_customize->add_control(
 		BSTONE_THEME_SETTINGS . '[enable-title-area-frontpage]', array(
 			'type'        => 'checkbox',
 			'section'     => 'section-title',
-			'label'       => __( 'Enable title on front page', 'bstone' ),
-			'priority'    =>20,
+			'label'       => __( 'Blog Title', 'bstone' ),
+			'priority'    =>25,
+		)
+	);
+
+	/**
+	 * Option: Enable title area on archive pages
+	 */
+	$wp_customize->add_setting(
+		BSTONE_THEME_SETTINGS . '[enable-title-area-archive]', array(
+			'default'           => bstone_get_option( 'enable-title-area-archive' ),
+			'type'              => 'option',
+			'capability' 		=> 'manage_options',
+			'sanitize_callback' => array( 'Bstone_Customizer_Sanitizes', 'sanitize_checkbox' ),
+		)
+	);
+	$wp_customize->add_control(
+		BSTONE_THEME_SETTINGS . '[enable-title-area-archive]', array(
+			'type'        => 'checkbox',
+			'section'     => 'section-title',
+			'label'       => __( 'Archive Title', 'bstone' ),
+			'priority'    =>30,
+		)
+	);
+
+	/**
+	 * Option: Enable title area on post single
+	 */
+	$wp_customize->add_setting(
+		BSTONE_THEME_SETTINGS . '[enable-title-area-single]', array(
+			'default'           => bstone_get_option( 'enable-title-area-single' ),
+			'type'              => 'option',
+			'capability' 		=> 'manage_options',
+			'sanitize_callback' => array( 'Bstone_Customizer_Sanitizes', 'sanitize_checkbox' ),
+		)
+	);
+	$wp_customize->add_control(
+		BSTONE_THEME_SETTINGS . '[enable-title-area-single]', array(
+			'type'        => 'checkbox',
+			'section'     => 'section-title',
+			'label'       => __( 'Post Title', 'bstone' ),
+			'priority'    =>35,
+		)
+	);
+
+	/**
+	 * Option: Enable title area on pages
+	 */
+	$wp_customize->add_setting(
+		BSTONE_THEME_SETTINGS . '[enable-title-area-page]', array(
+			'default'           => bstone_get_option( 'enable-title-area-page' ),
+			'type'              => 'option',
+			'capability' 		=> 'manage_options',
+			'sanitize_callback' => array( 'Bstone_Customizer_Sanitizes', 'sanitize_checkbox' ),
+		)
+	);
+	$wp_customize->add_control(
+		BSTONE_THEME_SETTINGS . '[enable-title-area-page]', array(
+			'type'        => 'checkbox',
+			'section'     => 'section-title',
+			'label'       => __( 'Page Title', 'bstone' ),
+			'priority'    =>40,
+		)
+	);
+
+	/**
+	 * Option: Enable title area on search
+	 */
+	$wp_customize->add_setting(
+		BSTONE_THEME_SETTINGS . '[enable-title-area-search]', array(
+			'default'           => bstone_get_option( 'enable-title-area-search' ),
+			'type'              => 'option',
+			'capability' 		=> 'manage_options',
+			'sanitize_callback' => array( 'Bstone_Customizer_Sanitizes', 'sanitize_checkbox' ),
+		)
+	);
+	$wp_customize->add_control(
+		BSTONE_THEME_SETTINGS . '[enable-title-area-search]', array(
+			'type'        => 'checkbox',
+			'section'     => 'section-title',
+			'label'       => __( 'Search Page Title', 'bstone' ),
+			'priority'    =>45,
+		)
+	);
+
+	/**
+	 * Option: Enable title area on 404
+	 */
+	$wp_customize->add_setting(
+		BSTONE_THEME_SETTINGS . '[enable-title-area-notfound]', array(
+			'default'           => bstone_get_option( 'enable-title-area-notfound' ),
+			'type'              => 'option',
+			'capability' 		=> 'manage_options',
+			'sanitize_callback' => array( 'Bstone_Customizer_Sanitizes', 'sanitize_checkbox' ),
+		)
+	);
+	$wp_customize->add_control(
+		BSTONE_THEME_SETTINGS . '[enable-title-area-notfound]', array(
+			'type'        => 'checkbox',
+			'section'     => 'section-title',
+			'label'       => __( '404 Page Title', 'bstone' ),
+			'priority'    =>50,
 		)
 	);

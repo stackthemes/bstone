@@ -69,6 +69,7 @@ function bstone_new_customize_register( $wp_customize ) {
 	require $settings_path . 'spacing/sidebar.php';
 	require $settings_path . 'spacing/blog-archive.php';
 	require $settings_path . 'spacing/title-spacing.php';
+	require $settings_path . 'spacing/single-post.php';
 	
 	// -- Extra Elements	
 	require $settings_path . 'extra-elements/general-settings.php';

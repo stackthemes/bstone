@@ -49,6 +49,7 @@ add_action( 'after_setup_theme', 'bstone_content_width', 0 );
 add_image_size( 'bstone-small', 700, 450, true );
 add_image_size( 'bstone-medium', 1000, 563, true );
 add_image_size( 'bstone-large', 1920, 780, true );
+add_image_size( 'bstone-banner', 1920, 500, true );
 
 /**
  * Return Theme options.
@@ -250,30 +251,33 @@ if ( ! function_exists( 'bstone_options' ) ) {
 	/*
 	 * Function to get customizer options
 	 */
-	
-	function bstone_options($option) {
-		$bstone_theme_options  = get_option(BSTONE_THEME_SETTINGS);
+	function bstone_options( $option ) {
 		
-		if( !is_array($bstone_theme_options) ) {
-			$bstone_theme_options = array();
-		}
-		
-		if ( array_key_exists( $option, $bstone_theme_options ) ) :
-		
-			$option_value = $bstone_theme_options[$option];
-			
-		else:
-			$bstone_theme_defaults = Bstone_Theme_Options::defaults();
+		if( is_string ( $option ) ) {
 
-			if ( array_key_exists( $option, $bstone_theme_defaults ) )
-			{
-				$option_value = $bstone_theme_defaults[$option];
-			} else {
-				$option_value = '';
+			$bstone_theme_options  = get_option( BSTONE_THEME_SETTINGS );
+
+			if( !is_array( $bstone_theme_options ) ) {
+				$bstone_theme_options = array();
 			}
-		endif;
+			
+			if ( array_key_exists( $option, $bstone_theme_options ) ) :
+			
+				$option_value = $bstone_theme_options[$option];
+				
+			else:
+				$bstone_theme_defaults = Bstone_Theme_Options::defaults();
+
+				if ( array_key_exists( $option, $bstone_theme_defaults ) )
+				{
+					$option_value = $bstone_theme_defaults[$option];
+				} else {
+					$option_value = '';
+				}
+			endif;
 		
-		return apply_filters( 'bstone_options', $option_value, $option );
+			return apply_filters( 'bstone_options', $option_value, $option );
+		}
 	}
 }
 
@@ -1204,7 +1208,7 @@ if ( ! function_exists( 'bstone_masthead_toggle_buttons_primary' ) ) {
 /**
  * Single Post/Page Header
  */
-add_action( 'bstone_single_header', 'bstone_single_post_page_header' );
+add_action( 'bstone_single_header', 'bstone_single_post_page_header', 10 );
 
 if ( ! function_exists( 'bstone_single_post_page_header' ) ) {
 	/**
@@ -1221,6 +1225,8 @@ if ( ! function_exists( 'bstone_single_post_page_header' ) ) {
 
 /**
  * Get RTL directions
+ * 
+ * @param  string $dir       Content alignment in css.
  */
 if ( ! function_exists( 'bstone_get_rtl_directions' ) ) {
 	function bstone_get_rtl_directions( $dir ) {

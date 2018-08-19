@@ -22,3 +22,13 @@ require $control_dir . 'color/class-bstone-control-color.php';
 require $control_dir . 'dimensions/class-bstone-control-dimensions.php';
 require $control_dir . 'heading/class-bstone-control-heading.php';
 require $control_dir . 'tabs/class-bstone-control-tabs.php';
+require $control_dir . 'responsive-slider/class-bstone-control-responsive-slider.php';
+
+/**
+ * Shop Customizer Contorls
+ */
+require $control_dir . 'sc-main/class-sc-control.php';
+require $control_dir . 'sc-dialog/class-sc-dialog-control.php';
+require $control_dir . 'sc-radio/class-sc-radio-control.php';
+require $control_dir . 'sc-toggle/class-sc-toggle-control.php';
+require $control_dir . 'shadow/class-bstone-control-shadow.php';

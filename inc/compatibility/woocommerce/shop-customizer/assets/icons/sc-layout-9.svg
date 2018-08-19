@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="70px" height="70px" viewBox="0 0 70 70" style="enable-background:new 0 0 70 70;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#F8F8F8;}
+	.st1{fill:#B9B2EE;}
+	.st2{fill:#948EEA;}
+	.st3{fill:#989898;}
+	.st4{fill:#D3D0F9;}
+</style>
+<g>
+	<path class="st0" d="M67,70H3c-1.7,0-3-1.3-3-3V3c0-1.7,1.3-3,3-3h64c1.7,0,3,1.3,3,3v64C70,68.7,68.7,70,67,70z"/>
+	<path class="st1" d="M34.9,25.6H14c-0.6,0-1-0.4-1-1V8c0-0.6,0.4-1,1-1h20.9c0.6,0,1,0.4,1,1v16.6C35.9,25.1,35.4,25.6,34.9,25.6z"
+		/>
+	<path class="st2" d="M19.7,16.5L13,21.2v3.3c0,0.6,0.4,1,1,1h20.9c0.6,0,1-0.4,1-1V10.9l-12,8.6L19.7,16.5z"/>
+	<path class="st1" d="M52,34H41c-0.6,0-1,0.4-1,1v2c0,0.6,0.4,1,1,1h11c0.6,0,1-0.4,1-1v-2C53,34.4,52.6,34,52,34z"/>
+	<g>
+		<rect x="40" y="26" class="st3" width="5" height="2"/>
+		<rect x="40" y="30" class="st3" width="5" height="2"/>
+		<rect x="40" y="14" class="st3" width="19" height="1"/>
+		<rect x="40" y="16" class="st3" width="19" height="1"/>
+		<rect x="40" y="18" class="st3" width="19" height="1"/>
+		<rect x="40" y="20" class="st3" width="19" height="1"/>
+		<rect x="40" y="22" class="st3" width="12.1" height="1"/>
+		<rect x="40" y="7" class="st3" width="17" height="2"/>
+		<rect x="40" y="10" class="st3" width="7" height="2"/>
+	</g>
+	<circle class="st4" cx="19" cy="12" r="3"/>
+	<path class="st1" d="M34.9,46H14c-0.6,0-1-0.4-1-1V28.4c0-0.6,0.4-1,1-1h20.9c0.6,0,1,0.4,1,1V45C35.9,45.6,35.4,46,34.9,46z"/>
+	<path class="st2" d="M19.7,36.9L13,41.7V45c0,0.6,0.4,1,1,1h20.9c0.6,0,1-0.4,1-1V31.4l-12,8.6L19.7,36.9z"/>
+	<circle class="st4" cx="19" cy="32.4" r="3"/>
+	<path class="st1" d="M34.9,66.4H14c-0.6,0-1-0.4-1-1V48.9c0-0.6,0.4-1,1-1h20.9c0.6,0,1,0.4,1,1v16.6C35.9,66,35.4,66.4,34.9,66.4z
+		"/>
+	<path class="st2" d="M19.7,57.4L13,62.1v3.3c0,0.6,0.4,1,1,1h20.9c0.6,0,1-0.4,1-1V51.8l-12,8.6L19.7,57.4z"/>
+	<circle class="st4" cx="19" cy="52.9" r="3"/>
+</g>
+</svg>
