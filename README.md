@@ -3,7 +3,7 @@ Website: https://wpbstone.com/
 Email: support@wpbstone.com
 
 ## Description
-Bstone is the perfect theme for page builders. Lightweight and highly extendable, it will enable you to create almost any type of website such a blog, portfolio and business website with a beautiful & professional design. Very fast, responsive, translation ready, best SEO practices and much more. You can even edit the settings on tablet & mobile so your site looks good on every device. Work with the most popular page builders as Elementor, Beaver Builder, Visual Composer, Divi, SiteOrigin, etc... Developers will love his extensible codebase making it a joy to customize and extend. Best friend of Elementor.
+Bstone is fully customizable, fast, lightweight, responsive, RTL & translation ready and super flexible multipurpose theme built with SEO, speed, and usability in mind. Bstone comes with WooCommerce Shop Customizer that empowers you to choose the exact look of your e-commerce website. The theme works great with any of your favorite page builder likes Elementor, Beaver Builder, SiteOrigin, Thrive Architect, Divi, Visual Composer, etc. You can build any type of websites like shop, blog, business agencies, corporate, portfolio, education, university portal, consulting, church, restaurant, medical and so on. You can even edit the settings on tablet & mobile so your site looks good on every device. Bstone is compatible with all well-coded plugins, including major ones like OrbitFox, Yoast, BuddyPress, bbPress, etc. Learn more about the theme and ready to import demo sites at https://wpbstone.com/
 
 ## Installation
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
