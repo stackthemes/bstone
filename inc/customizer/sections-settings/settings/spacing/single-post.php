@@ -23,14 +23,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'section'       => 'section-spacing-blog-single',
 				'priority'      => 1,
 				'settings'      => array(),
-				'tabs_data'     => array(
+				'tabs_data'     => apply_filters( 'bst_single_post_layout_tabs_data', array(
 					__('layout', 'bstone'),
 					__('spacing', 'bstone')
-				),
-				'tabs_sections' => array(
+				)),
+				'tabs_sections' => apply_filters( 'bst_single_post_layout_tabs_sections', array(
 					'section-single',
 					'section-spacing-blog-single'
-				),
+				)),
 				'tabs_active'   => __('spacing', 'bstone'),
 			)
 		)
@@ -265,3 +265,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 			)
 		)
 	);
+
+	/**
+	 * Option: Divider
+	 */
+	// Learn More link if Bstone Pro is not activated.
+	if ( ! defined( 'BSTONE_PRO_VER' ) ) {
+		$wp_customize->add_control(
+			new Bstone_Control_Divider(
+				$wp_customize, BSTONE_THEME_SETTINGS . '[single-spacing-pro-divider]', array(
+					'type'        => 'bst-divider',
+					'section' 	  => 'section-spacing-blog-single',
+					'priority' 	  => 50,
+					'settings'    => array(),
+					'dividerline' => true,
+					'link' 		  => 'https://wpbstone.com/pro/?utm_source=customizer&utm_medium=upgrade-link&utm_campaign=upgrade-to-pro',
+					'html'     	  => __( 'More Options Available in Bstone Pro!', 'bstone' ),
+				)
+			)
+		);
+	}

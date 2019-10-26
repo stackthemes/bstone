@@ -74,7 +74,7 @@
 			}); // End Bstone Customizer Control Toggles
 
 			// Loop through each setting. - Shop Customizer Controls Toggle
-			if( BstoneShopCustomizerToggles ) {
+			if( typeof BstoneShopCustomizerToggles !== 'undefined' ) {
 				$.each( BstoneShopCustomizerToggles, function( settingId, toggles ) {
 					
 					// Get the setting object.

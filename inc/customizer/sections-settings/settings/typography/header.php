@@ -53,6 +53,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'label'    	=> esc_html__( 'Header Text Typography', 'bstone' ),
 				'section'  	=> 'section-header-typo-settings',
 				'priority' 	=> 10,
+				'status' 	=> 'open',
+				'items'     => array(
+					"customize-control-bstone-settings-header-typo-text-font-family",
+					"customize-control-bstone-settings-header-typo-text-font-weight",
+					"customize-control-bstone-settings-header-typo-text-transform",
+					"customize-control-bstone-settings-header-typo-text-font-size"
+				),
 			)
 		)
 	);
@@ -173,6 +180,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'label'    	=> esc_html__( 'Logo / Site Title  Typography', 'bstone' ),
 				'section'  	=> 'section-header-typo-settings',
 				'priority' 	=> 35,
+				'status' 	=> 'close',
+				'items'     => array(
+					"customize-control-bstone-settings-logo-typo-text-font-family",
+					"customize-control-bstone-settings-logo-typo-text-font-weight",
+					"customize-control-bstone-settings-logo-typo-text-transform",
+					"customize-control-bstone-settings-logo-typo-text-font-size"
+				),
 			)
 		)
 	);
@@ -292,6 +306,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'label'    	=> esc_html__( 'Tagline Typography', 'bstone' ),
 				'section'  	=> 'section-header-typo-settings',
 				'priority' 	=> 60,
+				'status' 	=> 'close',
+				'items'     => array(
+					"customize-control-bstone-settings-tagline-typo-text-font-family",
+					"customize-control-bstone-settings-tagline-typo-text-font-weight",
+					"customize-control-bstone-settings-tagline-typo-text-transform",
+					"customize-control-bstone-settings-tagline-typo-text-font-size"
+				),
 			)
 		)
 	);
@@ -411,6 +432,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'label'    	=> esc_html__( 'Primary Navigation', 'bstone' ),
 				'section'  	=> 'section-header-typo-settings',
 				'priority' 	=> 85,
+				'status' 	=> 'close',
+				'items'     => array(
+					"customize-control-bstone-settings-nav-typo-text-font-family",
+					"customize-control-bstone-settings-nav-typo-text-font-weight",
+					"customize-control-bstone-settings-nav-typo-text-transform",
+					"customize-control-bstone-settings-nav-typo-text-font-size"
+				),
 			)
 		)
 	);

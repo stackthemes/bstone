@@ -12,11 +12,19 @@
  */
 
 if ( apply_filters( 'bstone_footer_top_enabled', true ) ) {
-	add_action('bstone_footer_content_markup', 'bstone_footer_top_markup', 1);
+	if ( defined('BSTONE_PRO_VER') && 'true' == bstProGetModuleStatus( 'addon-footer-builder' ) ) {
+		add_action('bstone_footer_content_markup', 'bstone_pro_footer_top_markup', 1);
+	} else {
+		add_action('bstone_footer_content_markup', 'bstone_footer_top_markup', 1);
+	}
 }
 
 if ( apply_filters( 'bstone_footer_bottom_enabled', true ) ) {
-	add_action('bstone_footer_content_markup', 'bstone_footer_bar_markup', 2);
+	if ( defined('BSTONE_PRO_VER') && 'true' == bstProGetModuleStatus( 'addon-footer-builder' ) ) {
+		add_action('bstone_footer_content_markup', 'bstone_pro_footer_bar_markup', 2);
+	} else {
+		add_action('bstone_footer_content_markup', 'bstone_footer_bar_markup', 2);
+	}
 }
 
 /*

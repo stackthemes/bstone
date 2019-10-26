@@ -1,6 +1,6 @@
-jQuery( function($) {
+jQuery( document ).ready( function( $ ) {
 	
-	$('.sc-toggle').on('click', function() {
+	$( document ).on( 'click', '.sc-toggle', function(e) {
 		var $input = $(this).find('.sc-toggle-value');
 		var $bullet = $(this).find('.sc-toggle-bullet');
 		if ( $input.val() === 'true' ) {

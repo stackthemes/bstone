@@ -1,0 +1,93 @@
+.bst-dimensions-nr > ul {
+    display: inline-block;
+    width: 100%;
+}
+
+.bst-dimensions-nr .dimension-nr-wrap {
+    float: left;
+    width: 20%;
+    margin: 0;
+}
+
+.wp-customizer .ui-dialog-content .bst-control-dimensions-nr .dimension-nr-wrap input[type="number"],
+.bst-control-dimensions-nr .dimension-nr-wrap button,
+.wp-customizer .bst-control-dimensions-nr .dimension-nr-wrap input[type="number"] {
+    display: block;
+    font-size: 14px;
+    padding: 4px 0;
+    width: 100%;
+    height: 28px;
+    border: 1px solid;
+    border-color: #a4afb7 !important;
+    border-left-width: 0;
+    border-radius: 0;
+    text-align: center;
+    padding-top: 7px;
+}
+
+.wp-customizer .ui-dialog-content .bst-control-dimensions-nr .dimension-nr-wrap:first-child input,
+.wp-customizer .bst-control-dimensions-nr .dimension-nr-wrap:first-child input {
+    border-left-width: 1px !important;
+    border-radius: 3px 0 0 3px !important;
+}
+
+.bst-dimensions-nr .dimension-nr-wrap .link-dimensions span {
+    display: block;
+    width: 100%;
+    height: 26px;
+    line-height: 26px;
+    font-size: 16px;
+}
+
+.bst-dimensions-nr .dimension-nr-wrap .link-dimensions {
+    background-color: #fff;
+    border: 1px solid #a4afb7;
+    border-left-width: 0;
+    padding: 0;
+    outline: none;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+}
+
+.bst-dimensions-nr .dimension-nr-wrap .link-dimensions span {
+    display: block;
+    width: 100%;
+    height: 26px;
+    line-height: 26px;
+    font-size: 16px;
+}
+
+.bst-dimensions-nr .dimension-nr-wrap .link-dimensions .bstone-linked {
+    display: none;
+}
+
+.bst-dimensions-nr .dimension-nr-wrap .link-dimensions .bstone-linked {
+    background-color: #a4afb7;
+    color: #fff;
+}
+
+.bst-control-dimensions-nr .dimension-nr-wrap .dimension-label {
+    display: block;
+    color: #949698;
+    font-size: 10px;
+    padding-top: 5px;
+    font-style: normal;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.bst-dimensions-nr .dimension-nr-wrap .link-dimensions.unlinked .bstone-unlinked {
+    display: none;
+}
+
+.bst-dimensions-nr .dimension-nr-wrap .link-dimensions.unlinked .bstone-linked {
+    display: block;
+}
+
+.bst-dimensions-nr .dimension-nr-wrap .link-dimensions.linked .bstone-unlinked {
+    display: block;
+}
+
+.bst-dimensions-nr .dimension-nr-wrap .link-dimensions.linked .bstone-linked {
+    display: none;
+}

@@ -109,6 +109,42 @@ if ( ! class_exists( 'Bstone_Woocommerce' ) ) :
 			add_filter( 'woocommerce_get_stock_html', 'bstone_woo_product_in_stock', 10, 2 );
 			
 		}
+
+		/**
+		 * Updates timestamp for global assets.
+		 */
+		public static function update_global_assets_timestamp() {
+
+			$timestamp = time();
+
+			if ( get_option( 'bst_global_assets_timestamp' ) !== false ) {
+				
+				update_option( 'bst_global_assets_timestamp', $timestamp );
+
+			} else {
+
+				add_option( 'bst_global_assets_timestamp', $timestamp );
+			}
+		}
+
+		/**
+		 * Takes the timestamp of the global assets. Creates if it's not yet created.
+		 */
+		public static function global_assets_timestamp() {
+
+			$timestamp = time();
+
+			if ( get_option( 'bst_global_assets_timestamp' ) !== false ) {
+
+				$timestamp = get_option( 'bst_global_assets_timestamp' );
+
+			} else {
+
+				add_option( 'bst_global_assets_timestamp', $timestamp );
+			}
+
+			return $timestamp;
+		}
 		
 		function demo_filter_woocommerce_get_image_size( array $size = array() ){
 			$size = array(
@@ -2732,13 +2768,13 @@ if ( ! class_exists( 'Bstone_Woocommerce' ) ) :
 				'margin-right' => 'sh_mc_sty_icon_margin_right',
 			), '', '');
 
-			$css_output .= bstone_get_shop_customizer_css('.bst-site-header-cart .widget_shopping_cart', array(
+			$css_output .= bstone_get_shop_customizer_css('.bst-site-header-cart .widget_shopping_cart, .bst-site-header-cart .widget_shopping_cart, .woocommerce .bst-site-header-cart .widget_shopping_cart, #bst-pro-woo-cart-sidebar', array(
 				'background-color' => 'sh_mc_sty_container_bg_color',
 				'border-color' 	   => 'sh_mc_sty_container_border_color',
 				'border-width' 	   => 'sh_mc_sty_container_border_width',
 			), '', '');
 
-			$css_output .= bstone_get_shop_customizer_css('.woocommerce .bst-site-header-cart .widget_shopping_cart, .bst-site-header-cart .widget_shopping_cart', array(
+			$css_output .= bstone_get_shop_customizer_css('.woocommerce .bst-site-header-cart .widget_shopping_cart, .bst-site-header-cart .widget_shopping_cart, #bst-pro-woo-cart-sidebar', array(
 				'border-radius' => 'sh_mc_sty_container_border_radius',
 			), '', '');
 
@@ -2750,7 +2786,7 @@ if ( ! class_exists( 'Bstone_Woocommerce' ) ) :
 				'border-bottom-color' => 'sh_mc_sty_container_bg_color',
 			), '', '');
 
-			$css_output .= bstone_get_shop_customizer_css('.site-header .bst-site-header-cart-data .button.wc-forward', array(
+			$css_output .= bstone_get_shop_customizer_css('.site-header .shopping-cart-element .button.wc-forward, .site-header .widget_shopping_cart .button.wc-forward, #bst-pro-woo-cart-sidebar .shopping-cart-element .button.wc-forward, #bst-pro-woo-cart-sidebar .widget_shopping_cart .button.wc-forward', array(
 				'color' 		   => 'sh_mc_sty_view_txt_color',
 				'background-color' => 'sh_mc_sty_view_bg_color',
 				'border-color' 	   => 'sh_mc_sty_view_brdr_color',
@@ -2766,13 +2802,13 @@ if ( ! class_exists( 'Bstone_Woocommerce' ) ) :
 				array('desktop', 'tablet', 'mobile')
 			));
 
-			$css_output .= bstone_get_shop_customizer_css('.site-header .bst-site-header-cart-data .button.wc-forward:hover', array(
+			$css_output .= bstone_get_shop_customizer_css('.site-header .shopping-cart-element .button.wc-forward:hover, .site-header .widget_shopping_cart .button.wc-forward:hover, #bst-pro-woo-cart-sidebar .shopping-cart-element .button.wc-forward:hover, #bst-pro-woo-cart-sidebar .widget_shopping_cart .button.wc-forward:hover', array(
 				'color' 		   => 'sh_mc_sty_view_txt_color_hovr',
 				'background-color' => 'sh_mc_sty_view_bg_color_hovr',
 				'border-color' 	   => 'sh_mc_sty_view_brdr_color_hovr',
 			), '', '');
-
-			$css_output .= bstone_get_shop_customizer_css('.bst-site-header-cart .widget_shopping_cart .buttons .button.checkout, .woocommerce .widget_shopping_cart .woocommerce-mini-cart__buttons .checkout.wc-forward', array(
+			
+			$css_output .= bstone_get_shop_customizer_css('.site-header .shopping-cart-element .bst-site-header-cart .buttons .button.checkout, .site-header .widget_shopping_cart .buttons .button.checkout, #bst-pro-woo-cart-sidebar .shopping-cart-element .buttons .button.checkout, #bst-pro-woo-cart-sidebar .widget_shopping_cart .buttons .button.checkout', array(
 				'color' 		   => 'sh_mc_sty_checkout_txt_color',
 				'background-color' => 'sh_mc_sty_checkout_bg_color',
 				'border-color' 	   => 'sh_mc_sty_checkout_brdr_color',
@@ -2788,60 +2824,60 @@ if ( ! class_exists( 'Bstone_Woocommerce' ) ) :
 				array('desktop', 'tablet', 'mobile')
 			));
 
-			$css_output .= bstone_get_shop_customizer_css('.bst-site-header-cart .widget_shopping_cart .buttons .button.checkout:hover, .woocommerce .widget_shopping_cart .woocommerce-mini-cart__buttons .checkout.wc-forward:hover', array(
+			$css_output .= bstone_get_shop_customizer_css('.site-header .shopping-cart-element .bst-site-header-cart .buttons .button.checkout:hover, .site-header .widget_shopping_cart .buttons .button.checkout:hover, #bst-pro-woo-cart-sidebar .shopping-cart-element .buttons .button.checkout:hover, #bst-pro-woo-cart-sidebar .widget_shopping_cart .buttons .button.checkout:hover', array(
 				'color' 		   => 'sh_mc_sty_checkout_txt_color_hovr',
 				'background-color' => 'sh_mc_sty_checkout_bg_color_hovr',
 				'border-color' 	   => 'sh_mc_sty_checkout_brdr_color_hovr',
 			), '', '');
 
-			$css_output .= bstone_get_shop_customizer_css('.woocommerce .widget_shopping_cart .total, .woocommerce.widget_shopping_cart .total', array(
+			$css_output .= bstone_get_shop_customizer_css('.site-header .shopping-cart-element .bst-site-header-cart .total, .site-header .woocommerce.widget_shopping_cart .total, #bst-pro-woo-cart-sidebar .shopping-cart-element .total, #bst-pro-woo-cart-sidebar .woocommerce.widget_shopping_cart .total', array(
 				'border-top-color' 	  => 'sh_mc_sty_content_subtotal_border_color',
 				'border-bottom-color' => 'sh_mc_sty_content_subtotal_border_color',
 			), '', '');
 
-			$css_output .= bstone_get_shop_customizer_css('.bst-site-header-cart .widget_shopping_cart .cart_list a.remove', array(
+			$css_output .= bstone_get_shop_customizer_css('header.site-header .shopping-cart-element .bst-site-header-cart .cart_list a.remove, header.site-header .widget_shopping_cart .cart_list a.remove, body #bst-pro-woo-cart-sidebar .shopping-cart-element .cart_list a.remove, body #bst-pro-woo-cart-sidebar .widget_shopping_cart .cart_list a.remove', array(
 				'color' 	   => 'sh_mc_sty_remove_btn_color',
 				'border-color' => 'sh_mc_sty_remove_btn_color',
 				'font-size'    => 'sh_mc_sty_remove_btn_font_size',
 				'line-height'  => 'sh_mc_sty_remove_btn_line_height',
 			), '', '');
 
-			$css_output .= bstone_get_shop_customizer_css('.bst-site-header-cart .widget_shopping_cart .cart_list a.remove:hover', array(
+			$css_output .= bstone_get_shop_customizer_css('.site-header .shopping-cart-element .bst-site-header-cart .cart_list a.remove:hover, .site-header .widget_shopping_cart .cart_list a.remove:hover, #bst-pro-woo-cart-sidebar .shopping-cart-element .cart_list a.remove:hover, #bst-pro-woo-cart-sidebar .widget_shopping_cart .cart_list a.remove:hover', array(
 				'color' 	   => 'sh_mc_sty_remove_btn_color_hover',
 				'border-color' => 'sh_mc_sty_remove_btn_color_hover',
 			), '', '');
 
-			$css_output .= bstone_get_shop_customizer_css('.bst-site-header-cart .widget_shopping_cart .total .woocommerce-Price-amount', array(
+			$css_output .= bstone_get_shop_customizer_css('.site-header .shopping-cart-element .bst-site-header-cart .total .woocommerce-Price-amount, .site-header .widget_shopping_cart .total .woocommerce-Price-amount, #bst-pro-woo-cart-sidebar .shopping-cart-element .total .woocommerce-Price-amount, #bst-pro-woo-cart-sidebar .widget_shopping_cart .total .woocommerce-Price-amount', array(
 				'color' => 'sh_mc_sty_content_subtotal_color',
-			), '', '');
+			), '', '');	
 
-			$css_output .= bstone_get_shop_customizer_css('.bst-site-header-cart .widget_shopping_cart .cart_list a', array(
+			$css_output .= bstone_get_shop_customizer_css('.site-header .shopping-cart-element .bst-site-header-cart .cart_list a, .site-header .woocommerce.widget_shopping_cart .cart_list a, #bst-pro-woo-cart-sidebar .shopping-cart-element .cart_list a, #bst-pro-woo-cart-sidebar .woocommerce.widget_shopping_cart .cart_list a', array(
 				'color' 		=> 'sh_mc_sty_content_ptitle_color',
 				'line-height'   => 'sh_mc_sty_content_ptitle_line_height',
 				'margin-bottom' => 'sh_mc_sty_content_ptitle_margin_bottom',
 				'margin-top' 	=> 'sh_mc_sty_content_ptitle_margin_top',
 			), '', '');
 
-			$css_output .= bstone_get_shop_customizer_css('.bst-site-header-cart .widget_shopping_cart_content, header.site-header .st-head-cta .widget_shopping_cart_content, header.site-header .st-head-cta .widget_shopping_cart_content p, header.site-header .st-head-cta .widget_shopping_cart_content a', array(
+			$css_output .= bstone_get_shop_customizer_css('.site-header .shopping-cart-element .bst-site-header-cart, .site-header .woocommerce.widget_shopping_cart, #bst-pro-woo-cart-sidebar .shopping-cart-element, #bst-pro-woo-cart-sidebar .woocommerce.widget_shopping_cart, .site-header .shopping-cart-element .bst-site-header-cart p, .site-header .woocommerce.widget_shopping_cart p, #bst-pro-woo-cart-sidebar .shopping-cart-element p, #bst-pro-woo-cart-sidebar .woocommerce.widget_shopping_cart p, .site-header .shopping-cart-element .bst-site-header-cart a, .site-header .woocommerce.widget_shopping_cart a, #bst-pro-woo-cart-sidebar .shopping-cart-element a, #bst-pro-woo-cart-sidebar .woocommerce.widget_shopping_cart a, .site-header .shopping-cart-element .bst-site-header-cart li, .site-header .woocommerce.widget_shopping_cart li, #bst-pro-woo-cart-sidebar .shopping-cart-element li, #bst-pro-woo-cart-sidebar .woocommerce.widget_shopping_cart li', array(
 				'font-family'	   => 'sh_mc_sty_content_font_family',
 				'font-weight'	   => 'sh_mc_sty_content_font_weight',
 				'text-transform'   => 'sh_mc_sty_content_text_transform',
 				'font-style'	   => 'sh_mc_sty_content_text_style',
 			), 'sh_mc_sty_content_font_size', '');
 
-			$css_output .= bstone_get_shop_customizer_css('.bst-site-header-cart .widget_shopping_cart .cart_list a:hover', array(
+			$css_output .= bstone_get_shop_customizer_css('.site-header .shopping-cart-element .bst-site-header-cart .cart_list a:hover, .site-header .woocommerce.widget_shopping_cart .cart_list a:hover, #bst-pro-woo-cart-sidebar .shopping-cart-element .cart_list a:hover, #bst-pro-woo-cart-sidebar .woocommerce.widget_shopping_cart .cart_list a:hover', array(
 				'color' => 'sh_mc_sty_content_ptitle_color_hover',
 			), '', '');
 
-			$css_output .= bstone_get_shop_customizer_css('.woocommerce .bst-site-header-cart .widget_shopping_cart .product_list_widget li, .bst-site-header-cart .widget_shopping_cart .product_list_widget li', array(
+			$css_output .= bstone_get_shop_customizer_css('header.site-header .shopping-cart-element .bst-site-header-cart .product_list_widget li, header.site-header .widget_shopping_cart .product_list_widget li, #bst-pro-woo-cart-sidebar .shopping-cart-element .product_list_widget li, #bst-pro-woo-cart-sidebar .widget_shopping_cart .product_list_widget li', array(
 				'border-bottom-color' => 'sh_mc_sty_content_divider_color',
 			), '', '');
 
-			$css_output .= bstone_get_shop_customizer_css('header.site-header .st-head-cta .widget_shopping_cart, header.site-header .st-head-cta .widget_shopping_cart p, .bst-site-header-cart .widget_shopping_cart .product_list_widget li', array(
+			$css_output .= bstone_get_shop_customizer_css('header.site-header .shopping-cart-element .bst-site-header-cart, header.site-header .widget_shopping_cart, header.site-header .shopping-cart-element .bst-site-header-cart p, header.site-header .widget_shopping_cart p, header.site-header .shopping-cart-element .bst-site-header-cart li, header.site-header .widget_shopping_cart li, #bst-pro-woo-cart-sidebar .shopping-cart-element, #bst-pro-woo-cart-sidebar .widget_shopping_cart, #bst-pro-woo-cart-sidebar .shopping-cart-element p, #bst-pro-woo-cart-sidebar .widget_shopping_cart p, #bst-pro-woo-cart-sidebar .shopping-cart-element li, #bst-pro-woo-cart-sidebar .widget_shopping_cart li', array(
 				'color' => 'sh_mc_sty_content_text_color',
 			), '', '');
 
-			$css_output .= bstone_get_shop_customizer_css('.woocommerce .bst-site-header-cart .widget_shopping_cart .product_list_widget li, .bst-site-header-cart .widget_shopping_cart .product_list_widget li', array(
+			$css_output .= bstone_get_shop_customizer_css('header.site-header .shopping-cart-element .bst-site-header-cart .product_list_widget li, header.site-header .widget_shopping_cart .product_list_widget li, #bst-pro-woo-cart-sidebar .shopping-cart-element .product_list_widget li, #bst-pro-woo-cart-sidebar .widget_shopping_cart .product_list_widget li', array(
 				'padding-bottom' => 'sh_mc_sty_content_cart_item_padding_bottom',
 			), '', '');
 			
@@ -3235,7 +3271,47 @@ if ( ! class_exists( 'Bstone_Woocommerce' ) ) :
 				$css_output .= bstone_parse_css( $site_width, '769' );
 			endif;
 
-			wp_add_inline_style( 'woocommerce-general', apply_filters( 'bstone_theme_woocommerce_dynamic_css', $css_output ) );
+			// wp_add_inline_style( 'woocommerce-general', apply_filters( 'bstone_theme_woocommerce_dynamic_css', $css_output ) );
+
+			/**
+			 * Customizer CSS Output
+			 */
+			if( 'file' == bstone_options( 'bstone-css-location' ) ) {
+				global $wp_filesystem;
+				
+				$upload_dir = wp_upload_dir();
+				
+				$dir = trailingslashit( $upload_dir['basedir'] ) . 'bstone-woo'. DIRECTORY_SEPARATOR; // Set storage directory path
+				
+				if ( empty( $wp_filesystem ) ) {
+					require_once( ABSPATH .'/wp-admin/includes/file.php' );
+					WP_Filesystem();
+				}
+				
+				if ( $wp_filesystem ) {
+
+					$wp_filesystem->mkdir( $dir ); // Make a new folder 'bstone' for storing our file if not created already.
+					
+					$existing_file = $dir . 'woo-styles.min.css';
+					
+					$existing_css = $wp_filesystem->get_contents( $existing_file );
+					
+					$bstone_custom_css_output = apply_filters( 'bstone_theme_woocommerce_dynamic_css', $css_output );
+					
+					if ( $existing_css !== $bstone_custom_css_output ) {
+						$wp_filesystem->put_contents( $existing_file, $bstone_custom_css_output, FS_CHMOD_FILE );
+
+						self::update_global_assets_timestamp();
+					}
+					
+					wp_enqueue_style( 'bstone-woocommerce-styles', $upload_dir['baseurl'].'/bstone-woo/' . 'woo-styles.min.css', array(), self::global_assets_timestamp() );
+
+				} else {
+					wp_add_inline_style( 'woocommerce-general', apply_filters( 'bstone_theme_woocommerce_dynamic_css', $css_output ) );
+				}
+			} else {
+				wp_add_inline_style( 'woocommerce-general', apply_filters( 'bstone_theme_woocommerce_dynamic_css', $css_output ) );
+			}
 
 			/**
 			 * YITH WooCommerce Wishlist Style
@@ -3402,30 +3478,84 @@ if ( ! class_exists( 'Bstone_Woocommerce' ) ) :
 		 */
 		function bstone_get_cart_link() {
 
-			$view_shopping_cart = apply_filters( 'bstone_woo_view_shopping_cart_title', __( 'View your shopping cart', 'bstone' ) );
+			$view_shopping_cart  = apply_filters( 'bstone_woo_view_shopping_cart_title', __( 'View your shopping cart', 'bstone' ) );
+
 			?>
 			<a class="cart-container" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php echo esc_attr( $view_shopping_cart ); ?>">
 
-						<?php
-						do_action( 'bstone_woo_header_cart_icons_before' );
+				<?php
+				do_action( 'bstone_woo_header_cart_icons_before' );
 
-						if ( apply_filters( 'bstone_woo_default_header_cart_icon', true ) ) {
-						?>
-							<div class="bst-cart-menu-wrap">
-								<span class="count"> 
-									<?php
-									if ( apply_filters( 'bstone_woo_header_cart_total', true ) && null != WC()->cart ) {
-										echo WC()->cart->get_cart_contents_count();
-									}
-									?>
-								</span>
-							</div>
-						<?php
-						}
+				if ( apply_filters( 'bstone_woo_default_header_cart_icon', true ) ) {
+				?>
+					<div class="bst-cart-menu-wrap">
+					
+						<span class="count"> 
+							<?php
+							if ( apply_filters( 'bstone_woo_header_cart_total', true ) && null != WC()->cart ) {
+								echo WC()->cart->get_cart_contents_count();
+							}
+							?>
+						</span>
+					</div>
+				<?php
+				}
 
-						do_action( 'bstone_woo_header_cart_icons_after' );
+				do_action( 'bstone_woo_header_cart_icons_after' );
 
-						?>
+				?>
+			</a>
+		<?php
+		}
+
+		/**
+		 * Cart Link
+		 * Displayed a link to the cart including the number of items present and the cart total
+		 *
+		 * @return void
+		 * @since  1.1.6
+		 */
+		function bstone_get_cart_link_with_extra_details() {
+
+			$view_shopping_cart  = apply_filters( 'bstone_woo_view_shopping_cart_title', __( 'View your shopping cart', 'bstone' ) );
+			$shopping_cart_item  = apply_filters( 'bstone_woo_shopping_cart_item', __( 'Item', 'bstone' ) );
+			$shopping_cart_items = apply_filters( 'bstone_woo_shopping_cart_items', __( 'Items', 'bstone' ) );
+			
+			$shopping_cart_label = apply_filters( 'bstone_woo_shopping_cart_label', __( 'My Cart', 'bstone' ) );
+
+			$my_cart_markup = '<span class="mycart">'.$shopping_cart_label.'</span>';
+			$cart_items_markup = '';
+
+			if( 1 === WC()->cart->get_cart_contents_count() ) {
+				$cart_items_markup = ' '.$shopping_cart_item;
+			} else {
+				$cart_items_markup = ' '.$shopping_cart_items;
+			}
+
+			?>
+			<a class="cart-container" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php echo esc_attr( $view_shopping_cart ); ?>">
+
+				<?php
+				do_action( 'bstone_woo_header_cart_icons_before' );
+
+				if ( apply_filters( 'bstone_woo_default_header_cart_icon', true ) ) {
+				?>
+					<div class="bst-cart-menu-wrap">
+						<?php echo $my_cart_markup; ?>
+						<span class="count"> 
+							<?php
+							if ( apply_filters( 'bstone_woo_header_cart_total', true ) && null != WC()->cart ) {
+								echo WC()->cart->get_cart_contents_count().$cart_items_markup;
+							}
+							?>
+						</span>
+					</div>
+				<?php
+				}
+
+				do_action( 'bstone_woo_header_cart_icons_after' );
+
+				?>
 			</a>
 		<?php
 		}
@@ -3441,7 +3571,15 @@ if ( ! class_exists( 'Bstone_Woocommerce' ) ) :
 
 			ob_start();
 			$this->bstone_get_cart_link();
-			$fragments['a.cart-container'] = ob_get_clean();
+			$cart_update_normal = ob_get_clean();			
+
+			ob_start();
+			$this->bstone_get_cart_link_with_extra_details();
+			$cart_update_w_details = ob_get_clean();
+
+			$fragments['.bst-site-header-cart a.cart-container'] = $cart_update_normal;
+			$fragments['.bst-outer-cart-container a.cart-container'] = $cart_update_normal;
+			$fragments['.bst-outer-cart-container-details a.cart-container'] = $cart_update_w_details;
 
 			return $fragments;
 		}

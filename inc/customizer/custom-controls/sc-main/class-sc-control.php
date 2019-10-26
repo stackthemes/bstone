@@ -133,9 +133,11 @@ class SC_Control extends WP_Customize_Control {
 	 */
 	public function render() {
 		$class = 'customize-control customize-control-' . $this->type . ' ' . $this->column;
-
+		
+		$bst_control_id = str_replace("]","", $this->id);
+		$bst_control_id = str_replace("[","-", $bst_control_id);
 		?>
-		<li id="<?php echo esc_attr( $this->id ); ?>" class="<?php echo esc_attr( $class ); ?>">
+		<li id="<?php echo esc_attr( $bst_control_id ); ?>" class="<?php echo esc_attr( $class ); ?>">
 			<?php
 			$this->render_content();
 			$this->render_condition();

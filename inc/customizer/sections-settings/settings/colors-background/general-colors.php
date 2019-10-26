@@ -358,6 +358,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'label'    	=> esc_html__( 'Heading Colors', 'bstone' ),
 				'section'  	=> 'section-color-general',
 				'priority' 	=> 80,
+				'status' 	=> 'close',
+				'items'     => array(
+					"customize-control-bstone-settings-h1-color",
+					"customize-control-bstone-settings-h2-color",
+					"customize-control-bstone-settings-h3-color",
+					"customize-control-bstone-settings-h4-color",
+					"customize-control-bstone-settings-h5-color",
+					"customize-control-bstone-settings-h6-color"
+				),
 			)
 		)
 	);

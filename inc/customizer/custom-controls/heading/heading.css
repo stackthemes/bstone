@@ -1,2 +1,56 @@
-.customize-control-bstone-heading { margin-top: 30px; }
-.bstone-customizer-heading { display: block; margin: 0 -12px; padding: 13px 12px; background-color: #fff; color: #555; border: 1px solid #ddd; border-left: 0; border-right: 0; font-size: 11px; font-weight: 600; letter-spacing: 2px; line-height: 1; text-transform: uppercase; }
+.customize-control-bstone-heading {
+    margin-top: 0px;
+}
+
+/* .bstone-heading-container {
+    margin-bottom: 0px;
+} */
+
+.bstone-customizer-heading {
+    display: block;
+    margin: 0 -12px;
+    padding: 13px 12px;
+    background-color: #0085BA;
+    color: #ffffff;
+    border: 1px solid #0085BA;
+    border-left: 0;
+    border-right: 0;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    line-height: 1;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.bstone-customizer-heading button {
+    position: absolute;
+    right: 5px;
+    margin-top: -13px;
+    top: 50%;
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    border: solid 2px #ffffff24;
+    padding: 0px;
+    border-radius: 100%;
+    cursor: pointer;
+    background: none;
+    box-sizing: border-box;
+}
+
+.bstone-customizer-heading button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.bstone-customizer-heading button i {
+    color: #fff;
+    margin-top: 5px;
+    font-size: 14px;
+    margin-left: 1px;
+}
+
+.bstone-customizer-heading button i.dashicons-arrow-up-alt2 {
+    margin-top: 3px;
+}

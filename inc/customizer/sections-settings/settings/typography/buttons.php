@@ -154,6 +154,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'label'    	=> esc_html__( 'Read More Button', 'bstone' ),
 				'section'  	=> 'section-buttons-typo-settings',
 				'priority' 	=> 25,
+				'status' 	=> 'close',
+				'items'     => array(
+					"customize-control-bstone-settings-readbtn-typo-text-font-family",
+					"customize-control-bstone-settings-readbtn-typo-text-font-weight",
+					"customize-control-bstone-settings-readbtn-typo-text-transform",
+					"customize-control-bstone-settings-readbtn-typo-text-font-size"
+				),
 			)
 		)
 	);	

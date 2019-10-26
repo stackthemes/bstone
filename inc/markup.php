@@ -141,7 +141,7 @@ if ( ! function_exists( 'bstone_primary_navigation_markup' ) ) {
 			?>
 			<div class="st-site-nav">
 				
-				<nav itemtype="http://schema.org/SiteNavigationElement" itemscope="itemscope" id="site-navigation" class="st-flex-grow-1" role="navigation" aria-label="<?php esc_attr_e( 'Site Navigation', 'bstone' ); ?>">
+				<nav itemtype="http://schema.org/SiteNavigationElement" itemscope="itemscope" id="bst-site-navigation" class="st-flex-grow-1" role="navigation" aria-label="<?php esc_attr_e( 'Site Navigation', 'bstone' ); ?>">
 					<?php
 					if ( has_nav_menu( 'primary' ) ) {
 						wp_nav_menu( $primary_menu_args );
@@ -304,7 +304,7 @@ if ( ! function_exists( 'bstone_replace_header_attr' ) ) :
 				}
 			}
 
-			$retina_logo = bstone_get_option( 'bst-header-retina-logo' );
+			$retina_logo = bstone_options( 'bst-header-retina-logo' );
 
 			$attr['srcset'] = '';
 
@@ -377,7 +377,7 @@ if ( ! function_exists( 'bstone_toggle_buttons_markup' ) ) {
 		
 		if ( apply_filters( 'bstone_enable_mobile_menu_buttons', $menu_bottons ) ) {
 		?>
-		<div class="bst-mobile-menu-buttons">
+		<div class="bst-mobile-menu-buttons" id="bst-mobile-menu-button">
 
 			<?php bstone_masthead_toggle_buttons_before(); ?>
 
@@ -391,7 +391,7 @@ if ( ! function_exists( 'bstone_toggle_buttons_markup' ) ) {
 	}
 }// End if().
 
-add_action( 'bstone_masthead_content', 'bstone_toggle_buttons_markup', 9 );
+add_action( 'bstone_masthead_content', 'bstone_toggle_buttons_markup', 2 );
 
 /**
  * Return the selected sections
@@ -686,8 +686,8 @@ if ( ! function_exists( 'bstone_number_pagination' ) ) {
 			echo "<div class='st-pagination'>";
 			the_posts_pagination(
 				array(
-					'prev_text' => bstone_get_option( 'pagination-text-prev' ),
-					'next_text' => bstone_get_option( 'pagination-text-next' ),
+					'prev_text' => bstone_options( 'pagination-text-prev' ),
+					'next_text' => bstone_options( 'pagination-text-next' ),
 				)
 			);
 			echo '</div>';

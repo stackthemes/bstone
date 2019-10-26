@@ -18,7 +18,13 @@ if ( ! has_post_thumbnail() ) {
 $post_thumb = get_the_post_thumbnail();
 
 // Caption
-$caption = get_post( get_post_thumbnail_id() )->post_excerpt;
+$caption = NULL;
+if( isset( get_post( get_post_thumbnail_id() )->post_excerpt ) ) {
+	$caption = get_post( get_post_thumbnail_id() )->post_excerpt;
+}
+
+// Overlay on mouse hover
+$overlay = bstone_options( 'overlay-on-img-hover' );
 ?>
 
 <div class="thumbnail">
@@ -31,6 +37,11 @@ $caption = get_post( get_post_thumbnail_id() )->post_excerpt;
 		
 		<span class="post-thumb-cnt">
 			<img src="<?php echo esc_url( $img_url[0] ); ?>" alt="<?php the_title_attribute(); ?>" <?php echo ' '.bstone_schema_markup( 'image' ); ?> />
+			<?php
+			if( true == $overlay ) {
+				echo '<span class="bst-img-overlay"></span>';
+			}
+			?>
 		</span>
 	
 	<?php

@@ -53,6 +53,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'label'    	=> esc_html__( 'Widget Title Typography', 'bstone' ),
 				'section'  	=> 'section-footer-typo-settings',
 				'priority' 	=> 10,
+				'status' 	=> 'open',
+				'items'     => array(
+					"customize-control-bstone-settings-footer-typo-title-font-family",
+					"customize-control-bstone-settings-footer-typo-title-font-weight",
+					"customize-control-bstone-settings-footer-typo-title-transform",
+					"customize-control-bstone-settings-footer-typo-title-font-size"
+				),
 			)
 		)
 	);
@@ -173,6 +180,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'label'    	=> esc_html__( 'Widget Text Typography', 'bstone' ),
 				'section'  	=> 'section-footer-typo-settings',
 				'priority' 	=> 35,
+				'status' 	=> 'close',
+				'items'     => array(
+					"customize-control-bstone-settings-footer-typo-text-font-family",
+					"customize-control-bstone-settings-footer-typo-text-font-weight",
+					"customize-control-bstone-settings-footer-typo-text-transform",
+					"customize-control-bstone-settings-footer-typo-text-font-size"
+				),
 			)
 		)
 	);

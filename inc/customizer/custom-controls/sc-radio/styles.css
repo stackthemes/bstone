@@ -97,3 +97,12 @@
 .sc-radio-item svg path {
 	fill: #555555 !important;
 }
+
+.sc-element-radio-icon svg {
+    width: 12px !important;
+    height: 10px !important;
+}
+
+#bstone-settings[bst_hb_col_merge] .dashicons-editor-help {
+	right: -10px;
+}

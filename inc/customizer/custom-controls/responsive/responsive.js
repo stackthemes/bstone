@@ -81,6 +81,7 @@
 			
 			'use strict';
 			this.container.find( '.bst-responsive-btns button' ).on( 'click', function( event ) {
+				
 
 				var device = jQuery(this).attr('data-device');
 				if( 'desktop' == device ) {
@@ -100,6 +101,29 @@
 
 		var device = jQuery(this).attr('data-device');
 
-		jQuery( '.customize-control-bst-responsive .input-wrapper input, .customize-control .bst-responsive-btns > li' ).removeClass( 'active' );
-		jQuery( '.customize-control-bst-responsive .input-wrapper input.' + device + ', .customize-control .bst-responsive-btns > li.' + device ).addClass( 'active' );
+		jQuery( '.customize-control .bst-responsive-btns > li' ).each( function() {
+			if( "true" == jQuery(this).attr('data-desktoponly') ) {
+				
+			} else {
+				jQuery( this ).removeClass( 'active' );
+
+				if( jQuery( this ).hasClass( device ) ) {
+					jQuery( this ).addClass( 'active' );
+				}
+			}
+		});
+
+		jQuery( '.customize-control-bst-responsive .input-wrapper input' ).each( function() {
+			if( "true" == jQuery(this).attr('data-desktoponly') ) {
+				
+			} else {
+				jQuery( this ).removeClass( 'active' );
+
+				if( jQuery( this ).attr('data-id') == device ) {
+					jQuery( this ).addClass( 'active' );
+				}
+			}
+		});
+		// jQuery( '.customize-control-bst-responsive .input-wrapper input, .customize-control .bst-responsive-btns > li' ).removeClass( 'active' );
+		// jQuery( '.customize-control-bst-responsive .input-wrapper input.' + device + ', .customize-control .bst-responsive-btns > li.' + device ).addClass( 'active' );
 	});

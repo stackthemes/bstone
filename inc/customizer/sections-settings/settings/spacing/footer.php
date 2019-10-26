@@ -98,6 +98,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'label'    	=> esc_html__( 'Widgets Spacing', 'bstone' ),
 				'section'  	=> 'section-spacing-footer',
 				'priority' 	=> 10,
+				'collapse'	=> false,
 			)
 		)
 	);

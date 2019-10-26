@@ -11,10 +11,11 @@
 /**
  * Define Constants
  */
-define( 'BSTONE_THEME_VERSION', '1.1.6' );
+define( 'BSTONE_THEME_VERSION', '1.2.2' );
 define( 'BSTONE_THEME_SETTINGS', 'bstone-settings' );
 define( 'BSTONE_THEME_DIR', get_template_directory() . '/' );
 define( 'BSTONE_THEME_URI', get_template_directory_uri() . '/' );
+define( 'BSTONE_SC_URI', get_template_directory_uri() . '/inc/compatibility/woocommerce/shop-customizer/' ); 
 
 /**
  * Bstone Common Functions
@@ -41,8 +42,10 @@ require BSTONE_THEME_DIR . 'inc/custom-header.php';
 require_once BSTONE_THEME_DIR . 'inc/bstone-fonts.php';
 if ( is_admin() ) {
 	require_once BSTONE_THEME_DIR . 'inc/customizer/bstone-fonts-data.php';
-	require_once BSTONE_THEME_DIR . 'inc/plugins/class-tgm-plugin-activation.php';
-	require_once BSTONE_THEME_DIR . 'inc/plugins/tgm-plugin-activation.php';
+	if ( ! in_array( 'bstone-pro-addons/bstone-pro-addons.php', apply_filters('active_plugins', get_option('active_plugins')) ) ) {
+		require_once BSTONE_THEME_DIR . 'inc/plugins/class-tgm-plugin-activation.php';
+		require_once BSTONE_THEME_DIR . 'inc/plugins/tgm-plugin-activation.php';
+	}
 }
 
 /**
@@ -72,6 +75,7 @@ require_once BSTONE_THEME_DIR . 'inc/core/class-bstone-strings.php';
  */
 require_once BSTONE_THEME_DIR . 'inc/markup.php';
 require_once BSTONE_THEME_DIR . 'inc/template-parts.php';
+require_once BSTONE_THEME_DIR . 'inc/core/class-bstone-loop.php';
 require_once BSTONE_THEME_DIR . 'inc/blog/blog.php';
 require_once BSTONE_THEME_DIR . 'inc/blog/single.php';
 require_once BSTONE_THEME_DIR . 'inc/blog/blog-markup.php';
@@ -86,11 +90,14 @@ require BSTONE_THEME_DIR . 'inc/template-functions.php';
  */
 require BSTONE_THEME_DIR . 'inc/customizer/bstone-customizer.php';
 
+if( class_exists( 'WooCommerce' ) ) {
+	require_once BSTONE_THEME_DIR . 'inc/compatibility/woocommerce/class-bstone-woocommerce.php';
+}
+require_once BSTONE_THEME_DIR . 'inc/compatibility/elementor/elementor.php';
+
 /**
  * Load Jetpack compatibility file.
  */
-require_once BSTONE_THEME_DIR . 'inc/compatibility/woocommerce/class-bstone-woocommerce.php';
-
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require BSTONE_THEME_DIR . 'inc/compatibility/jetpack.php';
 }

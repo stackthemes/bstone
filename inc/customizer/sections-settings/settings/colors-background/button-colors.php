@@ -213,6 +213,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'label'    	=> esc_html__( 'Read More Button', 'bstone' ),
 				'section'  	=> 'section-color-buttons',
 				'priority' 	=> 45,
+				'status' 	=> 'close',
+				'items'     => array(
+					"customize-control-bstone-settings-read-text-color",
+					"customize-control-bstone-settings-read-text-color-hover",
+					"customize-control-bstone-settings-divider-read-bg-color",
+					"customize-control-bstone-settings-read-background-color",
+					"customize-control-bstone-settings-read-background-color-hover",
+					"customize-control-bstone-settings-divider-read-border-color",
+					"customize-control-bstone-settings-read-border-color",
+					"customize-control-bstone-settings-read-border-color-hover"
+				),
 			)
 		)
 	);
@@ -378,3 +389,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 			)
 		)
 	);
+
+	/**
+	 * Option: Divider
+	 */
+	// Learn More link if Bstone Pro is not activated.
+	if ( ! defined( 'BSTONE_PRO_VER' ) ) {
+		$wp_customize->add_control(
+			new Bstone_Control_Divider(
+				$wp_customize, BSTONE_THEME_SETTINGS . '[buttons-pro-divider]', array(
+					'type'        => 'bst-divider',
+					'section' 	  => 'section-color-buttons',
+					'priority'    => 90,
+					'settings'    => array(),
+					'dividerline' => true,
+					'link' 		  => 'https://wpbstone.com/pro/?utm_source=customizer&utm_medium=upgrade-link&utm_campaign=upgrade-to-pro',
+					'html'     	  => __( 'More Options Available in Bstone Pro!', 'bstone' ),
+				)
+			)
+		);
+	}

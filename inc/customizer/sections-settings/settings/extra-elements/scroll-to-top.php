@@ -38,18 +38,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 */
 	$wp_customize->add_setting(
 		BSTONE_THEME_SETTINGS . '[sctop-icon-class]', array(
-			'default'   => bstone_get_option( 'sctop-icon-class' ),
-			'type'      => 'option',
+			'default'           => bstone_get_option( 'sctop-icon-class' ),
+			'type'              => 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
 	$wp_customize->add_control(
-		BSTONE_THEME_SETTINGS . '[sctop-icon-class]', array(
-			'section'     => 'section-scroll-top-settings',
-			'priority'    => 10,
-			'label'       => __( 'Icon Class', 'bstone' ),
-			'type'        => 'text',
+		new Bstone_Control_Iconpicker(
+			$wp_customize, BSTONE_THEME_SETTINGS . '[sctop-icon-class]', array(
+				'type'        => 'bst-iconpicker',
+				'section'     => 'section-scroll-top-settings',
+				'priority'    => 10,
+				'label'       => __( 'Select Icon', 'bstone' ),
+			)
 		)
 	);
 

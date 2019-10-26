@@ -26,6 +26,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'label'    	=> esc_html__( 'Customizer Styles Location', 'bstone' ),
 				'section'  	=> 'section-general-settings',
 				'priority' 	=> 30,
+				'status' 	=> 'open',
+				'items'     => array(
+					"customize-control-bstone-settings-bstone-css-location"
+				),
 			)
 		)
 	);
@@ -67,6 +71,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'label'    	=> esc_html__( 'Icon Settings', 'bstone' ),
 				'section'  	=> 'section-general-settings',
 				'priority' 	=> 40,
+				'status' 	=> 'open',
+				'items'     => array(
+					"customize-control-bstone-settings-bstone-font-awesome-icons",
+					"customize-control-bstone-settings-bstone-font-awesome-brands",
+					"customize-control-bstone-settings-bstone-font-awesome-regular",
+					"customize-control-bstone-settings-bstone-font-awesome-solid"
+				),
 			)
 		)
 	);

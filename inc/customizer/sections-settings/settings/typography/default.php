@@ -26,6 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'label'    	=> esc_html__( 'Default Typography Settings', 'bstone' ),
 				'section'  	=> 'section-default-typo-settings',
 				'priority' 	=> 5,
+				'collapse'	=> false,
 			)
 		)
 	);

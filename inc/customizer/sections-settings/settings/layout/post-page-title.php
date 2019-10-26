@@ -129,6 +129,7 @@ $wp_customize->add_control(
 				'label'    	=> esc_html__( 'Enable Title Section', 'bstone' ),
 				'section'  	=> 'section-title',
 				'priority' 	=> 20,
+				'collapse'	=> false,
 			)
 		)
 	);

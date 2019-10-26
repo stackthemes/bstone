@@ -182,6 +182,17 @@ if ( ! class_exists( 'Bstone_Customizer_Sanitizes' ) ) {
 		}
 
 		/**
+		 * Sanitize JSON
+		 *
+		 * @param  string $input    setting input.
+		 * @return mixed            setting input value.
+		 */
+		static public function sanitize_json( $val ) {
+			
+			return wp_kses_post( $val);
+		}
+
+		/**
 		 * Sanitize Responsive Typography
 		 *
 		 * @param  number $val Customizer setting input number.
@@ -362,6 +373,31 @@ if ( ! class_exists( 'Bstone_Customizer_Sanitizes' ) ) {
 		}
 
 		/**
+		 * Sanitize Alpha color And Gradient
+		 *
+		 * @param  string $color setting input.
+		 * @return string        setting input value.
+		 */
+		static public function sanitize_alpha_gradient_color( $color ) {
+
+			if ( '' === $color ) {
+				return '';
+			}
+
+			if ( false === strpos( $color, 'rgba' ) ) {
+				/* Hex sanitize */
+				return self::sanitize_hex_color( $color );
+			}
+
+			/* rgba sanitize */
+			// $color = str_replace( ' ', '', $color );
+			// sscanf( $color, 'rgba(%d,%d,%d,%f)', $red, $green, $blue, $alpha );
+			// return 'rgba(' . $red . ',' . $green . ',' . $blue . ',' . $alpha . ')';
+
+			return $color;
+		}
+
+		/**
 		 * Sanitize html
 		 *
 		 * @param  string $input    setting input.
@@ -445,6 +481,27 @@ if ( ! class_exists( 'Bstone_Customizer_Sanitizes' ) ) {
 				return 'normal';
 			}
 		}
+
+		/**
+		 * Sanitize Font weight
+		 *
+		 * @param  mixed $input setting input.
+		 * @return mixed        setting input value.
+		 */
+		static public function google_font_sanitization( $input ) {
+			$val =  json_decode( $input, true );
+			if( is_array( $val ) ) {
+				foreach ( $val as $key => $value ) {
+					$val[$key] = sanitize_text_field( $value );
+				}
+				$input = json_encode( $val );
+			}
+			else {
+				$input = json_encode( sanitize_text_field( $val ) );
+			}
+			return $input;
+		}
+
 	}
 }// End if().
 

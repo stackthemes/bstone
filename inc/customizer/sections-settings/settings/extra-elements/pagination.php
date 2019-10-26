@@ -424,7 +424,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 		BSTONE_THEME_SETTINGS . '[pagination-text-next]', array(
 			'default'   => bstone_get_option( 'pagination-text-next' ),
 			'type'      => 'option',
-			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
@@ -445,7 +444,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 		BSTONE_THEME_SETTINGS . '[pagination-text-prev]', array(
 			'default'   => bstone_get_option( 'pagination-text-prev' ),
 			'type'      => 'option',
-			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);

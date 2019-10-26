@@ -343,8 +343,7 @@
 			},
 		],
 		
-		// Footer Controls
-		
+		// Footer Controls		
 		'bstone-settings[footer-adv]' :
 		[
 			{
@@ -352,7 +351,7 @@
 					'bstone-settings[footer-top-area-width]',
 					'bstone-settings[site-footer-layout-tabs]',
 				],
-				callback: function( value ) {					
+				callback: function( value ) {				
 					if ( 'disabled' !== value ) {
 						return true;
 					}
@@ -573,7 +572,6 @@
 			{
 				controls: [
 					'bstone-settings[blog-post-cols-count]',
-					'bstone-settings[post-cols-count-divider]',
 				],
 				callback: function( value ) {					
 					if ( 'full-width' !== value && 'list' !== value ) {
@@ -708,6 +706,56 @@
 						return false;
 					}
 					return true;
+				}
+			},
+		],
+		
+		// Enable Disable Form Styling
+		
+		'bstone-settings[bstone-disably-form-styling]' :
+		[
+			{
+				controls: [
+					'bstone-settings[forms-heading-layout]',
+					'bstone-settings[bstone-input-height]',
+					'bstone-settings[bstone-textarea-height]',
+					'bstone-settings[bstone-fields-border-width]',
+					'bstone-settings[bstone-fields-border-radius]',
+					'bstone-settings[bfbuttons-border-width]',
+					'bstone-settings[bfbuttons-border-radius]',
+					'bstone-settings[forms-heading-spacing]',
+					'bstone-settings[bffield-spacing]',
+					'bstone-settings[bftextarea-spacing]',
+					'bstone-settings[bffield-margin-spacing]',
+					'bstone-settings[bfbuttons-spacing]',
+					'bstone-settings[forms-heading-typography]',
+					'bstone-settings[bffield-font-family]',
+					'bstone-settings[bffield-font-weight]',
+					'bstone-settings[bffield-text-transform]',
+					'bstone-settings[bffield-font-size]',
+					'bstone-settings[forms-heading-buttons-typography]',
+					'bstone-settings[bfbuttons-font-family]',
+					'bstone-settings[bfbuttons-font-weight]',
+					'bstone-settings[bfbuttons-text-transform]',
+					'bstone-settings[bfbuttons-font-size]',
+					'bstone-settings[forms-heading-colors]',
+					'bstone-settings[bffield-bg-color]',
+					'bstone-settings[bffield-text-color]',
+					'bstone-settings[bffield-placeholder-color]',
+					'bstone-settings[bffield-border-color]',
+					'bstone-settings[forms-heading-buttons-colors]',
+					'bstone-settings[bfbuttons-text-color]',
+					'bstone-settings[bfbuttons-text-color-hover]',
+					'bstone-settings[bfbuttons-bg-color]',
+					'bstone-settings[bfbuttons-bg-color-hover]',
+					'bstone-settings[bfbuttons-border-color]',
+					'bstone-settings[bfbuttons-border-color-hover]',
+				],
+				callback: function( value ) {
+					if ( false === value ) {
+						return true;
+					}
+					return false;
 				}
 			},
 		],
@@ -943,7 +991,7 @@
 			bst_tab_border_left = '-1px';
 		}
 
-		if( $(this).scrollTop() > 200 ) {
+		if( $(this).scrollTop() > 11200 ) {
 
 			if( screenSize <= 600 ) {
 				bst_tab_width = '100%';

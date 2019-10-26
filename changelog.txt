@@ -1,3 +1,18 @@
+= 1.2.1 =
+* FIXED: More than one text-domain was used.
+
+= 1.2.0 =
+* ADD: Icon Picker Control
+* IMPROVED: Blog Layout Customizer Settings
+
+= 1.1.9 =
+* FIXED: Header hidden when title section enabled
+
+= 1.1.8 =
+* ADD: Clear cache when customizer options updated
+* ADD: Drop down menu toggle on small devices
+* IMPROVED: Form styles customization can be disabled
+
 = 1.1.6 =
 * ADD: WooCommerce Shop Customizer
 * FIXED: Responsive Menu Background in Transparent Header

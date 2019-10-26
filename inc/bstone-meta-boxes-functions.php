@@ -49,7 +49,7 @@ if ( ! class_exists( 'Bstone_Meta_Box_Functions' ) ) {
 
 			if ( is_singular() ) {
 				add_action( 'wp_head', array( $this, 'primary_header' ) );
-                add_filter( 'bstone_the_title_enabled', array( $this, 'post_title' ) );                
+                add_filter( 'bstone_the_title_enabled', array( $this, 'post_title' ) );
 				add_filter( 'bstone_footer_top_enabled', array( $this, 'footer_top' ) );
 				add_filter( 'bstone_footer_bottom_enabled', array( $this, 'footer_bottom' ) );
 			}
@@ -67,6 +67,7 @@ if ( ! class_exists( 'Bstone_Meta_Box_Functions' ) ) {
 			if ( 'disabled' == $display_header ) {
 
 				remove_action( 'bstone_masthead', 'bstone_masthead_default_template' );
+				remove_action( 'bstone_masthead', 'bstone_pro_header_markup' );
 			}
 		}
 

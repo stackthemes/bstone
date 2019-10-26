@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			$wp_customize, BSTONE_THEME_SETTINGS . '[site-blog-layout-tabs]', array(
 				'type'          => 'bst-tabs',
 				'section'       => 'section-blog',
-				'priority'      => 1,
+				'priority'      => 5,
 				'settings'      => array(),
 				'tabs_data'     => array(
 					__('layout', 'bstone'),
@@ -41,109 +41,29 @@ if ( ! defined( 'ABSPATH' ) ) {
 	);
 
 	/**
-	 * Option: Blog Post Content
+	 * Blog / Archive Layout - Title: Heading
 	 */
-	$wp_customize->add_setting(
-		BSTONE_THEME_SETTINGS . '[blog-post-content]', array(
-			'default'           => bstone_get_option( 'blog-post-content' ),
-			'type'              => 'option',
-			'sanitize_callback' => array( 'Bstone_Customizer_Sanitizes', 'sanitize_choices' ),
-		)
-	);
-	$wp_customize->add_control(
-		BSTONE_THEME_SETTINGS . '[blog-post-content]', array(
-			'section'  => 'section-blog',
-			'label'    => __( 'Blog Post Content', 'bstone' ),
-			'type'     => 'select',
-			'priority' => 5,
-			'choices'  => array(
-				'full-content' => __( 'Full Content', 'bstone' ),
-				'excerpt'      => __( 'Excerpt', 'bstone' ),
-			),
-		)
-	);
+	$wp_customize->add_setting( BSTONE_THEME_SETTINGS . '[blog-layout-title-heading]', array(
+		'sanitize_callback'	=> 'wp_kses',
+	) );
 
-	/**
-	 * Option: Blog Post Content Length
-	 */
-	$wp_customize->add_setting(
-		BSTONE_THEME_SETTINGS . '[blog-post-content-length]', array(
-			'default'           => bstone_get_option( 'blog-post-content-length' ),
-			'type'              => 'option',
-			'sanitize_callback' => array( 'Bstone_Customizer_Sanitizes', 'sanitize_number' ),
-		)
-	);
-	$wp_customize->add_control(
-		BSTONE_THEME_SETTINGS . '[blog-post-content-length]', array(
-			'type'        => 'number',
-			'section'     => 'section-blog',
-			'priority'    => 10,
-			'label'       => __( 'Excerpt Length', 'bstone' ),
-			'input_attrs' => array(
-				'min'  => 0,
-				'step' => 1,
-				'max'  => 500,
-			),
-		)
-	);
-
-	/**
-	 * Option: Blog Post Content More 
-	 */
-	$wp_customize->add_setting(
-		BSTONE_THEME_SETTINGS . '[blog-post-content-more]', array(
-			'default'           => bstone_get_option( 'blog-post-content-more' ),
-			'type'              => 'option',
-			'sanitize_callback' => 'sanitize_text_field',
-		)
-	);
-	$wp_customize->add_control(
-		BSTONE_THEME_SETTINGS . '[blog-post-content-more]', array(
-			'type'        => 'text',
-			'section'     => 'section-blog',
-			'priority'    => 15,
-			'label'       => __( 'Excerpt End With', 'bstone' ),
-		)
-	);
-
-	/**
-	 * Option: Blog Post Read More Text
-	 */
-	$wp_customize->add_setting(
-		BSTONE_THEME_SETTINGS . '[blog-read-more-text]', array(
-			'default'           => bstone_get_option( 'blog-read-more-text' ),
-			'type'              => 'option',
-			'sanitize_callback' => 'sanitize_text_field',
-		)
-	);
-	$wp_customize->add_control(
-		BSTONE_THEME_SETTINGS . '[blog-read-more-text]', array(
-			'type'        => 'text',
-			'section'     => 'section-blog',
-			'priority'    => 20,
-			'label'       => __( 'Read More Button Text', 'bstone' ),
-			'description' => __( 'Read more button text string.', 'bstone' ),
-		)
-	);
-
-	/**
-	 * Option: Blog Post Read More Icone
-	 */
-	$wp_customize->add_setting(
-		BSTONE_THEME_SETTINGS . '[blog-read-more-icon]', array(
-			'default'           => bstone_get_option( 'blog-read-more-icon' ),
-			'type'              => 'option',
-			'sanitize_callback' => 'sanitize_text_field',
-		)
-	);
-	$wp_customize->add_control(
-		BSTONE_THEME_SETTINGS . '[blog-read-more-icon]', array(
-			'type'        => 'text',
-			'section'     => 'section-blog',
-			'priority'    => 25,
-			'label'       => __( 'Read More Button Icon', 'bstone' ),
-			'description' => __( 'Icon to display in Read More button.', 'bstone' ),
-		)
+	$wp_customize->add_control (
+		new Bstone_Control_Heading (
+			$wp_customize, BSTONE_THEME_SETTINGS . '[blog-layout-title-heading]', array(
+				'label'    	=> esc_html__( 'Layout', 'bstone' ),
+				'section'       => 'section-blog',
+				'priority' 	=> 10,
+				'status' 	=> 'open',
+				'items'     => apply_filters( 'blog_layout_title_heading', array(
+					"customize-control-bstone-settings-blog-style",
+					"customize-control-bstone-settings-blog-display-style",
+					"customize-control-bstone-settings-blog-article-alignment",
+					"customize-control-bstone-settings-blog-display-style-list",
+					"customize-control-bstone-settings-blog-list-text-position",
+					"customize-control-bstone-settings-blog-post-cols-count"
+				)),
+			)
+		) 
 	);
 
 	/**
@@ -157,19 +77,33 @@ if ( ! defined( 'ABSPATH' ) ) {
 		)
 	);
 	$wp_customize->add_control(
-		BSTONE_THEME_SETTINGS . '[blog-style]', array(
-			'section'  => 'section-blog',
-			'label'    => __( 'Blog Style', 'bstone' ),
-			'type'     => 'select',
-			'priority' => 30,
-			'choices'  => array(
-				'full-width' => __( 'Full Width Post', 'bstone' ),
-				'list'  	 => __( 'List', 'bstone' ),
-				'grid'       => __( 'Grid', 'bstone' ),
-				'masonry'    => __( 'Masonry', 'bstone' ),
-			),
+		new Bstone_Control_Radio_Image(
+			$wp_customize, BSTONE_THEME_SETTINGS . '[blog-style]', array(
+				'type'    => 'bst-radio-image',
+				'label'   => __( 'Layout Type', 'bstone' ),
+                'section'  => 'section-blog',
+                'priority' => 15,
+				'choices' => array(
+					'full-width'    => array(
+						'label' => __( 'Full Width Post', 'bstone' ),
+						'path'  => BSTONE_THEME_URI . '/assets/images/blog-full-width.png',
+					),
+					'list'  => array(
+						'label' => __( 'List', 'bstone' ),
+						'path'  => BSTONE_THEME_URI . '/assets/images/blog-list.png',
+					),
+					'grid'  => array(
+						'label' => __( 'Grid', 'bstone' ),
+						'path'  => BSTONE_THEME_URI . '/assets/images/blog-grid.png',
+					),
+					'masonry'  => array(
+						'label' => __( 'Masonry', 'bstone' ),
+						'path'  => BSTONE_THEME_URI . '/assets/images/blog-masonry.png',
+					),
+				),
+			)
 		)
-	);
+	);	
 
 	/**
 	 * Option: Blog Grid Display Style
@@ -184,13 +118,38 @@ if ( ! defined( 'ABSPATH' ) ) {
 	$wp_customize->add_control(
 		BSTONE_THEME_SETTINGS . '[blog-display-style]', array(
 			'section'  => 'section-blog',
-			'label'    => __( 'Posts Display Style', 'bstone' ),
+			'label'    => __( 'Display Style', 'bstone' ),
 			'type'     => 'select',
-			'priority' => 35,
+			'priority' => 20,
 			'choices'  => array(
-				'normal'     => __( 'None', 'bstone' ),
+				'normal'     => __( 'Default', 'bstone' ),
 				'1-full-1'   => __( 'First post full width on first page', 'bstone' ),
 				'1-full-all' => __( 'First post full width on all pages', 'bstone' ),
+			),
+		)
+	);	
+
+	/**
+	 * Option: Blog Display Style - List Style
+	 */
+	$wp_customize->add_setting(
+		BSTONE_THEME_SETTINGS . '[blog-article-alignment]', array(
+			'default'           => bstone_get_option( 'blog-article-alignment' ),
+			'type'              => 'option',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => array( 'Bstone_Customizer_Sanitizes', 'sanitize_choices' ),
+		)
+	);
+	$wp_customize->add_control(
+		BSTONE_THEME_SETTINGS . '[blog-article-alignment]', array(
+			'section'  => 'section-blog',
+			'label'    => __( 'Content Alignment', 'bstone' ),
+			'type'     => 'select',
+			'priority' => 25,
+			'choices'  => array(
+				'left'       => __( 'Left', 'bstone' ),
+				'right'      => __( 'Right', 'bstone' ),
+				'center' => __( 'Center', 'bstone' ),
 			),
 		)
 	);
@@ -210,7 +169,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			'section'  => 'section-blog',
 			'label'    => __( 'Image Position - List Style', 'bstone' ),
 			'type'     => 'select',
-			'priority' => 40,
+			'priority' => 30,
 			'choices'  => array(
 				'left'       => __( 'Image on left', 'bstone' ),
 				'right'      => __( 'Image on right', 'bstone' ),
@@ -234,7 +193,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			'section'  => 'section-blog',
 			'label'    => __( 'Vertical Position - List Style', 'bstone' ),
 			'type'     => 'select',
-			'priority' => 40,
+			'priority' => 35,
 			'choices'  => array(
 				'flex-start' => __( 'Top', 'bstone' ),
 				'center'	 => __( 'Center', 'bstone' ),
@@ -244,28 +203,194 @@ if ( ! defined( 'ABSPATH' ) ) {
 	);
 
 	/**
-	 * Option: Blog Display Style - List Style
+	 * Option: Post Cols Count
 	 */
 	$wp_customize->add_setting(
-		BSTONE_THEME_SETTINGS . '[blog-article-alignment]', array(
-			'default'           => bstone_get_option( 'blog-article-alignment' ),
+		BSTONE_THEME_SETTINGS . '[blog-post-cols-count]', array(
+			'default'           => bstone_get_option( 'blog-post-cols-count' ),
 			'type'              => 'option',
-			'transport'         => 'postMessage',
+			'sanitize_callback' => array( 'Bstone_Customizer_Sanitizes', 'sanitize_number' ),
+		)
+	);
+	$wp_customize->add_control(
+		new Bstone_Control_Slider(
+			$wp_customize, BSTONE_THEME_SETTINGS . '[blog-post-cols-count]', array(
+				'type'        => 'bst-slider',
+				'section'     => 'section-blog',
+				'priority'    => 40,
+				'label'       => __( 'Columns', 'bstone' ),
+				'input_attrs' => array(
+					'min'  => 1,
+					'step' => 1,
+					'max'  => 6,
+				),
+			)
+		)
+	);
+
+	/**
+	 * Blog / Archive Content - Title: Heading
+	 */
+	$wp_customize->add_setting( BSTONE_THEME_SETTINGS . '[blog-content-title-heading]', array(
+		'sanitize_callback'	=> 'wp_kses',
+	) );
+
+	$wp_customize->add_control (
+		new Bstone_Control_Heading (
+			$wp_customize, BSTONE_THEME_SETTINGS . '[blog-content-title-heading]', array(
+				'label'    	=> esc_html__( 'Content', 'bstone' ),
+				'section'       => 'section-blog',
+				'priority' 	=> 45,
+				'status' 	=> 'close',
+				'items'     => array(
+					"customize-control-bstone-settings-blog-post-content",
+					"customize-control-bstone-settings-blog-post-content-length",
+					"customize-control-bstone-settings-blog-post-content-more",
+					"customize-control-bstone-settings-blog-read-more-text",
+					"customize-control-bstone-settings-blog-read-more-icon"
+				),
+			)
+		) 
+	);
+
+	/**
+	 * Option: Blog Post Content
+	 */
+	$wp_customize->add_setting(
+		BSTONE_THEME_SETTINGS . '[blog-post-content]', array(
+			'default'           => bstone_get_option( 'blog-post-content' ),
+			'type'              => 'option',
 			'sanitize_callback' => array( 'Bstone_Customizer_Sanitizes', 'sanitize_choices' ),
 		)
 	);
 	$wp_customize->add_control(
-		BSTONE_THEME_SETTINGS . '[blog-article-alignment]', array(
+		BSTONE_THEME_SETTINGS . '[blog-post-content]', array(
 			'section'  => 'section-blog',
-			'label'    => __( 'Content Alignment', 'bstone' ),
+			'label'    => __( 'Blog Post Content', 'bstone' ),
 			'type'     => 'select',
-			'priority' => 43,
+			'priority' => 50,
 			'choices'  => array(
-				'left'       => __( 'Left', 'bstone' ),
-				'right'      => __( 'Right', 'bstone' ),
-				'center' => __( 'Center', 'bstone' ),
+				'full-content' => __( 'Full Content', 'bstone' ),
+				'excerpt'      => __( 'Excerpt', 'bstone' ),
 			),
 		)
+	);
+
+	/**
+	 * Option: Blog Post Content Length
+	 */
+	$wp_customize->add_setting(
+		BSTONE_THEME_SETTINGS . '[blog-post-content-length]', array(
+			'default'           => bstone_get_option( 'blog-post-content-length' ),
+			'type'              => 'option',
+			'sanitize_callback' => array( 'Bstone_Customizer_Sanitizes', 'sanitize_number' ),
+		)
+	);
+	$wp_customize->add_control(
+		BSTONE_THEME_SETTINGS . '[blog-post-content-length]', array(
+			'type'        => 'number',
+			'section'     => 'section-blog',
+			'priority'    => 55,
+			'label'       => __( 'Excerpt Length', 'bstone' ),
+			'input_attrs' => array(
+				'min'  => 0,
+				'step' => 1,
+				'max'  => 500,
+			),
+		)
+	);
+
+	/**
+	 * Option: Blog Post Content More 
+	 */
+	$wp_customize->add_setting(
+		BSTONE_THEME_SETTINGS . '[blog-post-content-more]', array(
+			'default'           => bstone_get_option( 'blog-post-content-more' ),
+			'type'              => 'option',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		BSTONE_THEME_SETTINGS . '[blog-post-content-more]', array(
+			'type'        => 'text',
+			'section'     => 'section-blog',
+			'priority'    => 60,
+			'label'       => __( 'Excerpt End With', 'bstone' ),
+		)
+	);
+
+	/**
+	 * Option: Blog Post Read More Text
+	 */
+	$wp_customize->add_setting(
+		BSTONE_THEME_SETTINGS . '[blog-read-more-text]', array(
+			'default'           => bstone_get_option( 'blog-read-more-text' ),
+			'type'              => 'option',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		BSTONE_THEME_SETTINGS . '[blog-read-more-text]', array(
+			'type'        => 'text',
+			'section'     => 'section-blog',
+			'priority'    => 65,
+			'label'       => __( 'Read More Button Text', 'bstone' ),
+			'description' => __( 'Read more button text string.', 'bstone' ),
+		)
+	);
+
+	/**
+	 * Option: Blog Post Read More Icone
+	 */
+	$wp_customize->add_setting(
+		BSTONE_THEME_SETTINGS . '[blog-read-more-icon]', array(
+			'default'           => bstone_get_option( 'blog-read-more-icon' ),
+			'type'              => 'option',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		BSTONE_THEME_SETTINGS . '[blog-read-more-icon]', array(
+			'type'        => 'text',
+			'section'     => 'section-blog',
+			'priority'    => 70,
+			'label'       => __( 'Read More Button Icon', 'bstone' ),
+			'description' => __( 'Icon to display in Read More button.', 'bstone' ),
+		)
+	);
+
+	/**
+	 * Blog / Archive Content - Title: Heading
+	 */
+	$wp_customize->add_setting( BSTONE_THEME_SETTINGS . '[blog-meta-title-heading]', array(
+		'sanitize_callback'	=> 'wp_kses',
+	) );
+
+	$wp_customize->add_control (
+		new Bstone_Control_Heading (
+			$wp_customize, BSTONE_THEME_SETTINGS . '[blog-meta-title-heading]', array(
+				'label'    	=> esc_html__( 'Post Elements', 'bstone' ),
+				'section'       => 'section-blog',
+				'priority' 	=> 75,
+				'status' 	=> 'close',
+				'items'     => array(
+					"customize-control-bstone-settings-blog-post-structure",
+					"customize-control-bstone-settings-blog-meta",
+					"customize-control-bstone-settings-blog-meta-separator",
+					"customize-control-bstone-settings-blog-comments-txt-zero",
+					"customize-control-bstone-settings-blog-comments-txt-one",
+					"customize-control-bstone-settings-blog-comments-txt-more",
+					"customize-control-bstone-settings-display-meta-text",
+					"customize-control-bstone-settings-display-meta-icons",
+					"customize-control-bstone-settings-meta-icons-type",
+					"customize-control-bstone-settings-bst-post-type-icon-devider",
+					"customize-control-bstone-settings-post-type-icon",
+					"customize-control-bstone-settings-post-icon-position",
+					"customize-control-bstone-settings-post-icon-type",
+					"customize-control-bstone-settings-post-icon-size"
+				),
+			)
+		) 
 	);
 
 	/**
@@ -283,7 +408,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			$wp_customize, BSTONE_THEME_SETTINGS . '[blog-post-structure]', array(
 				'type'     => 'bst-sortable',
 				'section'  => 'section-blog',
-				'priority' => 45,
+				'priority' => 80,
 				'label'    => __( 'Blog Post Structure', 'bstone' ),
 				'choices'  => array(
 					'image'      	=> __( 'Featured Image', 'bstone' ),
@@ -311,7 +436,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			$wp_customize, BSTONE_THEME_SETTINGS . '[blog-meta]', array(
 				'type'     => 'bst-sortable',
 				'section'  => 'section-blog',
-				'priority' => 50,
+				'priority' => 85,
 				'label'    => __( 'Blog Meta', 'bstone' ),
 				'choices'  => array(
 					'comments' => __( 'Comments', 'bstone' ),
@@ -338,7 +463,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		BSTONE_THEME_SETTINGS . '[blog-meta-separator]', array(
 			'type'        => 'text',
 			'section'     => 'section-blog',
-			'priority'    => 55,
+			'priority'    => 90,
 			'label'       => __( 'Post Meta Separator', 'bstone' ),
 		)
 	);
@@ -357,7 +482,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		BSTONE_THEME_SETTINGS . '[blog-comments-txt-zero]', array(
 			'type'        => 'text',
 			'section'     => 'section-blog',
-			'priority'    => 60,
+			'priority'    => 95,
 			'label'       => __( 'Comments Text: Zero', 'bstone' ),
 			'description' => __( 'Text to display when there are no comments. Default: No Comments', 'bstone' ),
 		)
@@ -377,7 +502,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		BSTONE_THEME_SETTINGS . '[blog-comments-txt-one]', array(
 			'type'        => 'text',
 			'section'     => 'section-blog',
-			'priority'    => 65,
+			'priority'    => 100,
 			'label'       => __( 'Comments Text: One', 'bstone' ),
 			'description' => __( 'Text to display when there is one comment. Default: 1 Comment', 'bstone' ),
 		)
@@ -397,7 +522,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		BSTONE_THEME_SETTINGS . '[blog-comments-txt-more]', array(
 			'type'        => 'text',
 			'section'     => 'section-blog',
-			'priority'    => 70,
+			'priority'    => 105,
 			'label'       => __( 'Comments Text: More', 'bstone' ),
 			'description' => __( 'Text to display when there is more than one comment. Default: Comments', 'bstone' ),
 		)
@@ -418,7 +543,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			'type'        => 'checkbox',
 			'section'     => 'section-blog',
 			'label'       => __( 'Display Meta Text', 'bstone' ),
-			'priority'    => 75,
+			'priority'    => 110,
 		)
 	);
 
@@ -437,7 +562,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			'type'        => 'checkbox',
 			'section'     => 'section-blog',
 			'label'       => __( 'Display Meta Icons', 'bstone' ),
-			'priority'    => 80,
+			'priority'    => 115,
 		)
 	);
 
@@ -456,7 +581,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			'section'  => 'section-blog',
 			'label'    => __( 'Meta Icons Type', 'bstone' ),
 			'type'     => 'select',
-			'priority' => 85,
+			'priority' => 120,
 			'choices'  => array(
 				'regular' => __( 'Regular', 'bstone' ),
 				'solid'   => __( 'Solid', 'bstone' ),
@@ -473,7 +598,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			$wp_customize, BSTONE_THEME_SETTINGS . '[bst-post-type-icon-devider]', array(
 				'type'     => 'bst-divider',
 				'section'  => 'section-blog',
-				'priority' => 90,
+				'priority' => 125,
 				'settings' => array(),
 			)
 		)
@@ -494,7 +619,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			'type'        => 'radio',
 			'section'     => 'section-blog',
 			'label'       => __( 'Post Type Icon', 'bstone' ),
-			'priority'    => 95,
+			'priority'    => 130,
 			'choices'     => array(
 				'disable' 	   => esc_html__( 'Disable', 'bstone' ),
 				'enable' 	   => esc_html__( 'Enable', 'bstone' ),
@@ -518,7 +643,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			'section'  => 'section-blog',
 			'label'    => __( 'Post Icon Position', 'bstone' ),
 			'type'     => 'select',
-			'priority' => 100,
+			'priority' => 135,
 			'choices'  => array(
 				'center' 		=> __( 'Center', 'bstone' ),
 				'top-left' 		=> __( 'Top Left', 'bstone' ),
@@ -544,7 +669,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			'section'  => 'section-blog',
 			'label'    => __( 'Post Icon Type', 'bstone' ),
 			'type'     => 'select',
-			'priority' => 100,
+			'priority' => 140,
 			'choices'  => array(
 				'far' => __( 'Regular', 'bstone' ),
 				'fas'   => __( 'Solid', 'bstone' ),
@@ -568,7 +693,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			'section'  => 'section-blog',
 			'label'    => __( 'Post Icon Size', 'bstone' ),
 			'type'     => 'select',
-			'priority' => 100,
+			'priority' => 145,
 			'choices'  => array(
 				's'  => __( 'Small', 'bstone' ),
 				'm'  => __( 'Medium', 'bstone' ),
@@ -576,20 +701,36 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'xl' => __( 'Extra Large', 'bstone' ),
 			),
 		)
-	);
+	);	
 
 	/**
-	 * Option: Divider
+	 * Blog / Archive Content - Title: Heading
 	 */
-	$wp_customize->add_control(
-		new Bstone_Control_Divider(
-			$wp_customize, BSTONE_THEME_SETTINGS . '[bst-styling-section-blog-width]', array(
-				'type'     => 'bst-divider',
-				'section'  => 'section-blog',
-				'priority' => 105,
-				'settings' => array(),
+	$wp_customize->add_setting( BSTONE_THEME_SETTINGS . '[blog-style-title-heading]', array(
+		'sanitize_callback'	=> 'wp_kses',
+	) );
+
+	$wp_customize->add_control (
+		new Bstone_Control_Heading (
+			$wp_customize, BSTONE_THEME_SETTINGS . '[blog-style-title-heading]', array(
+				'label'    	=> esc_html__( 'Post Container', 'bstone' ),
+				'section'       => 'section-blog',
+				'priority' 	=> 150,
+				'status' 	=> 'close',
+				'items'     => apply_filters( 'blog_content_title_heading', array(
+					"customize-control-bstone-settings-blog-width",
+					"customize-control-bstone-settings-blog-max-width",
+					"customize-control-bstone-settings-blog-img-size-divider",
+					"customize-control-bstone-settings-overlay-on-img-hover",
+					"customize-control-bstone-settings-blog-img-size",
+					"customize-control-bstone-settings-blog-img-custom-width",
+					"customize-control-bstone-settings-blog-img-custom-height",
+					"customize-control-bstone-settings-blog-post-styling-divider",
+					"customize-control-bstone-settings-blog-article-outer-border",
+					"customize-control-bstone-settings-blog-post-border-radius"
+				) ),
 			)
-		)
+		) 
 	);
 
 	/**
@@ -606,7 +747,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		BSTONE_THEME_SETTINGS . '[blog-width]', array(
 			'type'     => 'select',
 			'section'  => 'section-blog',
-			'priority' => 110,
+			'priority' => 155,
 			'label'    => __( 'Blog Content Width', 'bstone' ),
 			'choices'  => array(
 				'default' => __( 'Default', 'bstone' ),
@@ -631,53 +772,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 			$wp_customize, BSTONE_THEME_SETTINGS . '[blog-max-width]', array(
 				'type'        => 'bst-slider',
 				'section'     => 'section-blog',
-				'priority'    => 115,
+				'priority'    => 160,
 				'label'       => __( 'Enter Width', 'bstone' ),
 				'suffix'      => '',
 				'input_attrs' => array(
 					'min'  => 768,
 					'step' => 1,
 					'max'  => 1920,
-				),
-			)
-		)
-	);
-
-	/**
-	 * Option: Post Cols Count Divider
-	 */
-	$wp_customize->add_control(
-		new Bstone_Control_Divider(
-			$wp_customize, BSTONE_THEME_SETTINGS . '[post-cols-count-divider]', array(
-				'type'     => 'bst-divider',
-				'section'  => 'section-blog',
-				'priority' => 120,
-				'settings' => array(),
-			)
-		)
-	);
-
-	/**
-	 * Option: Post Cols Count
-	 */
-	$wp_customize->add_setting(
-		BSTONE_THEME_SETTINGS . '[blog-post-cols-count]', array(
-			'default'           => bstone_get_option( 'blog-post-cols-count' ),
-			'type'              => 'option',
-			'sanitize_callback' => array( 'Bstone_Customizer_Sanitizes', 'sanitize_number' ),
-		)
-	);
-	$wp_customize->add_control(
-		new Bstone_Control_Slider(
-			$wp_customize, BSTONE_THEME_SETTINGS . '[blog-post-cols-count]', array(
-				'type'        => 'bst-slider',
-				'section'     => 'section-blog',
-				'priority'    => 125,
-				'label'       => __( 'Blog Columns', 'bstone' ),
-				'input_attrs' => array(
-					'min'  => 1,
-					'step' => 1,
-					'max'  => 6,
 				),
 			)
 		)
@@ -691,7 +792,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			$wp_customize, BSTONE_THEME_SETTINGS . '[blog-img-size-divider]', array(
 				'type'     => 'bst-divider',
 				'section'  => 'section-blog',
-				'priority' => 130,
+				'priority' => 165,
 				'settings' => array(),
 			)
 		)
@@ -712,7 +813,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			'type'        => 'checkbox',
 			'section'     => 'section-blog',
 			'label'       => __( 'Add overlay on image hover', 'bstone' ),
-			'priority'    => 135,
+			'priority'    => 170,
 		)
 	);
 
@@ -743,7 +844,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		BSTONE_THEME_SETTINGS . '[blog-img-size]', array(
 			'type'     => 'select',
 			'section'  => 'section-blog',
-			'priority' => 140,
+			'priority' => 175,
 			'label'    => __( 'Blog Image Size', 'bstone' ),
 			'choices'  => $bstone_blog_image_sizes,
 		)
@@ -763,7 +864,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		BSTONE_THEME_SETTINGS . '[blog-img-custom-width]', array(
 			'type'        => 'number',
 			'section'     => 'section-blog',
-			'priority'    => 145,
+			'priority'    => 180,
 			'label'       => __( 'Blog Image Custom Width', 'bstone' ),
 			'input_attrs' => array(
 				'min'  => 0,
@@ -787,7 +888,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		BSTONE_THEME_SETTINGS . '[blog-img-custom-height]', array(
 			'type'        => 'number',
 			'section'     => 'section-blog',
-			'priority'    => 150,
+			'priority'    => 185,
 			'label'       => __( 'Blog Image Custom Height', 'bstone' ),
 			'input_attrs' => array(
 				'min'  => 0,
@@ -805,7 +906,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			$wp_customize, BSTONE_THEME_SETTINGS . '[blog-post-styling-divider]', array(
 				'type'     => 'bst-divider',
 				'section'  => 'section-blog',
-				'priority' => 155,
+				'priority' => 190,
 				'settings' => array(),
 			)
 		)
@@ -836,7 +937,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		new Bstone_Control_Dimensions(
 			$wp_customize, BSTONE_THEME_SETTINGS . '[blog-article-outer-border]', array(
 				'section'  => 'section-blog',
-				'priority' => 160,
+				'priority' => 195,
 				'label'    => __( 'Post Border Size (px)', 'bstone' ),
 				'settings'   => array(
 		            'desktop_top' 		=> BSTONE_THEME_SETTINGS.'[baouter_top_border]',
@@ -877,7 +978,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		BSTONE_THEME_SETTINGS . '[blog-post-border-radius]', array(
 			'type'        => 'number',
 			'section'     => 'section-blog',
-			'priority'    => 165,
+			'priority'    => 200,
 			'label'       => __( 'Post Border Radius', 'bstone' ),
 			'input_attrs' => array(
 				'min'  => 0,
@@ -886,3 +987,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 			),
 		)
 	);
+
+	/**
+	 * Option: Divider
+	 */
+	// Learn More link if Bstone Pro is not activated.
+	if ( ! defined( 'BSTONE_PRO_VER' ) ) {
+		$wp_customize->add_control(
+			new Bstone_Control_Divider(
+				$wp_customize, BSTONE_THEME_SETTINGS . '[blog-pro-divider]', array(
+					'type'        => 'bst-divider',
+					'section'     => 'section-blog',
+					'priority'    => 205,
+					'settings'    => array(),
+					'dividerline' => true,
+					'link' 		  => 'https://wpbstone.com/pro/?utm_source=customizer&utm_medium=upgrade-link&utm_campaign=upgrade-to-pro',
+					'html'     	  => __( 'More Options Available in Bstone Pro!', 'bstone' ),
+				)
+			)
+		);
+	}

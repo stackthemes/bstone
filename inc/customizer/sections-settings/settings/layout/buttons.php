@@ -157,6 +157,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'label'    	=> esc_html__( 'Read More Button', 'bstone' ),
 				'section'  	=> 'section-buttons',
 				'priority' 	=> 25,
+				'collapse'	=> false,
 			)
 		)
 	);

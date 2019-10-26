@@ -14,6 +14,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 	/**
+	 * Option: Enable Scroll To Top
+	 */
+	$wp_customize->add_setting(
+		BSTONE_THEME_SETTINGS . '[bstone-disably-form-styling]', array(
+			'default'           => bstone_get_option( 'bstone-disably-form-styling' ),
+			'type'              => 'option',
+			'capability' 		=> 'manage_options',
+			'sanitize_callback' => array( 'Bstone_Customizer_Sanitizes', 'sanitize_checkbox' ),
+		)
+	);
+	$wp_customize->add_control(
+		BSTONE_THEME_SETTINGS . '[bstone-disably-form-styling]', array(
+			'type'        => 'checkbox',
+			'section'     => 'section-forms-settings',
+			'label'       => __( 'Disable Form Styles Customization', 'bstone' ),
+			'priority'    => 4,
+		)
+	);
+
+	/**
 	 * Heading: Form Layout
 	 */
 	$wp_customize->add_setting( BSTONE_THEME_SETTINGS . '[forms-heading-layout]', array(
@@ -26,27 +46,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'label'    	=> esc_html__( 'Layout', 'bstone' ),
 				'section'  	=> 'section-forms-settings',
 				'priority' 	=> 5,
+				'status' 	=> 'open',
+				'items'     => array(
+					"customize-control-bstone-settings-bstone-input-height",
+					"customize-control-bstone-settings-bstone-textarea-height",
+					"customize-control-bstone-settings-bstone-fields-border-width",
+					"customize-control-bstone-settings-bstone-fields-border-radius",
+					"customize-control-bstone-settings-bfbuttons-border-width",
+					"customize-control-bstone-settings-bfbuttons-border-radius"
+				),
 			)
-		)
-	);
-
-	/**
-	 * Option: Toggle form field's label
-	 */
-	$wp_customize->add_setting(
-		BSTONE_THEME_SETTINGS . '[bstone-toggle-form-label]', array(
-			'default'           => bstone_get_option( 'bstone-toggle-form-label' ),
-			'type'              => 'option',
-			'capability' 		=> 'manage_options',
-			'sanitize_callback' => array( 'Bstone_Customizer_Sanitizes', 'sanitize_checkbox' ),
-		)
-	);
-	$wp_customize->add_control(
-		BSTONE_THEME_SETTINGS . '[bstone-toggle-form-label]', array(
-			'type'        => 'checkbox',
-			'section'     => 'section-forms-settings',
-			'label'       => __( 'Display / Hide Fields Label', 'bstone' ),
-			'priority'    => 10,
 		)
 	);
 	
@@ -219,6 +228,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'label'    	=> esc_html__( 'Spacing', 'bstone' ),
 				'section'  	=> 'section-forms-settings',
 				'priority' 	=> 45,
+				'status' 	=> 'close',
+				'items'     => array(
+					"customize-control-bstone-settings-bffield-spacing",
+					"customize-control-bstone-settings-bftextarea-spacing",
+					"customize-control-bstone-settings-bffield-margin-spacing",
+					"customize-control-bstone-settings-bfbuttons-spacing"
+				),
 			)
 		)
 	);
@@ -432,6 +448,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'label'    	=> esc_html__( 'Fields Typography', 'bstone' ),
 				'section'  	=> 'section-forms-settings',
 				'priority' 	=> 70,
+				'status' 	=> 'close',
+				'items'     => array(
+					"customize-control-bstone-settings-bffield-font-family",
+					"customize-control-bstone-settings-bffield-font-weight",
+					"customize-control-bstone-settings-bffield-text-transform",
+					"customize-control-bstone-settings-bffield-font-size"
+				),
 			)
 		)
 	);
@@ -550,6 +573,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'label'    	=> esc_html__( 'Buttons Typography', 'bstone' ),
 				'section'  	=> 'section-forms-settings',
 				'priority' 	=> 95,
+				'status' 	=> 'close',
+				'items'     => array(
+					"customize-control-bstone-settings-bfbuttons-font-family",
+					"customize-control-bstone-settings-bfbuttons-font-weight",
+					"customize-control-bstone-settings-bfbuttons-text-transform",
+					"customize-control-bstone-settings-bfbuttons-font-size"
+				),
 			)
 		)
 	);
@@ -668,6 +698,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'label'    	=> esc_html__( 'Field Colors', 'bstone' ),
 				'section'  	=> 'section-forms-settings',
 				'priority' 	=> 120,
+				'status' 	=> 'close',
+				'items'     => array(
+					"customize-control-bstone-settings-bffield-bg-color",
+					"customize-control-bstone-settings-bffield-text-color",
+					"customize-control-bstone-settings-bffield-placeholder-color",
+					"customize-control-bstone-settings-bffield-border-color"
+				),
 			)
 		)
 	);
@@ -773,6 +810,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'label'    	=> esc_html__( 'Button Colors', 'bstone' ),
 				'section'  	=> 'section-forms-settings',
 				'priority' 	=> 145,
+				'status' 	=> 'close',
+				'items'     => array(
+					"customize-control-bstone-settings-bfbuttons-text-color",
+					"customize-control-bstone-settings-bfbuttons-text-color-hover",
+					"customize-control-bstone-settings-bfbuttons-bg-color",
+					"customize-control-bstone-settings-bfbuttons-bg-color-hover",
+					"customize-control-bstone-settings-bfbuttons-border-color",
+					"customize-control-bstone-settings-bfbuttons-border-color-hover"
+				),
 			)
 		)
 	);

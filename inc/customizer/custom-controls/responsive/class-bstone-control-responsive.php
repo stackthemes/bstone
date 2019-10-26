@@ -36,6 +36,14 @@ class Bstone_Control_Responsive extends WP_Customize_Control {
 	public $units = array();
 
 	/**
+	 * The control type.
+	 *
+	 * @access public
+	 * @var array
+	 */
+	public $desktop_only = false;
+
+	/**
 	 * Enqueue control related scripts/styles.
 	 *
 	 * @access public
@@ -77,12 +85,13 @@ class Bstone_Control_Responsive extends WP_Customize_Control {
 			);
 		}
 
-		$this->json['value']    = $val;
-		$this->json['choices']  = $this->choices;
-		$this->json['link']     = $this->get_link();
-		$this->json['id']       = $this->id;
-		$this->json['label']    = esc_html( $this->label );
-		$this->json['units']    = $this->units;
+		$this->json['value']    	 = $val;
+		$this->json['choices']  	 = $this->choices;
+		$this->json['link']     	 = $this->get_link();
+		$this->json['id']       	 = $this->id;
+		$this->json['label']    	 = esc_html( $this->label );
+		$this->json['units']    	 = $this->units;
+		$this->json['desktop_only']  = $this->desktop_only;
 
 		$this->json['inputAttrs'] = '';
 		foreach ( $this->input_attrs as $attr => $value ) {
@@ -102,7 +111,13 @@ class Bstone_Control_Responsive extends WP_Customize_Control {
 	 * @access protected
 	 */
 	protected function content_template() {
+
+		// data.units		devices
+
 		?>
+		
+		<# if ( data.desktop_only === false ) { #>
+
 		<label class="customizer-text" for="" >
 			<# if ( data.label ) { #>
 				<span class="customize-control-title">{{{ data.label }}}</span>
@@ -169,6 +184,76 @@ class Bstone_Control_Responsive extends WP_Customize_Control {
 				
 			</div>
 		</label>
+
+		<# } else { #>
+
+			<label class="customizer-text" for="" >
+				<# if ( data.label ) { #>
+					<span class="customize-control-title">{{{ data.label }}}</span>
+					<ul class="bst-responsive-btns" style="display: none;">
+						<li class="desktop active" data-desktoponly="true">
+							<button type="button" class="preview-desktop active" data-device="desktop" >
+								<i class="dashicons dashicons-desktop"></i>
+							</button>
+						</li>
+						<li class="tablet" data-desktoponly="true">
+							<button type="button" class="preview-tablet" data-device="tablet">
+								<i class="dashicons dashicons-tablet"></i>
+							</button>
+						</li>
+						<li class="mobile" data-desktoponly="true">
+							<button type="button" class="preview-mobile" data-device="mobile">
+								<i class="dashicons dashicons-smartphone"></i>
+							</button>
+						</li>
+					</ul>
+				<# } #>
+				<# if ( data.description ) { #>
+					<span class="description customize-control-description">{{{ data.description }}}</span>
+				<# } 
+
+				value_desktop = '';
+				value_tablet  = '';
+				value_mobile  = '';
+
+				if ( data.value['desktop'] ) { 
+					value_desktop = data.value['desktop'];
+				} 
+
+				if ( data.value['tablet'] ) { 
+					value_tablet = data.value['tablet'];
+				} 
+
+				if ( data.value['mobile'] ) { 
+					value_mobile = data.value['mobile'];
+				} #>
+
+				<div class="input-wrapper bst-responsive-wrapper">
+					
+					<input style="width: 80%;" {{{ data.inputAttrs }}} data-id='desktop' class="bst-responsive-input desktop active" type="number" value="{{ value_desktop }}" data-desktoponly="true"/>
+					<select style="width: 19%;" class="bst-responsive-select desktop" data-id='desktop-unit' <# if ( _.size( data.units ) === 1 ) { #> disabled="disabled" <# } #>>
+					<# _.each( data.units, function( value, key ) { #>
+						<option value="{{{ key }}}" <# if ( data.value['desktop-unit'] === key ) { #> selected="selected" <# } #>>{{{ data.units[ key ] }}}</option>
+					<# }); #>
+					</select>
+
+					<input style="width: 80%;" {{{ data.inputAttrs }}} data-id='tablet' class="bst-responsive-input tablet" type="number" value="{{ value_tablet }}" data-desktoponly="true"/>
+					<select style="width: 19%;" class="bst-responsive-select tablet" data-id='tablet-unit' <# if ( _.size( data.units ) === 1 ) { #> disabled="disabled" <# } #>>
+					<# _.each( data.units, function( value, key ) { #>
+						<option value="{{{ key }}}" <# if ( data.value['tablet-unit'] === key ) { #> selected="selected" <# } #>>{{{ data.units[ key ] }}}</option>
+					<# }); #>
+					</select>
+					
+					<input style="width: 80%;" {{{ data.inputAttrs }}} data-id='mobile' class="bst-responsive-input mobile" type="number" value="{{ value_mobile }}" data-desktoponly="true"/>
+					<select style="width: 19%;" class="bst-responsive-select mobile" data-id='mobile-unit' <# if ( _.size( data.units ) === 1 ) { #> disabled="disabled" <# } #>>
+					<# _.each( data.units, function( value, key ) { #>
+						<option value="{{{ key }}}" <# if ( data.value['mobile-unit'] === key ) { #> selected="selected" <# } #>>{{{ data.units[ key ] }}}</option>
+					<# }); #>
+					</select>
+					
+				</div>
+			</label>
+		<# } #>
 		<?php
 	}
 

@@ -82,6 +82,7 @@ if ( ( is_404() ) ) {
 			foreach ( $title_area_elements as $element ) {
 				
 				if( 'page-title' == $element ) {
+                    do_action( 'bstone_single_header_title_before' );
 					if( class_exists( 'WooCommerce' ) ) {
 
                         if( is_shop() ) {
@@ -93,6 +94,7 @@ if ( ( is_404() ) ) {
                     } else {
                         echo '<h1 itemprop="headline">' . wp_kses_post( bstone_single_title() ) . '</h1>';
                     }
+                    do_action( 'bstone_single_header_title_after' );
 				}
 				
 				if( 'page-breadcrumbs' == $element ) {

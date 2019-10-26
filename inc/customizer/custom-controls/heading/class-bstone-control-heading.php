@@ -28,24 +28,61 @@ class Bstone_Control_Heading extends WP_Customize_Control {
 	public $type = 'bstone-heading';
 
 	/**
+	 * Heading Status.
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $status = 'close';
+
+	/**
+	 * Customizer items to close or open.
+	 *
+	 * @access public
+	 * @var array
+	 */
+	public $items = [];
+
+	/**
+	 * Heading Collapse Disabled.
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $collapse = true;
+
+	/**
 	 * Enqueue control related scripts/styles.
 	 *
 	 * @access public
 	 */
 	public function enqueue() {
-		$css_uri  = BSTONE_THEME_URI . 'inc/customizer/custom-controls/heading/';
-		wp_enqueue_style( 'bstone-heading', $css_uri . 'heading.css', null );
+		$assets_uri  = BSTONE_THEME_URI . 'inc/customizer/custom-controls/heading/';
+		wp_enqueue_style( 'bstone-heading', $assets_uri . 'heading.css', null );
+		wp_enqueue_script( $this->type . '-control', $assets_uri . 'heading.js', array( 'jquery', 'customize-base' ), false, true );
 	}
 
-	/**
-	 * Content template for a connected control.
-	 *
-	 * @since 1.0.0
-	 * @access protected
-	 */
-	protected function content_template() {
+	public function render_content() {
+
+		$array_items = $this->items;
+
+		$icon_class = "";
+
+		if( "close" == $this->status ) {
+			$icon_class = "dashicons-arrow-down-alt2";
+		} else {
+			$icon_class = "dashicons-arrow-up-alt2";
+		}
 		?>
-		<h4 class="bstone-customizer-heading">{{{ data.label }}}</h4>
+		<h4 class="bstone-customizer-heading heading-<?php echo esc_html( $this->status ); ?>">
+			<?php echo esc_html( $this->label ); ?>
+			<?php if( true == $this->collapse ) { ?>
+			<button type="button" data-status="<?php echo esc_html( $this->status ); ?>" data-items="<?php echo implode(',', $array_items); ?>">
+				<i class="dashicons <?php echo $icon_class; ?>"></i>
+			</button>
+			<?php } ?>
+		</h4>
 		<?php
+		echo $this->description;
 	}
 }

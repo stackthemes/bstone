@@ -718,7 +718,7 @@ if ( ! class_exists( 'Bstone_Theme_Options' ) ) {
 					'icon-color-pagination'   		=> '#ffffff',
 					
 					// Form Styles
-					'bstone-toggle-form-label' 	 	=> true,
+					'bstone-disably-form-styling'   => false,
 					'bstone-fields-border-width'	=> 1,
 					'bstone-fields-border-radius'	=> 0,
 					'bstone-input-height'			=> 40,

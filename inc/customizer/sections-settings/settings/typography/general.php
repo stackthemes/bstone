@@ -53,6 +53,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'label'    	=> esc_html__( 'Body & Content', 'bstone' ),
 				'section'  	=> 'section-general-typo-settings',
 				'priority' 	=> 5,
+				'status' 	=> 'open',
+				'items'     => array(
+					"customize-control-bstone-settings-body-font-family",
+					"customize-control-bstone-settings-body-font-weight",
+					"customize-control-bstone-settings-body-text-transform",
+					"customize-control-bstone-settings-font-size-body",
+					"customize-control-bstone-settings-body-line-height",
+					"customize-control-bstone-settings-para-margin-bottom"
+				),
 			)
 		)
 	);
@@ -227,6 +236,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'label'    	=> esc_html__( 'Headings: H1', 'bstone' ),
 				'section'  	=> 'section-general-typo-settings',
 				'priority' 	=> 40,
+				'status' 	=> 'close',
+				'items'     => array(
+					"customize-control-bstone-settings-h1-font-family",
+					"customize-control-bstone-settings-h1-font-weight",
+					"customize-control-bstone-settings-h1-text-transform",
+					"customize-control-bstone-settings-font-h1-size"
+				),
 			)
 		)
 	);
@@ -345,6 +361,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'label'    	=> esc_html__( 'Headings: H2', 'bstone' ),
 				'section'  	=> 'section-general-typo-settings',
 				'priority' 	=> 65,
+				'status' 	=> 'close',
+				'items'     => array(
+					"customize-control-bstone-settings-h2-font-family",
+					"customize-control-bstone-settings-h2-font-weight",
+					"customize-control-bstone-settings-h2-text-transform",
+					"customize-control-bstone-settings-font-h2-size"
+				),
 			)
 		)
 	);
@@ -463,6 +486,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'label'    	=> esc_html__( 'Headings: H3', 'bstone' ),
 				'section'  	=> 'section-general-typo-settings',
 				'priority' 	=> 90,
+				'status' 	=> 'close',
+				'items'     => array(
+					"customize-control-bstone-settings-h3-font-family",
+					"customize-control-bstone-settings-h3-font-weight",
+					"customize-control-bstone-settings-h3-text-transform",
+					"customize-control-bstone-settings-font-h3-size"
+				),
 			)
 		)
 	);
@@ -581,6 +611,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'label'    	=> esc_html__( 'Headings: H4', 'bstone' ),
 				'section'  	=> 'section-general-typo-settings',
 				'priority' 	=> 115,
+				'status' 	=> 'close',
+				'items'     => array(
+					"customize-control-bstone-settings-h4-font-family",
+					"customize-control-bstone-settings-h4-font-weight",
+					"customize-control-bstone-settings-h4-text-transform",
+					"customize-control-bstone-settings-font-h4-size"
+				),
 			)
 		)
 	);
@@ -699,6 +736,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'label'    	=> esc_html__( 'Headings: H5', 'bstone' ),
 				'section'  	=> 'section-general-typo-settings',
 				'priority' 	=> 140,
+				'status' 	=> 'close',
+				'items'     => array(
+					"customize-control-bstone-settings-h5-font-family",
+					"customize-control-bstone-settings-h5-font-weight",
+					"customize-control-bstone-settings-h5-text-transform",
+					"customize-control-bstone-settings-font-h5-size"
+				),
 			)
 		)
 	);
@@ -817,6 +861,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'label'    	=> esc_html__( 'Headings: H6', 'bstone' ),
 				'section'  	=> 'section-general-typo-settings',
 				'priority' 	=> 165,
+				'status' 	=> 'close',
+				'items'     => array(
+					"customize-control-bstone-settings-h6-font-family",
+					"customize-control-bstone-settings-h6-font-weight",
+					"customize-control-bstone-settings-h6-text-transform",
+					"customize-control-bstone-settings-font-h6-size"
+				),
 			)
 		)
 	);

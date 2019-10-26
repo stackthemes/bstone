@@ -349,7 +349,7 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			$icon_color_hover_sctop   	 	 = bstone_options( 'icon-color-hover-sctop' );
 
 			// Form Customizer
-			$form_toggle_label   	 		 = bstone_options( 'bstone-toggle-form-label' );
+			$form_styling_toggle   	 	 	 = bstone_options( 'bstone-disably-form-styling' );
 			$form_input_height   	 	 	 = bstone_options( 'bstone-input-height' );
 			$form_textarea_height   	 	 = bstone_options( 'bstone-textarea-height' );
 			$form_border_width   	 	 	 = bstone_options( 'bstone-fields-border-width' );
@@ -864,13 +864,13 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 				'header .site-title, header .site-title a, header .site-title p, header h1.site-title, header p.site-title' => array(
 					'color' => esc_attr( $site_tital_color ),
 				),
-				'header.site-header nav .st-main-navigation > ul li a' => array(
+				'header.site-header nav .st-main-navigation > ul li a, .bst-responsive-menu .bst-sub-menu-toggle' => array(
 					'color' => esc_attr( $menu_link_color_header ),
 					'font-family' 	 => "'".bstone_get_css_value( $top_nav_font_family, 'font' )."'",
 					'font-weight' 	 => esc_attr( $top_nav_font_waight ),
 					'text-transform' => esc_attr( $top_nav_font_transform ),
 				),
-				'header.site-header nav .st-main-navigation > ul li > a:hover, header.site-header nav .st-main-navigation > ul li.current-menu-item > a, header.site-header nav .st-main-navigation > ul li.current-menu-parent > a' => array(
+				'header.site-header nav .st-main-navigation > ul li > a:hover, header.site-header nav .st-main-navigation > ul li.current-menu-item > a, header.site-header nav .st-main-navigation > ul li.current-menu-parent > a, .bst-responsive-menu li:hover > .bst-sub-menu-toggle' => array(
 					'color' => esc_attr( $menu_link_hover_color_header ),
 				),
 				'.header-2 .st-site-nav nav' => array(
@@ -953,49 +953,6 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 					'color' 		   => esc_attr( $icon_color_hover_sctop ),
 					'background-color' => esc_attr( $bg_color_hover_scroll ),
 					'border-color' 	   => esc_attr( $border_color_hover_scroll ),
-				),
-				
-				'body #page form input, body #page form select, body #page form textarea' => array(
-					'color' 		   => esc_attr( $form_bffield_text_color ),
-					'background-color' => esc_attr( $form_bffield_bg_color ),
-					'border-color' 	   => esc_attr( $form_bffield_border_color ),
-					'border-width' 	   => bstone_get_css_value( $form_border_width, 'px' ),
-					'border-radius'    => bstone_get_css_value( $form_border_radius, 'px' ),
-					'font-family' 	   => "'".bstone_get_css_value( $form_bffield_font_family, 'font' )."'",
-					'font-weight' 	   => esc_attr( $form_bffield_font_weight ),
-					'text-transform'   => esc_attr( $form_bffield_text_transform ),
-				),
-
-				'body #page form label'=> array(
-					'color' 		   => esc_attr( $form_bffield_text_color ),
-					'font-family' 	   => "'".bstone_get_css_value( $form_bffield_font_family, 'font' )."'",
-					'font-weight' 	   => esc_attr( $form_bffield_font_weight ),
-					'text-transform'   => esc_attr( $form_bffield_text_transform ),
-				),
-
-				'body #page form input'=> array(
-					'height' 		   => bstone_get_css_value( $form_input_height, 'px' ),
-				),
-
-				'body #page form textarea'=> array(
-					'height' 		   => bstone_get_css_value( $form_textarea_height, 'px' ),
-				),
-
-				'body #page form input[type="button"], body #page form input[type="reset"], body #page form input[type="submit"], body #page form button' => array(
-					'color' 		   => esc_attr( $form_bfbuttons_text_color ),
-					'background-color' => esc_attr( $form_bfbuttons_bg_color ),
-					'border-color' 	   => esc_attr( $form_bfbuttons_border_color ),
-					'border-width' 	   => bstone_get_css_value( $form_bfbuttons_border_width, 'px' ),
-					'border-radius'    => bstone_get_css_value( $form_bfbuttons_border_radius, 'px' ),
-					'font-family' 	   => "'".bstone_get_css_value( $form_bfbuttons_font_family, 'font' )."'",
-					'font-weight' 	   => esc_attr( $form_bfbuttons_font_weight ),
-					'text-transform'   => esc_attr( $form_bfbuttons_text_transform ),
-				),
-
-				'body #page form input[type="button"]:hover, body #page form input[type="reset"]:hover, body #page form input[type="submit"]:hover, body #page form button:hover' => array(
-					'color' 		   => esc_attr( $form_bfbuttons_text_color_hover ),
-					'background-color' => esc_attr( $form_bfbuttons_bg_color_hover ),
-					'border-color' 	   => esc_attr( $form_bfbuttons_border_color_hover ),
 				),
 				
 				'#primary .bst-posts-cnt .entry-title, #primary .bst-posts-cnt .entry-title a, .bst-popular-posts-widget li .entry-title' => array(
@@ -1165,6 +1122,56 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 
 			/* Parse CSS from array() */
 			$parse_css = bstone_parse_css( $css_output );
+
+			// Form Styling
+
+			if( false === $form_styling_toggle ) {
+				$form_styling_css = array(
+					'body #page form input, body #page form select, body #page form textarea' => array(
+						'color' 		   => esc_attr( $form_bffield_text_color ),
+						'background-color' => esc_attr( $form_bffield_bg_color ),
+						'border-color' 	   => esc_attr( $form_bffield_border_color ),
+						'border-width' 	   => bstone_get_css_value( $form_border_width, 'px' ),
+						'border-radius'    => bstone_get_css_value( $form_border_radius, 'px' ),
+						'font-family' 	   => "'".bstone_get_css_value( $form_bffield_font_family, 'font' )."'",
+						'font-weight' 	   => esc_attr( $form_bffield_font_weight ),
+						'text-transform'   => esc_attr( $form_bffield_text_transform ),
+					),
+
+					'body #page form label'=> array(
+						'color' 		   => esc_attr( $form_bffield_text_color ),
+						'font-family' 	   => "'".bstone_get_css_value( $form_bffield_font_family, 'font' )."'",
+						'font-weight' 	   => esc_attr( $form_bffield_font_weight ),
+						'text-transform'   => esc_attr( $form_bffield_text_transform ),
+					),
+
+					'body #page form input'=> array(
+						'height' 		   => bstone_get_css_value( $form_input_height, 'px' ),
+					),
+
+					'body #page form textarea'=> array(
+						'height' 		   => bstone_get_css_value( $form_textarea_height, 'px' ),
+					),
+
+					'body #page form input[type="button"], body #page form input[type="reset"], body #page form input[type="submit"], body #page form button' => array(
+						'color' 		   => esc_attr( $form_bfbuttons_text_color ),
+						'background-color' => esc_attr( $form_bfbuttons_bg_color ),
+						'border-color' 	   => esc_attr( $form_bfbuttons_border_color ),
+						'border-width' 	   => bstone_get_css_value( $form_bfbuttons_border_width, 'px' ),
+						'border-radius'    => bstone_get_css_value( $form_bfbuttons_border_radius, 'px' ),
+						'font-family' 	   => "'".bstone_get_css_value( $form_bfbuttons_font_family, 'font' )."'",
+						'font-weight' 	   => esc_attr( $form_bfbuttons_font_weight ),
+						'text-transform'   => esc_attr( $form_bfbuttons_text_transform ),
+					),
+
+					'body #page form input[type="button"]:hover, body #page form input[type="reset"]:hover, body #page form input[type="submit"]:hover, body #page form button:hover' => array(
+						'color' 		   => esc_attr( $form_bfbuttons_text_color_hover ),
+						'background-color' => esc_attr( $form_bfbuttons_bg_color_hover ),
+						'border-color' 	   => esc_attr( $form_bfbuttons_border_color_hover ),
+					),
+				);
+				$parse_css .= bstone_parse_css( $form_styling_css );
+			}
 			
 			// Page Background - Boxed & Padded Version			
 			$bstone_page_bg_css = array(
@@ -1220,23 +1227,6 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 					$parse_css .= bstone_parse_css( $bstone_logo_layout_inner_css );
 				}
 			}
-
-			// Form Label Display/Hide
-			if( true == $form_toggle_label ) {
-				$bstone_form_label_toggle_css = array(
-					'body #page form label' => array(
-						'display' 	 	=> 'block',
-					),
-				);
-			} else {
-				$bstone_form_label_toggle_css = array(
-					'body #page form label' => array(
-						'display' 	 	=> 'none',
-					),
-				);
-			}
-
-			$parse_css .= bstone_parse_css( $bstone_form_label_toggle_css );
 
 			// Form Fields Placeholder Color
 			$bstone_placeholder_color = array(
@@ -1309,7 +1299,7 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			);
 			
 			$parse_css .= bstone_get_responsive_spacings (
-				'body.page-builder #content > .st-container, body #content > .st-container',
+				'body #content > .st-container',
 				'pcnt', 'padding',
 				'padding', '',
 				'px',
@@ -1318,7 +1308,7 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			);
 			
 			$parse_css .= bstone_get_responsive_spacings (
-				'body.page-builder #content > .st-container, body #content > .st-container',
+				'body #content > .st-container',
 				'pcnt', 'margin',
 				'margin', '',
 				'px',
@@ -1328,7 +1318,7 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			
 			if( 'no-sidebar' != $bst_site_sidebar ) {
 				$parse_css .= bstone_get_responsive_spacings (
-					'body #primary',
+					'body:not(.page-builder) #primary',
 					'carea', 'padding',
 					'padding', '',
 					'px',
@@ -1338,7 +1328,7 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 			}
 			
 			$parse_css .= bstone_get_responsive_spacings (
-				'body #primary',
+				'body:not(.page-builder) #primary',
 				'pcontentarea', 'margin',
 				'margin', '',
 				'px',
@@ -1609,41 +1599,43 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 				array('desktop', 'tablet', 'mobile')
 			);
 
-			$parse_css .= bstone_get_responsive_spacings (
-				'body #page form input, body #page form select, body #page form textarea',
-				'bffield', 'margin',
-				'margin', '',
-				'px',
-				array('top', 'bottom', 'right', 'left'),
-				array('desktop', 'tablet', 'mobile')
-			);
+			if( false === $form_styling_toggle ) {
+				$parse_css .= bstone_get_responsive_spacings (
+					'body #page form input, body #page form select, body #page form textarea',
+					'bffield', 'margin',
+					'margin', '',
+					'px',
+					array('top', 'bottom', 'right', 'left'),
+					array('desktop', 'tablet', 'mobile')
+				);
 
-			$parse_css .= bstone_get_responsive_spacings (
-				'body #page form textarea',
-				'bftextarea', 'padding',
-				'padding', '',
-				'px',
-				array('top', 'bottom', 'right', 'left'),
-				array('desktop', 'tablet', 'mobile')
-			);
+				$parse_css .= bstone_get_responsive_spacings (
+					'body #page form textarea',
+					'bftextarea', 'padding',
+					'padding', '',
+					'px',
+					array('top', 'bottom', 'right', 'left'),
+					array('desktop', 'tablet', 'mobile')
+				);
 
-			$parse_css .= bstone_get_responsive_spacings (
-				'body #page form input, body #page form select',
-				'bffield', 'padding',
-				'padding', '',
-				'px',
-				array('top', 'bottom', 'right', 'left'),
-				array('desktop', 'tablet', 'mobile')
-			);
+				$parse_css .= bstone_get_responsive_spacings (
+					'body #page form input, body #page form select',
+					'bffield', 'padding',
+					'padding', '',
+					'px',
+					array('top', 'bottom', 'right', 'left'),
+					array('desktop', 'tablet', 'mobile')
+				);
 
-			$parse_css .= bstone_get_responsive_spacings (
-				'body #page form input[type="button"], body #page form input[type="reset"], body #page form input[type="submit"], body #page form button',
-				'bfbuttons', 'padding',
-				'padding', '',
-				'px',
-				array('top', 'bottom', 'right', 'left'),
-				array('desktop', 'tablet', 'mobile')
-			);
+				$parse_css .= bstone_get_responsive_spacings (
+					'body #page form input[type="button"], body #page form input[type="reset"], body #page form input[type="submit"], body #page form button',
+					'bfbuttons', 'padding',
+					'padding', '',
+					'px',
+					array('top', 'bottom', 'right', 'left'),
+					array('desktop', 'tablet', 'mobile')
+				);
+			}
 
 			$parse_css .= bstone_get_responsive_spacings (
 				'#bp-banner-container .bp-banner-inner',
@@ -1694,9 +1686,11 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 
 			$parse_css .= bstone_responsive_font_size_css( '#bstone-scroll-top', $sctop_icon_size );
 
-			$parse_css .= bstone_responsive_font_size_css( 'body #page form input, body #page form textarea, body #page form select, body #page form label', $form_bffield_font_size );
-			
-			$parse_css .= bstone_responsive_font_size_css( 'body #page form input[type="button"], body #page form input[type="reset"], body #page form input[type="submit"], body #page form button', $form_bfbuttons_font_size );
+			if( false === $form_styling_toggle ) {
+				$parse_css .= bstone_responsive_font_size_css( 'body #page form input, body #page form textarea, body #page form select, body #page form label', $form_bffield_font_size );
+				
+				$parse_css .= bstone_responsive_font_size_css( 'body #page form input[type="button"], body #page form input[type="reset"], body #page form input[type="submit"], body #page form button', $form_bfbuttons_font_size );
+			}
 			
 			$parse_css .= bstone_responsive_font_size_css( 'footer .footer_top_markup', $footer_top_text_font_size );
 			
@@ -1787,13 +1781,13 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 					'.menu-toggled header .st-site-nav nav li > ul' => array(
 						'background' => bstone_options( 'buttons-text-color' ),
 					),
-					'.menu-toggled header.site-header nav .st-main-navigation > ul li a' => array(
+					'.menu-toggled header.site-header nav .st-main-navigation > ul li a, .bst-responsive-menu .bst-sub-menu-toggle' => array(
 						'color' => bstone_options( 'buttons-background-color' ),
 					),
 					'header.site-header nav .st-main-navigation > ul li ul li a' => array(
 						'color' => '#3a3a3a',
 					),
-					'.menu-toggled header.site-header nav .st-main-navigation > ul li > a:hover, .menu-toggled header.site-header nav .st-main-navigation > ul li.current-menu-item > a, .menu-toggled header.site-header nav .st-main-navigation > ul li.current-menu-parent > a' => array(
+					'.menu-toggled header.site-header nav .st-main-navigation > ul li > a:hover, .menu-toggled header.site-header nav .st-main-navigation > ul li.current-menu-item > a, .menu-toggled header.site-header nav .st-main-navigation > ul li.current-menu-parent > a, .bst-responsive-menu li:hover > .bst-sub-menu-toggle' => array(
 						'color' => bstone_options( 'buttons-background-color-hover' ),
 					),
 					'body.menu-toggled .bst-cart-menu-wrap .count, body.menu-toggled .bst-cart-menu-wrap .count:after' => array(
@@ -2016,11 +2010,15 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 				if( true == $bstone_font_awesome_brands ) {
 					$bstone_font_awesome_brands_css = array(
 						'@font-face' => array(
-							'font-family' => 'Font Awesome\ 5 Brands',
+							'font-family' => "'Font Awesome 5 Brands'",
 							'font-style'  => 'normal',
 							'font-weight' => '400',
-							'src' 		  => 'url('.$font_awesome_dir.'fa-brands-400.eot)',
-							'src' 		  => 'url('.$font_awesome_dir.'fa-brands-400.eot?#iefix) format("embedded-opentype"), url('.$font_awesome_dir.'fa-brands-400.woff2) format("woff2"), url('.$font_awesome_dir.'fa-brands-400.woff) format("woff"), url('.$font_awesome_dir.'fa-brands-400.ttf) format("truetype"), url('.$font_awesome_dir.'fa-brands-400.svg#fontawesome) format("svg")',
+							'font-display'=> 'auto',
+							'src-eot' 		  => 'url("'.$font_awesome_dir.'fa-brands-400.eot")',
+							'src' 		  => 'url("'.$font_awesome_dir.'fa-brands-400.eot?#iefix") format("embedded-opentype"), url("'.$font_awesome_dir.'fa-brands-400.woff2") format("woff2"), url("'.$font_awesome_dir.'fa-brands-400.woff") format("woff"), url("'.$font_awesome_dir.'fa-brands-400.ttf") format("truetype"), url("'.$font_awesome_dir.'fa-brands-400.svg#fontawesome") format("svg")',
+						),
+						'.fab' => array(
+							'font-family'  => "'Font Awesome 5 Brands' !important",
 						),
 					);
 
@@ -2030,11 +2028,16 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 				if( true == $bstone_font_awesome_regular ) {
 					$bstone_font_awesome_regular_css = array(
 						'@font-face' => array(
-							'font-family' => 'Font Awesome\ 5 Free',
+							'font-family' => "'Font Awesome 5 Free'",
 							'font-style'  => 'normal',
 							'font-weight' => '400',
-							'src' 		  => 'url('.$font_awesome_dir.'fa-regular-400.eot)',
-							'src' 		  => 'url('.$font_awesome_dir.'fa-regular-400.eot?#iefix) format("embedded-opentype"), url('.$font_awesome_dir.'fa-regular-400.woff2) format("woff2"), url('.$font_awesome_dir.'fa-regular-400.woff) format("woff"), url('.$font_awesome_dir.'fa-regular-400.ttf) format("truetype"), url('.$font_awesome_dir.'fa-regular-400.svg#fontawesome) format("svg")',
+							'font-display'=> 'auto',
+							'src-eot' 		  => 'url("'.$font_awesome_dir.'fa-regular-400.eot")',
+							'src' 		  => 'url("'.$font_awesome_dir.'fa-regular-400.eot?#iefix") format("embedded-opentype"), url("'.$font_awesome_dir.'fa-regular-400.woff2") format("woff2"), url("'.$font_awesome_dir.'fa-regular-400.woff") format("woff"), url("'.$font_awesome_dir.'fa-regular-400.ttf") format("truetype"), url("'.$font_awesome_dir.'fa-regular-400.svg#fontawesome") format("svg")',
+						),
+						'.far' => array(
+							'font-family'  => "'Font Awesome 5 Free' !important",
+							'font-weight' => '400 !important',
 						),
 					);
 
@@ -2044,11 +2047,16 @@ if ( ! class_exists( 'Bstone_Dynamic_CSS' ) ) {
 				if( true == $bstone_font_awesome_solid ) {
 					$bstone_font_awesome_solid_css = array(
 						'@font-face' => array(
-							'font-family' => 'Font Awesome\ 5 Free',
+							'font-family' => "'Font Awesome 5 Free'",
 							'font-style'  => 'normal',
 							'font-weight' => '900',
-							'src' 		  => 'url('.$font_awesome_dir.'fa-solid-900.eot)',
-							'src' 		  => 'url('.$font_awesome_dir.'fa-solid-900.eot?#iefix) format("embedded-opentype"), url('.$font_awesome_dir.'fa-solid-900.woff2) format("woff2"), url('.$font_awesome_dir.'fa-solid-900.woff) format("woff"), url('.$font_awesome_dir.'fa-solid-900.ttf) format("truetype"), url('.$font_awesome_dir.'fa-solid-900.svg#fontawesome) format("svg")',
+							'font-display'=> 'auto',
+							'src-eot' 		  => 'url("'.$font_awesome_dir.'fa-solid-900.eot")',
+							'src' 		  => 'url("'.$font_awesome_dir.'fa-solid-900.eot?#iefix") format("embedded-opentype"), url("'.$font_awesome_dir.'fa-solid-900.woff2") format("woff2"), url("'.$font_awesome_dir.'fa-solid-900.woff") format("woff"), url("'.$font_awesome_dir.'fa-solid-900.ttf") format("truetype"), url("'.$font_awesome_dir.'fa-solid-900.svg#fontawesome") format("svg")',
+						),
+						'.fa, .fas' => array(
+							'font-family'  => "'Font Awesome 5 Free' !important",
+							'font-weight' => '900 !important',
 						),
 					);
 

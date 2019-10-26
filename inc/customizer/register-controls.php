@@ -6,7 +6,7 @@
  * @author    Stack Themes
  * @copyright Copyright (c) 2018, Bstone
  * @link      https://wpbstone.com/
- * @since     Bstone 1.0
+ * @since     Bstone 1.0.0
  */
 
 function bstone_customizer_controls( $wp_customize ) {
@@ -21,9 +21,9 @@ function bstone_customizer_controls( $wp_customize ) {
 	$wp_customize->register_control_type( 'Bstone_Control_Divider' );
 	$wp_customize->register_control_type( 'Bstone_Control_Color' );
 	$wp_customize->register_control_type( 'Bstone_Control_Dimensions' );
-	$wp_customize->register_control_type( 'Bstone_Control_Heading' );
 	$wp_customize->register_control_type( 'Bstone_Control_Tabs' );
 	$wp_customize->register_control_type( 'Bstone_Control_Responsive_Slider' );
+	//$wp_customize->register_control_type( 'Bstone_Control_Iconpicker' );
 	
 	require BSTONE_THEME_DIR . 'inc/customizer/customizer-custom-controls.php';
 }

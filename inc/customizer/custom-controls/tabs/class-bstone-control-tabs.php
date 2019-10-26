@@ -52,6 +52,40 @@ class Bstone_Control_Tabs extends WP_Customize_Control {
 	}
 
 	/**
+	 * Get customizer section status
+	 */
+	public function get_sections_status() {
+		$sec_status = array();
+
+		if ( in_array( 'bstone-light/bstone-light.php', apply_filters('active_plugins', get_option('active_plugins')) ) ) {
+
+			if( null == bstone_light_get_option( 'bst-enable-panel-layout' ) ) {
+				$sec_status[ 'layout' ] = true;
+			}
+
+			if( null == bstone_light_get_option( 'bst-enable-panel-colors' ) ) {
+				$sec_status[ 'colors' ] = true;
+			}
+
+			if( null == bstone_light_get_option( 'bst-enable-panel-typography' ) ) {
+				$sec_status[ 'typography' ] = true;
+			}
+
+			if( null == bstone_light_get_option( 'bst-enable-panel-spacing' ) ) {
+				$sec_status[ 'spacing' ] = true;
+			}
+
+		} else {
+			$sec_status[ 'layout' ] 	= true;
+			$sec_status[ 'typography' ] = true;
+			$sec_status[ 'colors' ] 	= true;
+			$sec_status[ 'spacing' ] 	= true;
+		}
+
+		return $sec_status;
+	}
+
+	/**
 	 * Refresh the parameters passed to the JavaScript via JSON.
 	 *
 	 * @see WP_Customize_Control::to_json()
@@ -64,6 +98,7 @@ class Bstone_Control_Tabs extends WP_Customize_Control {
 		$this->json['tabs_data']   	 = $this->tabs_data;
 		$this->json['tabs_active']   = $this->tabs_active;
 		$this->json['tabs_sections'] = $this->tabs_sections;
+		$this->json['tabs_settings'] = $this->get_sections_status();
 	}
 
 	/**
@@ -88,11 +123,15 @@ class Bstone_Control_Tabs extends WP_Customize_Control {
 			<ul class="bstone-customizer-tabs">
 		
 			<# _.each( data.tabs_data, function( tab, tab_index ) { #>
+
+				<# if ( tab in data.tabs_settings ) { #>
 				
-				<# if ( data.tabs_active === data.tabs_data[tab_index] ) { #>
-					<li class="active" data-section="{{ data.tabs_sections[tab_index] }}">{{ tab }}</li>
-				<# } else { #>
-					<li data-section="{{ data.tabs_sections[tab_index] }}">{{ tab }}</li>
+					<# if ( data.tabs_active === data.tabs_data[tab_index] ) { #>
+						<li class="active" data-section="{{ data.tabs_sections[tab_index] }}">{{ tab }}</li>
+					<# } else { #>
+						<li data-section="{{ data.tabs_sections[tab_index] }}">{{ tab }}</li>
+					<# } #>
+
 				<# } #>
 				
 			<# }); #>

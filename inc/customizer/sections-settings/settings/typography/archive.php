@@ -53,6 +53,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'label'    	=> esc_html__( 'Post Title Typography', 'bstone' ),
 				'section'  	=> 'section-archive-typo-settings',
 				'priority' 	=> 10,
+				'status' 	=> 'open',
+				'items'     => array(
+					"customize-control-bstone-settings-blog-typo-title-font-family",
+					"customize-control-bstone-settings-blog-typo-title-font-weight",
+					"customize-control-bstone-settings-blog-typo-title-transform",
+					"customize-control-bstone-settings-blog-typo-title-font-size"
+				),
 			)
 		) 
 	);
@@ -173,6 +180,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'label'    	=> esc_html__( 'Entry Meta Typography', 'bstone' ),
 				'section'  	=> 'section-archive-typo-settings',
 				'priority' 	=> 35,
+				'status' 	=> 'close',
+				'items'     => array(
+					"customize-control-bstone-settings-blog-typo-entry-font-family",
+					"customize-control-bstone-settings-blog-typo-entry-font-weight",
+					"customize-control-bstone-settings-blog-typo-entry-transform",
+					"customize-control-bstone-settings-blog-typo-entry-font-size"
+				),
 			)
 		)
 	);

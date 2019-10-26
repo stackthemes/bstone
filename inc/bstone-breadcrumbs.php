@@ -159,6 +159,8 @@ if ( ! function_exists( 'bstone_get_breadcrumbs' ) ) {
                 if ( $monthnum ) {
                     $date_time  = DateTime::createFromFormat( '!m', $monthnum );
                     $month_name = $date_time->format( 'F' );
+                } else {
+                    $month_name = '';
                 }
 
                 if ( is_year() ) {

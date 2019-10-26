@@ -6,12 +6,14 @@
 var bstone_menu_toggle  	 = document.querySelector('.main-header-menu-toggle');
 var bstone_body  			 = document.querySelector('body');
 
-bstone_menu_toggle.addEventListener( 'click', function ( event ) {
-	event.preventDefault();
-	
-	bstone_menu_toggle.classList.toggle("toggled");
-	bstone_body.classList.toggle("menu-toggled");
-});
+if( null !== bstone_menu_toggle ) {
+  bstone_menu_toggle.addEventListener( 'click', function ( event ) {
+    event.preventDefault();
+    
+    bstone_menu_toggle.classList.toggle("toggled");
+    bstone_body.classList.toggle("menu-toggled");
+  });
+}
 
 // Masonry Blog Posts
 var masonary_required  = document.querySelector('.bst-masonry-posts');

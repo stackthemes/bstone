@@ -29,7 +29,10 @@ $overlay = bstone_options( 'overlay-on-img-hover' );
 $post_icon = bstone_options( 'post-type-icon' );
 
 // Caption
-$caption = get_post( get_post_thumbnail_id() )->post_excerpt;
+$caption = NULL;
+if( isset( get_post( get_post_thumbnail_id() )->post_excerpt ) ) {
+	$caption = get_post( get_post_thumbnail_id() )->post_excerpt;
+}
 ?>
 
 <div class="thumbnail">

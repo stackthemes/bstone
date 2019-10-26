@@ -12,11 +12,6 @@
  */
 
 /**
- * Shop Customizer URI
- */
-define( 'BSTONE_SC_URI', get_template_directory_uri() . '/inc/compatibility/woocommerce/shop-customizer/' ); 
-
-/**
  * Schop Customizer Scripts
  */
 add_action( 'customize_controls_enqueue_scripts', 'my_customize_controls_enqueue_scripts' );

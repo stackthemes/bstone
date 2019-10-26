@@ -46,6 +46,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'label'    	=> esc_html__( 'Layout', 'bstone' ),
 				'section'  	=> 'section-posts-slider',
 				'priority' 	=> 10,
+				'status' 	=> 'open',
+				'items'     => array(
+					"customize-control-bstone-settings-bp-banner-width",
+					"customize-control-bstone-settings-bp-banner-type",
+					"customize-control-bstone-settings-bp-banner-data-source",
+					"customize-control-bstone-settings-bp-banner-data-category",
+					"customize-control-bstone-settings-bp-banner-data-postid",
+					"customize-control-bstone-settings-bp-banner-posts-num",
+					"customize-control-bstone-settings-bp-banner-structure",
+					"customize-control-bstone-settings-bp-banner-meta-structure",
+					"customize-control-bstone-settings-bp-banner-align",
+					"customize-control-bstone-settings-bp-banner-imgsize"
+				),
 			)
 		)
     );
@@ -335,6 +348,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'label'    	=> esc_html__( 'Spacing', 'bstone' ),
 				'section'  	=> 'section-posts-slider',
 				'priority' 	=> 70,
+				'status' 	=> 'close',
+				'items'     => array(
+					"customize-control-bstone-settings-bpbnr-margin",
+					"customize-control-bstone-settings-bpbnr-padding",
+					"customize-control-bstone-settings-bp-banner-content-gap",
+					"customize-control-bstone-settings-bp-banner-title-top-padding",
+					"customize-control-bstone-settings-bp-banner-title-left-padding",
+					"customize-control-bstone-settings-bp-banner-cat-top-padding",
+					"customize-control-bstone-settings-bp-banner-cat-left-padding",
+					"customize-control-bstone-settings-bp-banner-grid-gap"
+				),
 			)
 		)
     );
@@ -604,6 +628,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'label'    	=> esc_html__( 'Typography', 'bstone' ),
 				'section'  	=> 'section-posts-slider',
 				'priority' 	=> 115,
+				'status' 	=> 'close',
+				'items'     => array(
+					"customize-control-bstone-settings-bp-banner-title-font-size",
+					"customize-control-bstone-settings-bp-banner-category-font-size",
+					"customize-control-bstone-settings-bp-banner-title-font-size-smlgrid",
+					"customize-control-bstone-settings-bp-banner-category-font-size-smlgrid"
+				),
 			)
 		) 
 	);
@@ -729,6 +760,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'label'    	=> esc_html__( 'Colors', 'bstone' ),
 				'section'  	=> 'section-posts-slider',
 				'priority' 	=> 140,
+				'status' 	=> 'close',
+				'items'     => array(
+					"customize-control-bstone-settings-bp-banner-overlay-color",
+					"customize-control-bstone-settings-bp-banner-title-text-color",
+					"customize-control-bstone-settings-bp-banner-category-text-color",
+					"customize-control-bstone-settings-bp-banner-meta-text-color",
+					"customize-control-bstone-settings-bp-banner-title-text-color-hover",
+					"customize-control-bstone-settings-bp-banner-category-text-color-hover",
+					"customize-control-bstone-settings-bp-banner-title-bg-color",
+					"customize-control-bstone-settings-bp-banner-category-bg-color",
+					"customize-control-bstone-settings-bp-banner-title-bg-color-hover",
+					"customize-control-bstone-settings-bp-banner-category-bg-color-hover",
+					"customize-control-bstone-settings-bp-banner-title-shadow",
+					"customize-control-bstone-settings-bp-banner-cat-shadow",
+					"customize-control-bstone-settings-bp-banner-meta-shadow"
+				),
 			)
 		)
     );

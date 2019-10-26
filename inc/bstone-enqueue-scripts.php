@@ -43,6 +43,42 @@ if ( ! class_exists( 'Bstone_Enqueue_Scripts' ) ) {
 		}
 
 		/**
+		 * Updates timestamp for global assets.
+		 */
+		public static function update_global_assets_timestamp() {
+
+			$timestamp = time();
+
+			if ( get_option( 'bst_global_assets_timestamp' ) !== false ) {
+				
+				update_option( 'bst_global_assets_timestamp', $timestamp );
+
+			} else {
+
+				add_option( 'bst_global_assets_timestamp', $timestamp );
+			}
+		}
+
+		/**
+		 * Takes the timestamp of the global assets. Creates if it's not yet created.
+		 */
+		public static function global_assets_timestamp() {
+
+			$timestamp = time();
+
+			if ( get_option( 'bst_global_assets_timestamp' ) !== false ) {
+
+				$timestamp = get_option( 'bst_global_assets_timestamp' );
+
+			} else {
+
+				add_option( 'bst_global_assets_timestamp', $timestamp );
+			}
+
+			return $timestamp;
+		}
+
+		/**
 		 * Enqueue jQuery
 		 */
 		public function enque_jquery_script() {
@@ -67,6 +103,8 @@ if ( ! class_exists( 'Bstone_Enqueue_Scripts' ) ) {
 						'bstone-flexibility' => 'flexibility',
 						'bstone-masonry-js'  => 'masonry.pkgd',
 						'bstone-theme-js'    => 'bstone',
+						'bstone-navigation'  => 'navigation',
+						'bstone-skip-link-focus-fix' => 'skip-link-focus-fix',
 					),
 
 					// handle => location ( in /assets/css/ ) ( without .css ext).
@@ -81,8 +119,10 @@ if ( ! class_exists( 'Bstone_Enqueue_Scripts' ) ) {
 
 					// handle => location ( in /assets/js/ ) ( without .js ext).
 					'js' => array(
-						'bstone-theme-js' => 'bstone',
+						'bstone-theme-js' 	 => 'bstone',
 						'bstone-flexibility' => 'flexibility',
+						'bstone-navigation'  => 'navigation',
+						'bstone-skip-link-focus-fix' => 'skip-link-focus-fix',
 					),
 
 					// handle => location ( in /assets/css/ ) ( without .css ext).
@@ -93,12 +133,16 @@ if ( ! class_exists( 'Bstone_Enqueue_Scripts' ) ) {
 				
 			}
 
+			if( true == bstone_options( 'bstone-font-awesome-icons' ) ) {
+				$default_assets['css']['font-awesome-style'] = 'font-awesome';
+			}
+
 			if( true == bstone_options( 'bp-banner-enable' ) ) {
 				$default_assets['js']['bstone-owl-js']  	  = 'owl.carousel';
 				$default_assets['css']['bstone-owl-style'] 	  = 'owl.carousel';
 				$default_assets['css']['bstone-owl-theme'] 	  = 'owl.theme.default';
 			}
-
+			
 			return apply_filters( 'bstone_theme_assets', $default_assets );
 		}
 
@@ -533,9 +577,11 @@ if ( ! class_exists( 'Bstone_Enqueue_Scripts' ) ) {
 					
 					if ( $existing_css !== $bstone_custom_css_output ) {
 						$wp_filesystem->put_contents( $existing_file, $bstone_custom_css_output, FS_CHMOD_FILE );
+
+						self::update_global_assets_timestamp();
 					}
 					
-					wp_enqueue_style( 'bstone-custom-styles', $upload_dir['baseurl'].'/bstone/' . 'custom-style.min.css' );
+					wp_enqueue_style( 'bstone-custom-styles', $upload_dir['baseurl'].'/bstone/' . 'custom-style.min.css', array(), self::global_assets_timestamp() );
 					
 				} else {
 					wp_add_inline_style( 'bstone-theme-style', Bstone_Dynamic_CSS::return_output() );

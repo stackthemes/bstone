@@ -538,3 +538,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 			'priority'    => 100,
 		)
 	);
+
+	/**
+	 * Option: Divider
+	 */
+	// Learn More link if Bstone Pro is not activated.
+	if ( ! defined( 'BSTONE_PRO_VER' ) ) {
+		$wp_customize->add_control(
+			new Bstone_Control_Divider(
+				$wp_customize, BSTONE_THEME_SETTINGS . '[header-pro-divider]', array(
+					'type'        => 'bst-divider',
+					'section'     => 'section-header',
+					'priority'    => 105,
+					'settings'    => array(),
+					'dividerline' => true,
+					'link' 		  => 'https://wpbstone.com/pro/?utm_source=customizer&utm_medium=upgrade-link&utm_campaign=upgrade-to-pro',
+					'html'     	  => __( 'More Options Available in Bstone Pro!', 'bstone' ),
+				)
+			)
+		);
+	}

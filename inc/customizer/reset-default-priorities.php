@@ -55,7 +55,6 @@ if ( ! class_exists( 'Bstone_Customizer_Reset_Priority' ) ) {
 		   $header_image  	    = $wp_customize->get_control( 'header_image' );
 		   $background_image    = $wp_customize->get_control( 'background_image' );
 		   $background_color    = $wp_customize->get_control( 'background_color' );
-		   $header_text_color   = $wp_customize->get_control( 'header_textcolor' );
 		   
 		   if ( $header_image ) {
 			   $header_image->section  = 'section-color-page-title';
@@ -72,10 +71,23 @@ if ( ! class_exists( 'Bstone_Customizer_Reset_Priority' ) ) {
 			   $background_color->section  = 'section-color-general';
 		   }
 		   
-		   if ( $header_text_color ) {
-			   $header_text_color->priority = 5;
-			   $header_text_color->section  = 'section-color-header';
-		   }
+		   if ( in_array( 'bstone-pro-addons/bstone-pro-addons.php', apply_filters('active_plugins', get_option('active_plugins')) ) ) {
+
+				$bst_pro_header_module_status = get_bstone_pro_modules_setting('addon-header-builder');
+				if( 1 == $bst_pro_header_module_status ) {
+					$bst_pro_header_module_status = 'true';
+				}
+
+				if( 'true' !== $bst_pro_header_module_status ) {
+					$header_text_color   = $wp_customize->get_control( 'header_textcolor' );
+					if ( $header_text_color ) {
+						$header_text_color->priority = 8;
+						$header_text_color->transport = 'postMessage';
+						$header_text_color->section  = 'section-color-header';
+					}
+				}
+				
+			}
 
 	   }
 	}

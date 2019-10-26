@@ -53,6 +53,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'label'    	=> esc_html__( 'Content Spacing', 'bstone' ),
 				'section'  	=> 'section-spacing-content',
 				'priority' 	=> 5,
+				'status' 	=> 'open',
+				'items'     => array(
+					"customize-control-bstone-settings-primary-container-padding",
+					"customize-control-bstone-settings-primary-container-margin",
+					"customize-control-bstone-settings-content-area-padding",
+					"customize-control-bstone-settings-pcontentarea-margin"
+				),
 			)
 		)
 	);
@@ -81,9 +88,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	$wp_customize->add_control(
 		new Bstone_Control_Dimensions(
 			$wp_customize, BSTONE_THEME_SETTINGS . '[primary-container-padding]', array(
-				'section'  => 'section-spacing-content',
-				'priority' => 10,
-				'label'    => __( 'Main Container Padding (px)', 'bstone' ),				
+				'section'     => 'section-spacing-content',
+				'priority' 	  => 10,
+				'label'    	  => __( 'Main Container Padding (px)', 'bstone' ),
+				'description' => __( 'Not effective on Full Width / Stretched Layouts', 'bstone' ),
 				'settings'   => array(
 		            'desktop_top' 		=> BSTONE_THEME_SETTINGS.'[pcnt_top_padding]',
 		            'desktop_right' 	=> BSTONE_THEME_SETTINGS.'[pcnt_right_padding]',
@@ -133,7 +141,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 			$wp_customize, BSTONE_THEME_SETTINGS . '[primary-container-margin]', array(
 				'section'  => 'section-spacing-content',
 				'priority' => 15,
-				'label'    => __( 'Main Container Margin (px)', 'bstone' ),				
+				'label'    => __( 'Main Container Margin (px)', 'bstone' ),
+				'description' => __( 'Not effective on Full Width / Stretched Layouts', 'bstone' ),
 				'settings'   => array(
 		            'desktop_top' 		=> BSTONE_THEME_SETTINGS.'[pcnt_top_margin]',
 		            'desktop_bottom' 	=> BSTONE_THEME_SETTINGS.'[pcnt_bottom_margin]',
@@ -177,7 +186,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 			$wp_customize, BSTONE_THEME_SETTINGS . '[content-area-padding]', array(
 				'section'  => 'section-spacing-content',
 				'priority' => 20,
-				'label'    => __( 'Primary Content Area Padding (px)', 'bstone' ),				
+				'label'    => __( 'Primary Content Area Padding (px)', 'bstone' ),
+				'description' => __( 'Not effective on Full Width / Stretched Layouts', 'bstone' ),
+				'description' => __( 'Not effective on Full Width / Stretched Layouts', 'bstone' ),
 				'settings'   => array(
 		            'desktop_top' 		=> BSTONE_THEME_SETTINGS.'[carea_top_padding]',
 		            'desktop_right' 	=> BSTONE_THEME_SETTINGS.'[carea_right_padding]',
@@ -227,7 +238,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 			$wp_customize, BSTONE_THEME_SETTINGS . '[pcontentarea-margin]', array(
 				'section'  => 'section-spacing-content',
 				'priority' => 25,
-				'label'    => __( 'Primary Content Area Margin (px)', 'bstone' ),				
+				'label'    => __( 'Primary Content Area Margin (px)', 'bstone' ),	
+				'description' => __( 'Not effective on Full Width / Stretched Layouts', 'bstone' ),			
 				'settings'   => array(
 		            'desktop_top' 		=> BSTONE_THEME_SETTINGS.'[pcontentarea_top_margin]',
 		            'desktop_bottom' 	=> BSTONE_THEME_SETTINGS.'[pcontentarea_bottom_margin]',
@@ -258,6 +270,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'label'    	=> esc_html__( 'Headings Spacing', 'bstone' ),
 				'section'  	=> 'section-spacing-content',
 				'priority' 	=> 30,
+				'status' 	=> 'close',
+				'items'     => array(
+					"customize-control-bstone-settings-h1-margin",
+					"customize-control-bstone-settings-h2-margin",
+					"customize-control-bstone-settings-h3-margin",
+					"customize-control-bstone-settings-h4-margin",
+					"customize-control-bstone-settings-h5-margin",
+					"customize-control-bstone-settings-h6-margin"
+				),
 			)
 		)
 	);

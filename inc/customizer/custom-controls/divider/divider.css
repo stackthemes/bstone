@@ -1,3 +1,49 @@
 .customize-control-bst-divider .customize-control-title {
   font-size: 1.3em;
-  margin: 1.2em 0 0.2em; }
+  margin: 1.2em 0 0.2em;
+}
+
+.customize-control-bst-divider .customize-control-caption {
+  display: block;
+  cursor: pointer;
+}
+
+.customize-control-bst-divider .customize-control-caption button {
+  background: none;
+  border: solid 1px #0085BA;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  padding: 0px;
+  border-radius: 100%;
+  cursor: pointer;
+  float: right;
+  color: #0085BA;
+}
+
+.customize-control-bst-divider .customize-control-caption button i {
+  top: 3px;
+  left: -1px;
+  font-size: 14px;
+  position: relative;
+}
+
+.customize-control-bst-divider .customize-control-caption button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.customize-control-bst-divider .customize-control-caption.divider-open button i {
+  top: 2px;
+}
+
+.customize-control-bst-divider .customize-control-caption {
+  display: block;
+  cursor: pointer;
+}
+
+.customize-control-html p {
+  color: #555d66;
+  font-style: italic;
+  margin: 16px 0px 10px 0px;
+}

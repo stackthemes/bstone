@@ -239,7 +239,6 @@ jQuery( document ).ready( function( $ ) {
 		$control.on( 'input', function() {
 			var value = $( this ).val();
 			var alpha = acp_get_alpha_value_from_color( value );
-
 			acp_update_alpha_value_on_alpha_slider( alpha, $alphaSlider );
 		});
 

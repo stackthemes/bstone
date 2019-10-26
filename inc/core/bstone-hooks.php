@@ -354,6 +354,20 @@ function bstone_single_header_top() {
 }
 
 /**
+ * Single Post/Page Header Title Before
+ */
+function bstone_single_header_title_before() {
+	do_action( 'bstone_single_header_title_before' );
+}
+
+/**
+ * Single Post/Page Header Title After
+ */
+function bstone_single_header_title_after() {
+	do_action( 'bstone_single_header_title_after' );
+}
+
+/**
  * Single Post/Page Header Bottom
  */
 function bstone_single_header_bottom() {
@@ -469,4 +483,11 @@ function bstone_primary_content_top() {
  */
 function bstone_primary_content_bottom() {
 	do_action( 'bstone_primary_content_bottom' );
+}
+
+/**
+ * 404
+ */
+function bstone_entry_content_404_page() {
+	do_action( 'bstone_entry_content_404_page' );
 }

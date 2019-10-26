@@ -69,27 +69,117 @@
 header.site-header button.customize-partial-edit-shortcut-button {
 	left: 2px !important;
 }
-.customize-pane-child>li.customize-control-bst-font-weight,
-.customize-pane-child>li.transform-ctrl,
-#customize-control-bstone-settings-title-img-position,
-#customize-control-bstone-settings-title-img-attachment,
-#customize-control-bstone-settings-title-img-repeat,
-#customize-control-bstone-settings-title-img-size,
-#customize-control-bstone-settings-page-bg-img-position,
-#customize-control-bstone-settings-page-bg-img-attachment,
-#customize-control-bstone-settings-page-bg-img-repeat,
-#customize-control-bstone-settings-page-bg-img-size {
-	width: 50%;
-    display: inline-block;
+body.wp-customizer .customize-pane-child>li.customize-control-bst-font-weight,
+body.wp-customizer .customize-pane-child>li.transform-ctrl,
+body.wp-customizer #customize-control-bstone-settings-title-img-position,
+body.wp-customizer #customize-control-bstone-settings-title-img-attachment,
+body.wp-customizer #customize-control-bstone-settings-title-img-repeat,
+body.wp-customizer #customize-control-bstone-settings-title-img-size,
+body.wp-customizer #customize-control-bstone-settings-page-bg-img-position,
+body.wp-customizer #customize-control-bstone-settings-page-bg-img-attachment,
+body.wp-customizer #customize-control-bstone-settings-page-bg-img-repeat,
+body.wp-customizer #customize-control-bstone-settings-page-bg-img-size,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_main_header_bg_img_position,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_main_header_bg_img_attachment,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_main_header_bg_img_repeat,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_main_header_bg_img_size,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_main_header_bg_img_position_tm,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_main_header_bg_img_attachment_tm,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_main_header_bg_img_repeat_tm,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_main_header_bg_img_size_tm,
+body.wp-customizer #customize-control-bstone-settings-bsthb_m_side_bar_bg_img_position,
+body.wp-customizer #customize-control-bstone-settings-bsthb_m_side_bar_bg_img_attachment,
+body.wp-customizer #customize-control-bstone-settings-bsthb_m_side_bar_bg_img_repeat,
+body.wp-customizer #customize-control-bstone-settings-bsthb_m_side_bar_bg_img_size,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_topbar_bg_img_position,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_topbar_bg_img_attachment,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_topbar_bg_img_repeat,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_topbar_bg_img_size,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_bottombar_bg_img_position,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_bottombar_bg_img_attachment,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_bottombar_bg_img_repeat,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_bottombar_bg_img_size,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_mainbar_bg_img_position,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_mainbar_bg_img_attachment,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_mainbar_bg_img_repeat,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_mainbar_bg_img_size,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_stickyheader_bg_img_position,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_stickyheader_bg_img_attachment,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_stickyheader_bg_img_repeat,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_stickyheader_bg_img_size,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_pmenu_dd_bg_img_position,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_pmenu_dd_bg_img_attachment,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_pmenu_dd_bg_img_repeat,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_pmenu_dd_bg_img_size,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_pmenu_link_font_family,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_pmenu_link_font_weight,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_pmenu_link_text_transform,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_pmenu_link_text_style,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_pmenu_dd_link_font_family,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_pmenu_dd_link_font_weight,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_pmenu_dd_link_text_transform,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_pmenu_dd_link_text_style,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_secmenu_dd_bg_img_position,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_secmenu_dd_bg_img_attachment,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_secmenu_dd_bg_img_repeat,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_secmenu_dd_bg_img_size,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_secmenu_link_font_family,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_secmenu_link_font_weight,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_secmenu_link_text_transform,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_secmenu_link_text_style,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_secmenu_dd_link_font_family,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_secmenu_dd_link_font_weight,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_secmenu_dd_link_text_transform,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_secmenu_dd_link_text_style,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_icon_title_font_family,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_icon_title_font_weight,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_icon_title_text_transform,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_icon_title_text_style,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_icon_desc_font_family,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_icon_desc_font_weight,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_icon_desc_text_transform,
+body.wp-customizer #customize-control-bstone-settings-bst_hb_icon_desc_text_style {
+    width: 50%;
     box-sizing: border-box;
     clear: none;
+    float: left;
 }
 
 #customize-control-bstone-settings-title-img-position,
 #customize-control-bstone-settings-title-img-repeat,
 #customize-control-bstone-settings-page-bg-img-position,
 #customize-control-bstone-settings-page-bg-img-repeat,
-.customize-pane-child>li.customize-control-bst-font-weight {
+.customize-pane-child>li.customize-control-bst-font-weight,
+#customize-control-bstone-settings-bst_hb_main_header_bg_img_position,
+#customize-control-bstone-settings-bst_hb_main_header_bg_img_repeat,
+#customize-control-bstone-settings-bst_hb_main_header_bg_img_position_tm,
+#customize-control-bstone-settings-bst_hb_main_header_bg_img_repeat_tm,
+#customize-control-bstone-settings-bsthb_m_side_bar_bg_img_position,
+#customize-control-bstone-settings-bsthb_m_side_bar_bg_img_repeat,
+#customize-control-bstone-settings-bst_hb_topbar_bg_img_position,
+#customize-control-bstone-settings-bst_hb_topbar_bg_img_repeat,
+#customize-control-bstone-settings-bst_hb_bottombar_bg_img_position,
+#customize-control-bstone-settings-bst_hb_bottombar_bg_img_repeat,
+#customize-control-bstone-settings-bst_hb_mainbar_bg_img_position,
+#customize-control-bstone-settings-bst_hb_mainbar_bg_img_repeat,
+#customize-control-bstone-settings-bst_hb_stickyheader_bg_img_position,
+#customize-control-bstone-settings-bst_hb_stickyheader_bg_img_repeat,
+#customize-control-bstone-settings-bst_hb_pmenu_dd_bg_img_position,
+#customize-control-bstone-settings-bst_hb_pmenu_dd_bg_img_repeat,
+#customize-control-bstone-settings-bst_hb_pmenu_link_font_family,
+#customize-control-bstone-settings-bst_hb_pmenu_link_text_transform,
+#customize-control-bstone-settings-bst_hb_pmenu_dd_link_font_family,
+#customize-control-bstone-settings-bst_hb_pmenu_dd_link_text_transform,
+#customize-control-bstone-settings-bst_hb_secmenu_dd_bg_img_position,
+#customize-control-bstone-settings-bst_hb_secmenu_dd_bg_img_repeat,
+#customize-control-bstone-settings-bst_hb_secmenu_link_font_family,
+#customize-control-bstone-settings-bst_hb_secmenu_link_text_transform,
+#customize-control-bstone-settings-bst_hb_secmenu_dd_link_font_family,
+#customize-control-bstone-settings-bst_hb_secmenu_dd_link_text_transform,
+#customize-control-bstone-settings-bst_hb_icon_title_font_family,
+#customize-control-bstone-settings-bst_hb_icon_title_text_transform,
+#customize-control-bstone-settings-bst_hb_icon_desc_font_family,
+#customize-control-bstone-settings-bst_hb_icon_desc_text_transform {
 	padding-right: 5px;
 }
 
@@ -179,12 +269,12 @@ header.site-header button.customize-partial-edit-shortcut-button {
 #customize-control-bstone-settings-readbtn-typo-text-transform,
 #customize-control-bstone-settings-bffield-text-transform, 
 #customize-control-bstone-settings-bfbuttons-text-transform,
-#bstone-settings[sh_pp_set_product_desc],
-#bstone-settings[sh_pp_set_product_review],
-#bstone-settings[sh_pp_set_product_additional_info],
-#bstone-settings[sh_pp_set_product_lightbox],
-#bstone-settings[sh_pp_set_product_zoom],
-#bstone-settings[sh_pp_set_related_products] {
+#bstone-settings-sh_pp_set_product_desc,
+#bstone-settings-sh_pp_set_product_review,
+#bstone-settings-sh_pp_set_product_additional_info,
+#bstone-settings-sh_pp_set_product_lightbox,
+#bstone-settings-sh_pp_set_product_zoom,
+#bstone-settings-sh_pp_set_related_products {
     width: 50%;
     clear: none;
 	display: inline-block !important;
@@ -233,4 +323,8 @@ header.site-header button.customize-partial-edit-shortcut-button {
 
 #sc_shop_pages button img {
     max-width: 20px;
+}
+
+#customize-control-bstone-settings-post-type-icon {
+    padding: 0px;
 }

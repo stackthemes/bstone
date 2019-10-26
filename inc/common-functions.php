@@ -399,7 +399,7 @@ if ( ! function_exists( 'bstone_get_font_family' ) ) {
 	function bstone_get_font_family( $value = '' ) {
 		$system_fonts = Bstone_Font_Families::get_system_fonts();
 		if ( isset( $system_fonts[ $value ] ) && isset( $system_fonts[ $value ]['fallback'] ) ) {
-			$value .= ',' . $system_fonts[ $value ]['fallback'];
+			$value .= "','" . $system_fonts[ $value ]['fallback'];
 		}
 
 		return $value;
@@ -443,7 +443,7 @@ if ( ! function_exists( 'bstone_get_css_value' ) ) {
 			case 'font':
 				if ( 'inherit' != $value ) {
 					$value   = bstone_get_font_family( $value );
-					$css_val = esc_attr( $value );
+					$css_val = $value;
 				} elseif ( '' != $default ) {
 					$css_val = esc_attr( $default );
 				}
@@ -521,6 +521,14 @@ if ( ! function_exists( 'bstone_parse_css' ) ) {
 					if ( '' === $value ) {
 						continue; }
 
+					if( 'background-ms' == $property || 'background-webkit' == $property || 'background-moz' == $property || 'background-o' == $property ) {
+						$property = 'background';
+					}
+
+					if( 'src-eot' == $property ) {
+						$property = 'src';
+					}
+
 					$properties_added++;
 					$temp_parse_css .= $property . ':' . $value . ';';
 				}
@@ -534,7 +542,7 @@ if ( ! function_exists( 'bstone_parse_css' ) ) {
 
 			if ( '' != $parse_css && ( '' !== $min_media || '' !== $max_media ) ) {
 
-				$media_css       = '@media ';
+				$media_css       = '@media screen and ';
 				$min_media_css   = '';
 				$max_media_css   = '';
 				$media_separator = '';
@@ -877,7 +885,7 @@ if ( ! function_exists( 'bstone_get_responsive_spacings' ) ) {
 	 * $media_queries => CSS media queries - Break Points ['desktop:921', tablet:481', mobile:120']
 	 */
 	
-	function bstone_get_responsive_spacings( $selector, $control1, $control2, $property1, $property2, $value, $types, $media_queries ) {		
+	function bstone_get_responsive_spacings( $selector, $control1, $control2, $property1, $property2, $value, $types, $media_queries, $property_pos = true ) {		
 		$css_output = '';
 		
 		if ( '' != $property2 && '-' != $property2 ) {
@@ -893,15 +901,19 @@ if ( ! function_exists( 'bstone_get_responsive_spacings' ) ) {
 		
 		foreach( $types as $position ) {
 
-			$css_pos = $position;
+			if( true === $property_pos ) {
+				$css_pos = '-'.$position;
 
-			if ( is_rtl() ) {
-				if( "right" == $position ) {
-					$css_pos = "left";
+				if ( is_rtl() ) {
+					if( "right" == $position ) {
+						$css_pos = "-left";
+					}
+					else if( "left" == $position ) {
+						$css_pos = "-right";
+					}
 				}
-				else if( "left" == $position ) {
-					$css_pos = "right";
-				}
+			} else {
+				$css_pos = '';
 			}
 		
 			$ctrl_val_desktop = bstone_options( $control1.'_'.$position.'_'.$control2 );
@@ -923,7 +935,7 @@ if ( ! function_exists( 'bstone_get_responsive_spacings' ) ) {
 
 				$mobile_css = array(
 					$selector => array(
-						$property1.'-'.$css_pos.$property2 => $nagative_value.$ctrl_val_mobile.$value,
+						$property1.$css_pos.$property2 => $nagative_value.$ctrl_val_mobile.$value,
 					),
 				);
 				$css_output .= bstone_parse_css( $mobile_css, '120' );
@@ -936,7 +948,7 @@ if ( ! function_exists( 'bstone_get_responsive_spacings' ) ) {
 
 				$tablet_css = array(
 					$selector => array(
-						$property1.'-'.$css_pos.$property2 => $nagative_value.$ctrl_val_tablet.$value,
+						$property1.$css_pos.$property2 => $nagative_value.$ctrl_val_tablet.$value,
 					),
 				);
 				$css_output .= bstone_parse_css( $tablet_css, '481' );
@@ -946,7 +958,7 @@ if ( ! function_exists( 'bstone_get_responsive_spacings' ) ) {
 			if ( in_array("desktop", $media_queries) ) {
 				$desktop_css = array(
 					$selector => array(
-						$property1.'-'.$css_pos.$property2 => $nagative_value.$ctrl_val_desktop.$value,
+						$property1.$css_pos.$property2 => $nagative_value.$ctrl_val_desktop.$value,
 					),
 				);
 				$css_output .= bstone_parse_css( $desktop_css, '921' );
