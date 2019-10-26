@@ -10,18 +10,18 @@ Bstone is fully customizable, fast, lightweight, responsive, RTL & translation r
 
 ### Installation ###
 
-1.In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
-2.Type in Bstone in the search form and press the 'Enter' key on your keyboard.
-3.Click on the 'Activate' button to use your new theme right away.
-4.Navigate to Appearance > Customize in your admin panel and customize to taste.
+1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
+2. Type in Bstone in the search form and press the 'Enter' key on your keyboard.
+3. Click on the 'Activate' button to use your new theme right away.
+4. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
 ### BSTONE Child Theme ###
 
 There are multiple ways you can use a child theme with the Bstone Theme, Use any one method mentoned below to create a child theme or use a child theme we have created.
 
-1.Using Bstone Child theme generator [https://wpbstone.com/child-theme-generator/](https://wpbstone.com/child-theme-generator/)
-2.Using Plugin One click Child theme - [https://wordpress.org/plugins/one-click-child-theme/](https://wordpress.org/plugins/one-click-child-theme/)
-3.More information on creating child theme. - [https://codex.wordpress.org/Child_Themes](https://codex.wordpress.org/Child_Themes)
+1. Using Bstone Child theme generator [https://wpbstone.com/child-theme-generator/](https://wpbstone.com/child-theme-generator/)
+2. Using Plugin One click Child theme - [https://wordpress.org/plugins/one-click-child-theme/](https://wordpress.org/plugins/one-click-child-theme/)
+3. More information on creating child theme. - [https://codex.wordpress.org/Child_Themes](https://codex.wordpress.org/Child_Themes)
 
 ### BSTONE License ###
 
