@@ -2166,26 +2166,32 @@ body #primary, body #secondary, body #tertiary {
   border-color: transparent;
 }
 
-/***************************
- * Boxed Container Elementor
- ***************************/
+/************************************
+ * Boxed & Padded Container Elementor
+ ************************************/
 
-body.boxed-container.elementor-page #content #primary, body.boxed-container.elementor-page #content>.st-container, body.padded-container.elementor-page #content #primary, body.padded-container.elementor-page #content>.st-container {
+body.boxed-container.elementor-page #content #primary,
+body.boxed-container.elementor-page #content>.st-container,
+body.padded-container.elementor-page #content #primary,
+body.padded-container.elementor-page #content>.st-container {
   max-width: 100%;
   width: 100%;
 }
 
-/* body.elementor-page #content #primary, body.elementor-page #content>.st-container {
+body.elementor-page:not(.plain-container):not(.separate-container) #content #primary,
+body.elementor-page:not(.plain-container):not(.separate-container) #content>.st-container {
   margin: 0px;
   padding: 0px;
-} */
+}
 
-body.boxed-container .elementor-section.elementor-section-stretched, body.padded-container .elementor-section.elementor-section-stretched {
+body.boxed-container .elementor-section.elementor-section-stretched,
+body.padded-container .elementor-section.elementor-section-stretched {
   max-width: 100%;
   left: 0!important;
 }
 
-body.boxed-container.elementor-page #page, body.padded-container.elementor-page #page {
+body.boxed-container.elementor-page #page,
+body.padded-container.elementor-page #page {
   overflow: hidden;
 }
 

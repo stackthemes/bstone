@@ -1,3 +1,12 @@
+= 1.2.2 =
+* ADD: bstone_entry_content_404_page Hook
+* ADD: bstone_single_header_title_before Hook
+* ADD: bstone_single_header_title_after Hook
+* FIXED: Boxed layout fixed when using Elementor
+* FIXED: Bug fix in Woo Mini Cart Widget
+* FIXED: Bread Crumbs Month in Blog Archive
+* FIXED: Container Spacing Removed on Full Width / Streched layout
+
 = 1.2.1 =
 * FIXED: More than one text-domain was used.
 

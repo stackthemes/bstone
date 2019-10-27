@@ -2176,9 +2176,9 @@ body #primary, body #secondary, body #tertiary {
   border-color: transparent;
 }
 
-/***************************
- * Boxed Container Elementor
- ***************************/
+/************************************
+ * Boxed & Padded Container Elementor
+ ************************************/
 
 body.boxed-container.elementor-page #content #primary,
 body.boxed-container.elementor-page #content>.st-container,
@@ -2188,8 +2188,8 @@ body.padded-container.elementor-page #content>.st-container {
   width: 100%;
 }
 
-body.elementor-page #content #primary,
-body.elementor-page #content>.st-container {
+body.elementor-page:not(.plain-container):not(.separate-container) #content #primary,
+body.elementor-page:not(.plain-container):not(.separate-container) #content>.st-container {
   margin: 0px;
   padding: 0px;
 }
